@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Brand Colors ── */
+  --color-primary:       #0263CC;
+  --color-primary-dark:  #0251a8;
+  --color-primary-light: #d6e8fb;
+  --color-sky:           #4DA5EC;
+  --color-sky-light:     #e8f4fd;
+  --color-teal:          #02A7BB;
+  --color-teal-light:    #d6f4f7;
+
+  /* ── Neutral Palette ── */
+  --color-white:         #FFFFFF;
+  --color-offwhite:      #F8FAFC;
+  --color-surface:       #F1F7FC;
+  --color-border:        #E2E8F0;
+  --color-border-dark:   #CBD5E1;
+  --color-ink:           #0F172A;
+  --color-ink-muted:     #334155;
+  --color-ink-subtle:    #475569;
+  --color-ink-faint:     #94A3B8;
+
+  /* ── Fonts ──
+     --font-poppins is injected by next/font in layout.js as a CSS var.
+     Fall back to the Google Fonts import for Poppins, and load Manjari
+     from the Google Fonts @import above.
+  */
+  --font-heading: "Manjari", sans-serif;
+  --font-body:    var(--font-poppins, "Poppins"), sans-serif;
+
+  /* Tailwind font-family utilities: font-heading, font-body */
+  --font-family-heading: var(--font-heading);
+  --font-family-body:    var(--font-body);
+
+  /* ── Spacing extras ── */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+
+  /* ── Border radius ── */
+  --radius-xl:  1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Base resets ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography helpers ── */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: var(--color-sky); border-radius: 3px; }
+
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Utility: brand gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-sky) 50%, var(--color-teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Utility: hero gradient bg ── */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0351a8 40%, #024f9e 70%, var(--color-teal) 100%);
+}
+
+/* ── Utility: brand gradient bg ── */
+.brand-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-sky) 60%, var(--color-teal) 100%);
+}
+
+/* ── Utility: card glass ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* ── Scrollable table wrapper ── */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Sticky mobile bottom bar clearance ── */
+@media (max-width: 767px) {
+  .mobile-pb-safe {
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+  }
 }
