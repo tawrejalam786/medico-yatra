@@ -5,74 +5,37 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Badge from "@/components/ui/Badge";
 import { CAREERS } from "@/data/careers";
+import Image from "next/image";
 
 // Career icons as inline SVG per profession
 const CAREER_ICONS = {
   mbbs: (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <circle cx="14" cy="9" r="5" stroke="#0263CC" strokeWidth="1.8"/>
-      <path d="M11 14h6l1 9H10l1-9z" stroke="#0263CC" strokeWidth="1.8" strokeLinejoin="round"/>
-      <line x1="14" y1="16" x2="14" y2="21" stroke="#4DA5EC" strokeWidth="1.5" strokeLinecap="round"/>
-      <line x1="11.5" y1="18.5" x2="16.5" y2="18.5" stroke="#4DA5EC" strokeWidth="1.5" strokeLinecap="round"/>
-    </svg>
+    <Image src="/images/mbbs.jpg" width={500} height={300} alt="MBBS" className="rounded-xl object-cover" />
   ),
   dentistry: (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <path d="M10 6C7 6 5 8 5 11c0 4 2 7 4 10l1 1h8l1-1c2-3 4-6 4-10 0-3-2-5-5-5-1.5 0-2.5.8-3 1.5C14.5 6.8 13.5 6 12 6c-.7 0-1.4.15-2 .4V6z" stroke="#0263CC" strokeWidth="1.8" strokeLinejoin="round"/>
-    </svg>
+    <Image src="/images/Dentistry-BDS.jpg" width={500} height={300} alt="MBBS" className="rounded-xl object-cover" />
   ),
   nursing: (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <rect x="9" y="6" width="10" height="16" rx="3" stroke="#0263CC" strokeWidth="1.8"/>
-      <line x1="14" y1="10" x2="14" y2="16" stroke="#4DA5EC" strokeWidth="1.8" strokeLinecap="round"/>
-      <line x1="11" y1="13" x2="17" y2="13" stroke="#4DA5EC" strokeWidth="1.8" strokeLinecap="round"/>
-    </svg>
+    <Image src="/images/nursing-new.jpg" width={500} height={300} alt="MBBS" className="rounded-xl" />
   ),
   pharmacy: (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <rect x="8" y="7" width="12" height="16" rx="3" stroke="#0263CC" strokeWidth="1.8"/>
-      <rect x="11" y="5" width="6" height="4" rx="1.5" stroke="#0263CC" strokeWidth="1.5"/>
-      <line x1="11" y1="13" x2="17" y2="13" stroke="#4DA5EC" strokeWidth="1.5" strokeLinecap="round"/>
-      <line x1="11" y1="16" x2="15" y2="16" stroke="#4DA5EC" strokeWidth="1.5" strokeLinecap="round"/>
-      <line x1="11" y1="19" x2="16" y2="19" stroke="#4DA5EC" strokeWidth="1.5" strokeLinecap="round"/>
-    </svg>
+    <Image src="/images/young-woman-pharmacist.jpg" width={500} height={300} alt="MBBS" className="rounded-xl" />
   ),
   physiotherapy: (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <circle cx="14" cy="7" r="3" stroke="#0263CC" strokeWidth="1.8"/>
-      <path d="M14 10v7" stroke="#0263CC" strokeWidth="1.8" strokeLinecap="round"/>
-      <path d="M14 14l-4 4" stroke="#4DA5EC" strokeWidth="1.8" strokeLinecap="round"/>
-      <path d="M14 14l4 4" stroke="#4DA5EC" strokeWidth="1.8" strokeLinecap="round"/>
-      <path d="M10 10l-3 3" stroke="#0263CC" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M18 10l3 3" stroke="#0263CC" strokeWidth="1.5" strokeLinecap="round"/>
-    </svg>
+    <Image src="/images/physiotherapist-course.jpg" width={500} height={300} alt="MBBS" className="rounded-xl" />
   ),
   respiratoryTherapy: (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <path d="M8 20c0-5 3-9 6-9s6 4 6 9" stroke="#0263CC" strokeWidth="1.8" strokeLinecap="round"/>
-      <path d="M14 11V8" stroke="#0263CC" strokeWidth="1.8" strokeLinecap="round"/>
-      <ellipse cx="14" cy="7" rx="3" ry="2" stroke="#4DA5EC" strokeWidth="1.5"/>
-      <path d="M10 16c-1.5 0-3 1-3 3" stroke="#4DA5EC" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M18 16c1.5 0 3 1 3 3" stroke="#4DA5EC" strokeWidth="1.5" strokeLinecap="round"/>
-    </svg>
+    <Image src="/images/doctor-helping-patient-rehabilitation.jpg" width={500} height={300} alt="MBBS" className="rounded-xl" />
   ),
   mlt: (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <circle cx="14" cy="16" r="6" stroke="#0263CC" strokeWidth="1.8"/>
-      <path d="M11 10V7h6v3" stroke="#0263CC" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-      <circle cx="14" cy="16" r="2.5" fill="#d6e8fb"/>
-      <circle cx="13" cy="15.5" r="1" fill="#0263CC"/>
-    </svg>
+    <Image src="/images/labs.jpg" width={500} height={300} alt="MBBS" className="rounded-xl" />
   ),
   alliedHealth: (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <circle cx="14" cy="14" r="10" stroke="#94A3B8" strokeWidth="1.8" strokeDasharray="4 3"/>
-      <text x="10" y="18" fontSize="12" fill="#94A3B8" fontWeight="bold">?</text>
-    </svg>
+    <Image src="/images/alied-ask.jpg" width={500} height={300} alt="MBBS" className="rounded-xl" />
   ),
 };
 
-const directCareers  = CAREERS.filter((c) => c.group === "direct");
+const directCareers = CAREERS.filter((c) => c.group === "direct");
 const exploringCareers = CAREERS.filter((c) => c.group === "exploring");
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.07 } } };
@@ -84,19 +47,25 @@ function CareerCard({ career }) {
   return (
     <motion.article
       variants={card}
-      className="group flex flex-col gap-4 bg-white border border-[#E2E8F0] rounded-2xl p-6 hover:shadow-lg hover:border-[#4DA5EC]/50 hover:-translate-y-0.5 transition-all duration-250"
+      className="group flex flex-col gap-4 bg-white border border-[#E2E8F0] rounded-2xl p-4 hover:shadow-lg hover:border-[#4DA5EC]/50 hover:-translate-y-0.5 transition-all duration-250"
       aria-label={`Career: ${career.title}`}
     >
-      {/* Icon */}
-      <div className="w-12 h-12 rounded-xl bg-[#F1F7FC] border border-[#E2E8F0] flex items-center justify-center group-hover:bg-[#e8f4fd] group-hover:border-[#4DA5EC]/30 transition-all duration-250">
+      {/* Image */}
+      <div className="w-full object-cover h-52 lg:h-40 shrink-0 rounded-xl bg-[#F1F7FC] border border-[#E2E8F0] flex items-center justify-center overflow-hidden group-hover:bg-[#e8f4fd] group-hover:border-[#4DA5EC]/30 transition-all duration-250">
         {icon}
       </div>
 
       {/* Title + badge */}
       <div className="flex items-start gap-2 flex-wrap">
-        <h3 className="font-heading text-lg text-[#0F172A] leading-snug">{career.shortTitle}</h3>
+        <h3 className="font-heading text-lg text-[#0F172A] leading-snug">
+          {career.shortTitle}
+        </h3>
+
         {career.badge && <Badge variant="teal">{career.badge}</Badge>}
-        {career.popular && !career.badge && <Badge variant="primary">Popular</Badge>}
+
+        {career.popular && !career.badge && (
+          <Badge variant="primary">Popular</Badge>
+        )}
       </div>
 
       {/* Description */}
@@ -107,10 +76,13 @@ function CareerCard({ career }) {
       {/* Meta */}
       <div className="space-y-1.5 py-3 border-t border-[#F1F5F9]">
         <p className="font-body text-xs text-[#94A3B8]">
-          <span className="font-medium text-[#475569]">Duration:</span> {career.duration}
+          <span className="font-medium text-[#475569]">Duration:</span>{" "}
+          {career.duration}
         </p>
+
         <p className="font-body text-xs text-[#94A3B8]">
-          <span className="font-medium text-[#475569]">Entry:</span> {career.entryRequirement}
+          <span className="font-medium text-[#475569]">Entry:</span>{" "}
+          {career.entryRequirement}
         </p>
       </div>
 
@@ -121,7 +93,11 @@ function CareerCard({ career }) {
         aria-label={`Learn more about ${career.title}`}
       >
         Learn More
-        <ArrowRight size={15} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1"/>
+        <ArrowRight
+          size={15}
+          aria-hidden="true"
+          className="transition-transform duration-200 group-hover:translate-x-1"
+        />
       </Link>
     </motion.article>
   );
@@ -143,7 +119,7 @@ export default function CareersSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="font-body text-xs font-medium text-[#02A7BB] uppercase tracking-widest mb-3"
+            className="font-body text-xs font-bold text-[#02A7BB] uppercase tracking-widest mb-3"
           >
             Healthcare Pathways
           </motion.p>
@@ -153,7 +129,7 @@ export default function CareersSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.06 }}
-            className="font-heading text-3xl sm:text-4xl lg:text-5xl text-[#0F172A] mb-4"
+            className="font-medium text-3xl sm:text-4xl lg:text-5xl text-[#0F172A] mb-4"
           >
             One Partner for Your Entire Healthcare Journey
           </motion.h2>
@@ -177,11 +153,11 @@ export default function CareersSection() {
             transition={{ duration: 0.5 }}
             className="flex items-center gap-3 mb-7"
           >
-            <div className="h-px flex-1 bg-[#E2E8F0]" aria-hidden="true"/>
+            <div className="h-px flex-1 bg-[#E2E8F0]" aria-hidden="true" />
             <span className="font-body font-semibold text-sm text-[#0263CC] bg-[#d6e8fb] px-4 py-1.5 rounded-full whitespace-nowrap">
               Direct Entry After Class 12
             </span>
-            <div className="h-px flex-1 bg-[#E2E8F0]" aria-hidden="true"/>
+            <div className="h-px flex-1 bg-[#E2E8F0]" aria-hidden="true" />
           </motion.div>
 
           <motion.div
@@ -206,11 +182,11 @@ export default function CareersSection() {
             transition={{ duration: 0.5 }}
             className="flex items-center gap-3 mb-7"
           >
-            <div className="h-px flex-1 bg-[#E2E8F0]" aria-hidden="true"/>
+            <div className="h-px flex-1 bg-[#E2E8F0]" aria-hidden="true" />
             <span className="font-body font-semibold text-sm text-[#475569] bg-[#F1F5F9] px-4 py-1.5 rounded-full whitespace-nowrap">
               Worth Exploring If You're Still Deciding
             </span>
-            <div className="h-px flex-1 bg-[#E2E8F0]" aria-hidden="true"/>
+            <div className="h-px flex-1 bg-[#E2E8F0]" aria-hidden="true" />
           </motion.div>
 
           <motion.div
@@ -227,20 +203,35 @@ export default function CareersSection() {
             {/* "Not sure?" nudge */}
             <motion.div
               variants={card}
-              className="flex flex-col justify-center gap-3 bg-gradient-to-br from-[#0263CC] to-[#02A7BB] rounded-2xl p-6 text-white"
+              className="relative flex flex-col justify-center gap-3 rounded-2xl p-6 text-white overflow-hidden bg-gradient-to-br from-[#0263CC] to-[#02A7BB]"
+              style={{
+                backgroundImage: "url('/images/counselling-bg.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
-              <p className="font-heading text-xl leading-snug">Not sure which fits you?</p>
-              <p className="font-body font-light text-sm text-white/85 leading-relaxed">
-                Use the Country Finder above, or — that's exactly what our free counselling is for.
-              </p>
-              <Link
-                href="/counselling"
-                className="inline-flex items-center gap-2 font-body font-medium text-sm text-white hover:gap-3 transition-all duration-200 mt-1"
-                aria-label="Book free counselling to explore career options"
-              >
-                Book Free Counselling
-                <ArrowRight size={15} aria-hidden="true"/>
-              </Link>
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-[#0263CC]/70" />
+
+              {/* Content */}
+              <div className="relative z-10">
+                <p className="font-heading text-xl leading-snug">
+                  Not sure which fits you?
+                </p>
+
+                <p className="font-body font-light text-sm text-white/85 leading-relaxed mt-3">
+                  Use the Country Finder above, or — that's exactly what our free counselling is for.
+                </p>
+
+                <Link
+                  href="/counselling"
+                  className="inline-flex items-center gap-2 font-body font-medium text-sm text-white hover:gap-3 transition-all duration-200 mt-4"
+                  aria-label="Book free counselling to explore career options"
+                >
+                  Book Free Counselling
+                  <ArrowRight size={15} aria-hidden="true" />
+                </Link>
+              </div>
             </motion.div>
           </motion.div>
         </div>

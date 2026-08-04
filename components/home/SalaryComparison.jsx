@@ -35,7 +35,7 @@ export default function SalaryComparison({ highlightCareer }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="font-body text-xs font-medium text-[#02A7BB] uppercase tracking-widest mb-3"
+            className="font-body text-xs font-bold text-[#02A7BB] uppercase tracking-widest mb-3"
           >
             Career Possibilities
           </motion.p>
@@ -45,7 +45,7 @@ export default function SalaryComparison({ highlightCareer }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.06 }}
-            className="font-heading text-3xl sm:text-4xl lg:text-5xl text-[#0F172A] mb-4"
+            className="font-bold text-3xl sm:text-4xl lg:text-5xl text-[#0F172A] mb-4"
           >
             Where Could a Healthcare Career Take You?
           </motion.h2>

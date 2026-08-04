@@ -25,6 +25,9 @@ import CTABand from "@/components/home/CTABand";
 import Testimonials from "@/components/home/Testimonials";
 import FAQ from "@/components/home/FAQ";
 import HomeJsonLd from "./HomeJsonLd";
+import CourseMarquee from "@/components/home/CourseMarquee";
+import CountriesSection from "@/components/home/CountriesSection";
+
 
 export default function HomePage() {
   const finderRef = useRef(null);
@@ -53,9 +56,13 @@ export default function HomePage() {
         Skip to main content
       </a>
 
+
       {/* ── 1. Hero ── */}
       <Hero onScrollToFinder={handleScrollToFinder} />
 
+       {/* Marquee */}
+       <CourseMarquee />
+       
       {/* ── 2. Country Finder ── */}
       <div ref={finderRef}>
         <CountryFinder onCareerSelect={handleCareerSelect} />
@@ -74,7 +81,7 @@ export default function HomePage() {
       <AgentComparison />
 
       {/* ── 7. Honesty Check ── */}
-      <HonestyCheck />
+      <CountriesSection />
 
       {/* ── 8. CTA Band ── */}
       <CTABand />

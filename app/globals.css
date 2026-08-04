@@ -100,15 +100,27 @@ body {
   background-clip: text;
 }
 
-/* ── Utility: hero gradient bg ── */
+/* ── Utility: hero bg — solid primary blue ── */
 .hero-gradient {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #0351a8 40%, #024f9e 70%, var(--color-teal) 100%);
+  background-color: #0263CC;
 }
 
-/* ── Utility: brand gradient bg ── */
+/* ── Utility: brand cta bg — solid primary blue ── */
 .brand-gradient {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-sky) 60%, var(--color-teal) 100%);
+  background-color: #0263CC;
 }
+
+/* ── Carousel fade ── */
+@keyframes carousel-fade-in {
+  from { opacity: 0; transform: translateY(18px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+@keyframes carousel-fade-out {
+  from { opacity: 1; transform: translateY(0)     scale(1);    }
+  to   { opacity: 0; transform: translateY(-18px) scale(0.97); }
+}
+.carousel-enter { animation: carousel-fade-in  0.55s ease forwards; }
+.carousel-exit  { animation: carousel-fade-out 0.4s  ease forwards; }
 
 /* ── Utility: card glass ── */
 .glass-card {

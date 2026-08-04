@@ -26,7 +26,7 @@ export const CAREERS = [
     icon: "smile",
     group: "direct",
     description:
-      "A rewarding career with strong independent practice potential. Study BDS at recognised universities abroad.",
+      "A rewarding career with strong independent practice potential. Study BDS at recognised universities abroad, gain valuable clinical experience, and successful modern dentistry.",
     duration: "4–5 years",
     entryRequirement: "Class 12 (PCB) + NEET",
     licenseExam: "Relevant national dental licensing exam depending on country",

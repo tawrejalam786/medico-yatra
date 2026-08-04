@@ -41,7 +41,7 @@ function Logo({ scrolled }) {
             : "/logo/medico-yatra-white.png"
         }
         alt="Medico Yatra Logo"
-        width={180}
+        width={160}
         height={50}
         priority
       />
@@ -85,13 +85,13 @@ export default function Header() {
     <>
       <header
         role="banner"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all border-b-1 border-white duration-300 ${
           scrolled
             ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[#E2E8F0]"
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-18">
 
             {/* Logo */}
