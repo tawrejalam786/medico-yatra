@@ -24,7 +24,7 @@ export const courses = [
     id: 2,
     title: "BDS",
     subtitle: "Bachelor of Dental Surgery",
-    image: "/images/Dentiest.jpg",
+    image: "/images/dentiest.jpg",
     duration: "5 Years",
     eligibility: "NEET + PCB",
     countries: "Kazakhstan",
