@@ -6,6 +6,7 @@ import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "Home",        href: "/" },
@@ -55,6 +56,10 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const menuRef = useRef(null);
 
+  const pathname = usePathname();
+
+const isHomePage = pathname === "/";
+
   // Scroll listener
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -85,10 +90,12 @@ export default function Header() {
     <>
       <header
         role="banner"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all border-b-1 border-white duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[#E2E8F0]"
-            : "bg-transparent"
+            : isHomePage
+              ? "bg-transparent"
+              : "bg-[#0263CC]"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,6 +103,7 @@ export default function Header() {
 
             {/* Logo */}
             <Logo scrolled={scrolled} />
+            {/* <Logo scrolled={scrolled || !isHomePage} /> */}
 
             {/* Desktop Nav */}
             <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-1">
@@ -188,14 +196,7 @@ export default function Header() {
               {/* Drawer Header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-[#E2E8F0]">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#0263CC] flex items-center justify-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M12 2C9.5 2 7 3.5 7 6.5c0 2 1.5 4 3 5L12 13l2-1.5c1.5-1 3-3 3-5C17 3.5 14.5 2 12 2z" fill="white" />
-                      <line x1="12" y1="7" x2="12" y2="11" stroke="#4DA5EC" strokeWidth="1.5" strokeLinecap="round" />
-                      <line x1="10" y1="9" x2="14" y2="9" stroke="#4DA5EC" strokeWidth="1.5" strokeLinecap="round" />
-                    </svg>
-                  </div>
-                  <span className="font-heading text-lg font-bold text-[#0F172A]">Medico Yatra</span>
+                  <Image src="/logo/medico-yatra-blue.png" width={160} height={50} alt="Mobile Logo" />
                 </div>
                 <button
                   onClick={() => setMobileOpen(false)}

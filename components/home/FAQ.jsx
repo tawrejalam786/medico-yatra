@@ -25,9 +25,9 @@ const TRUST_POINTS = [
 ];
 
 function LeadForm() {
-  const [form, setForm]       = useState({ name: "", phone: "", email: "", course: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "", course: "" });
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading]    = useState(false);
+  const [loading, setLoading] = useState(false);
 
   function handleChange(e) {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -169,8 +169,8 @@ function LeadForm() {
         {loading ? (
           <>
             <svg className="animate-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.3)" strokeWidth="3"/>
-              <path d="M12 2a10 10 0 0 1 10 10" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+              <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.3)" strokeWidth="3" />
+              <path d="M12 2a10 10 0 0 1 10 10" stroke="white" strokeWidth="3" strokeLinecap="round" />
             </svg>
             Submitting...
           </>
@@ -287,10 +287,23 @@ export default function FAQ() {
               <div className="px-7 pt-7 pb-6" style={{ backgroundColor: "#0263CC" }}>
                 {/* Icon mark */}
                 <div className="w-11 h-11 rounded-2xl bg-white/15 flex items-center justify-center mb-4">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2C9.5 2 7 3.5 7 6.5c0 2 1.5 4 3 5L12 13l2-1.5c1.5-1 3-3 3-5C17 3.5 14.5 2 12 2z" fill="white"/>
-                    <line x1="12" y1="7" x2="12" y2="11" stroke="#4DA5EC" strokeWidth="1.8" strokeLinecap="round"/>
-                    <line x1="10" y1="9" x2="14" y2="9" stroke="#4DA5EC" strokeWidth="1.8" strokeLinecap="round"/>
+
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-graduation-cap-icon lucide-graduation-cap"
+                  >
+                    <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                    <path d="M22 10v6" />
+                    <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
                   </svg>
                 </div>
 

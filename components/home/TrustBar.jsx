@@ -5,11 +5,32 @@ import { motion } from "framer-motion";
 const TRUST_ITEMS = [
   {
     icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="13" stroke="#0263CC" strokeWidth="1.5"/>
-        <path d="M8 14l4 4 8-8" stroke="#0263CC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="14" cy="14" r="5" fill="#d6e8fb" opacity="0.5"/>
-      </svg>
+      <svg
+  width="28"
+  height="28"
+  viewBox="0 0 28 28"
+  fill="none"
+  aria-hidden="true"
+  className="text-white"
+>
+  <circle
+    cx="14"
+    cy="14"
+    r="13"
+    stroke="currentColor"
+    strokeWidth={1.5}
+  />
+
+  <path
+    d="M8 14l4 4 8-8"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+
+
+</svg>
     ),
     heading: "NMC-recognised universities",
     body: "Your degree has to count when you come home — this is one of the most important things families need to verify.",
@@ -40,12 +61,43 @@ const TRUST_ITEMS = [
   },
   {
     icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="13" stroke="#0263CC" strokeWidth="1.5"/>
-        <path d="M9 14c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="#0263CC" strokeWidth="1.8" strokeLinecap="round"/>
-        <path d="M14 19v-5" stroke="#0263CC" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="14" cy="20.5" r="1.5" fill="#0263CC"/>
-      </svg>
+     <svg
+  width="28"
+  height="28"
+  viewBox="0 0 28 28"
+  fill="none"
+  aria-hidden="true"
+  className="text-white"
+>
+  <circle
+    cx="14"
+    cy="14"
+    r="13"
+    stroke="currentColor"
+    strokeWidth={1.5}
+  />
+
+  <path
+    d="M9 14c0-2.76 2.24-5 5-5s5 2.24 5 5"
+    stroke="currentColor"
+    strokeWidth={1.8}
+    strokeLinecap="round"
+  />
+
+  <path
+    d="M14 19v-5"
+    stroke="currentColor"
+    strokeWidth={1.8}
+    strokeLinecap="round"
+  />
+
+  <circle
+    cx="14"
+    cy="20.5"
+    r="1.5"
+    fill="currentColor"
+  />
+</svg>
     ),
     heading: "Honest, end-to-end guidance",
     body: "From counselling to licensing, we stay involved throughout the journey.",
