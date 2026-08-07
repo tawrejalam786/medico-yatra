@@ -161,7 +161,8 @@ export default function ContactSection() {
 
         {/* Main Layout */}
 
-        <div className="grid gap-8 xl:grid-cols-[1.45fr_.95fr_.72fr]">
+        {/* <div className="grid gap-8  xl:grid-cols-[1.45fr_.95fr_.72fr]"> */}
+          <div className="grid min-w-0 gap-8 xl:grid-cols-[1.45fr_.95fr_.72fr]">
 
           {/* ==================================================== */}
           {/* LEFT CONTACT FORM */}
@@ -172,10 +173,9 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: .7 }}
-            className="relative overflow-hidden rounded-[34px] border border-white/70 bg-gradient-to-br from-[#0263CC] via-[#0A5FD8] to-[#014AA5] p-[1px] shadow-[0_40px_80px_rgba(2,99,204,.20)]"
-          >
+            className="relative min-w-0 overflow-hidden rounded-[34px] border border-white/70 bg-gradient-to-br from-[#0263CC] via-[#0A5FD8] to-[#014AA5] p-[1px] shadow-[0_40px_80px_rgba(2,99,204,.20)]">
 
-            <div className="relative rounded-[33px] bg-gradient-to-br from-[#0263CC] via-[#0A5FD8] to-[#0253B8] p-8 lg:p-10">
+            <div className="relative w-full min-w-0 rounded-[33px] bg-gradient-to-br from-[#0263CC] via-[#0A5FD8] to-[#0253B8] p-8 max-[425px]:p-5 lg:p-10">
 
               <motion.div
                 animate={{
@@ -199,7 +199,7 @@ export default function ContactSection() {
 
                     <Sparkles className="h-6 w-6 text-white" />
 
-                    <h3 className="text-3xl font-bold text-white">
+                 <h3 className="text-3xl font-bold leading-tight text-white max-[425px]:text-2xl">
                       Send Us a Message
                     </h3>
 
@@ -207,7 +207,7 @@ export default function ContactSection() {
 
                   <div className="h-1 w-20 rounded-full bg-white" />
 
-                  <p className="mt-5 text-white/80">
+                 <p className="mt-5 text-base leading-6 text-white/80 max-[425px]:text-sm">
                     Fill out the form and our admission experts will contact you shortly.
                   </p>
 
@@ -215,18 +215,18 @@ export default function ContactSection() {
 
                 <form className="space-y-5">
 
-                  <div className="grid gap-5 md:grid-cols-2">
+                  <div className="grid min-w-0 gap-5 md:grid-cols-2">
 
                     <input
                       type="text"
                       placeholder="Full Name"
-                      className="h-14 rounded-2xl border border-white/20 bg-white px-5 text-slate-700 outline-none transition-all placeholder:text-slate-400 focus:scale-[1.02] focus:border-white"
+                      className="h-14 w-full min-w-0 rounded-2xl border border-white/20 bg-white px-5 text-slate-700 outline-none transition-all placeholder:text-slate-400 focus:scale-[1.02] focus:border-white"
                     />
 
                     <input
                       type="email"
                       placeholder="Email Address"
-                      className="h-14 rounded-2xl border border-white/20 bg-white px-5 text-slate-700 outline-none transition-all placeholder:text-slate-400 focus:scale-[1.02] focus:border-white"
+                      className="h-14 w-full min-w-0 rounded-2xl border border-white/20 bg-white px-5 text-slate-700 outline-none transition-all placeholder:text-slate-400 focus:scale-[1.02] focus:border-white"
                     />
 
                   </div>
@@ -236,7 +236,7 @@ export default function ContactSection() {
                     <input
                       type="text"
                       placeholder="Phone Number"
-                      className="h-14 rounded-2xl border border-white/20 bg-white px-5 text-slate-700 outline-none transition-all placeholder:text-slate-400 focus:scale-[1.02] focus:border-white"
+                      className="h-14 w-full min-w-0 rounded-2xl border border-white/20 bg-white px-5 text-slate-700 outline-none transition-all placeholder:text-slate-400 focus:scale-[1.02] focus:border-white"
                     />
 
                     <select
@@ -339,7 +339,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: .2 }}
-            className="space-y-5"
+            className="min-w-0 space-y-5"
           >
 
             <div>
@@ -370,7 +370,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: .35 }}
-            className="relative overflow-hidden rounded-[34px] bg-gradient-to-br from-[#0263CC] via-[#0A63DA] to-[#0147A2] p-6 text-white shadow-[0_30px_70px_rgba(2,99,204,.28)]"
+            className="relative min-w-0 overflow-hidden rounded-[34px] bg-gradient-to-br from-[#0263CC] via-[#0A63DA] to-[#0147A2] p-6 text-white shadow-[0_30px_70px_rgba(2,99,204,.28)]"
           >
 
             {/* Glow */}
