@@ -47,7 +47,7 @@ export default function FounderImageCard() {
           className="absolute inset-0 opacity-[0.08]"
           style={{
             backgroundImage:
-              "url('/images/world-map-dots.png')",
+              "url('/images/about/world-map-dots.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -66,7 +66,7 @@ export default function FounderImageCard() {
             alt="Founder"
             fill
             priority
-            className="object-contain object-bottom"
+            className="object-cover object-bottom"
           />
 
           {/* Bottom Gradient */}

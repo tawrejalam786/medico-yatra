@@ -190,9 +190,9 @@ export default function FounderSection() {
 
             {/* Signature */}
 
-            {/* <div className="mt-10">
+            <div className="mt-10">
               <SignatureCard />
-            </div> */}
+            </div>
 
             {/* CTA */}
 
