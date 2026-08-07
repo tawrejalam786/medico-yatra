@@ -20,13 +20,13 @@
  * and immigration requirements — they are NOT guaranteed outcomes.
  */
 
-export const SALARY_WARNING =
-  "⚠ Figures are illustrative & approximate, for qualified and licensed professionals. " +
-  "They vary widely by experience, city, employer, currency and year. " +
-  "Earning these salaries requires meeting each country's licensing/registration and immigration requirements. " +
-  "Verify with official sources before relying on them.";
+// export const SALARY_WARNING =
+//   "⚠ Figures are illustrative & approximate, for qualified and licensed professionals. " +
+//   "They vary widely by experience, city, employer, currency and year. " +
+//   "Earning these salaries requires meeting each country's licensing/registration and immigration requirements. " +
+//   "Verify with official sources before relying on them.";
 
-export const SALARY_DEV_NOTE = "ILLUSTRATIVE — VERIFY BEFORE PUBLISH";
+// export const SALARY_DEV_NOTE = "ILLUSTRATIVE — VERIFY BEFORE PUBLISH";
 
 /** Profession column definitions */
 export const PROFESSIONS = [

@@ -62,7 +62,7 @@ export default function SalaryComparison({ highlightCareer }) {
         </div>
 
         {/* Warning banner */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -80,7 +80,7 @@ export default function SalaryComparison({ highlightCareer }) {
               {SALARY_WARNING}
             </p>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Finder highlight note */}
         {highlightedProfession && (
