@@ -9,7 +9,7 @@ export default function CTASection() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="lg:col-span-3 mt-8 flex flex-col items-center gap-4 text-center"
+      className="lg:col-span-3 mt-2 flex flex-col items-center gap-4 text-center"
     >
       <p className="font-body text-slate-400 text-sm max-w-lg">
         We are specialists, not a general agency. Becoming a healthcare professional is a journey, not a transaction.

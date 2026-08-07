@@ -65,13 +65,11 @@ export default function CompareCourses() {
 
               <div>
 
-                <h2 className="text-[34px] leading-none font-bold text-[#14213D]">
-                  Compare
-                  
-                  Courses
+                <h2 className="text-2xl lg:text-[34px] leading-none font-bold text-[#14213D]">
+                  Compare Courses
                 </h2>
 
-                <p className="mt-5 text-[16px] leading-8 text-[#6B7280]">
+                <p className="mt-5 text-sm lg:text-[16px] leading-6 text-[#6B7280]">
                   Not sure which course is right for you?
                   <br />
                   Compare courses side by side.

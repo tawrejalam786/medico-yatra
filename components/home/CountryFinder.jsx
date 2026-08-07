@@ -101,7 +101,7 @@ export default function CountryFinder({ onCareerSelect }) {
     <section
       id="country-finder"
       aria-labelledby="finder-heading"
-      className="py-20 max-w-8xl mx-auto lg:py-28"
+      className="py-7 max-w-8xl mx-auto lg:py-10"
     >
       <div className="heading">
         {/* Section header */}

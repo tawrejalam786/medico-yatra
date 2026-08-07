@@ -25,7 +25,7 @@ export default function AboutHero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#F8FBFF] pt-24 sm:pt-28 lg:pt-36 pb-24 sm:pb-32 lg:pb-44">
+    <section className="relative overflow-hidden bg-[#F8FBFF] pt-20 sm:pt-20 lg:pt-22 pb-24 sm:pb-16 lg:pb-20">
       {/* Background Blur */}
       <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-[#0263CC]/10 blur-[110px]" />
       <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-[#4DA5EC]/20 blur-[120px]" />
@@ -139,7 +139,7 @@ items-center">
               <div className="absolute inset-0 overflow-hidden rounded-[38%_62%_45%_55%/42%_35%_65%_58%] shadow-2xl">
 
                 <Image
-                  src="/images/about/university.png"
+                  src="/images/about/uni.png"
                   alt=""
                   fill
                   className="object-cover"
@@ -147,26 +147,7 @@ items-center">
 
               </div>
 
-              {/* Doctor */}
-
-              <div className="absolute -inset-2/14 bottom-16 right-0.5 ">
-
-                <Image
-                  src="/images/about/fresh-graduate.png"
-                  alt="Doctor"
-                  fill
-                  priority
-                 className="
-object-contain
-object-bottom
-scale-90
-sm:scale-95
-lg:scale-100
-"
-                />
-
-              </div>
-
+             
               {/* Floating Card 1 */}
 
               <motion.div

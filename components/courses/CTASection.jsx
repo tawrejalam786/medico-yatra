@@ -54,7 +54,7 @@ export default function CTASection() {
                 Medical Career Support
               </div>
 
-              <h2 className="text-3xl lg:text-5xl font-bold leading-tight text-slate-900">
+              <h2 className="text-2xl lg:text-5xl font-bold leading-tight text-slate-900">
 
                 Need Expert
                 <span className="text-[#0263CC]">
@@ -169,7 +169,7 @@ export default function CTASection() {
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: .2 }}
-                className="absolute left-0 top-12 bg-white rounded-2xl shadow-xl p-5 w-[190px]"
+                className="absolute -left-5 lg:left-0 top-5 lg:top-12 bg-white rounded-2xl shadow-xl p-2 lg:p-5 w-[140px] lg:w-[190px]"
               >
 
                 <div className="flex items-center gap-4">
@@ -182,7 +182,7 @@ export default function CTASection() {
 
                   <div>
 
-                    <h4 className="text-3xl font-bold text-[#0263CC]">
+                    <h4 className="text-lg lg:text-3xl font-bold text-[#0263CC]">
                       5000+
                     </h4>
 
@@ -235,12 +235,12 @@ export default function CTASection() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: .6 }}
-                className="absolute right-0 top-12 bg-white rounded-2xl shadow-xl p-5 w-[170px]"
+                className="absolute -right-5 lg:right-0 -top-3 lg:top-12 bg-white rounded-2xl shadow-xl p-3  lg:p-5 w-[150px] lg:w-[170px]"
               >
 
                 <div className="flex items-center gap-4">
 
-                  <div className="h-12 w-12 rounded-xl bg-blue-50 flex items-center justify-center">
+                  <div className="h-6 w-6 lg:h-12  lg:w-12 rounded-xl bg-blue-50 flex items-center justify-center">
 
                     <Globe className="text-[#0263CC]" />
 
@@ -248,7 +248,7 @@ export default function CTASection() {
 
                   <div>
 
-                    <h4 className="text-3xl font-bold text-[#0263CC]">
+                    <h4 className="text-sm lg:text-3xl font-bold text-[#0263CC]">
                       15+
                     </h4>
 

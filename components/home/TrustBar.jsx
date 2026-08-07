@@ -131,7 +131,7 @@ const TrustBar = () => {
   <section
     id="trust"
     aria-labelledby="trust-heading"
-    className="relative overflow-hidden bg-gradient-to-b from-white via-[#F8FBFF] to-white py-20 lg:py-20"
+    className="relative overflow-hidden bg-gradient-to-b from-white via-[#F8FBFF] to-white py-10 lg:py-10"
   >
     {/* Background */}
     <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#0263CC]/10 blur-3xl" />

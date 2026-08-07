@@ -3,7 +3,7 @@ export const TEAM = [
     id: 1,
     name: "Rahul Sharma",
     role: "Founder & CEO",
-    image: "/images/about/fresh-graduate.png",
+    image: "/images/young-doctor-getting-ready-work.jpg",
   },
 
   {

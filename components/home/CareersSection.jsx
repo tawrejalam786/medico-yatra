@@ -108,7 +108,7 @@ export default function CareersSection() {
     <section
       id="careers"
       aria-labelledby="careers-heading"
-      className="py-20 lg:py-28 bg-[#F8FAFC]"
+      className="py-10 lg:py-10 bg-[#F8FAFC]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -203,7 +203,7 @@ export default function CareersSection() {
             {/* "Not sure?" nudge */}
             <motion.div
               variants={card}
-              className="relative flex flex-col justify-center gap-3 rounded-2xl p-6 text-white overflow-hidden bg-gradient-to-br from-[#0263CC] to-[#02A7BB]"
+              className="relative flex flex-col justify-center gap-3 h-[320px] min-[320px]:h-[400px] rounded-2xl p-6 text-white overflow-hidden bg-gradient-to-br from-[#0263CC] to-[#02A7BB]"
               style={{
                 backgroundImage: "url('/images/counselling-bg.jpg')",
                 backgroundSize: "cover",

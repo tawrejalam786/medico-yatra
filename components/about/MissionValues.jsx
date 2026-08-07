@@ -58,7 +58,7 @@ const values = [
 
 export default function MissionValues() {
     return (
-        <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
+        <section className="relative overflow-hidden bg-white py-12 sm:py-20 lg:py-14">
 
             {/* Background */}
 

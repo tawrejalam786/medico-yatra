@@ -54,7 +54,7 @@ const stats = [
 
 export default function AboutStats() {
   return (
-    <section className="relative -mt-16 z-20 pb-20 px-4 hidden sm:block">
+    <section className="relative -mt-16 z-20 pb-10 px-4 hidden sm:block">
 
       <div className="container mx-auto">
 

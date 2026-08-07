@@ -14,7 +14,7 @@ import {
 // Named export so AgentComparison can import { ComparisonSection }
 export function ComparisonSection() {
   return (
-    <section className="relative overflow-hidden bg-[#071321] py-28">
+    <section className="relative overflow-hidden bg-[#071321] py-10">
       <BackgroundGlow />
 
       {/* Grid Overlay */}
@@ -30,7 +30,7 @@ export function ComparisonSection() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <div className="rounded-full border border-cyan-400/20 bg-cyan-500/10 px-5 py-2 text-sm font-semibold uppercase tracking-[.25em] text-cyan-300 backdrop-blur-xl">
+          <div className="rounded-full border border-cyan-400/20 bg-cyan-500/10 px-5 py-2 text-xs lg:text-sm font-semibold lg:uppercase text-center tracking-[.25em] text-cyan-300 backdrop-blur-xl">
             Trusted by 5000+ Medical Aspirants
           </div>
         </motion.div>
@@ -43,7 +43,7 @@ export function ComparisonSection() {
           viewport={{ once: true }}
           className="mx-auto mt-10 max-w-4xl text-center"
         >
-          <h2 className="font-heading text-5xl leading-tight text-white md:text-7xl">
+          <h2 className="font-bold text-3xl lg:text-5xl leading-tight text-white md:text-7xl">
             Beyond Admissions.
             <br />
             <span className="text-[#4DA5EC]">
@@ -51,7 +51,7 @@ export function ComparisonSection() {
             </span>
           </h2>
 
-          <p className="mx-auto mt-8 max-w-3xl font-body font-light text-lg leading-8 text-slate-400">
+          <p className="mx-auto mt-4 max-w-3xl font-body font-light text-lg leading-8 text-slate-400">
             Most consultants disappear after your admission letter. We stay with
             you through licensing exams, career planning, and your journey to
             becoming a successful healthcare professional.
@@ -64,7 +64,7 @@ export function ComparisonSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-20 grid gap-6 md:grid-cols-4"
+          className="mt-10 grid gap-6 md:grid-cols-4"
         >
           {[
             ["5000+", "Students Guided"],
@@ -83,7 +83,7 @@ export function ComparisonSection() {
         </motion.div>
 
         {/* Comparison */}
-        <div className="mt-24 grid items-start gap-12 lg:grid-cols-[1fr_auto_1fr]">
+        <div className="mt-15 grid items-start gap-12 lg:grid-cols-[1fr_auto_1fr]">
           <ComparisonCard
             title="A Typical Admission Agent"
             color="red"

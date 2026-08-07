@@ -196,7 +196,7 @@ export default function FAQ() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="py-20 lg:py-28 bg-white"
+      className="py-10 lg:py-14 bg-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -227,7 +227,7 @@ export default function FAQ() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_440px] gap-10 lg:gap-14 items-start">
 
           {/* ── LEFT: FAQ accordion ── */}
-          <div>
+          <div className="order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -273,7 +273,8 @@ export default function FAQ() {
           </div>
 
           {/* ── RIGHT: Lead capture form ── */}
-          <motion.aside
+          <div className="order-1 lg:order-2">
+              <motion.aside
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -347,6 +348,7 @@ export default function FAQ() {
               </Link>
             </p>
           </motion.aside>
+          </div>
 
         </div>
       </div>

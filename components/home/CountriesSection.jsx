@@ -63,7 +63,7 @@ export default function CountriesSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative overflow-hidden bg-[#F8FBFF] py-28"
+            className="relative overflow-hidden bg-[#F8FBFF] py-10"
         >
             {/* Mouse Spotlight */}
             <div
@@ -109,7 +109,7 @@ export default function CountriesSection() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    className="mx-auto mb-20 max-w-3xl text-center"
+                    className="mx-auto mb-10 max-w-3xl text-center"
                 >
                     <div className="inline-flex items-center gap-2 rounded-full border border-[#0263CC]/10 bg-white px-5 py-2 shadow-sm">
                         <FontAwesomeIcon
@@ -122,7 +122,7 @@ export default function CountriesSection() {
                         </span>
                     </div>
 
-                    <h2 className="mt-6 text-4xl font-black leading-tight text-gray-900 md:text-6xl">
+                    <h2 className="mt-2 text-3xl font-black leading-tight text-gray-900 md:text-5xl">
                         Choose Your
 
                         <span className="block bg-gradient-to-r from-[#0263CC] to-[#4DA8FF] bg-clip-text text-transparent">
@@ -130,14 +130,14 @@ export default function CountriesSection() {
                         </span>
                     </h2>
 
-                    <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">
+                    <p className="mx-auto mt-2 max-w-2xl text-lg leading-8 text-gray-600">
                         Explore globally recognized countries offering affordable
                         medical education, NMC-approved universities and world-class
                         clinical exposure.
                     </p>
                 </motion.div>
 
-             <div className="mx-auto my-14 h-px w-52 bg-gradient-to-r from-transparent via-[#0263CC]/30 to-transparent" />
+             <div className="mx-auto my-7 h-px w-52 bg-gradient-to-r from-transparent via-[#0263CC]/30 to-transparent" />
 
                 {/* Bento Grid */}
                 <motion.div
@@ -191,7 +191,7 @@ export default function CountriesSection() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    className="mt-20 flex flex-col items-center justify-center"
+                    className="mt-10 flex flex-col items-center justify-center"
                 >
                     {[...Array(10)].map((_, i) => (
   <motion.div
@@ -214,7 +214,7 @@ export default function CountriesSection() {
     }}
   />
 ))}
-                    <div className="relative overflow-hidden rounded-[36px] border border-[#0263CC]/10 bg-white px-12 py-12 shadow-[0_30px_80px_rgba(2,99,204,.12)]">
+                    <div className="relative overflow-hidden rounded-[36px] border border-[#0263CC]/10 bg-white px-4 md:px-12 py-7 shadow-[0_30px_80px_rgba(2,99,204,.12)]">
                         <div className="absolute right-[-80px] top-[-80px] h-56 w-56 rounded-full bg-[#4DA8FF]/20 blur-[90px]" />
 
                         <motion.div
@@ -229,11 +229,11 @@ export default function CountriesSection() {
                             }}
                             className="absolute left-1/2 top-40 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[#4DA8FF]/10 blur-[180px]"
                         />
-                        <h3 className="text-4xl font-black">
+                        <h3 className="text-lg md:text-3xl font-black">
                             Not Sure Which Country Fits You?
                         </h3>
 
-                        <p className="mt-5 max-w-2xl text-lg text-gray-600">
+                        <p className="mt-3 max-w-2xl text-sm md:text-lg text-gray-600">
                             Compare tuition fees, university rankings,
                             living expenses and admission requirements
                             to choose the best destination.
@@ -241,7 +241,7 @@ export default function CountriesSection() {
 
                         <Link
                             href="/compare-countries"
-                            className="group mt-10 inline-flex items-center rounded-full bg-gradient-to-r from-[#0263CC] to-[#4DA8FF] px-8 py-4 font-semibold text-white"
+                            className="group mt-5 text-sm md:text-lg inline-flex items-center rounded-full bg-gradient-to-r from-[#0263CC] to-[#4DA8FF] px-4 py-2 md:px-8 md:py-4 font-semibold text-white"
                         >
                             Compare Countries
 

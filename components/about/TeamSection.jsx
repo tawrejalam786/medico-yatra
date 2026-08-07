@@ -8,7 +8,7 @@ import TeamSlider from "./team/TeamSlider";
 
 export default function TeamSection() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-white py-16 lg:py-14">
       {/* Background */}
 
       <div className="absolute inset-0 bg-gradient-to-br from-[#F8FBFF] via-white to-[#F5FAFF]" />
@@ -80,7 +80,7 @@ export default function TeamSection() {
 
             {/* Stats */}
 
-            <div className="mt-12 grid grid-cols-3 gap-4">
+            {/* <div className="mt-12 grid grid-cols-3 gap-4">
               {[
                 {
                   number: "25+",
@@ -108,7 +108,7 @@ export default function TeamSection() {
                   </p>
                 </div>
               ))}
-            </div>
+            </div> */}
           </motion.div>
 
           {/* ===================================== */}

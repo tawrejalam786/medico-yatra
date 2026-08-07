@@ -15,7 +15,7 @@ export default function WhyChoose() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden py-16 lg:py-10 bg-white">
+    <section className="relative overflow-hidden py-12 lg:py-5 bg-white">
       {/* Background Glow */}
 
       <div className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-[#4DA5EC]/10 blur-[120px]" />

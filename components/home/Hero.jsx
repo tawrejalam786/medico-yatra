@@ -106,7 +106,7 @@ export default function Hero({ onScrollToFinder }) {
               id="hero-heading"
               initial="hidden" animate="visible" custom={0.08}
               variants={fadeUp}
-              className="font-body text-4xl sm:text-5xl lg:text-5xl xl:text-4xl font-extrabold text-white leading-[1.12] mb-5"
+              className="font-body text-2xl sm:text-5xl lg:text-5xl xl:text-4xl font-extrabold text-white leading-[1.12] mb-5"
             >
               Your Healthcare Career —{" "}
               <span className="text-[#4DA5EC]">Guided Properly,</span>{" "}
@@ -117,7 +117,7 @@ export default function Hero({ onScrollToFinder }) {
             <motion.p
               initial="hidden" animate="visible" custom={0.16}
               variants={fadeUp}
-              className="font-body font-light text-white/75 text-base sm:text-lg leading-relaxed mb-8 max-w-lg"
+              className="font-body font-light text-white/75 text-sm sm:text-lg leading-relaxed mb-8 max-w-lg"
             >
               We specialise in healthcare careers — MBBS, Dentistry, Nursing, Pharmacy,
               Physiotherapy, Respiratory Therapy, MLT and more — with NMC-recognised
@@ -170,7 +170,7 @@ export default function Hero({ onScrollToFinder }) {
                 initial={{ opacity: 0, scale: 0.8, y: -10 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.5 }}
-                className="absolute -top-4 -left-4 z-20 flex items-center gap-2 px-3 py-2 rounded-xl shadow-lg"
+                className="absolute -top-8 -left-1 z-20 flex items-center gap-2 px-3 py-2 rounded-xl shadow-lg"
                 style={{ background: "#02A7BB", minWidth: 140 }}
                 aria-hidden="true"
               >
@@ -186,7 +186,7 @@ export default function Hero({ onScrollToFinder }) {
                 initial={{ opacity: 0, scale: 0.8, y: 10 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 0.85, duration: 0.5 }}
-                className="absolute -bottom-4 -right-4 z-20 flex items-center gap-2 px-3 py-2 rounded-xl shadow-lg"
+                className="absolute -bottom-4 -right-1 z-20 flex items-center gap-2 px-3 py-2 rounded-xl shadow-lg"
                 style={{ background: "white", minWidth: 148 }}
                 aria-hidden="true"
               >
@@ -202,7 +202,7 @@ export default function Hero({ onScrollToFinder }) {
                 initial={{ opacity: 0, scale: 0.8, x: 10 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ delay: 1.0, duration: 0.5 }}
-                className="absolute top-1/2 -right-6 -translate-y-1/2 z-20 flex items-center gap-2 px-3 py-2 rounded-xl shadow-lg"
+                className="absolute top-1/2 -right-1 -translate-y-1/2 z-20 flex items-center gap-2 px-3 py-2 rounded-xl shadow-lg"
                 style={{ background: "rgba(2,99,204,0.95)", border: "1px solid rgba(255,255,255,0.2)" }}
                 aria-hidden="true"
               >

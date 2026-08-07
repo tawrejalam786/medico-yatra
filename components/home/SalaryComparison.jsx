@@ -24,7 +24,7 @@ export default function SalaryComparison({ highlightCareer }) {
     <section
       id="salary-comparison"
       aria-labelledby="salary-heading"
-      className="py-20 lg:py-28 bg-white"
+      className="py-10 lg:py-10 bg-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 

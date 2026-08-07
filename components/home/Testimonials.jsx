@@ -358,7 +358,7 @@ export default function Testimonials() {
     <section
       id="testimonials"
       aria-labelledby="testimonials-heading"
-      className="py-20 lg:py-28 overflow-hidden"
+      className="py-10 lg:py-14 overflow-hidden"
       style={{ backgroundColor: "#F1F7FC" }}
     >
       {/* Subtle dot-grid bg */}

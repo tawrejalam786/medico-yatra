@@ -39,7 +39,7 @@ export default function AgentComparison() {
     <section
       id="agent-vs-medico"
       aria-labelledby="agent-heading"
-      className="py-20 lg:py-28 bg-ink text-white overflow-hidden"
+      className="py-10 lg:py-10 bg-ink text-white overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
