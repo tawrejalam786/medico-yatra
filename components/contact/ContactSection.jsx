@@ -311,16 +311,7 @@ export default function ContactSection() {
 
                   </div>
 
-                  <div className="mx-auto w-full max-w-[480px] lg:max-w-[560px]">
-                                                  <Image
-                                                      src="/images/about/icons-degree.png"
-                                                      alt="Mission"
-                                                      width={600}
-                                                      height={450}
-                                                      className="w-full h-auto object-contain"
-                                                      priority
-                                                  />
-                                              </div>
+                
 
                 </div>
 
@@ -428,17 +419,17 @@ export default function ContactSection() {
 
               {/* Live Status */}
 
-              <div className="mb-6 flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/10 py-3 backdrop-blur">
+              {/* <div className="mb-6 flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/10 py-3 backdrop-blur">
 
                 <span className="h-3 w-3 rounded-full bg-green-400 animate-pulse" />
 
                 <span className="text-xs font-semibold">
 
-                  We are Online • Usually reply in 15 min
+                  We are Online <br />• Usually reply in 15 min
 
                 </span>
 
-              </div>
+              </div> */}
 
               {/* Features */}
 
@@ -447,7 +438,6 @@ export default function ContactSection() {
                 {[
                   "1:1 Expert Counselling",
                   "University Shortlisting",
-                  "Scholarship Assistance",
                   "Visa & Documentation",
                   "FMGE / NExT Guidance",
                 ].map((item) => (
