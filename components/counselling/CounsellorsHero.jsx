@@ -72,7 +72,7 @@ const STATS = [
 
 export default function CounsellorsHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#F7FBFF] via-white to-[#EEF7FF]">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#F7FBFF] via-white to-[#EEF7FF] mt-16">
 
       {/* =========================================================
           BACKGROUND
@@ -285,7 +285,7 @@ export default function CounsellorsHero() {
           MAIN CONTAINER
       ========================================================== */}
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-8 pt-6 sm:px-6 sm:pb-10 sm:pt-8 lg:px-8 lg:pb-40">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-2 pt-6 sm:px-6 sm:pb-10 sm:pt-6 lg:px-8 lg:pb-20">
 
         {/* =====================================================
             BREADCRUMB
@@ -303,7 +303,7 @@ export default function CounsellorsHero() {
           transition={{
             duration: 0.5,
           }}
-          className="mb-8 flex items-center gap-1.5 text-xs font-semibold sm:mb-10 sm:text-sm"
+          className="mb-4 flex  gap-1.5 text-xs font-semibold sm:mb-0 sm:text-sm"
           aria-label="Breadcrumb"
         >
 
@@ -376,7 +376,7 @@ export default function CounsellorsHero() {
                 duration: 0.65,
                 delay: 0.1,
               }}
-              className="max-w-[650px] text-[38px] font-black leading-[1.05] tracking-[-0.03em] text-[#0B1B3A] sm:text-5xl lg:text-[50px] xl:text-[58px]"
+              className="max-w-[650px] text-[30px] font-black leading-[1.05] tracking-[-0.03em] text-[#0B1B3A] sm:text-5xl lg:text-[40px] xl:text-[45px]"
             >
 
               Expert Counsellors,
@@ -513,7 +513,7 @@ export default function CounsellorsHero() {
               RIGHT TEAM VISUAL
           ==================================================== */}
 
-       <div className="relative min-h-[330px] sm:min-h-[430px] lg:min-h-[620px]">
+          <div className="relative min-h-[330px] sm:min-h-[430px] lg:min-h-[620px]">
 
             {/* Main glow */}
 
@@ -556,44 +556,44 @@ export default function CounsellorsHero() {
                 TEAM IMAGE
             ================================================== */}
 
-           <motion.div
-    initial={{
-      opacity: 0,
-      scale: 0.94,
-      y: 25,
-    }}
-    animate={{
-      opacity: 1,
-      scale: 1,
-      y: 0,
-    }}
-    transition={{
-      duration: 0.9,
-      delay: 0.15,
-      ease: "easeOut",
-    }}
-    className="absolute bottom-15 left-1/2 z-10 w-[100%] max-w-[500px] -translate-x-1/2 sm:w-[92%] sm:max-w-[600px] lg:w-[115%] lg:max-w-[720px] xl:w-[120%]"
-  >
-    <motion.div
-      animate={{
-        y: [0, -5, 0],
-      }}
-      transition={{
-        duration: 5,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    >
-      <Image
-        src="/images/counsellors/counsellor-team.png"
-        alt="MedicoYatra expert counsellor team"
-        width={1000}
-        height={700}
-        priority
-        className="h-auto w-full object-contain drop-shadow-[0_25px_30px_rgba(2,40,90,.14)]"
-      />
-    </motion.div>
-  </motion.div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0.94,
+                y: 25,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.9,
+                delay: 0.15,
+                ease: "easeOut",
+              }}
+              className="absolute bottom-22 lg:bottom-8 left-1/2 z-10 w-[100%] max-w-[500px] -translate-x-1/2 sm:w-[92%] sm:max-w-[600px] lg:w-[115%] lg:max-w-[700px] xl:w-[120%]"
+            >
+              <motion.div
+                animate={{
+                  y: [0, -5, 0],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <Image
+                  src="/images/counsellors/counsellor-team.png"
+                  alt="MedicoYatra expert counsellor team"
+                  width={1000}
+                  height={700}
+                  priority
+                  className="h-auto w-full object-contain drop-shadow-[0_25px_30px_rgba(2,40,90,.14)]"
+                />
+              </motion.div>
+            </motion.div>
 
             {/* =================================================
                 FLOATING PLANE
@@ -690,10 +690,10 @@ export default function CounsellorsHero() {
           STATS PANEL
       ========================================================== */}
 
-     <div
-  id="counsellor-stats"
-  className="relative z-30 bottom-20 mt-[-20px] lg:absolute lg:bottom-[-1px] lg:left-0 lg:right-0"
->
+      <div
+        id="counsellor-stats"
+        className="relative z-30 pb-2.5 bottom-20 mt-[-20px] lg:absolute lg:bottom-[-1px] lg:left-0 lg:right-0"
+      >
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -738,25 +738,23 @@ export default function CounsellorsHero() {
                       duration: 0.45,
                       delay: index * 0.08,
                     }}
-                   className={`flex items-center gap-2.5 p-3 sm:gap-3 sm:p-4 lg:justify-center lg:p-3 xl:gap-4 ${
-  index === 4
-    ? "col-span-2 justify-center lg:col-span-1"
-    : ""
-}`}
+                    className={`flex items-center gap-2.5 p-3 sm:gap-3 sm:p-4 lg:justify-center lg:p-3 xl:gap-4 ${index === 4
+                        ? "col-span-2 justify-center lg:col-span-1"
+                        : ""
+                      }`}
                   >
 
                     {/* Icon */}
 
                     <div
-                     className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full sm:h-11 sm:w-11 ${
-                        stat.accent === "green"
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full sm:h-11 sm:w-11 ${stat.accent === "green"
                           ? "bg-emerald-50 text-emerald-500"
                           : stat.accent === "cyan"
                             ? "bg-cyan-50 text-cyan-500"
                             : stat.accent === "orange"
                               ? "bg-orange-50 text-orange-500"
                               : "bg-[#0263CC]/10 text-[#0263CC]"
-                      }`}
+                        }`}
                     >
                       <Icon className="h-5 w-5" />
                     </div>
@@ -765,7 +763,7 @@ export default function CounsellorsHero() {
 
                     <div className="min-w-0">
 
-                     <p className="text-[17px] font-black leading-none text-[#0B1B3A] sm:text-xl">
+                      <p className="text-[17px] font-black leading-none text-[#0B1B3A] sm:text-xl">
                         {stat.number}
                       </p>
 

@@ -98,7 +98,7 @@ const isHomePage = pathname === "/";
               : "bg-[#0263CC]"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
           <div className="flex items-center justify-between h-16 lg:h-18">
 
             {/* Logo */}
@@ -111,7 +111,7 @@ const isHomePage = pathname === "/";
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`font-body font-medium text-sm px-3 py-2 rounded-lg transition-colors duration-200 ${
+                  className={`font-body font-medium text-sm px-3 py-2 lg:text-[14px] rounded-lg transition-colors duration-200 ${
                     scrolled
                       ? "text-[#334155] hover:text-[#0263CC] hover:bg-[#F1F7FC]"
                       : "text-white/90 hover:text-white hover:bg-white/10"
