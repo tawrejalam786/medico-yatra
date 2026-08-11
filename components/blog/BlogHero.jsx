@@ -285,41 +285,96 @@ export default function BlogHero() {
                 SEARCH
             ================================================== */}
 
-            <motion.form
-              initial={{
-                opacity: 0,
-                y: 18,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.25,
-              }}
-              onSubmit={(e) => e.preventDefault()}
-              className="mt-7 flex w-full max-w-[570px] items-center rounded-2xl border border-slate-200/80 bg-white p-1.5 shadow-[0_15px_45px_rgba(20,70,130,.10)] transition-all focus-within:border-[#0263CC]/30 focus-within:shadow-[0_15px_45px_rgba(2,99,204,.15)]"
-            >
+             <motion.form
+  initial={{
+    opacity: 0,
+    y: 18,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  transition={{
+    duration: 0.6,
+    delay: 0.25,
+  }}
+  onSubmit={(e) => e.preventDefault()}
+  className="
+    mt-6
+    flex w-full max-w-[570px] items-center
+    rounded-xl sm:rounded-2xl
+    border border-slate-200/80
+    bg-white
+    p-1
+    sm:p-1.5
+    shadow-[0_12px_35px_rgba(20,70,130,.09)]
+    transition-all
+    focus-within:border-[#0263CC]/30
+    focus-within:shadow-[0_15px_45px_rgba(2,99,204,.15)]
+  "
+>
+  {/* Search Icon */}
+  <Search
+    className="
+      ml-2.5
+      h-[18px] w-[18px]
+      shrink-0
+      text-slate-400
+      sm:ml-3
+      sm:h-5 sm:w-5
+    "
+  />
 
-              <Search className="ml-3 h-5 w-5 shrink-0 text-slate-400" />
+  {/* Input */}
+  <input
+    type="search"
+    placeholder="Search blogs, topics, countries..."
+    aria-label="Search blogs"
+    className="
+      min-w-0
+      flex-1
+      bg-transparent
+      px-2
+      py-2.5
+      text-[13px]
+      leading-5
+      text-[#0A1B44]
+      outline-none
+      placeholder:text-slate-400
+      sm:px-3
+      sm:py-3
+      sm:text-[15px]
+    "
+  />
 
-              <input
-                type="search"
-                placeholder="Search blogs, topics, countries..."
-                aria-label="Search blogs"
-                className="min-w-0 flex-1 bg-transparent px-3 py-3 text-sm text-[#0A1B44] outline-none placeholder:text-slate-400 sm:text-[15px]"
-              />
-
-              <button
-                type="submit"
-                aria-label="Search"
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#0263CC] to-[#0758C7] text-white shadow-md transition-all hover:scale-[1.03] hover:shadow-lg active:scale-95 sm:h-12 sm:w-12"
-              >
-                <Search className="h-5 w-5" />
-              </button>
-
-            </motion.form>
+  {/* Search Button */}
+  <button
+    type="submit"
+    aria-label="Search"
+    className="
+      flex
+      h-10 w-10
+      shrink-0
+      items-center
+      justify-center
+      rounded-lg
+      bg-gradient-to-br
+      from-[#0263CC]
+      to-[#0758C7]
+      text-white
+      shadow-md
+      transition-all
+      hover:scale-[1.03]
+      hover:shadow-lg
+      active:scale-95
+      sm:h-12
+      sm:w-12
+      sm:rounded-xl
+    "
+  >
+    <Search className="h-[17px] w-[17px] sm:h-5 sm:w-5" />
+  </button>
+</motion.form>
 
             {/* Popular topics */}
 
