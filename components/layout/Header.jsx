@@ -2,20 +2,31 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, Phone } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Phone,
+} from "lucide-react";
+
+import {
+  motion,
+  AnimatePresence,
+} from "framer-motion";
+
+import CoursesMegaMenu from "@/components/layout/CoursesMegaMenu";
 
 const NAV_LINKS = [
-  { label: "Home",        href: "/" },
-  { label: "Courses",     href: "/courses" },
-  { label: "Countries",   href: "/countries" },
+  { label: "Home", href: "/" },
+  { label: "Courses", href: "/courses" },
+  { label: "Countries", href: "/countries" },
   { label: "FMGE / NExT", href: "/fmge-next" },
-  { label: "USMLE",       href: "/usmle" },
-  { label: "About Us",    href: "/about" },
-  { label: "Resources",   href: "/resources" },
+  { label: "USMLE", href: "/usmle" },
+  { label: "About Us", href: "/about" },
+  { label: "Resources", href: "/resources" },
 ];
 
 // WhatsApp SVG inline (brand icon — no icon library dependency)
@@ -54,11 +65,12 @@ function Logo({ scrolled }) {
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [coursesOpen, setCoursesOpen] = useState(false);
   const menuRef = useRef(null);
 
   const pathname = usePathname();
 
-const isHomePage = pathname === "/";
+  const isHomePage = pathname === "/";
 
   // Scroll listener
   useEffect(() => {
@@ -90,13 +102,12 @@ const isHomePage = pathname === "/";
     <>
       <header
         role="banner"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
             ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[#E2E8F0]"
             : isHomePage
               ? "bg-transparent"
               : "bg-[#0263CC]"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
           <div className="flex items-center justify-between h-16 lg:h-18">
@@ -106,20 +117,84 @@ const isHomePage = pathname === "/";
             {/* <Logo scrolled={scrolled || !isHomePage} /> */}
 
             {/* Desktop Nav */}
-            <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-1">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`font-body font-medium text-sm px-3 py-2 lg:text-[14px] rounded-lg transition-colors duration-200 ${
-                    scrolled
-                      ? "text-[#334155] hover:text-[#0263CC] hover:bg-[#F1F7FC]"
-                      : "text-white/90 hover:text-white hover:bg-white/10"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+            {/* Desktop Nav */}
+
+            <nav
+              aria-label="Primary navigation"
+              className="hidden lg:flex items-center gap-1"
+            >
+              {NAV_LINKS.map((link) => {
+                /* ==========================================
+                   COURSES MEGA MENU
+                ========================================== */
+
+                if (link.label === "Courses") {
+                  return (
+                    <div
+                      key={link.href}
+                      className="relative"
+                      onMouseEnter={() =>
+                        setCoursesOpen(true)
+                      }
+                      onMouseLeave={() =>
+                        setCoursesOpen(false)
+                      }
+                    >
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setCoursesOpen((prev) => !prev)
+                        }
+                        aria-expanded={coursesOpen}
+                        aria-haspopup="true"
+                        className={`flex items-center gap-1.5 font-body font-medium text-sm px-3 py-2 lg:text-[14px] rounded-lg transition-all duration-200 ${scrolled
+                            ? "text-[#334155] hover:text-[#0263CC] hover:bg-[#F1F7FC]"
+                            : "text-white/90 hover:text-white hover:bg-white/10"
+                          } ${coursesOpen
+                            ? scrolled
+                              ? "bg-[#F1F7FC] text-[#0263CC]"
+                              : "bg-white/10 text-white"
+                            : ""
+                          }`}
+                      >
+                        Courses
+
+                        <ChevronDown
+                          size={14}
+                          className={`transition-transform duration-200 ${coursesOpen
+                              ? "rotate-180"
+                              : ""
+                            }`}
+                        />
+                      </button>
+
+                      <CoursesMegaMenu
+                        isOpen={coursesOpen}
+                        onClose={() =>
+                          setCoursesOpen(false)
+                        }
+                      />
+                    </div>
+                  );
+                }
+
+                /* ==========================================
+                   NORMAL NAVIGATION
+                ========================================== */
+
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`font-body font-medium text-sm px-3 py-2 lg:text-[14px] rounded-lg transition-colors duration-200 ${scrolled
+                        ? "text-[#334155] hover:text-[#0263CC] hover:bg-[#F1F7FC]"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
+                      }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Desktop CTAs */}
@@ -129,11 +204,10 @@ const isHomePage = pathname === "/";
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp Us"
-                className={`flex items-center gap-2 font-body font-medium text-sm px-4 py-2 rounded-full transition-all duration-200 ${
-                  scrolled
+                className={`flex items-center gap-2 font-body font-medium text-sm px-4 py-2 rounded-full transition-all duration-200 ${scrolled
                     ? "text-[#02A7BB] hover:bg-[#d6f4f7] border border-[#02A7BB]/30"
                     : "text-white/90 hover:text-white hover:bg-white/10 border border-white/20"
-                }`}
+                  }`}
               >
                 <WhatsAppIcon size={16} />
                 WhatsApp Us
@@ -154,11 +228,10 @@ const isHomePage = pathname === "/";
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
               onClick={() => setMobileOpen((o) => !o)}
-              className={`lg:hidden w-10 h-10 flex items-center justify-center rounded-lg transition-colors duration-200 ${
-                scrolled
+              className={`lg:hidden w-10 h-10 flex items-center justify-center rounded-lg transition-colors duration-200 ${scrolled
                   ? "text-[#0F172A] hover:bg-[#F1F7FC]"
                   : "text-white hover:bg-white/10"
-              }`}
+                }`}
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -208,23 +281,100 @@ const isHomePage = pathname === "/";
               </div>
 
               {/* Nav links */}
-              <nav aria-label="Mobile navigation" className="flex-1 overflow-y-auto py-4 px-3">
-                {NAV_LINKS.map((link, i) => (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.04, duration: 0.25 }}
-                  >
-                    <Link
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl font-body font-medium text-[#0F172A] hover:text-[#0263CC] hover:bg-[#F1F7FC] transition-colors duration-200 text-base"
+              {/* Nav links */}
+
+              <nav
+                aria-label="Mobile navigation"
+                className="flex-1 overflow-y-auto py-4 px-3"
+              >
+                {NAV_LINKS.map((link, i) => {
+                  /* ==========================================
+                     MOBILE COURSES
+                  ========================================== */
+
+                  if (link.label === "Courses") {
+                    return (
+                      <motion.div
+                        key={link.href}
+                        initial={{
+                          opacity: 0,
+                          x: 20,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          x: 0,
+                        }}
+                        transition={{
+                          delay: i * 0.04,
+                          duration: 0.25,
+                        }}
+                      >
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setCoursesOpen((prev) => !prev)
+                          }
+                          className={`flex w-full items-center justify-between gap-3 px-4 py-3 rounded-xl font-body font-medium text-[#0F172A] transition-colors duration-200 text-base ${coursesOpen
+                              ? "bg-[#F1F7FC] text-[#0263CC]"
+                              : "hover:text-[#0263CC] hover:bg-[#F1F7FC]"
+                            }`}
+                        >
+                          <span>Courses</span>
+
+                          <ChevronDown
+                            size={18}
+                            className={`transition-transform duration-200 ${coursesOpen
+                                ? "rotate-180"
+                                : ""
+                              }`}
+                          />
+                        </button>
+
+                        <CoursesMegaMenu
+                          mobile
+                          isOpen={coursesOpen}
+                          onClose={() => {
+                            setCoursesOpen(false);
+                            setMobileOpen(false);
+                          }}
+                        />
+                      </motion.div>
+                    );
+                  }
+
+                  /* ==========================================
+                     NORMAL MOBILE LINK
+                  ========================================== */
+
+                  return (
+                    <motion.div
+                      key={link.href}
+                      initial={{
+                        opacity: 0,
+                        x: 20,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        x: 0,
+                      }}
+                      transition={{
+                        delay: i * 0.04,
+                        duration: 0.25,
+                      }}
                     >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        href={link.href}
+                        onClick={() => {
+                          setMobileOpen(false);
+                          setCoursesOpen(false);
+                        }}
+                        className="flex items-center gap-3 px-4 py-3 rounded-xl font-body font-medium text-[#0F172A] hover:text-[#0263CC] hover:bg-[#F1F7FC] transition-colors duration-200 text-base"
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
               </nav>
 
               {/* Drawer CTAs */}
