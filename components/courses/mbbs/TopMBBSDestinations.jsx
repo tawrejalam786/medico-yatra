@@ -39,7 +39,7 @@ const destinations = [
     country: "Kazakhstan",
     slug: "kazakhstan",
     flag: "🇰🇿",
-    image: "/images/countries/kazakhstan.png",
+    image: "/images/countries/Kazakhstan.png",
     points: [
       "NMC Recognized",
       "Safe & Student Friendly",
@@ -51,7 +51,7 @@ const destinations = [
     country: "Georgia",
     slug: "georgia",
     flag: "🇬🇪",
-    image: "/images/countries/georgia.png",
+    image: "/images/countries/Georgia.png",
     points: [
       "NMC Recognized",
       "Indian Food Available",
@@ -63,7 +63,7 @@ const destinations = [
     country: "Uzbekistan",
     slug: "uzbekistan",
     flag: "🇺🇿",
-    image: "/images/countries/uzbekistan.png",
+    image: "/images/countries/Uzbekistan.png",
     points: [
       "NMC Recognized",
       "Low Living Cost",
@@ -75,7 +75,7 @@ const destinations = [
     country: "Kyrgyzstan",
     slug: "kyrgyzstan",
     flag: "🇰🇬",
-    image: "/images/countries/kyrgyzstan.png",
+    image: "/images/countries/Kyrgyzstan.png",
     points: [
       "NMC Recognized",
       "Affordable Tuition",
@@ -87,7 +87,7 @@ const destinations = [
     country: "Philippines",
     slug: "philippines",
     flag: "🇵🇭",
-    image: "/images/countries/philippines.png",
+    image: "/images/countries/Philippines.png",
     points: [
       "NMC Recognized",
       "English Medium",
