@@ -154,9 +154,9 @@ export default function CTASection() {
               >
 
                 <Image
-                  src="/images/courses/cta.png"
-                  width={390}
-                  height={520}
+                  src="/images/courses/cta2.png"
+                  width={700}
+                  height={550}
                   alt="doctor"
                   priority
                 />

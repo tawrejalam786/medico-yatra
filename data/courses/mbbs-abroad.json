@@ -1,0 +1,870 @@
+{
+  "course": {
+    "id": "mbbs-abroad",
+    "slug": "mbbs-abroad",
+    "name": "MBBS Abroad",
+    "shortName": "MBBS",
+    "category": "Medical Education Abroad",
+    "status": "published",
+    "version": 1
+  },
+  "page": {
+    "component": "MBBSPage",
+    "sections": [
+      "hero",
+      "benefits",
+      "journeyComparison",
+      "topDestinations",
+      "whyMedicoYatra",
+      "journey",
+      "leadCapture",
+      "faq"
+    ]
+  },
+  "theme": {
+    "primary": "#0263CC",
+    "secondary": "#02A7BB",
+    "accent": "#4DA5EC",
+    "dark": "#071A49",
+    "success": "#16A05D"
+  },
+  "sections": {
+    "hero": {
+      "id": "mbbs-hero",
+      "component": "MBBSHero",
+      "enabled": true,
+      "type": "hero",
+      "breadcrumb": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Courses",
+          "href": "/courses"
+        },
+        {
+          "label": "MBBS Abroad",
+          "href": "/courses/mbbs-abroad"
+        }
+      ],
+      "badge": {
+        "text": "MEDICAL EDUCATION ABROAD",
+        "icon": "Stethoscope"
+      },
+      "title": {
+        "line1": "Your Path to Becoming",
+        "line2": "a Doctor Starts With a",
+        "highlight": "Plan.",
+        "line3": "Not Just an Admission."
+      },
+      "description": "Studying MBBS abroad can be a smart, structured route to a medical career — when it's planned properly. Medico Yatra helps you choose the right country and university, complete your admission and visa, and prepare for FMGE / NExT from day one.",
+      "primaryCta": {
+        "label": "Explore Countries",
+        "href": "/countries",
+        "icon": "ArrowRight"
+      },
+      "secondaryCta": {
+        "label": "Book Free Counselling",
+        "href": "/counselling",
+        "icon": "MessageCircle"
+      },
+      "highlights": [
+        {
+          "icon": "GraduationCap",
+          "text": "NMC-list Awareness"
+        },
+        {
+          "icon": "ShieldCheck",
+          "text": "Transparent Guidance"
+        },
+        {
+          "icon": "Users",
+          "text": "End-to-End Support"
+        },
+        {
+          "icon": "Stethoscope",
+          "text": "Medical Experts"
+        }
+      ],
+      "image": {
+        "src": "/images/mbbs-hero-doctors.png",
+        "alt": "Medical professionals guiding students for MBBS abroad",
+        "priority": true
+      },
+      "floatingCard": {
+        "icon": "Headphones",
+        "title": "Not sure where to start?",
+        "description": "Talk to our expert counsellors for personalised guidance.",
+        "button": {
+          "label": "Let's Talk",
+          "href": "/counselling"
+        }
+      }
+    },
+    "benefits": {
+      "id": "mbbs-benefits",
+      "component": "MBBSBenefits",
+      "enabled": true,
+      "type": "benefits",
+      "eyebrow": {
+        "text": "Your Journey, Our Support",
+        "icon": "Circle"
+      },
+      "title": {
+        "prefix": "Everything You Need to",
+        "highlight": "Start Your Journey"
+      },
+      "description": "From choosing the right university to admission, visa and exam preparation, our experts stay with you at every important step.",
+      "items": [
+        {
+          "id": 1,
+          "number": "01",
+          "icon": "Target",
+          "title": "Personalised",
+          "highlight": "Career Counselling",
+          "description": "Experts help you choose the right medical education path based on your goals."
+        },
+        {
+          "id": 2,
+          "number": "02",
+          "icon": "Building2",
+          "title": "University",
+          "highlight": "Shortlisting",
+          "description": "Carefully selected NMC-list aware universities aligned with your requirements."
+        },
+        {
+          "id": 3,
+          "number": "03",
+          "icon": "PlaneTakeoff",
+          "title": "Admission & Visa",
+          "highlight": "Guidance",
+          "description": "End-to-end assistance for a smooth admission and documentation process."
+        },
+        {
+          "id": 4,
+          "number": "04",
+          "icon": "BookCopy",
+          "title": "Integrated",
+          "highlight": "Coaching",
+          "description": "FMGE / NExT & USMLE preparation support designed into your journey."
+        }
+      ],
+      "trustLine": [
+        {
+          "icon": "ShieldCheck",
+          "text": "Transparent guidance"
+        },
+        {
+          "icon": "GraduationCap",
+          "text": "Medical education specialists"
+        },
+        {
+          "icon": "UsersRound",
+          "text": "Student-first support"
+        }
+      ]
+    },
+    "journeyComparison": {
+      "id": "mbbs-journey-comparison",
+      "component": "MBBSJourneyComparison",
+      "enabled": true,
+      "type": "comparison",
+      "eyebrow": {
+        "text": "Compare Your Path",
+        "icon": "CheckCircle2"
+      },
+      "title": {
+        "line1": "Two Students, Two Journeys —",
+        "line2Prefix": "Understand the",
+        "highlight": "Real Choice"
+      },
+      "description": "The decision to study MBBS isn't only about fees. It's about time, opportunity cost, and how clearly your path to becoming a licensed doctor is mapped.",
+      "subDescription": "Below are two illustrative journeys to help you compare.",
+      "routes": [
+        {
+          "id": "route-a",
+          "title": "ROUTE A",
+          "subtitle": "MBBS IN INDIA",
+          "label": "(Govt. Seat)",
+          "theme": "blue",
+          "steps": [
+            {
+              "icon": "BookOpen",
+              "title": "Class 12",
+              "subtitle": "(PCB)"
+            },
+            {
+              "icon": "Stethoscope",
+              "title": "NEET",
+              "subtitle": "Preparation"
+            },
+            {
+              "icon": "BookOpen",
+              "title": "NEET",
+              "subtitle": "Exam"
+            },
+            {
+              "icon": "GraduationCap",
+              "title": "MBBS",
+              "subtitle": "(5.5 Years)"
+            },
+            {
+              "icon": "UserRound",
+              "title": "Internship",
+              "subtitle": "(1 Year)"
+            },
+            {
+              "icon": "Medal",
+              "title": "FMGE / NExT",
+              "subtitle": "Exam"
+            },
+            {
+              "icon": "Trophy",
+              "title": "Licensed",
+              "subtitle": "Doctor"
+            }
+          ],
+          "metrics": [
+            {
+              "icon": "Clock3",
+              "label": "Total Time",
+              "value": "~ 11 to 12 Years"
+            },
+            {
+              "icon": "ArrowRight",
+              "label": "Opportunity Cost",
+              "value": "High (Drop years + Delayed start)"
+            },
+            {
+              "icon": "Landmark",
+              "label": "Indicative Cost",
+              "value": "₹60L - ₹1 Cr+ (Govt. Seat)"
+            },
+            {
+              "icon": "Users",
+              "label": "Seats",
+              "value": "Highly Limited"
+            },
+            {
+              "icon": "Trophy",
+              "label": "Competition",
+              "value": "Very High"
+            }
+          ]
+        },
+        {
+          "id": "route-b",
+          "title": "ROUTE B",
+          "subtitle": "MBBS ABROAD",
+          "label": "+ FMGE / NExT",
+          "theme": "green",
+          "steps": [
+            {
+              "icon": "BookOpen",
+              "title": "Class 12",
+              "subtitle": "(PCB)"
+            },
+            {
+              "icon": "GraduationCap",
+              "title": "MBBS Abroad",
+              "subtitle": "(5 - 6 Years)"
+            },
+            {
+              "icon": "UserRound",
+              "title": "Internship*",
+              "subtitle": "(If applicable)"
+            },
+            {
+              "icon": "Medal",
+              "title": "FMGE / NExT",
+              "subtitle": "Exam"
+            },
+            {
+              "icon": "Trophy",
+              "title": "Licensed",
+              "subtitle": "Doctor"
+            }
+          ],
+          "metrics": [
+            {
+              "icon": "Clock3",
+              "label": "Total Time",
+              "value": "~ 6.5 to 8 Years"
+            },
+            {
+              "icon": "ArrowRight",
+              "label": "Opportunity Cost",
+              "value": "Lower (Earlier start, Earlier earning)"
+            },
+            {
+              "icon": "Landmark",
+              "label": "Indicative Cost",
+              "value": "₹25L - ₹50L (Approx.)"
+            },
+            {
+              "icon": "Users",
+              "label": "Seats",
+              "value": "More Options"
+            },
+            {
+              "icon": "Trophy",
+              "label": "Competition",
+              "value": "Moderate"
+            }
+          ]
+        }
+      ],
+      "honestFraming": {
+        "enabled": true,
+        "icon": "Info",
+        "title": "Important Context",
+        "description": "Some students who qualify for an overseas admission may begin their medical education earlier than they would after multiple NEET attempts — potentially saving waiting time and preparation costs.",
+        "disclaimer": "This is an example scenario, not a guarantee. FMGE / NExT (or the relevant licensing exam) remains essential to practise in India, and a university must be on the NMC-approved list at the time of enrolment and at the time of your exam."
+      },
+      "cta": {
+        "label": "See Which Country Fits Your Goals",
+        "href": "/countries",
+        "icon": "ArrowRight"
+      },
+      "disclaimer": {
+        "icon": "Info",
+        "label": "Note",
+        "text": "All timelines & costs are illustrative examples. Verify current NMC regulations, university recognition, and licensing requirements before making any decision."
+      }
+    },
+    "topDestinations": {
+      "id": "top-mbbs-destinations",
+      "component": "TopMBBSDestinations",
+      "enabled": true,
+      "type": "destinations",
+      "eyebrow": {
+        "text": "Study Around the World",
+        "icon": "Globe2"
+      },
+      "title": {
+        "prefix": "Explore Top",
+        "highlight": "MBBS Destinations"
+      },
+      "description": "Quality education, global exposure, and a clear path to building your medical career abroad.",
+      "destinations": [
+        {
+          "id": 1,
+          "country": "Russia",
+          "slug": "russia",
+          "flag": "🇷🇺",
+          "image": "/images/countries/russia.jpg",
+          "points": [
+            "NMC Recognized",
+            "English Medium",
+            "Affordable Fees"
+          ]
+        },
+        {
+          "id": 2,
+          "country": "Kazakhstan",
+          "slug": "kazakhstan",
+          "flag": "🇰🇿",
+          "image": "/images/countries/Kazakhstan.png",
+          "points": [
+            "NMC Recognized",
+            "Safe & Student Friendly",
+            "Modern Infrastructure"
+          ]
+        },
+        {
+          "id": 3,
+          "country": "Georgia",
+          "slug": "georgia",
+          "flag": "🇬🇪",
+          "image": "/images/countries/Georgia.png",
+          "points": [
+            "NMC Recognized",
+            "Indian Food Available",
+            "High FMGE Pass Rate"
+          ]
+        },
+        {
+          "id": 4,
+          "country": "Uzbekistan",
+          "slug": "uzbekistan",
+          "flag": "🇺🇿",
+          "image": "/images/countries/Uzbekistan.png",
+          "points": [
+            "NMC Recognized",
+            "Low Living Cost",
+            "Quality Education"
+          ]
+        },
+        {
+          "id": 5,
+          "country": "Kyrgyzstan",
+          "slug": "kyrgyzstan",
+          "flag": "🇰🇬",
+          "image": "/images/countries/Kyrgyzstan.png",
+          "points": [
+            "NMC Recognized",
+            "Affordable Tuition",
+            "Easy Admission"
+          ]
+        },
+        {
+          "id": 6,
+          "country": "Philippines",
+          "slug": "philippines",
+          "flag": "🇵🇭",
+          "image": "/images/countries/Philippines.png",
+          "points": [
+            "NMC Recognized",
+            "English Medium",
+            "Globally Accepted"
+          ]
+        },
+        {
+          "id": 7,
+          "country": "Bangladesh",
+          "slug": "bangladesh",
+          "flag": "🇧🇩",
+          "image": "/images/countries/bangladesh.jpg",
+          "points": [
+            "NMC Recognized",
+            "Low Tuition Fees",
+            "Close to India"
+          ]
+        }
+      ],
+      "cta": {
+        "label": "Compare All Countries",
+        "href": "/countries",
+        "icon": "ArrowRight"
+      },
+      "mobileHint": "Swipe to explore"
+    },
+    "whyMedicoYatra": {
+      "id": "why-medico-yatra",
+      "component": "WhyMedicoYatra",
+      "enabled": true,
+      "type": "services",
+      "eyebrow": {
+        "text": "Why Medico Yatra",
+        "icon": "ShieldCheck"
+      },
+      "title": {
+        "prefix": "Support That Goes",
+        "highlight": "Beyond Admission"
+      },
+      "description": "From counselling and university selection to visa, arrival and licensing support, we stay with you throughout the journey.",
+      "services": [
+        {
+          "id": 1,
+          "icon": "BriefcaseBusiness",
+          "number": "01",
+          "title": "Career Counselling",
+          "description": "Honest assessment of whether MBBS abroad fits your goals, finances, and NEET situation.",
+          "tag": "Start With Clarity"
+        },
+        {
+          "id": 2,
+          "icon": "Building2",
+          "number": "02",
+          "title": "University Selection",
+          "description": "Shortlisting with awareness of the current NMC-approved list and your priorities.",
+          "tag": "Choose Wisely"
+        },
+        {
+          "id": 3,
+          "icon": "ClipboardCheck",
+          "number": "03",
+          "title": "Documentation",
+          "description": "Organised, checklist-driven support so nothing important is missed.",
+          "tag": "Stay Organised"
+        },
+        {
+          "id": 4,
+          "icon": "FileText",
+          "number": "04",
+          "title": "Admission Support",
+          "description": "End-to-end application handling through to the offer or invitation letter.",
+          "tag": "Complete Support"
+        },
+        {
+          "id": 5,
+          "icon": "Plane",
+          "number": "05",
+          "title": "Visa Guidance",
+          "description": "Preparation and guidance for the student visa process.",
+          "tag": "Travel Prepared"
+        },
+        {
+          "id": 6,
+          "icon": "Home",
+          "number": "06",
+          "title": "Accommodation Guidance",
+          "description": "Help understanding hostel and housing options before departure.",
+          "tag": "Settle Comfortably"
+        },
+        {
+          "id": 7,
+          "icon": "GraduationCap",
+          "number": "07",
+          "title": "Pre-Departure Briefing",
+          "description": "Know what to pack, what to expect, and how to prepare for life abroad.",
+          "tag": "Ready To Go"
+        },
+        {
+          "id": 8,
+          "icon": "UserRound",
+          "number": "08",
+          "title": "Student Support",
+          "description": "A point of contact during your studies, not just before you leave.",
+          "tag": "We're With You"
+        },
+        {
+          "id": 9,
+          "icon": "Stethoscope",
+          "number": "09",
+          "title": "FMGE / NExT Coaching",
+          "description": "Integrated licensing preparation during your medical education journey.",
+          "tag": "Prepare Early"
+        },
+        {
+          "id": 10,
+          "icon": "ShieldCheck",
+          "number": "10",
+          "title": "USMLE Coaching",
+          "description": "Support for students planning to pursue their medical career in the USA.",
+          "tag": "USA Pathway"
+        }
+      ]
+    },
+    "journey": {
+      "id": "mbbs-journey",
+      "component": "MBBSJourneySection",
+      "enabled": true,
+      "type": "journey",
+      "eyebrow": "Your Next Step",
+      "title": {
+        "prefix": "Your Journey Doesn't End With",
+        "highlight": "Admission"
+      },
+      "description": "Whether you choose MBBS abroad or another healthcare career, Medico Yatra helps you understand your options and move forward with confidence.",
+      "alternativeCareers": [
+        {
+          "title": "Dentistry (BDS)",
+          "icon": "Stethoscope"
+        },
+        {
+          "title": "Pharmacy (B.Pharm)",
+          "icon": "Pill"
+        },
+        {
+          "title": "Nursing",
+          "icon": "HeartPulse"
+        },
+        {
+          "title": "Physiotherapy",
+          "icon": "UserRound"
+        },
+        {
+          "title": "Allied Health Sciences",
+          "icon": "Syringe"
+        },
+        {
+          "title": "Public Health",
+          "icon": "Hospital"
+        }
+      ],
+      "alternativeCareerCard": {
+        "icon": "BriefcaseMedical",
+        "eyebrow": "Explore Your Options",
+        "title": "Not Set on MBBS?",
+        "highlight": "Explore Other Healthcare Careers",
+        "description": "Discover other rewarding career options in the healthcare field and find a path that matches your interests.",
+        "cta": {
+          "label": "Explore All Healthcare Courses",
+          "href": "/courses",
+          "icon": "ArrowRight"
+        }
+      },
+      "journeySteps": [
+        {
+          "number": "01",
+          "title": "Counselling",
+          "subtitle": "& Profile Evaluation",
+          "icon": "UserRound"
+        },
+        {
+          "number": "02",
+          "title": "University",
+          "subtitle": "Shortlisting",
+          "icon": "GraduationCap"
+        },
+        {
+          "number": "03",
+          "title": "Admission",
+          "subtitle": "& Documentation",
+          "icon": "BriefcaseMedical"
+        },
+        {
+          "number": "04",
+          "title": "Visa",
+          "subtitle": "Assistance",
+          "icon": "CircleCheck"
+        },
+        {
+          "number": "05",
+          "title": "Travel & Arrival",
+          "subtitle": "Support",
+          "icon": "Hospital"
+        },
+        {
+          "number": "06",
+          "title": "FMGE / NExT",
+          "subtitle": "Coaching",
+          "icon": "Stethoscope"
+        },
+        {
+          "number": "07",
+          "title": "Licensing &",
+          "subtitle": "Career Support",
+          "icon": "CheckCircle2"
+        }
+      ]
+    },
+    "leadCapture": {
+      "id": "mbbs-lead-capture",
+      "component": "MBBSLeadCapture",
+      "enabled": true,
+      "type": "lead-capture",
+      "eyebrow": "Your MBBS Abroad Roadmap",
+      "title": {
+        "prefix": "Get Your Free",
+        "highlight": "MBBS Abroad Roadmap"
+      },
+      "description": "Tell us a little about yourself and a Medico Yatra counsellor will share a personalised, no-obligation roadmap — including suitable countries, an indicative budget range, and your licensing pathway.",
+      "benefits": [
+        {
+          "icon": "Globe2",
+          "title": "Suitable Countries",
+          "description": "Shortlisted around your profile and preferences."
+        },
+        {
+          "icon": "WalletCards",
+          "title": "Indicative Budget",
+          "description": "Understand the expected education cost range."
+        },
+        {
+          "icon": "Route",
+          "title": "Licensing Pathway",
+          "description": "Get clarity on the journey after graduation."
+        }
+      ],
+      "form": {
+        "submitLabel": "Get My Free Roadmap",
+        "submitIcon": "ArrowRight",
+        "fields": [
+          {
+            "name": "name",
+            "label": "Full Name",
+            "type": "text",
+            "required": true,
+            "placeholder": "Enter your full name",
+            "icon": "UserRound"
+          },
+          {
+            "name": "mobile",
+            "label": "Mobile Number",
+            "type": "tel",
+            "required": true,
+            "placeholder": "Enter mobile number",
+            "icon": "Phone"
+          },
+          {
+            "name": "city",
+            "label": "City",
+            "type": "text",
+            "required": true,
+            "placeholder": "Enter your city",
+            "icon": "MapPin"
+          },
+          {
+            "name": "classStatus",
+            "label": "Current Status",
+            "type": "select",
+            "required": true,
+            "placeholder": "Select your status",
+            "icon": "GraduationCap",
+            "options": [
+              {
+                "value": "class-12-studying",
+                "label": "Class 12 - Currently Studying"
+              },
+              {
+                "value": "class-12-completed",
+                "label": "Class 12 - Completed"
+              },
+              {
+                "value": "neet-preparing",
+                "label": "Preparing for NEET"
+              },
+              {
+                "value": "neet-qualified",
+                "label": "NEET Qualified"
+              },
+              {
+                "value": "neet-attempted",
+                "label": "NEET Attempted"
+              }
+            ]
+          },
+          {
+            "name": "country",
+            "label": "Preferred Country",
+            "type": "select",
+            "required": false,
+            "placeholder": "Not sure yet",
+            "icon": "Globe2",
+            "options": [
+              "Russia",
+              "Kazakhstan",
+              "Georgia",
+              "Uzbekistan",
+              "Kyrgyzstan",
+              "Philippines",
+              "Bangladesh",
+              "Other / Not Sure"
+            ]
+          }
+        ]
+      },
+      "privacyNote": "By submitting this form, you agree to be contacted by Medico Yatra regarding counselling and course guidance."
+    },
+    "faq": {
+      "id": "mbbs-faq",
+      "component": "MBBSFAQ",
+      "enabled": true,
+      "type": "faq",
+      "eyebrow": {
+        "text": "Need Answers?",
+        "icon": "HelpCircle"
+      },
+      "title": {
+        "prefix": "Frequently Asked",
+        "highlight": "Questions"
+      },
+      "description": "Everything you need to know about studying MBBS abroad, eligibility, costs, licensing, universities and the support provided by Medico Yatra.",
+      "items": [
+        {
+          "id": 1,
+          "question": "Is NEET required to study MBBS abroad?",
+          "answer": "For Indian students who intend to practise in India, qualifying NEET is required to obtain the Eligibility Certificate and to sit for FMGE / NExT later. Always confirm the current NMC rules before applying."
+        },
+        {
+          "id": 2,
+          "question": "Is an MBBS degree from abroad valid in India?",
+          "answer": "A foreign MBBS can lead to practice in India if the university is on the NMC-approved list and you clear the required licensing exam (currently FMGE; NExT is planned as a future replacement). Verify the university's NMC status before enrolling."
+        },
+        {
+          "id": 3,
+          "question": "What is NExT and has it replaced FMGE yet?",
+          "answer": "NExT (National Exit Test) is planned to eventually replace FMGE, but its rollout has been deferred. As of now, FMGE remains the operative exam. We track updates and recommend you verify the latest NMC notifications."
+        },
+        {
+          "id": 4,
+          "question": "How long does MBBS abroad take?",
+          "answer": "Commonly around 6 years including clinical training, though this varies by country and university."
+        },
+        {
+          "id": 5,
+          "question": "How much does MBBS abroad cost?",
+          "answer": "It varies widely by country and university. We'll share an indicative budget range during your free counselling — and a detailed breakdown on each country page. We never quote a single \"fixed\" figure because real costs include tuition, hostel, food, insurance, and travel."
+        },
+        {
+          "id": 6,
+          "question": "Which is the best country for MBBS abroad?",
+          "answer": "There's no single \"best\" — it depends on your budget, goals (India vs USA), language comfort, and the university's recognition. Our counsellors help you match a country to your profile."
+        },
+        {
+          "id": 7,
+          "question": "Are the universities you recommend NMC-approved?",
+          "answer": "We shortlist with awareness of the current NMC-approved list, but recognition can change. We always encourage you to independently verify a university's current NMC status before enrolling."
+        },
+        {
+          "id": 8,
+          "question": "Will I be taught in English?",
+          "answer": "Many universities offer fully English-medium MBBS programmes for international students. Some local-language familiarity helps during clinical years."
+        },
+        {
+          "id": 9,
+          "question": "Can I practise in the USA after MBBS abroad?",
+          "answer": "Yes, through the USMLE pathway, which is separate from FMGE / NExT. We offer structured USMLE guidance for students choosing this route."
+        },
+        {
+          "id": 10,
+          "question": "What are the eligibility requirements?",
+          "answer": "Typically Class 12 with PCB + English and a minimum aggregate as per NMC norms, NEET qualification, and the minimum age. Requirements can change — we confirm current criteria for you."
+        },
+        {
+          "id": 11,
+          "question": "When are the intakes?",
+          "answer": "Intake months vary by country and university. We help you align your application with the next available intake."
+        },
+        {
+          "id": 12,
+          "question": "Is MBBS abroad safe for students, especially for girls?",
+          "answer": "Safety depends on the country, city, and university. We provide pre-departure briefings and accommodation guidance, and we factor safety into shortlisting. We discuss this openly with parents."
+        },
+        {
+          "id": 13,
+          "question": "What support do I get after I reach the university?",
+          "answer": "You get a point of contact during your studies, plus access to integrated FMGE / NExT coaching. We stay involved beyond admission."
+        },
+        {
+          "id": 14,
+          "question": "Do you guarantee admission or a visa?",
+          "answer": "No — and you should be cautious of anyone who does. We provide strong, organised support to maximise your chances, but admissions and visas are decided by universities and authorities."
+        },
+        {
+          "id": 15,
+          "question": "What happens if a university loses NMC recognition during my course?",
+          "answer": "This is exactly why we emphasise the NMC list at the start. Recognition status matters at enrolment and at exam time. We help you make an informed initial choice and recommend ongoing verification."
+        },
+        {
+          "id": 16,
+          "question": "Can I do PG in India after MBBS abroad?",
+          "answer": "Yes, after clearing the required licensing exam and meeting current PG-entrance requirements. The pathway can evolve with NExT, so we keep students informed."
+        },
+        {
+          "id": 17,
+          "question": "How is Medico Yatra different from a normal admission agent?",
+          "answer": "We support the entire journey — counselling, admission, visa, in-study coaching for FMGE / NExT, and career guidance — rather than ending at the offer letter."
+        },
+        {
+          "id": 18,
+          "question": "Do you help with education loans?",
+          "answer": "Yes, our Future Yatra group offers educational loan assistance guidance. Ask your counsellor about current options."
+        },
+        {
+          "id": 19,
+          "question": "How do I start?",
+          "answer": "Book a free counselling session. We'll assess your goals and NEET situation honestly and share a personalised roadmap — with no obligation."
+        },
+        {
+          "id": 20,
+          "question": "Can I get guidance before choosing a country?",
+          "answer": "Yes. Our counsellors can help you understand your options based on your goals, budget, academic profile, and preferred career pathway before you make a decision."
+        }
+      ],
+      "supportCta": {
+        "icon": "MessageCircle",
+        "title": "Still have questions?",
+        "description": "Talk to a Medico Yatra counsellor.",
+        "button": {
+          "label": "Get Free Counselling",
+          "href": "/counselling",
+          "icon": "ShieldCheck"
+        }
+      }
+    }
+  }
+}

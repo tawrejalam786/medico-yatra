@@ -1,0 +1,90 @@
+{
+  "slug": "mbbs-abroad",
+  "courseType": "Medical",
+  "title": "MBBS Abroad",
+  "shortTitle": "MBBS",
+  "description": "Study MBBS abroad at NMC-recognised universities with complete guidance from admission to graduation.",
+
+  "hero": {
+    "enabled": true,
+    "badge": "Popular Medical Course",
+    "title": "Study MBBS Abroad",
+    "description": "Explore affordable MBBS programs at recognised universities across the world.",
+    "image": "/images/mbbs.jpg"
+  },
+
+  "overview": {
+    "enabled": true,
+    "title": "MBBS Course Overview",
+    "description": "MBBS abroad is an excellent option for students looking for globally recognised medical education.",
+    "items": [
+      {
+        "label": "Duration",
+        "value": "5.5 Years"
+      },
+      {
+        "label": "Degree",
+        "value": "MBBS"
+      },
+      {
+        "label": "Medium",
+        "value": "English"
+      },
+      {
+        "label": "Mode",
+        "value": "On Campus"
+      }
+    ]
+  },
+
+  "eligibility": {
+    "enabled": true,
+    "title": "MBBS Eligibility",
+    "requirements": [
+      "Passed 12th with Physics, Chemistry and Biology",
+      "Minimum required PCB percentage",
+      "NEET qualification is required for Indian students",
+      "Valid passport"
+    ]
+  },
+
+  "neetRequirement": {
+    "enabled": true,
+    "title": "Is NEET Required for MBBS Abroad?",
+    "description": "Indian students who intend to practise medicine in India need to qualify NEET as per applicable regulations."
+  },
+
+  "fmge": {
+    "enabled": true,
+    "title": "FMGE / NExT Preparation",
+    "description": "Get integrated preparation support for FMGE / NExT during your medical education."
+  },
+
+  "usmle": {
+    "enabled": true,
+    "title": "USMLE Pathway",
+    "description": "Students planning to pursue medical careers in the United States can explore the USMLE pathway."
+  },
+
+  "fees": {
+    "enabled": true,
+    "title": "MBBS Fees",
+    "startingFrom": "₹3.5 Lakhs / Year",
+    "description": "Tuition fees vary depending on university and country."
+  },
+
+  "faq": {
+    "enabled": true,
+    "title": "MBBS FAQs",
+    "items": [
+      {
+        "question": "Is NEET required for MBBS abroad?",
+        "answer": "Yes, Indian students should qualify NEET according to the applicable rules."
+      },
+      {
+        "question": "How long is MBBS abroad?",
+        "answer": "The duration depends on the country and university."
+      }
+    ]
+  }
+}

@@ -73,7 +73,7 @@ export default function MBBSLeadCapture() {
   };
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#F5F9FF] py-14 sm:py-16 lg:py-20">
+    <section className="relative isolate overflow-hidden bg-[#F5F9FF] py-14 sm:py-16 lg:py-16">
       {/* =====================================================
           BACKGROUND
       ====================================================== */}

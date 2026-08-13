@@ -1,0 +1,813 @@
+{
+  "course": {
+    "id": "nursing",
+    "slug": "nursing",
+    "name": "Nursing",
+    "shortName": "Nursing",
+    "category": "Healthcare Education Abroad",
+    "status": "published",
+    "version": 1
+  },
+
+  "page": {
+    "component": "NursingPage",
+    "sections": [
+      "hero",
+      "benefits",
+      "salaryCountries",
+      "careerOptions",
+      "studyPathway",
+      "licensing",
+      "medicoYatraSupport",
+      "journey",
+      "otherCourses",
+      "faq",
+      "cta"
+    ]
+  },
+
+  "theme": {
+    "primary": "#0263CC",
+    "secondary": "#02A7BB",
+    "accent": "#4DA5EC",
+    "dark": "#071A49",
+    "success": "#16A05D"
+  },
+
+  "sections": {
+    "hero": {
+      "id": "nursing-hero",
+      "component": "NursingHero",
+      "enabled": true,
+      "type": "hero",
+
+      "breadcrumb": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Courses",
+          "href": "/courses"
+        },
+        {
+          "label": "Nursing",
+          "href": "/courses/nursing"
+        }
+      ],
+
+      "badge": {
+        "text": "STUDY NURSING ABROAD",
+        "icon": "HeartPulse"
+      },
+
+      "title": {
+        "line1": "Study Nursing Abroad.",
+        "line2": "Build a Respected Career.",
+        "line3": "Live Your Dreams."
+      },
+
+      "description": "Qualified nurses are needed almost everywhere. Study nursing abroad with the right guidance and open the door to strong career opportunities, global mobility, and pathways to settle with your family.",
+
+      "primaryCta": {
+        "label": "Book Free Counselling",
+        "href": "/counselling",
+        "icon": "ArrowRight"
+      },
+
+      "secondaryCta": {
+        "label": "View Nurse Salaries",
+        "href": "#salary-countries",
+        "icon": "ArrowDown"
+      },
+
+      "highlights": [
+        {
+          "icon": "BadgeCheck",
+          "text": "High Employability"
+        },
+        {
+          "icon": "ShieldCheck",
+          "text": "Licensing Support"
+        },
+        {
+          "icon": "UsersRound",
+          "text": "Family Settlement Paths"
+        },
+        {
+          "icon": "Globe2",
+          "text": "End-to-End Support"
+        }
+      ],
+
+      "image": {
+        "src": "/images/nursing-hero.png",
+        "alt": "Nursing student studying nursing abroad",
+        "priority": true
+      },
+
+      "floatingCard": {
+        "icon": "Headphones",
+        "title": "Not sure where to start?",
+        "description": "Talk to our expert counsellors about your nursing journey abroad.",
+        "button": {
+          "label": "Let's Talk",
+          "href": "/counselling"
+        }
+      },
+
+      "note": "*Subject to each country's eligibility and immigration rules."
+    },
+
+    "benefits": {
+      "id": "nursing-benefits",
+      "component": "NursingBenefits",
+      "enabled": true,
+      "type": "benefits",
+
+      "eyebrow": {
+        "text": "Why Study Nursing Abroad",
+        "icon": "Circle"
+      },
+
+      "title": {
+        "prefix": "Build a Career With",
+        "highlight": "Global Opportunities"
+      },
+
+      "description": "Nursing is a globally recognised healthcare profession with opportunities across hospitals, communities and specialised healthcare settings.",
+
+      "items": [
+        {
+          "id": 1,
+          "number": "01",
+          "icon": "HeartPulse",
+          "title": "High",
+          "highlight": "Demand",
+          "description": "Qualified nurses are needed across healthcare systems globally."
+        },
+        {
+          "id": 2,
+          "number": "02",
+          "icon": "TrendingUp",
+          "title": "Better",
+          "highlight": "Salaries",
+          "description": "International nursing careers can offer competitive earning opportunities."
+        },
+        {
+          "id": 3,
+          "number": "03",
+          "icon": "Globe2",
+          "title": "Global",
+          "highlight": "Mobility",
+          "description": "Build a nursing career and explore opportunities across multiple countries."
+        },
+        {
+          "id": 4,
+          "number": "04",
+          "icon": "UsersRound",
+          "title": "Family",
+          "highlight": "Settlement",
+          "description": "Some countries provide pathways that may support family migration."
+        },
+        {
+          "id": 5,
+          "number": "05",
+          "icon": "BriefcaseBusiness",
+          "title": "Career",
+          "highlight": "Growth",
+          "description": "Develop your career through specialised nursing and advanced practice opportunities."
+        }
+      ],
+
+      "trustLine": [
+        {
+          "icon": "BadgeCheck",
+          "text": "Career-focused guidance"
+        },
+        {
+          "icon": "Globe2",
+          "text": "Global opportunities"
+        },
+        {
+          "icon": "UsersRound",
+          "text": "Student-first support"
+        }
+      ]
+    },
+
+    "salaryCountries": {
+      "id": "nursing-salary-countries",
+      "component": "NursingSalaryCountries",
+      "enabled": true,
+      "type": "salary-countries",
+
+      "eyebrow": {
+        "text": "Global Nursing Opportunities",
+        "icon": "TrendingUp"
+      },
+
+      "title": {
+        "prefix": "Nurse Salary Across",
+        "highlight": "10 Countries"
+      },
+
+      "description": "Illustrative average annual salary ranges for nurses. Actual salaries vary by role, experience, location and employer.",
+
+      "note": "Always verify latest figures with official sources before making decisions.",
+
+      "countries": [
+        {
+          "id": 1,
+          "country": "USA",
+          "slug": "usa",
+          "flag": "🇺🇸",
+          "salary": "₹60 - 85 L",
+          "period": "Approx. / year"
+        },
+        {
+          "id": 2,
+          "country": "Canada",
+          "slug": "canada",
+          "flag": "🇨🇦",
+          "salary": "₹45 - 60 L",
+          "period": "Approx. / year"
+        },
+        {
+          "id": 3,
+          "country": "UK",
+          "slug": "uk",
+          "flag": "🇬🇧",
+          "salary": "₹35 - 50 L",
+          "period": "Approx. / year"
+        },
+        {
+          "id": 4,
+          "country": "Australia",
+          "slug": "australia",
+          "flag": "🇦🇺",
+          "salary": "₹50 - 65 L",
+          "period": "Approx. / year"
+        },
+        {
+          "id": 5,
+          "country": "Germany",
+          "slug": "germany",
+          "flag": "🇩🇪",
+          "salary": "₹30 - 40 L",
+          "period": "Approx. / year"
+        },
+        {
+          "id": 6,
+          "country": "Ireland",
+          "slug": "ireland",
+          "flag": "🇮🇪",
+          "salary": "₹35 - 45 L",
+          "period": "Approx. / year"
+        },
+        {
+          "id": 7,
+          "country": "New Zealand",
+          "slug": "new-zealand",
+          "flag": "🇳🇿",
+          "salary": "₹40 - 55 L",
+          "period": "Approx. / year"
+        },
+        {
+          "id": 8,
+          "country": "UAE",
+          "slug": "uae",
+          "flag": "🇦🇪",
+          "salary": "₹25 - 35 L",
+          "period": "Approx. / year"
+        },
+        {
+          "id": 9,
+          "country": "Singapore",
+          "slug": "singapore",
+          "flag": "🇸🇬",
+          "salary": "₹30 - 45 L",
+          "period": "Approx. / year"
+        },
+        {
+          "id": 10,
+          "country": "Saudi Arabia",
+          "slug": "saudi-arabia",
+          "flag": "🇸🇦",
+          "salary": "₹20 - 30 L",
+          "period": "Approx. / year"
+        }
+      ],
+
+      "cta": {
+        "label": "View Full Salary Guide",
+        "href": "/resources/nursing-salary-guide",
+        "icon": "ArrowRight"
+      },
+
+      "disclaimer": "Salary figures are illustrative and can vary significantly based on country, role, experience, location and employer. Verify current figures before making decisions."
+    },
+
+    "careerOptions": {
+      "id": "nursing-career-options",
+      "component": "NursingCareerOptions",
+      "enabled": true,
+      "type": "career-options",
+
+      "eyebrow": {
+        "text": "Career Opportunities",
+        "icon": "BriefcaseMedical"
+      },
+
+      "title": {
+        "prefix": "What a Nursing",
+        "highlight": "Career Looks Like"
+      },
+
+      "description": "Nursing can lead to a wide range of clinical, educational, leadership and advanced-practice careers.",
+
+      "items": [
+        {
+          "id": 1,
+          "icon": "HeartPulse",
+          "title": "Registered Nurse",
+          "description": "Patient care and clinical nursing."
+        },
+        {
+          "id": 2,
+          "icon": "Stethoscope",
+          "title": "Specialist Nurse",
+          "description": "ICU, OT, ER, Oncology & more."
+        },
+        {
+          "id": 3,
+          "icon": "GraduationCap",
+          "title": "Nurse Educator",
+          "description": "Train & mentor the next generation."
+        },
+        {
+          "id": 4,
+          "icon": "UsersRound",
+          "title": "Nurse Leader",
+          "description": "Manage teams & lead departments."
+        },
+        {
+          "id": 5,
+          "icon": "Brain",
+          "title": "Advanced Practice",
+          "description": "Nurse Practitioner and specialised clinical roles."
+        },
+        {
+          "id": 6,
+          "icon": "Globe2",
+          "title": "Global Opportunities",
+          "description": "Work in hospitals, clinics and communities."
+        }
+      ],
+
+      "image": {
+        "src": "/images/nursing-family.jpg",
+        "alt": "Nursing graduate and family abroad"
+      }
+    },
+
+    "studyPathway": {
+      "id": "nursing-study-pathway",
+      "component": "NursingStudyPathway",
+      "enabled": true,
+      "type": "pathway",
+
+      "eyebrow": {
+        "text": "Study & Qualification",
+        "icon": "GraduationCap"
+      },
+
+      "title": {
+        "prefix": "Your Nursing",
+        "highlight": "Study Pathway"
+      },
+
+      "description": "Understand the key stages from choosing your destination to preparing for an international nursing career.",
+
+      "steps": [
+        {
+          "number": "01",
+          "icon": "MapPin",
+          "title": "Choose",
+          "highlight": "Your Destination",
+          "description": "Pick a country based on your goals, eligibility and career plans."
+        },
+        {
+          "number": "02",
+          "icon": "ClipboardCheck",
+          "title": "Meet",
+          "highlight": "Eligibility",
+          "description": "Academic, age, English and other requirements."
+        },
+        {
+          "number": "03",
+          "icon": "FileCheck",
+          "title": "Admission",
+          "highlight": "Support",
+          "description": "University shortlisting, application and offer support."
+        },
+        {
+          "number": "04",
+          "icon": "GraduationCap",
+          "title": "Study",
+          "highlight": "Abroad",
+          "description": "Complete your nursing degree or programme."
+        },
+        {
+          "number": "05",
+          "icon": "BriefcaseMedical",
+          "title": "Graduate",
+          "highlight": "& Prepare",
+          "description": "Prepare for licensing and your career pathway."
+        }
+      ],
+
+      "cta": {
+        "label": "Explore Top Nursing Programs",
+        "href": "/courses/nursing/programs",
+        "icon": "ArrowRight"
+      }
+    },
+
+    "licensing": {
+      "id": "nursing-licensing",
+      "component": "NursingLicensing",
+      "enabled": true,
+      "type": "licensing",
+
+      "eyebrow": {
+        "text": "Work Abroad",
+        "icon": "BadgeCheck"
+      },
+
+      "title": {
+        "prefix": "Licensing & Registration",
+        "highlight": "to Work Abroad"
+      },
+
+      "description": "Understand the exams and registration requirements that may apply before you can practise nursing legally in your chosen country.",
+
+      "items": [
+        {
+          "id": 1,
+          "icon": "Stethoscope",
+          "title": "NCLEX-RN",
+          "country": "USA",
+          "description": "Required for registration as a registered nurse in the USA."
+        },
+        {
+          "id": 2,
+          "icon": "BadgeCheck",
+          "title": "NMK / NMC",
+          "country": "UK",
+          "description": "Nursing registration and professional requirements for the UK."
+        },
+        {
+          "id": 3,
+          "icon": "Languages",
+          "title": "English Tests",
+          "country": "Multiple Countries",
+          "description": "IELTS, OET or other accepted English-language requirements."
+        },
+        {
+          "id": 4,
+          "icon": "Globe2",
+          "title": "Other Country",
+          "country": "Registrations",
+          "description": "Requirements differ by country and nursing authority."
+        }
+      ],
+
+      "cta": {
+        "label": "Learn More About Licensing",
+        "href": "/resources/nursing-licensing",
+        "icon": "ArrowRight"
+      },
+
+      "disclaimer": "Licensing requirements can change and differ by country, qualification and applicant profile. Always verify requirements with the relevant nursing authority."
+    },
+
+    "medicoYatraSupport": {
+      "id": "nursing-medico-yatra-support",
+      "component": "NursingMedicoYatraSupport",
+      "enabled": true,
+      "type": "support",
+
+      "eyebrow": {
+        "text": "Why Medico Yatra",
+        "icon": "ShieldCheck"
+      },
+
+      "title": {
+        "prefix": "How Medico Yatra",
+        "highlight": "Helps You Succeed"
+      },
+
+      "description": "End-to-end support for your study, career and settlement journey.",
+
+      "image": {
+        "src": "/images/nursing-support.png",
+        "alt": "Medico Yatra nursing career support"
+      },
+
+      "services": [
+        {
+          "id": 1,
+          "icon": "UserRound",
+          "title": "Career Counselling",
+          "description": "Choose the right path based on your goals."
+        },
+        {
+          "id": 2,
+          "icon": "Building2",
+          "title": "University Admission",
+          "description": "Top universities and smooth admission support."
+        },
+        {
+          "id": 3,
+          "icon": "Plane",
+          "title": "Visa & Travel Support",
+          "description": "Help before visa and pre-departure preparation."
+        },
+        {
+          "id": 4,
+          "icon": "BadgeCheck",
+          "title": "Licensing Guidance",
+          "description": "Exam preparation and registration guidance."
+        },
+        {
+          "id": 5,
+          "icon": "UsersRound",
+          "title": "Family & Migration Support",
+          "description": "Guidance for family and migration pathways."
+        },
+        {
+          "id": 6,
+          "icon": "Home",
+          "title": "Post-Arrival Support",
+          "description": "Accommodation, orientation and more."
+        }
+      ]
+    },
+
+    "journey": {
+      "id": "nursing-journey",
+      "component": "NursingJourney",
+      "enabled": true,
+      "type": "journey",
+
+      "eyebrow": {
+        "text": "Your Nursing Journey",
+        "icon": "Route"
+      },
+
+      "title": {
+        "prefix": "Your Nursing Journey",
+        "highlight": "with Medico Yatra"
+      },
+
+      "description": "From understanding your goals to building your nursing career abroad, we stay with you throughout the journey.",
+
+      "steps": [
+        {
+          "number": "01",
+          "icon": "Target",
+          "title": "Understand",
+          "subtitle": "Your Goals"
+        },
+        {
+          "number": "02",
+          "icon": "MessageCircle",
+          "title": "Book Free",
+          "subtitle": "Counselling"
+        },
+        {
+          "number": "03",
+          "icon": "UserRoundCheck",
+          "title": "Profile",
+          "subtitle": "Evaluation"
+        },
+        {
+          "number": "04",
+          "icon": "Building2",
+          "title": "University",
+          "subtitle": "Shortlist"
+        },
+        {
+          "number": "05",
+          "icon": "FileCheck",
+          "title": "Offer Letter",
+          "subtitle": "& Admission"
+        },
+        {
+          "number": "06",
+          "icon": "Plane",
+          "title": "Visa",
+          "subtitle": "& Travel"
+        },
+        {
+          "number": "07",
+          "icon": "GraduationCap",
+          "title": "Study",
+          "subtitle": "Abroad"
+        },
+        {
+          "number": "08",
+          "icon": "BadgeCheck",
+          "title": "License &",
+          "subtitle": "Build Career"
+        },
+        {
+          "number": "09",
+          "icon": "Home",
+          "title": "Settle &",
+          "subtitle": "Grow with Family"
+        }
+      ]
+    },
+
+    "otherCourses": {
+      "id": "nursing-other-courses",
+      "component": "NursingOtherCourses",
+      "enabled": true,
+      "type": "other-courses",
+
+      "eyebrow": {
+        "text": "Explore More",
+        "icon": "LayoutGrid"
+      },
+
+      "title": {
+        "prefix": "Explore Other",
+        "highlight": "Healthcare Courses"
+      },
+
+      "courses": [
+        {
+          "id": "mbbs-abroad",
+          "name": "MBBS Abroad",
+          "slug": "mbbs-abroad",
+          "image": "/images/mbbs.jpg",
+          "href": "/courses/mbbs-abroad",
+          "icon": "Stethoscope"
+        },
+        {
+          "id": "bds",
+          "name": "Dentistry (BDS)",
+          "slug": "bds",
+          "image": "/images/Dentistry-BDS.jpg",
+          "href": "/courses/bds",
+          "icon": "Tooth"
+        },
+        {
+          "id": "pharmacy",
+          "name": "Pharmacy",
+          "slug": "pharmacy",
+          "image": "/images/young-woman-pharmacist.jpg",
+          "href": "/courses/pharmacy",
+          "icon": "Pill"
+        },
+        {
+          "id": "physiotherapy",
+          "name": "Physiotherapy",
+          "slug": "physiotherapy",
+          "image": "/images/physiotherapy.jpg",
+          "href": "/courses/physiotherapy",
+          "icon": "Accessibility"
+        },
+        {
+          "id": "mlt",
+          "name": "MLT (Lab Tech)",
+          "slug": "medical-lab-technology",
+          "image": "/images/mlt.jpg",
+          "href": "/courses/medical-lab-technology",
+          "icon": "Microscope"
+        }
+      ],
+
+      "cta": {
+        "label": "View All Courses",
+        "href": "/courses",
+        "icon": "ArrowRight"
+      }
+    },
+
+    "faq": {
+      "id": "nursing-faq",
+      "component": "NursingFAQ",
+      "enabled": true,
+      "type": "faq",
+
+      "eyebrow": {
+        "text": "Need Answers?",
+        "icon": "HelpCircle"
+      },
+
+      "title": {
+        "prefix": "Frequently Asked",
+        "highlight": "Questions"
+      },
+
+      "description": "Everything you need to know about studying nursing abroad, eligibility, licensing, career opportunities and support.",
+
+      "items": [
+        {
+          "id": 1,
+          "question": "Is nursing abroad a good career option?",
+          "answer": "Nursing is a globally recognised healthcare profession with opportunities across hospitals, clinics, communities and specialised healthcare settings. The right destination depends on your academic profile, goals and career plans."
+        },
+        {
+          "id": 2,
+          "question": "Which countries are best for Indian nursing students?",
+          "answer": "There is no single best country for every student. The right choice depends on your budget, eligibility, language requirements, licensing pathway, career goals and long-term plans."
+        },
+        {
+          "id": 3,
+          "question": "Can I settle abroad after studying nursing?",
+          "answer": "Some countries have work and migration pathways for qualified healthcare professionals. Eligibility and immigration rules vary by country and can change over time."
+        },
+        {
+          "id": 4,
+          "question": "Which exams are required to work abroad as a nurse?",
+          "answer": "Requirements depend on the country. Some destinations may require licensing exams such as NCLEX-RN, while others have their own registration and assessment processes."
+        },
+        {
+          "id": 5,
+          "question": "Do I need IELTS or OET?",
+          "answer": "English-language requirements vary by country and registration authority. IELTS, OET or another accepted English test may be required depending on the pathway."
+        },
+        {
+          "id": 6,
+          "question": "How much can nurses earn abroad?",
+          "answer": "Nursing salaries vary significantly based on country, role, experience, location and employer. We can provide an indicative range during counselling."
+        },
+        {
+          "id": 7,
+          "question": "How long does a nursing course take?",
+          "answer": "Course duration varies depending on the country, university and programme. Your counsellor can help you understand the duration for your preferred destination."
+        },
+        {
+          "id": 8,
+          "question": "Can I take my family with me?",
+          "answer": "Family migration options depend on the destination, visa type, employment status and current immigration rules. We can help you understand the relevant pathway."
+        },
+        {
+          "id": 9,
+          "question": "Will Medico Yatra help with licensing?",
+          "answer": "Yes. We provide guidance around relevant licensing exams, registration requirements and the career pathway for your selected destination."
+        },
+        {
+          "id": 10,
+          "question": "How does Medico Yatra help students?",
+          "answer": "We support students across counselling, university selection, admission, visa and travel preparation, licensing guidance and post-arrival support."
+        }
+      ],
+
+      "supportCta": {
+        "icon": "MessageCircle",
+        "title": "Still have questions?",
+        "description": "Talk to a Medico Yatra counsellor.",
+        "button": {
+          "label": "Get Free Counselling",
+          "href": "/counselling",
+          "icon": "ArrowRight"
+        }
+      }
+    },
+
+    "cta": {
+      "id": "nursing-final-cta",
+      "component": "NursingCTA",
+      "enabled": true,
+      "type": "cta",
+
+      "title": {
+        "line1": "Your Dream. Our Guidance.",
+        "highlight": "A Global Future."
+      },
+
+      "description": "Study nursing abroad and build a respected career with better opportunities and the support to move forward with confidence.",
+
+      "primaryButton": {
+        "label": "Book Free Counselling",
+        "href": "/counselling",
+        "icon": "ArrowRight"
+      },
+
+      "image": {
+        "src": "/images/nursing-cta.png",
+        "alt": "Nursing professionals and family abroad"
+      },
+
+      "background": {
+        "type": "gradient",
+        "animated": true
+      }
+    }
+  }
+}

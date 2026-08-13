@@ -99,7 +99,7 @@ const destinations = [
     country: "Bangladesh",
     slug: "bangladesh",
     flag: "🇧🇩",
-    image: "/images/countries/bangladesh.png",
+    image: "/images/countries/bangladesh.jpg",
     points: [
       "NMC Recognized",
       "Low Tuition Fees",
@@ -258,7 +258,7 @@ export default function TopMBBSDestinations() {
           MAIN CONTAINER
       ====================================================== */}
 
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8 xl:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-[1200px] overflow-hidden px-4 sm:px-6 lg:px-8 xl:px-10">
 
         {/* =================================================
             SECTION HEADER

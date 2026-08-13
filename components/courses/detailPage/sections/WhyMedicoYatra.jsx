@@ -155,7 +155,7 @@ export default function WhyMedicoYatra() {
   const nextRef = useRef(null);
 
   return (
-    <section className="relative isolate overflow-hidden bg-white py-16 sm:py-20 lg:py-16">
+    <section className="relative isolate overflow-hidden bg-white py-16 sm:py-20 lg:pt-5 lg:pb-15">
 
       {/* ======================================================
           BACKGROUND
@@ -297,7 +297,7 @@ export default function WhyMedicoYatra() {
           CONTAINER
       ======================================================= */}
 
-      <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1200px] overflow-hidden px-4 sm:px-6 lg:px-8">
 
 
         {/* ====================================================

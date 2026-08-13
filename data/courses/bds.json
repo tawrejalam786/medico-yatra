@@ -1,0 +1,88 @@
+{
+  "slug": "bds-dental",
+  "courseType": "Dental",
+  "title": "BDS Abroad",
+  "shortTitle": "BDS",
+  "description": "Explore international dental education opportunities with guidance from MedicoYatra.",
+
+  "hero": {
+    "enabled": true,
+    "badge": "Dental Course",
+    "title": "Study BDS Abroad",
+    "description": "Build your dental career with globally recognised universities.",
+    "image": "/images/Dentistry-BDS.jpg"
+  },
+
+  "overview": {
+    "enabled": true,
+    "title": "BDS Course Overview",
+    "description": "BDS abroad provides students with opportunities to study dentistry internationally.",
+    "items": [
+      {
+        "label": "Duration",
+        "value": "5 Years"
+      },
+      {
+        "label": "Degree",
+        "value": "BDS"
+      },
+      {
+        "label": "Medium",
+        "value": "English"
+      },
+      {
+        "label": "Mode",
+        "value": "On Campus"
+      }
+    ]
+  },
+
+  "eligibility": {
+    "enabled": true,
+    "title": "BDS Eligibility",
+    "requirements": [
+      "Passed 12th with Physics, Chemistry and Biology",
+      "Meet university eligibility criteria",
+      "NEET qualification as applicable",
+      "Valid passport"
+    ]
+  },
+
+  "neetRequirement": {
+    "enabled": true,
+    "title": "NEET Requirement for BDS",
+    "description": "NEET requirements depend on the applicable rules for Indian students."
+  },
+
+  "fmge": {
+    "enabled": true,
+    "title": "FMGE Preparation",
+    "description": "Dental students can receive guidance regarding licensing and examination pathways."
+  },
+
+  "usmle": {
+    "enabled": false
+  },
+
+  "fees": {
+    "enabled": true,
+    "title": "BDS Fees",
+    "startingFrom": "₹2.5 Lakhs / Year",
+    "description": "Fees vary depending on university and destination."
+  },
+
+  "faq": {
+    "enabled": true,
+    "title": "BDS FAQs",
+    "items": [
+      {
+        "question": "Can I study BDS abroad?",
+        "answer": "Yes, several universities offer dental programs for international students."
+      },
+      {
+        "question": "Is NEET required?",
+        "answer": "Requirements depend on applicable regulations and university rules."
+      }
+    ]
+  }
+}

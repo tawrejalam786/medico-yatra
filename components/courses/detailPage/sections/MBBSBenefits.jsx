@@ -10,44 +10,51 @@ import {
   Target,
   PlaneTakeoff,
   BookCopy,
+  ChevronRight,
+  Headphones,
+  MessageCircle,
 } from "lucide-react";
 
-const benefits = [
-  {
-    icon: Target,
-    number: "01",
-    title: "Personalised",
-    highlight: "Career Counselling",
-    description:
-      "Experts help you choose the right medical education path based on your goals.",
-  },
-  {
-    icon: Building2,
-    number: "02",
-    title: "University",
-    highlight: "Shortlisting",
-    description:
-      "Carefully selected NMC-list aware universities aligned with your requirements.",
-  },
-  {
-    icon: PlaneTakeoff,
-    number: "03",
-    title: "Admission & Visa",
-    highlight: "Guidance",
-    description:
-      "End-to-end assistance for a smooth admission and documentation process.",
-  },
-  {
-    icon: BookCopy,
-    number: "04",
-    title: "Integrated",
-    highlight: "Coaching",
-    description:
-      "FMGE / NExT & USMLE preparation support designed into your journey.",
-  },
-];
+const ICONS = {
+  ArrowUpRight,
+  ChevronRight,
+  GraduationCap,
+  Headphones,
+  MessageCircle,
+  Target,
+  PlaneTakeoff,
+  BookCopy,
+  Building2,
+  ChevronRight,
+  Headphones,
+  MessageCircle,
+  ShieldCheck,
+};
 
-export default function MBBSBenefits() {
+// ============================================================
+// FALLBACK ICON
+// Agar JSON me icon missing / galat naam hua
+// ============================================================
+
+function CircleFallback({ className = "h-4 w-4" }) {
+  return (
+    <span
+      className={`inline-flex items-center justify-center rounded-full border-2 border-current ${className}`}
+    />
+  );
+}
+
+function DynamicIcon({
+  name,
+  className = "h-4 w-4",
+  ...props
+}) {
+  const Icon = ICONS[name] || CircleFallback;
+
+  return <Icon className={className} {...props} />;
+}
+
+export default function MBBSBenefits({data}) {
   return (
     <section className="relative overflow-hidden bg-white py-6 sm:py-12 lg:py-8">
       {/* =====================================================
@@ -142,20 +149,19 @@ export default function MBBSBenefits() {
             <span className="h-1.5 w-1.5 rounded-full bg-[#0263CC]" />
 
             <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#0263CC] sm:text-[11px]">
-              Your Journey, Our Support
+              {data.eyebrow.text}
             </span>
           </div>
 
           <h2 className="text-[24px] font-extrabold tracking-[-0.8px] text-[#071A49] sm:text-[30px] lg:text-[34px]">
-            Everything You Need to{" "}
+            {data.title.prefix}{" "}
             <span className="bg-gradient-to-r from-[#0263CC] to-[#02A7BB] bg-clip-text text-transparent">
-              Start Your Journey
+               {data.title.highlight}
             </span>
           </h2>
 
           <p className="mx-auto mt-2 max-w-2xl text-xs leading-5 text-slate-500 sm:text-sm sm:leading-6">
-            From choosing the right university to admission, visa and exam
-            preparation, our experts stay with you at every important step.
+            {data.description}
           </p>
         </motion.div>
 
@@ -193,7 +199,7 @@ export default function MBBSBenefits() {
               lg:grid-cols-4
             "
           >
-            {benefits.map((benefit, index) => {
+            {data.items.map((benefit, index) => {
               const Icon = benefit.icon;
 
               return (
@@ -281,7 +287,10 @@ export default function MBBSBenefits() {
                         sm:w-13
                       "
                     >
-                      <Icon className="h-5 w-5 sm:h-5.5 sm:w-5.5" />
+                       <DynamicIcon
+                      name={benefit.icon}
+                     className="h-5 w-5 sm:h-5.5 sm:w-5.5"
+                    />
                     </motion.div>
 
                     {/* Content */}
@@ -333,33 +342,34 @@ export default function MBBSBenefits() {
         {/* =================================================
             TRUST LINE
         ================================================== */}
+{data?.trustLine?.length > 0 && (
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.4, duration: 0.5 }}
+    className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center"
+  >
+    {data.trustLine.map((item, index) => (
+      <div
+        key={`${item.text}-${index}`}
+        className="flex items-center gap-1.5 text-[10px] font-semibold text-slate-500 sm:text-xs"
+      >
+        <DynamicIcon
+          name={item.icon}
+          className="h-3.5 w-3.5 text-[#0263CC]"
+        />
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center"
-        >
-          <div className="flex items-center gap-1.5 text-[10px] font-semibold text-slate-500 sm:text-xs">
-            <ShieldCheck className="h-3.5 w-3.5 text-[#0263CC]" />
-            Transparent guidance
-          </div>
+        <span>{item.text}</span>
 
-          <span className="hidden h-3 w-px bg-slate-200 sm:block" />
-
-          <div className="flex items-center gap-1.5 text-[10px] font-semibold text-slate-500 sm:text-xs">
-            <GraduationCap className="h-3.5 w-3.5 text-[#0263CC]" />
-            Medical education specialists
-          </div>
-
-          <span className="hidden h-3 w-px bg-slate-200 sm:block" />
-
-          <div className="flex items-center gap-1.5 text-[10px] font-semibold text-slate-500 sm:text-xs">
-            <UsersRound className="h-3.5 w-3.5 text-[#0263CC]" />
-            Student-first support
-          </div>
-        </motion.div>
+        {/* Divider */}
+        {index !== data.trustLine.length - 1 && (
+          <span className="ml-3 hidden h-3 w-px bg-slate-200 sm:block" />
+        )}
+      </div>
+    ))}
+  </motion.div>
+)}
       </div>
     </section>
   );

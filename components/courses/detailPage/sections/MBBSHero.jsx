@@ -9,32 +9,66 @@ import {
   GraduationCap,
   Headphones,
   Map,
+  Globe,
   MessageCircle,
   ShieldCheck,
   Stethoscope,
   Users,
 } from "lucide-react";
 
-const highlights = [
-  {
-    icon: GraduationCap,
-    text: "NMC-list Awareness",
-  },
-  {
-    icon: ShieldCheck,
-    text: "Transparent Guidance",
-  },
-  {
-    icon: Users,
-    text: "End-to-End Support",
-  },
-  {
-    icon: Stethoscope,
-    text: "Medical Experts",
-  },
-];
 
-export default function MBBSHero() {
+
+const ICONS = {
+  ArrowRight,
+  ChevronRight,
+  GraduationCap,
+  Headphones,
+  Map,
+  MessageCircle,
+  ShieldCheck,
+  Stethoscope,
+  Users,
+  Globe,
+  // BookOpen,
+  // Building2,
+  // CheckCircle,
+  // Phone,
+  // Mail,
+  // Calendar,
+  // HeartPulse,
+  // Award,
+  // Star,
+  // Plane,
+};
+
+// ============================================================
+// FALLBACK ICON
+// Agar JSON me icon missing / galat naam hua
+// ============================================================
+
+function CircleFallback({ className = "h-4 w-4" }) {
+  return (
+    <span
+      className={`inline-flex items-center justify-center rounded-full border-2 border-current ${className}`}
+    />
+  );
+}
+
+// ============================================================
+// DYNAMIC ICON COMPONENT
+// ============================================================
+
+function DynamicIcon({
+  name,
+  className = "h-4 w-4",
+  ...props
+}) {
+  const Icon = ICONS[name] || CircleFallback;
+
+  return <Icon className={className} {...props} />;
+}
+
+export default function MBBSHero({data}) {
   return (
     <section className="relative isolate w-full overflow-hidden bg-[#F5F9FF]">
       {/* =====================================================
@@ -186,25 +220,27 @@ export default function MBBSHero() {
                 className="mb-5 flex min-w-0 items-center gap-1.5 overflow-hidden text-[10px] font-medium sm:mb-7 sm:text-xs"
               >
                 <Link
-                  href="/"
+                  href={data.hero.breadcrumb[0].href}
                   className="shrink-0 text-slate-500 transition-colors hover:text-[#0263CC]"
                 >
-                  Home
+                  {
+                    data.hero.breadcrumb[0].label
+                  }
                 </Link>
 
                 <ChevronRight className="h-3 w-3 shrink-0 text-slate-300 sm:h-3.5 sm:w-3.5" />
 
                 <Link
-                  href="/courses"
+                  href={data.hero.breadcrumb[1].href}
                   className="shrink-0 text-slate-500 transition-colors hover:text-[#0263CC]"
                 >
-                  Courses
+                  {data.hero.breadcrumb[1].label}
                 </Link>
 
                 <ChevronRight className="h-3 w-3 shrink-0 text-slate-300 sm:h-3.5 sm:w-3.5" />
 
                 <span className="min-w-0 truncate font-semibold text-[#0263CC]">
-                  MBBS Abroad
+                {data.hero.breadcrumb[1].label}
                 </span>
               </motion.nav>
 
@@ -230,7 +266,7 @@ export default function MBBSHero() {
                 </span>
 
                 <span className="truncate text-[9px] font-bold tracking-[0.04em] text-[#0263CC] sm:text-xs">
-                  MEDICAL EDUCATION ABROAD
+                  {data.hero.badge.text}
                 </span>
               </motion.div>
 
@@ -265,16 +301,16 @@ export default function MBBSHero() {
                   2xl:text-[46px]
                 "
               >
-                Your Path to Becoming
+                 {data.hero.title.line1}
                 <span className="block">
-                  a Doctor Starts With a{" "}
+                  {data.hero.title.line2}{" "}
                   <span className="bg-gradient-to-r from-[#0263CC] to-[#02A7BB] bg-clip-text text-transparent">
-                    Plan.
+                   {data.hero.title.highlight}
                   </span>
                 </span>
 
                 <span className="block text-[#0263CC]">
-                  Not Just an Admission.
+                   {data.hero.title.line3}
                 </span>
               </motion.h1>
 
@@ -306,9 +342,7 @@ export default function MBBSHero() {
                   md:leading-7
                 "
               >
-                Studying MBBS abroad can be a smart, structured route to a medical career
-— when it's planned properly. Medico Yatra helps you choose the right country and
-university, complete your admission and visa, and prepare for FMGE / NExT from day one..
+                {data.hero.description}
               </motion.p>
 
               {/* CTA */}
@@ -339,7 +373,7 @@ university, complete your admission and visa, and prepare for FMGE / NExT from d
                 "
               >
                 <Link
-                  href="/countries"
+                  href={data.hero.primaryCta.href}
                   className="
                     group
                     inline-flex
@@ -363,13 +397,17 @@ university, complete your admission and visa, and prepare for FMGE / NExT from d
                     sm:text-sm
                   "
                 >
-                  Explore Countries
+                 {data.hero.primaryCta.label}
 
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  
+                    <DynamicIcon
+                      name={data.hero.primaryCta.icon}
+                      className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                    />
                 </Link>
 
                 <Link
-                  href="/counselling"
+                  href={data.hero.secondaryCta.href}
                   className="
                     group
                     inline-flex
@@ -396,9 +434,13 @@ university, complete your admission and visa, and prepare for FMGE / NExT from d
                     sm:text-sm
                   "
                 >
-                  <MessageCircle className="h-4 w-4" />
+                 
+                    <DynamicIcon
+                      name={data.hero.secondaryCta.icon}
+                      className="h-4 w-4"
+                    />
 
-                  Book Free Counselling
+                  {data.hero.secondaryCta.label}
                 </Link>
               </motion.div>
 
@@ -430,7 +472,7 @@ university, complete your admission and visa, and prepare for FMGE / NExT from d
                   md:max-w-[700px]
                 "
               >
-                {highlights.map((item, index) => {
+                {data.hero.highlights.map((item, index) => {
                   const Icon = item.icon;
 
                   return (
@@ -450,14 +492,18 @@ university, complete your admission and visa, and prepare for FMGE / NExT from d
                         sm:px-2
                         sm:py-0
                         ${
-                          index !== highlights.length - 1
+                          index !== data.hero.highlights.length - 1
                             ? "sm:border-r sm:border-slate-300"
                             : ""
                         }
                       `}
                     >
                       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[#0263CC] shadow-sm ring-1 ring-[#0263CC]/10 sm:h-8 sm:w-8">
-                        <Icon className="h-3.5 w-3.5" />
+                        {/* <Icon className="h-3.5 w-3.5" /> */}
+                         <DynamicIcon
+                      name={Icon}
+                      className="h-3.5 w-3.5"
+                    />
                       </div>
 
                       <span className="text-[8px] font-semibold leading-3 text-slate-600 min-[375px]:text-[9px] sm:text-[10px] sm:leading-4">
@@ -499,18 +545,18 @@ university, complete your admission and visa, and prepare for FMGE / NExT from d
               {/* Visual area */}
 
              <div
-  className="
-    relative
-    h-[350px]
-    w-full
-    min-[375px]:h-[400px]
-    sm:h-[470px]
-    md:h-[530px]
-    lg:h-[610px]
-    xl:h-[700px]
-    2xl:h-[640px]
-  "
->
+                className="
+                  relative
+                  h-[350px]
+                  w-full
+                  min-[375px]:h-[400px]
+                  sm:h-[470px]
+                  md:h-[530px]
+                  lg:h-[610px]
+                  xl:h-[700px]
+                  2xl:h-[640px]
+                "
+              >
                 {/* Main circle */}
 
                 <motion.div
@@ -619,6 +665,7 @@ university, complete your admission and visa, and prepare for FMGE / NExT from d
                   "
                 >
                   <Map className="h-5 w-5" />
+                  
                 </motion.div>
 
                 {/* Small floating dot */}
@@ -684,7 +731,7 @@ university, complete your admission and visa, and prepare for FMGE / NExT from d
   "
 >
   <Image
-    src="/images/mbbs-hero-doctors.png"
+    src={data.hero.image.src}
     alt="Medical professionals guiding students for MBBS abroad"
     fill
     priority
@@ -699,7 +746,6 @@ university, complete your admission and visa, and prepare for FMGE / NExT from d
     className="
       object-contain
       object-bottom
-
       scale-[1.15]
       min-[375px]:scale-[1.18]
       sm:scale-[1.20]
@@ -759,25 +805,25 @@ university, complete your admission and visa, and prepare for FMGE / NExT from d
                 >
                   <div className="flex items-start gap-2.5 sm:gap-3">
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#EAF3FF] text-[#0263CC] sm:h-10 sm:w-10">
-                      <Headphones className="h-4 w-4 sm:h-5 sm:w-5" />
+                       <DynamicIcon
+                      name={data.hero.floatingCard.icon}
+                      className="h-4 w-4 sm:h-5 sm:w-5"
+                    />
                     </div>
 
                     <div className="min-w-0">
                       <h3 className="text-xs font-extrabold leading-4 text-[#071A49] sm:text-sm sm:leading-5">
-                        Not sure where
-                        <br />
-                        to start?
+                      {data.hero.floatingCard.title}
                       </h3>
 
                       <p className="mt-1 text-[8px] leading-3.5 text-slate-500 sm:text-[9px] sm:leading-4">
-                        Talk to our expert counsellors for personalised
-                        guidance.
+                        {data.hero.floatingCard.description}
                       </p>
                     </div>
                   </div>
 
                   <Link
-                    href="/counselling"
+                    href={data.hero.floatingCard.button.href}
                     className="
                       mt-3
                       flex
@@ -797,7 +843,7 @@ university, complete your admission and visa, and prepare for FMGE / NExT from d
                       sm:text-xs
                     "
                   >
-                    Let&apos;s Talk
+                    {data.hero.floatingCard.button.label}
                   </Link>
                 </motion.div>
               </div>
