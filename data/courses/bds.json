@@ -1,88 +1,1155 @@
 {
-  "slug": "bds-dental",
-  "courseType": "Dental",
-  "title": "BDS Abroad",
-  "shortTitle": "BDS",
-  "description": "Explore international dental education opportunities with guidance from MedicoYatra.",
-
-  "hero": {
-    "enabled": true,
-    "badge": "Dental Course",
-    "title": "Study BDS Abroad",
-    "description": "Build your dental career with globally recognised universities.",
-    "image": "/images/Dentistry-BDS.jpg"
+  "course": {
+    "id": "bds-dental",
+    "slug": "bds-dental",
+    "name": "BDS & Dental Courses Abroad",
+    "shortName": "BDS",
+    "category": "Dental Education Abroad",
+    "status": "published",
+    "version": 1
   },
 
-  "overview": {
-    "enabled": true,
-    "title": "BDS Course Overview",
-    "description": "BDS abroad provides students with opportunities to study dentistry internationally.",
-    "items": [
-      {
-        "label": "Duration",
-        "value": "5 Years"
+  "page": {
+    "component": "BDSPage",
+    "sections": [
+      "hero",
+      "whyDentistry",
+      "salary",
+      "familySettlement",
+      "dentalCourses",
+      "career",
+      "studyPathway",
+      "licensing",
+      "howMedicoYatraHelps",
+      "journey",
+      "otherCourses",
+      "leadCapture",
+      "faq",
+      "cta"
+    ]
+  },
+
+  "theme": {
+    "primary": "#0263CC",
+    "secondary": "#02A7BB",
+    "accent": "#4DA5EC",
+    "dark": "#071A49",
+    "success": "#16A05D"
+  },
+
+  "sections": {
+    "hero": {
+      "id": "bds-hero",
+      "component": "BDSHero",
+      "enabled": true,
+      "type": "hero",
+
+      "breadcrumb": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Courses",
+          "href": "/courses"
+        },
+        {
+          "label": "BDS & Dental Courses",
+          "href": "/courses/bds-dental"
+        }
+      ],
+
+      "badge": {
+        "text": "STUDY DENTISTRY ABROAD",
+        "icon": "Stethoscope"
       },
-      {
-        "label": "Degree",
-        "value": "BDS"
+
+      "title": {
+        "line1": "Study Dentistry Abroad —",
+        "line2": "BDS, Dental Hygiene",
+        "highlight": "& More",
+        "line3": "Build a Global Healthcare Career."
       },
-      {
-        "label": "Medium",
-        "value": "English"
+
+      "description": "Dentistry is a respected, in-demand healthcare field worldwide. By studying a dental course abroad — BDS, Dental Hygiene, or a related allied programme — and clearing the destination country's licensing and English requirements, you can open the door to a strong global career. Medico Yatra guides your study-abroad journey end to end.",
+
+      "primaryCta": {
+        "label": "Book Free Counselling",
+        "href": "/counselling",
+        "icon": "ArrowRight"
       },
-      {
-        "label": "Mode",
-        "value": "On Campus"
+
+      "secondaryCta": {
+        "label": "See Dentist Salaries",
+        "href": "#dentist-salary",
+        "icon": "ArrowDown"
+      },
+
+      "highlights": [
+        {
+          "icon": "ShieldCheck",
+          "text": "Honest Guidance"
+        },
+        {
+          "icon": "Languages",
+          "text": "Licensing & English Support"
+        },
+        {
+          "icon": "UsersRound",
+          "text": "Family Settlement Pathways"
+        },
+        {
+          "icon": "BriefcaseMedical",
+          "text": "End-to-End Support"
+        }
+      ],
+
+      "image": {
+        "src": "/images/bds-hero-dentist.png",
+        "alt": "Dentist guiding students about studying dentistry abroad",
+        "priority": true
+      },
+
+      "floatingCard": {
+        "icon": "Headphones",
+        "title": "Not sure which dental path is right for you?",
+        "description": "Talk to our counsellors for personalised guidance on BDS, Dental Hygiene and allied dental courses.",
+        "button": {
+          "label": "Let's Talk",
+          "href": "/counselling"
+        }
+      },
+
+      "microTrust": "Honest guidance · Licensing & English-exam support · Family-settlement pathways* · End-to-end support",
+
+      "microTrustNote": "*Subject to each country's eligibility and immigration rules."
+    },
+
+    "whyDentistry": {
+      "id": "why-dentistry",
+      "component": "WhyDentistry",
+      "enabled": true,
+      "type": "benefits",
+
+      "eyebrow": {
+        "text": "Why Dentistry Now",
+        "icon": "CircleCheck"
+      },
+
+      "title": {
+        "prefix": "Why Dentistry Is a",
+        "highlight": "Smart, Future-Ready Career"
+      },
+
+      "description": "Dentistry combines healthcare impact, professional growth and global career possibilities when planned with the right qualification and licensing pathway.",
+
+      "items": [
+        {
+          "id": 1,
+          "number": "01",
+          "icon": "TrendingUp",
+          "title": "Steady Global",
+          "highlight": "Demand",
+          "description": "Steady global demand for oral-health professionals."
+        },
+        {
+          "id": 2,
+          "number": "02",
+          "icon": "Award",
+          "title": "Respected &",
+          "highlight": "Skilled Profession",
+          "description": "Dentistry is a respected and well-paid skilled healthcare profession."
+        },
+        {
+          "id": 3,
+          "number": "03",
+          "icon": "Layers3",
+          "title": "Multiple",
+          "highlight": "Career Paths",
+          "description": "Choose clinical practice, specialisation, academics, research or allied dental roles."
+        },
+        {
+          "id": 4,
+          "number": "04",
+          "icon": "Globe2",
+          "title": "Global",
+          "highlight": "Mobility",
+          "description": "With the right licensing, dentists can work across many countries."
+        },
+        {
+          "id": 5,
+          "number": "05",
+          "icon": "UsersRound",
+          "title": "Family-Friendly",
+          "highlight": "Pathways",
+          "description": "Several countries offer family migration pathways subject to eligibility and current rules."
+        }
+      ],
+
+      "note": "Eligibility and immigration rules vary by country and can change. We help you understand current options."
+    },
+
+    "salary": {
+      "id": "dentist-salary",
+      "component": "DentistSalary",
+      "enabled": true,
+      "type": "salary",
+
+      "eyebrow": {
+        "text": "Global Dental Careers",
+        "icon": "CircleDollarSign"
+      },
+
+      "title": {
+        "prefix": "What Do Dentists",
+        "highlight": "Earn Abroad?"
+      },
+
+      "description": "Below is an illustrative comparison of indicative average annual salaries for qualified, licensed dentists across selected countries. Use it to explore possibilities — not as a promise.",
+
+      "warning": {
+        "enabled": true,
+        "icon": "TriangleAlert",
+        "title": "Important Salary Context",
+        "description": "Figures are illustrative and approximate for qualified and licensed dentists. They vary by experience, private vs public practice, city, currency and year. Earning these requires meeting each country's dental licensing, registration and immigration requirements. Verify with official sources before relying on them."
+      },
+
+      "currency": "USD",
+      "period": "Annual",
+      "sourceNote": "Source & year must be verified before publishing.",
+
+      "countries": [
+        {
+          "id": 1,
+          "country": "USA",
+          "flag": "🇺🇸",
+          "salary": "~$170,000"
+        },
+        {
+          "id": 2,
+          "country": "Canada",
+          "flag": "🇨🇦",
+          "salary": "~$130,000"
+        },
+        {
+          "id": 3,
+          "country": "Australia",
+          "flag": "🇦🇺",
+          "salary": "~$100,000"
+        },
+        {
+          "id": 4,
+          "country": "Norway",
+          "flag": "🇳🇴",
+          "salary": "~$90,000"
+        },
+        {
+          "id": 5,
+          "country": "Denmark",
+          "flag": "🇩🇰",
+          "salary": "~$90,000"
+        },
+        {
+          "id": 6,
+          "country": "Ireland",
+          "flag": "🇮🇪",
+          "salary": "~$85,000"
+        },
+        {
+          "id": 7,
+          "country": "Netherlands",
+          "flag": "🇳🇱",
+          "salary": "~$85,000"
+        },
+        {
+          "id": 8,
+          "country": "Germany",
+          "flag": "🇩🇪",
+          "salary": "~$80,000"
+        },
+        {
+          "id": 9,
+          "country": "UK",
+          "flag": "🇬🇧",
+          "salary": "~$80,000"
+        },
+        {
+          "id": 10,
+          "country": "Sweden",
+          "flag": "🇸🇪",
+          "salary": "~$80,000"
+        }
+      ],
+
+      "hygieneNote": {
+        "enabled": true,
+        "icon": "HeartPulse",
+        "title": "Dental Hygiene & Therapy",
+        "description": "Dental hygienists and dental therapists are separate, in-demand roles. Their pay is generally lower than a dentist's, but they are sought after in many countries and may sometimes have a more accessible work or registration route. Figures vary widely."
+      },
+
+      "honestFraming": {
+        "enabled": true,
+        "description": "These are possibilities for licensed dentists, not guarantees. To practise abroad you will typically need to clear the destination country's dental licensing or registration process and meet English and visa requirements."
+      },
+
+      "cta": {
+        "label": "Plan My Dental Career Abroad",
+        "href": "/counselling",
+        "icon": "ArrowRight"
       }
-    ]
-  },
+    },
 
-  "eligibility": {
-    "enabled": true,
-    "title": "BDS Eligibility",
-    "requirements": [
-      "Passed 12th with Physics, Chemistry and Biology",
-      "Meet university eligibility criteria",
-      "NEET qualification as applicable",
-      "Valid passport"
-    ]
-  },
+    "familySettlement": {
+      "id": "family-settlement",
+      "component": "DentalFamilySettlement",
+      "enabled": true,
+      "type": "family-settlement",
 
-  "neetRequirement": {
-    "enabled": true,
-    "title": "NEET Requirement for BDS",
-    "description": "NEET requirements depend on the applicable rules for Indian students."
-  },
-
-  "fmge": {
-    "enabled": true,
-    "title": "FMGE Preparation",
-    "description": "Dental students can receive guidance regarding licensing and examination pathways."
-  },
-
-  "usmle": {
-    "enabled": false
-  },
-
-  "fees": {
-    "enabled": true,
-    "title": "BDS Fees",
-    "startingFrom": "₹2.5 Lakhs / Year",
-    "description": "Fees vary depending on university and destination."
-  },
-
-  "faq": {
-    "enabled": true,
-    "title": "BDS FAQs",
-    "items": [
-      {
-        "question": "Can I study BDS abroad?",
-        "answer": "Yes, several universities offer dental programs for international students."
+      "eyebrow": {
+        "text": "Beyond Your Career",
+        "icon": "HouseHeart"
       },
-      {
-        "question": "Is NEET required?",
-        "answer": "Requirements depend on applicable regulations and university rules."
+
+      "title": {
+        "prefix": "A Career That Can Become",
+        "highlight": "A Life Abroad — With Your Family"
+      },
+
+      "description": "For many dental professionals, the goal is a future abroad. In several countries, skilled-worker and migration pathways can allow qualified, licensed dentists and some allied roles to live, work and bring their family, subject to eligibility.",
+
+      "image": {
+        "src": "/images/dental-family-abroad.jpg",
+        "alt": "Dental professional building a life abroad with family"
+      },
+
+      "benefits": [
+        {
+          "icon": "UsersRound",
+          "title": "Dependent Visas",
+          "description": "Potential dependent visa pathways for spouse and children."
+        },
+        {
+          "icon": "House",
+          "title": "Long-Term Settlement",
+          "description": "Routes toward long-term residency or settlement after meeting eligibility conditions."
+        },
+        {
+          "icon": "GraduationCap",
+          "title": "Local Education",
+          "description": "Access to local schooling and education options for family members in many destinations."
+        },
+        {
+          "icon": "BriefcaseBusiness",
+          "title": "Spouse Work Rights",
+          "description": "Spouse work rights may be available in several countries, depending on current rules."
+        }
+      ],
+
+      "warning": {
+        "enabled": true,
+        "icon": "TriangleAlert",
+        "title": "Honest & Compliant Framing",
+        "description": "Immigration, dependent-visa and settlement rules differ by country and change frequently. Eligibility depends on qualification, licensing or registration, job offer, language scores and current policy."
+      },
+
+      "disclaimer": "Medico Yatra does not guarantee visas, jobs, settlement or PR. We provide current, honest information and connect students with the right support across the Future Yatra group.",
+
+      "cta": {
+        "label": "Talk to Us About Family-Settlement Options",
+        "href": "/counselling",
+        "icon": "ArrowRight"
       }
-    ]
+    },
+
+    "dentalCourses": {
+      "id": "dental-courses",
+      "component": "DentalCourses",
+      "enabled": true,
+      "type": "course-options",
+
+      "eyebrow": {
+        "text": "Explore Dental Education",
+        "icon": "GraduationCap"
+      },
+
+      "title": {
+        "prefix": "Dental Courses You Can",
+        "highlight": "Study Abroad"
+      },
+
+      "description": "Choose a dental pathway based on your academic profile, career goals and the country where you eventually want to work.",
+
+      "items": [
+        {
+          "id": 1,
+          "icon": "Stethoscope",
+          "title": "BDS / DDS / DMD",
+          "subtitle": "Dentistry",
+          "description": "The core dental surgery degree. Degree titles vary by country."
+        },
+        {
+          "id": 2,
+          "icon": "HeartPulse",
+          "title": "Dental Hygiene",
+          "subtitle": "Oral Health",
+          "description": "Prevention and oral-health-focused allied dental role."
+        },
+        {
+          "id": 3,
+          "icon": "Activity",
+          "title": "Dental Therapy",
+          "subtitle": "Clinical Care",
+          "description": "Clinical dental care within a defined scope depending on the country."
+        },
+        {
+          "id": 4,
+          "icon": "Wrench",
+          "title": "Dental Technology",
+          "subtitle": "Dental Appliances",
+          "description": "Designing and making dental appliances, prosthetics and related products."
+        },
+        {
+          "id": 5,
+          "icon": "PlusCircle",
+          "title": "Other Dental Allied",
+          "subtitle": "Specialised Programs",
+          "description": "Explore other dental allied programmes based on your specific career goal."
+        }
+      ],
+
+      "supportingLine": "Not sure which dental path fits you? That's exactly what free counselling is for.",
+
+      "cta": {
+        "label": "Find My Dental Path",
+        "href": "/counselling",
+        "icon": "ArrowRight"
+      }
+    },
+
+    "career": {
+      "id": "dental-career",
+      "component": "DentalCareer",
+      "enabled": true,
+      "type": "career-options",
+
+      "eyebrow": {
+        "text": "Career Possibilities",
+        "icon": "BriefcaseMedical"
+      },
+
+      "title": {
+        "prefix": "Room to",
+        "highlight": "Grow & Specialise"
+      },
+
+      "description": "Dentistry offers multiple career directions — from clinical practice to specialisation, academics and allied dental roles.",
+
+      "roles": [
+        {
+          "id": 1,
+          "icon": "Stethoscope",
+          "title": "General Dentist",
+          "description": "Clinics, hospitals and private practice."
+        },
+        {
+          "id": 2,
+          "icon": "Brain",
+          "title": "Specialisations",
+          "description": "Orthodontics, endodontics, periodontics, oral surgery, paediatric dentistry and prosthodontics."
+        },
+        {
+          "id": 3,
+          "icon": "HeartPulse",
+          "title": "Dental Hygienist / Therapist",
+          "description": "Preventive and clinical oral-health care."
+        },
+        {
+          "id": 4,
+          "icon": "GraduationCap",
+          "title": "Academics & Research",
+          "description": "Teaching, academic careers and dental research."
+        },
+        {
+          "id": 5,
+          "icon": "Building2",
+          "title": "Practice Ownership",
+          "description": "Practice ownership where permitted by local regulations."
+        }
+      ],
+
+      "supportingLine": "Dentistry is a field with clear progression — from clinician to specialist, educator or practice owner."
+    },
+
+    "studyPathway": {
+      "id": "study-abroad-pathway",
+      "component": "DentalStudyPathway",
+      "enabled": true,
+      "type": "pathway",
+
+      "eyebrow": {
+        "text": "Study Abroad Pathway",
+        "icon": "Route"
+      },
+
+      "title": {
+        "prefix": "Studying Dentistry Abroad —",
+        "highlight": "Your Pathway"
+      },
+
+      "description": "Understand the typical study requirements before selecting your destination. Current specifics should always be confirmed for your chosen university and country.",
+
+      "details": [
+        {
+          "id": 1,
+          "icon": "GraduationCap",
+          "label": "Typical Qualification",
+          "value": "BDS / DDS / DMD",
+          "description": "Approximately 5 years including clinical training for dentists. Dental hygiene, therapy and technology programmes can be shorter."
+        },
+        {
+          "id": 2,
+          "icon": "ClipboardCheck",
+          "label": "Eligibility",
+          "value": "Class 12 Science + English",
+          "description": "Typically Class 12 with Science (PCB) + English, minimum aggregate and minimum age according to university or country requirements."
+        },
+        {
+          "id": 3,
+          "icon": "Globe2",
+          "label": "Where You Study",
+          "value": "Abroad",
+          "description": "Choose a country and university aligned with where you want to work later."
+        },
+        {
+          "id": 4,
+          "icon": "Languages",
+          "label": "Language",
+          "value": "English-Medium Options",
+          "description": "English-medium programmes are widely available. English proficiency also matters for later registration."
+        },
+        {
+          "id": 5,
+          "icon": "FileCheck2",
+          "label": "NEET",
+          "value": "Pathway Dependent",
+          "description": "NEET may be required for Indian students for certain dental pathways or recognition. Confirm current rules before applying."
+        }
+      ],
+
+      "callout": {
+        "enabled": true,
+        "icon": "Lightbulb",
+        "title": "Choose Your Destination With the End in Mind",
+        "description": "Dental recognition and licensing differ sharply by country. We help you choose a country and university that fits where you want to practise and settle."
+      }
+    },
+
+    "licensing": {
+      "id": "dental-licensing",
+      "component": "DentalLicensing",
+      "enabled": true,
+      "type": "licensing",
+
+      "eyebrow": {
+        "text": "Licensing & Registration",
+        "icon": "BadgeCheck"
+      },
+
+      "title": {
+        "prefix": "The Honest Part",
+        "highlight": "Most Agencies Skip"
+      },
+
+      "description": "A dental degree alone usually isn't enough to practise abroad. Foreign-trained dentists typically must clear the destination country's licensing or registration process and sometimes complete further study.",
+
+      "countries": [
+        {
+          "id": 1,
+          "country": "UK",
+          "flag": "🇬🇧",
+          "exam": "ORE",
+          "fullName": "Overseas Registration Exam",
+          "authority": "GDC",
+          "description": "ORE pathway for GDC registration."
+        },
+        {
+          "id": 2,
+          "country": "Australia",
+          "flag": "🇦🇺",
+          "exam": "ADC",
+          "fullName": "Australian Dental Council",
+          "authority": "ADC",
+          "description": "ADC examination and assessment process."
+        },
+        {
+          "id": 3,
+          "country": "Canada",
+          "flag": "🇨🇦",
+          "exam": "NDEB",
+          "fullName": "National Dental Examining Board",
+          "authority": "NDEB",
+          "description": "NDEB process, often including equivalency and clinical assessment."
+        },
+        {
+          "id": 4,
+          "country": "USA",
+          "flag": "🇺🇸",
+          "exam": "INBDE",
+          "fullName": "Integrated National Board Dental Examination",
+          "authority": "US Dental Boards",
+          "description": "INBDE plus commonly an advanced-standing DDS/DMD programme for foreign-trained dentists."
+        }
+      ],
+
+      "supportAreas": [
+        {
+          "icon": "Languages",
+          "title": "English Tests",
+          "description": "IELTS / OET preparation and guidance.",
+          "provider": "Academic Yatra"
+        },
+        {
+          "icon": "Plane",
+          "title": "Visa & Migration",
+          "description": "Visa and migration pathway guidance.",
+          "provider": "ApplyVisa Yatra"
+        }
+      ],
+
+      "warning": {
+        "enabled": true,
+        "icon": "TriangleAlert",
+        "title": "Be Realistic",
+        "description": "Dental licensing for foreign-trained dentists can be demanding, lengthy and competitive — and rules change. Always verify requirements with the official dental regulator. No outcome is guaranteed."
+      },
+
+      "differentiator": {
+        "enabled": true,
+        "icon": "ShieldCheck",
+        "title": "We Don't Hide the Licensing Reality",
+        "description": "We explain the licensing requirements honestly and help you plan for them from day one. That's the difference between an agent and a partner."
+      }
+    },
+
+    "howMedicoYatraHelps": {
+      "id": "how-medico-yatra-helps",
+      "component": "HowMedicoYatraHelps",
+      "enabled": true,
+      "type": "services",
+
+      "eyebrow": {
+        "text": "Why Medico Yatra",
+        "icon": "ShieldCheck"
+      },
+
+      "title": {
+        "prefix": "End-to-End —",
+        "highlight": "From Your First Question"
+      },
+
+      "description": "We support students from counselling and course selection through admission, licensing guidance, visa and long-term career planning.",
+
+      "services": [
+        {
+          "id": 1,
+          "number": "01",
+          "icon": "UserRound",
+          "title": "Career Counselling",
+          "description": "Honest assessment of dentistry as a fit and the best study-abroad destination for your goals."
+        },
+        {
+          "id": 2,
+          "number": "02",
+          "icon": "GraduationCap",
+          "title": "Course & University Selection",
+          "description": "Recognised programmes aligned to where you want to work."
+        },
+        {
+          "id": 3,
+          "number": "03",
+          "icon": "ClipboardCheck",
+          "title": "Documentation & Admission",
+          "description": "Checklist-driven, end-to-end admission support."
+        },
+        {
+          "id": 4,
+          "number": "04",
+          "icon": "Languages",
+          "title": "English & Licensing Guidance",
+          "description": "IELTS/OET preparation and clarity on ORE, ADC, NDEB and INBDE pathways with Academic Yatra."
+        },
+        {
+          "id": 5,
+          "number": "05",
+          "icon": "Plane",
+          "title": "Visa & Migration",
+          "description": "Student and skilled-worker pathway guidance with ApplyVisa Yatra."
+        },
+        {
+          "id": 6,
+          "number": "06",
+          "icon": "UsersRound",
+          "title": "Family-Settlement Guidance",
+          "description": "Honest information on dependent and settlement options without false promises."
+        },
+        {
+          "id": 7,
+          "number": "07",
+          "icon": "Headphones",
+          "title": "Ongoing Support",
+          "description": "A real point of contact throughout your study, licensing and career journey."
+        }
+      ]
+    },
+
+    "journey": {
+      "id": "dental-journey",
+      "component": "DentalJourney",
+      "enabled": true,
+      "type": "journey",
+
+      "eyebrow": "Your Next Step",
+
+      "title": {
+        "prefix": "Your Step-by-Step",
+        "highlight": "Dental Journey"
+      },
+
+      "description": "Every step is supported — including the licensing steps that many agencies leave students to face alone.",
+
+      "journeySteps": [
+        {
+          "number": "01",
+          "title": "Career",
+          "subtitle": "Counselling",
+          "icon": "UserRound"
+        },
+        {
+          "number": "02",
+          "title": "Course & Country",
+          "subtitle": "Selection",
+          "icon": "Globe2"
+        },
+        {
+          "number": "03",
+          "title": "Admission",
+          "subtitle": "Support",
+          "icon": "ClipboardCheck"
+        },
+        {
+          "number": "04",
+          "title": "Study",
+          "subtitle": "Dentistry Abroad",
+          "icon": "GraduationCap"
+        },
+        {
+          "number": "05",
+          "title": "English Test",
+          "subtitle": "IELTS / OET",
+          "icon": "Languages"
+        },
+        {
+          "number": "06",
+          "title": "Licensing",
+          "subtitle": "ORE / ADC / NDEB / INBDE",
+          "icon": "BadgeCheck"
+        },
+        {
+          "number": "07",
+          "title": "Job & Visa",
+          "subtitle": "Pathway",
+          "icon": "BriefcaseBusiness"
+        },
+        {
+          "number": "08",
+          "title": "Practise",
+          "subtitle": "Abroad",
+          "icon": "Stethoscope"
+        },
+        {
+          "number": "09",
+          "title": "Family",
+          "subtitle": "Settlement Pathway",
+          "icon": "UsersRound"
+        },
+        {
+          "number": "10",
+          "title": "Long-Term",
+          "subtitle": "Career",
+          "icon": "TrendingUp"
+        }
+      ],
+
+      "supportingLine": "Every step supported — including the licensing steps most agencies leave you to face alone."
+    },
+
+    "otherCourses": {
+      "id": "other-healthcare-courses",
+      "component": "OtherHealthcareCourses",
+      "enabled": true,
+      "type": "course-links",
+
+      "eyebrow": {
+        "text": "Explore Other Healthcare Courses",
+        "icon": "LayoutGrid"
+      },
+
+      "title": {
+        "prefix": "Dentistry Is One Path —",
+        "highlight": "We Guide Many"
+      },
+
+      "description": "Explore other healthcare education pathways supported by Medico Yatra.",
+
+      "courses": [
+        {
+          "id": "mbbs-abroad",
+          "title": "MBBS Abroad",
+          "slug": "mbbs-abroad",
+          "icon": "Stethoscope",
+          "href": "/courses/mbbs-abroad"
+        },
+        {
+          "id": "nursing",
+          "title": "Nursing",
+          "slug": "nursing",
+          "icon": "HeartPulse",
+          "href": "/courses/nursing"
+        },
+        {
+          "id": "pharmacy",
+          "title": "Pharmacy",
+          "slug": "pharmacy",
+          "icon": "Pill",
+          "href": "/courses/pharmacy"
+        },
+        {
+          "id": "physiotherapy-rehab",
+          "title": "Physiotherapy",
+          "slug": "physiotherapy-rehab",
+          "icon": "Accessibility",
+          "href": "/courses/physiotherapy-rehab"
+        },
+        {
+          "id": "respiratory-therapy",
+          "title": "Respiratory Therapy",
+          "slug": "respiratory-therapy",
+          "icon": "Lungs",
+          "href": "/courses/respiratory-therapy"
+        },
+        {
+          "id": "medical-lab-technology",
+          "title": "Medical Lab Technology",
+          "slug": "medical-lab-technology",
+          "icon": "Microscope",
+          "href": "/courses/medical-lab-technology"
+        }
+      ],
+
+      "cta": {
+        "label": "Explore All Healthcare Courses",
+        "href": "/courses",
+        "icon": "ArrowRight"
+      }
+    },
+
+    "leadCapture": {
+      "id": "bds-lead-capture",
+      "component": "BDSLeadCapture",
+      "enabled": true,
+      "type": "lead-capture",
+
+      "eyebrow": "Your Dental Career Roadmap",
+
+      "title": {
+        "prefix": "Get Your Free",
+        "highlight": "Dental-Career Roadmap"
+      },
+
+      "description": "Share a few details and a counsellor will send a personalised, no-obligation plan — including study options, target country, licensing steps and family-settlement guidance.",
+
+      "benefits": [
+        {
+          "icon": "GraduationCap",
+          "title": "Study Options",
+          "description": "Understand BDS, Dental Hygiene and other dental pathways."
+        },
+        {
+          "icon": "Globe2",
+          "title": "Target Country",
+          "description": "Explore destinations aligned with your career goals."
+        },
+        {
+          "icon": "BadgeCheck",
+          "title": "Licensing Steps",
+          "description": "Get clarity on the licensing pathway for your destination."
+        },
+        {
+          "icon": "UsersRound",
+          "title": "Family Settlement",
+          "description": "Understand potential family and migration pathways."
+        }
+      ],
+
+      "form": {
+        "submitLabel": "Get My Free Dental Roadmap",
+        "submitIcon": "ArrowRight",
+
+        "fields": [
+          {
+            "name": "name",
+            "label": "Full Name",
+            "type": "text",
+            "required": true,
+            "placeholder": "Enter your full name",
+            "icon": "UserRound"
+          },
+          {
+            "name": "mobile",
+            "label": "Mobile Number",
+            "type": "tel",
+            "required": true,
+            "placeholder": "Enter WhatsApp number",
+            "icon": "Phone"
+          },
+          {
+            "name": "city",
+            "label": "City",
+            "type": "text",
+            "required": true,
+            "placeholder": "Enter your city",
+            "icon": "MapPin"
+          },
+          {
+            "name": "classStatus",
+            "label": "Class 12 Status",
+            "type": "select",
+            "required": true,
+            "placeholder": "Select your status",
+            "icon": "GraduationCap",
+            "options": [
+              {
+                "value": "class-12-studying",
+                "label": "Class 12 - Currently Studying"
+              },
+              {
+                "value": "class-12-completed",
+                "label": "Class 12 - Completed"
+              },
+              {
+                "value": "gap-year",
+                "label": "Taking a Gap Year"
+              },
+              {
+                "value": "college-student",
+                "label": "Currently in College"
+              }
+            ]
+          },
+          {
+            "name": "courseInterest",
+            "label": "Course Interest",
+            "type": "select",
+            "required": true,
+            "placeholder": "Select dental course",
+            "icon": "Stethoscope",
+            "options": [
+              {
+                "value": "bds",
+                "label": "BDS / Dentistry"
+              },
+              {
+                "value": "dds-dmd",
+                "label": "DDS / DMD"
+              },
+              {
+                "value": "dental-hygiene",
+                "label": "Dental Hygiene"
+              },
+              {
+                "value": "dental-therapy",
+                "label": "Dental Therapy"
+              },
+              {
+                "value": "dental-technology",
+                "label": "Dental Technology"
+              },
+              {
+                "value": "other",
+                "label": "Other Dental Course"
+              },
+              {
+                "value": "not-sure",
+                "label": "Not Sure Yet"
+              }
+            ]
+          },
+          {
+            "name": "country",
+            "label": "Preferred Country",
+            "type": "select",
+            "required": false,
+            "placeholder": "Not sure yet",
+            "icon": "Globe2",
+            "options": [
+              "UK",
+              "Australia",
+              "Canada",
+              "USA",
+              "Germany",
+              "Ireland",
+              "Other / Not Sure"
+            ]
+          },
+          {
+            "name": "consent",
+            "label": "I agree to be contacted regarding my enquiry.",
+            "type": "checkbox",
+            "required": true,
+            "icon": "ShieldCheck"
+          }
+        ]
+      },
+
+      "privacyNote": "Your details are used only to contact you about your enquiry. No spam."
+    },
+
+    "faq": {
+      "id": "bds-faq",
+      "component": "BDSFAQ",
+      "enabled": true,
+      "type": "faq",
+
+      "eyebrow": {
+        "text": "Need Answers?",
+        "icon": "HelpCircle"
+      },
+
+      "title": {
+        "prefix": "Frequently Asked",
+        "highlight": "Questions"
+      },
+
+      "description": "Everything you need to know about studying dentistry abroad, BDS, licensing, salaries, family settlement and career pathways.",
+
+      "items": [
+        {
+          "id": 1,
+          "question": "Can I study BDS abroad as an Indian student?",
+          "answer": "Yes — many countries offer dental degrees in English-medium programmes. We help you choose a recognised university aligned to your goals."
+        },
+        {
+          "id": 2,
+          "question": "What about Dental Hygiene or other dental courses?",
+          "answer": "We also guide students toward dental hygiene, therapy and technology programmes abroad — distinct allied dental roles with different study and registration pathways."
+        },
+        {
+          "id": 3,
+          "question": "Will I be able to practise abroad after my dental degree?",
+          "answer": "Usually only after clearing the destination country's licensing or registration requirements, such as ORE in the UK, ADC in Australia, NDEB in Canada or INBDE plus advanced-standing study in the USA. English requirements may also apply."
+        },
+        {
+          "id": 4,
+          "question": "What do dentists earn abroad?",
+          "answer": "Dentist salaries vary widely by country, experience, practice type, location and year. The salary table on this page provides illustrative averages, not guarantees."
+        },
+        {
+          "id": 5,
+          "question": "Can I settle abroad with my family as a dentist?",
+          "answer": "Several countries offer skilled-worker and dependent-visa pathways that may lead toward settlement, subject to eligibility and current immigration rules."
+        },
+        {
+          "id": 6,
+          "question": "Is the dental licensing process hard?",
+          "answer": "For foreign-trained dentists it can be demanding, lengthy and competitive. This is why we encourage students to understand licensing requirements before choosing their study destination."
+        },
+        {
+          "id": 7,
+          "question": "Do I need NEET for BDS abroad?",
+          "answer": "Depending on the pathway and recognition requirements, NEET may be required for Indian students. We confirm the current rules for your chosen route."
+        },
+        {
+          "id": 8,
+          "question": "How long is a dental degree abroad?",
+          "answer": "BDS, DDS and DMD programmes are commonly around 5 years including clinical training, while allied dental courses can be shorter depending on the programme and country."
+        },
+        {
+          "id": 9,
+          "question": "Is English mandatory?",
+          "answer": "English requirements depend on the programme and destination. For many overseas licensing pathways, English tests such as IELTS or OET may be required."
+        },
+        {
+          "id": 10,
+          "question": "Do you guarantee a job, visa or licence?",
+          "answer": "No. We provide honest, organised and end-to-end guidance, but jobs, visas, licensing and registration outcomes are decided by employers and authorities."
+        },
+        {
+          "id": 11,
+          "question": "Which country is best for dentistry?",
+          "answer": "There is no single best country. It depends on your academic profile, budget, career goals and where you ultimately want to practise and settle."
+        },
+        {
+          "id": 12,
+          "question": "How do I start?",
+          "answer": "Book a free counselling session. We will understand your goals and share a personalised dental-career roadmap with no obligation."
+        }
+      ],
+
+      "supportCta": {
+        "icon": "MessageCircle",
+        "title": "Still Have Questions?",
+        "description": "Talk to a Medico Yatra counsellor about your dental career abroad.",
+        "button": {
+          "label": "Get Free Counselling",
+          "href": "/counselling",
+          "icon": "ArrowRight"
+        }
+      }
+    },
+
+    "cta": {
+      "id": "bds-final-cta",
+      "component": "BDSCTA",
+      "enabled": true,
+      "type": "cta",
+
+      "title": "Your Dental Career. Your Global Future.",
+
+      "description": "Study dentistry abroad with honest guidance on courses, countries, licensing, English exams and your long-term career pathway.",
+
+      "primaryCta": {
+        "label": "Book Free Counselling",
+        "href": "/counselling",
+        "icon": "ArrowRight"
+      },
+
+      "secondaryCta": {
+        "label": "Explore Dental Courses",
+        "href": "#dental-courses",
+        "icon": "GraduationCap"
+      },
+
+      "backgroundImage": "/images/dental-cta-bg.jpg"
+    }
+  },
+
+  "seo": {
+    "title": "Study Dentistry (BDS) Abroad for Indian Students | Medico Yatra",
+    "description": "Study BDS and dental courses abroad with honest guidance on dentist salaries, licensing, ORE, ADC, NDEB, INBDE, English exams and family-settlement pathways.",
+    "keywords": [
+      "study dentistry abroad",
+      "BDS abroad for Indian students",
+      "study BDS abroad",
+      "dental courses abroad",
+      "dentist salary abroad",
+      "dental hygiene course abroad",
+      "ORE exam UK dentist",
+      "ADC Australia dentist",
+      "NDEB Canada dentist",
+      "INBDE USA dentist",
+      "settle abroad as a dentist"
+    ],
+    "canonical": "/courses/bds-dental"
   }
 }

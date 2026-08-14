@@ -240,7 +240,7 @@ export default function MBBSHero({data}) {
                 <ChevronRight className="h-3 w-3 shrink-0 text-slate-300 sm:h-3.5 sm:w-3.5" />
 
                 <span className="min-w-0 truncate font-semibold text-[#0263CC]">
-                {data.hero.breadcrumb[1].label}
+                {data.hero.breadcrumb[2].label}
                 </span>
               </motion.nav>
 

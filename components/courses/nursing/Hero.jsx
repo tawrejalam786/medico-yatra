@@ -28,18 +28,22 @@ export default function Hero() {
         >
           {/* Badge */}
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/90 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.12em] text-blue-700 shadow-sm sm:mb-5 sm:px-3.5 sm:py-2 sm:text-[11px]">
-            <Sparkles size={12} className="sm:size-[13px]" /> Study Nursing Abroad
+            <Sparkles size={12} className="sm:size-[13px]" /> Medico Yatra · Study Nursing Abroad
           </div>
 
           {/* Heading */}
-          <h1 className="max-w-3xl text-[28px] font-black leading-[1.08] tracking-[-.03em] text-slate-950 sm:text-[34px] sm:leading-[1.06] md:text-[42px] lg:text-[48px] lg:leading-[1.05] lg:tracking-[-.04em] xl:text-[58px]">
-            Build a respected nursing career{" "}
-            <span className="text-blue-600">anywhere in the world.</span>
+          <h1 className="max-w-3xl text-[28px] font-black leading-[1.08] tracking-[-.03em] text-slate-950 sm:text-[34px] sm:leading-[1.06] md:text-[42px] lg:text-[48px] lg:leading-[1.05] lg:tracking-[-.04em] xl:text-[45px]">
+            Study nursing abroad. Earn well.{" "}
+            <span className="text-blue-600"> Settle abroad with your family.</span>
           </h1>
 
           {/* Description */}
           <p className="mt-4 max-w-xl text-[13px] leading-6 text-slate-600 sm:mt-5 sm:text-[14px] sm:leading-6 md:text-[15px] md:leading-7 lg:mt-6">
-            Get a clear roadmap for nursing abroad — from course selection and admission to licensing, employment and family settlement.
+            Qualified nurses are needed almost everywhere. By  <span className="text-blue-600 font-bold"> studying nursing
+abroad</span> with the right guidance — and clearing the required licensing and English exams —
+you can open the door to strong earnings, global mobility, and, in several countries,
+pathways to settle with your family. Medico Yatra guides your study-abroad journey end to
+end.
           </p>
 
           {/* Features Grid */}
