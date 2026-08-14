@@ -137,8 +137,8 @@ export default function Hero() {
                     </span>
                   ))}
                 </div>
-                <b className="mt-1 block text-xs">15,000+ students</b>
-                <span className="text-[9px] text-slate-500">guided successfully</span>
+                <b className="mt-1 block text-xs">15,000+ Students</b>
+                <span className="text-[9px] text-slate-500">Guided successfully</span>
               </div>
             </div>
           </div>
