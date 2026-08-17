@@ -64,9 +64,9 @@ export default function HomePage() {
        <CourseMarquee />
        
       {/* ── 2. Country Finder ── */}
-      <div ref={finderRef}>
+      {/* <div ref={finderRef}>
         <CountryFinder onCareerSelect={handleCareerSelect} />
-      </div>
+      </div> */}
 
       {/* ── 3. Trust Bar ── */}
       <TrustBar />

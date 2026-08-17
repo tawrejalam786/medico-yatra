@@ -1,302 +1,266 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Shield, Briefcase, GraduationCap, Heart, Users, CheckCircle } from "lucide-react";
 
 const TRUST_ITEMS = [
   {
-    icon: (
-      <svg
-  width="28"
-  height="28"
-  viewBox="0 0 28 28"
-  fill="none"
-  aria-hidden="true"
-  className="text-white"
->
-  <circle
-    cx="14"
-    cy="14"
-    r="13"
-    stroke="currentColor"
-    strokeWidth={1.5}
-  />
-
-  <path
-    d="M8 14l4 4 8-8"
-    stroke="currentColor"
-    strokeWidth={2}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  />
-
-
-</svg>
-    ),
+    icon: Shield,
     heading: "NMC-recognised universities",
     body: "Your degree has to count when you come home — this is one of the most important things families need to verify.",
+    color: "from-[#0263CC] to-[#4DA5EC]",
+    iconBg: "bg-blue-500/10",
+    accentColor: "text-[#0263CC]",
   },
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="13" stroke="#4DA5EC" strokeWidth="1.5"/>
-        <path d="M9 10h10M9 14h7M9 18h9" stroke="#4DA5EC" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="7" cy="10" r="1.5" fill="#4DA5EC"/>
-        <circle cx="7" cy="14" r="1.5" fill="#4DA5EC"/>
-        <circle cx="7" cy="18" r="1.5" fill="#4DA5EC"/>
-      </svg>
-    ),
+    icon: Briefcase,
     heading: "Many healthcare careers — not just MBBS",
-    body: "A low NEET score or a different interest doesn't mean fewer honest options. ",
+    body: "A low NEET score or a different interest doesn't mean fewer honest options.",
+    color: "from-[#02A7BB] to-[#4ECDC4]",
+    iconBg: "bg-cyan-500/10",
+    accentColor: "text-[#02A7BB]",
   },
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="13" stroke="#02A7BB" strokeWidth="1.5"/>
-        <path d="M14 7v7l4 3" stroke="#02A7BB" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="14" cy="14" r="3" fill="#d6f4f7" opacity="0.8"/>
-      </svg>
-    ),
+    icon: GraduationCap,
     heading: "Integrated FMGE / NExT & USMLE coaching",
-    body: "Licensing preparation starts with your course, not years later. ",
+    body: "Licensing preparation starts with your course, not years later.",
+    color: "from-[#0263CC] to-[#02A7BB]",
+    iconBg: "bg-indigo-500/10",
+    accentColor: "text-[#4DA5EC]",
   },
   {
-    icon: (
-     <svg
-  width="28"
-  height="28"
-  viewBox="0 0 28 28"
-  fill="none"
-  aria-hidden="true"
-  className="text-white"
->
-  <circle
-    cx="14"
-    cy="14"
-    r="13"
-    stroke="currentColor"
-    strokeWidth={1.5}
-  />
-
-  <path
-    d="M9 14c0-2.76 2.24-5 5-5s5 2.24 5 5"
-    stroke="currentColor"
-    strokeWidth={1.8}
-    strokeLinecap="round"
-  />
-
-  <path
-    d="M14 19v-5"
-    stroke="currentColor"
-    strokeWidth={1.8}
-    strokeLinecap="round"
-  />
-
-  <circle
-    cx="14"
-    cy="20.5"
-    r="1.5"
-    fill="currentColor"
-  />
-</svg>
-    ),
+    icon: Heart,
     heading: "Honest, end-to-end guidance",
     body: "From counselling to licensing, we stay involved throughout the journey.",
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="13" stroke="#4DA5EC" strokeWidth="1.5"/>
-        <circle cx="10" cy="12" r="2.5" stroke="#4DA5EC" strokeWidth="1.5"/>
-        <circle cx="18" cy="12" r="2.5" stroke="#4DA5EC" strokeWidth="1.5"/>
-        <path d="M6 20c0-2.21 1.79-4 4-4h8c2.21 0 4 1.79 4 4" stroke="#4DA5EC" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-    heading: "Parents are part of every conversation",
-    body: "This is a family decision — we treat it like one. Parents are welcomed at every stage, from the first counselling call to pre-departure briefings. No one is left out.",
+    color: "from-[#F59E0B] to-[#EF4444]",
+    iconBg: "bg-orange-500/10",
+    accentColor: "text-[#F59E0B]",
   },
 ];
 
 const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
 };
 
-const item = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+const cardVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } 
+  },
+};
+
+const iconVariants = {
+  hover: { 
+    scale: 1.1, 
+    rotate: [0, -10, 10, -10, 0],
+    transition: { duration: 0.5 }
+  }
 };
 
 const TrustBar = () => {
   return (
-  <section
-    id="trust"
-    aria-labelledby="trust-heading"
-    className="relative overflow-hidden bg-gradient-to-b from-white via-[#F8FBFF] to-white py-10 lg:py-10"
-  >
-    {/* Background */}
-    <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#0263CC]/10 blur-3xl" />
-    <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-[#02A7BB]/10 blur-3xl" />
+    <section
+      id="trust"
+      aria-labelledby="trust-heading"
+      className="relative overflow-hidden bg-gradient-to-b from-white via-[#F8FBFF] to-[#F1F7FC] py-16 sm:py-20 lg:py-24"
+    >
+      {/* Enhanced Background Elements */}
+      <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-gradient-to-br from-[#0263CC]/15 to-[#4DA5EC]/10 blur-3xl animate-pulse" />
+      <div className="absolute -right-40 bottom-10 h-96 w-96 rounded-full bg-gradient-to-br from-[#02A7BB]/15 to-[#4ECDC4]/10 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-[#4DA5EC]/5 to-[#02A7BB]/5 blur-3xl" />
 
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      {/* Heading */}
-      <div className="mb-16 text-center">
-        <span className="inline-flex rounded-full bg-[#0263CC]/10 px-4 py-2 text-sm font-semibold text-[#0263CC]">
-          Why Choose Us
-        </span>
-
-        <h2 className="mt-5 text-4xl font-bold text-[#0F172A] md:text-5xl">
-          Why Families Trust
-          <br />
-          <span className="text-blue-800">Medico Yatra</span>
-        </h2>
-
-        <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          We help students and parents make confident healthcare education
-          decisions with transparent counselling, trusted universities and
-          complete guidance from admission to career.
-        </p>
-      </div>
-
-      <div className="grid items-center gap-16 lg:grid-cols-2">
-
-        {/* LEFT */}
-        <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="relative mx-auto"
-        >
-          {/* Student Image */}
-          <motion.img
-            animate={{ y: [0, -10, 0] }}
-            transition={{
-              repeat: Infinity,
-              duration: 5,
-            }}
-            src="/images/young-doctor-getting-ready-work.jpg"
-            alt="MBBS Student"
-            className="relative z-10 mx-auto rounded-4xl w-full max-w-md"
-          />
-
-          {/* Top Badge */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Enhanced Heading Section */}
+        <div className="mb-14 sm:mb-16 text-center">
           <motion.div
-            animate={{ y: [-5, 5, -5] }}
-            transition={{
-              repeat: Infinity,
-              duration: 4,
-            }}
-            className="absolute left-0 top-12 z-20 rounded-xl bg-white px-4 py-3 shadow-xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0263CC]/10 to-[#02A7BB]/10 px-5 py-2.5 border border-[#0263CC]/20 shadow-sm"
           >
-            <p className="text-sm font-semibold text-[#0263CC]">
-              ✔ Trusted Guidance
-            </p>
+            <CheckCircle size={16} className="text-[#0263CC]" />
+            <span className="text-sm font-bold text-[#0263CC] tracking-wide">
+              WHY CHOOSE US
+            </span>
           </motion.div>
 
-          {/* Bottom Badge */}
-          <motion.div
-            animate={{ y: [5, -5, 5] }}
-            transition={{
-              repeat: Infinity,
-              duration: 4,
-            }}
-            className="absolute bottom-10 right-0 z-20 rounded-xl bg-white px-4 py-3 shadow-xl"
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] leading-tight"
           >
-            <p className="text-sm font-semibold text-[#02A7BB]">
-              🌍 Global Universities
-            </p>
-          </motion.div>
-        </motion.div>
+            Why Families Trust{" "}
+            <span className="bg-gradient-to-r from-[#0263CC] via-[#4DA5EC] to-[#02A7BB] bg-clip-text text-transparent">
+              Medico Yatra
+            </span>
+          </motion.h2>
 
-        {/* RIGHT */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {/* <div className="grid gap-6 sm:grid-cols-2">
-            {TRUST_ITEMS.slice(0, 4).map((item) => (
-              <motion.div
-                key={item.heading}
-                variants={item}
-                whileHover={{
-                  y: -8,
-                }}
-                className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-2xl"
-              >
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#0263CC]/10 to-[#02A7BB]/10">
-                  {item.icon}
-                </div>
-
-                <h3 className="mb-3 text-lg font-semibold text-slate-900">
-                  {item.heading}
-                </h3>
-
-                <p className="text-sm leading-7 text-slate-600">
-                  {item.body}
-                </p>
-              </motion.div>
-            ))}
-          </div> */}
-          <div className="grid gap-6 sm:grid-cols-2">
-  {TRUST_ITEMS.slice(0, 4).map((item, index) => {
-    const isBlue = index === 0;
-    const isBrown = index === 3;
-    const isColored = isBlue || isBrown;
-
-    return (
-      <motion.div
-        key={item.heading}
-        variants={item}
-        whileHover={{
-          y: -8,
-        }}
-        className={`group rounded-2xl border p-6 shadow-sm transition-all hover:shadow-2xl ${
-          isBlue
-            ? "border-[#0263CC] bg-[#0263CC]"
-            : isBrown
-              ? "border-[#8b6b3f] bg-[#8b6b3f]"
-              : "border-slate-200 bg-white"
-        }`}
-      >
-        {/* Icon */}
-        <div
-          className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl ${
-            isColored
-              ? "bg-white/10 text-white"
-              : "bg-gradient-to-br from-[#0263CC]/10 to-[#02A7BB]/10"
-          }`}
-        >
-          {item.icon}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mx-auto mt-5 max-w-3xl text-base sm:text-lg leading-relaxed text-[#475569]"
+          >
+            We help students and parents make confident healthcare education
+            decisions with transparent counselling, trusted universities and
+            complete guidance from admission to career.
+          </motion.p>
         </div>
 
-        {/* Heading */}
-        <h3
-          className={`mb-3 text-lg font-semibold ${
-            isColored ? "text-white" : "text-slate-900"
-          }`}
-        >
-          {item.heading}
-        </h3>
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+          {/* LEFT - Image with Enhanced Floating Cards */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="relative mx-auto w-full max-w-md lg:max-w-lg"
+          >
+            {/* Decorative Circle Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0263CC]/10 to-[#02A7BB]/10 rounded-3xl blur-2xl" />
+            
+            {/* Main Image Container with Fixed Aspect Ratio */}
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 6,
+                ease: "easeInOut"
+              }}
+              className="relative z-10 aspect-[3/4] max-h-[500px]"
+            >
+              <img
+                src="/images/doc1.jpg"
+                alt="Healthcare Student"
+                className="relative rounded-3xl w-full h-full object-cover shadow-2xl border-4 border-white"
+              />
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-3xl" />
+            </motion.div>
 
-        {/* Description */}
-        <p
-          className={`text-sm leading-7 ${
-            isColored ? "text-white/80" : "text-slate-600"
-          }`}
-        >
-          {item.body}
-        </p>
-      </motion.div>
-    );
-  })}
-</div>
-        </motion.div>
+            {/* Enhanced Floating Badge - Top Left */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              animate={{ 
+                y: [-8, 8, -8],
+                transition: { repeat: Infinity, duration: 5, ease: "easeInOut" }
+              }}
+              whileHover={{ scale: 1.05 }}
+              className="absolute -left-4 sm:left-0 top-8 sm:top-12 z-20 rounded-2xl bg-white px-4 sm:px-5 py-3 sm:py-4 shadow-2xl border border-[#E2E8F0] backdrop-blur-sm"
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#0263CC] to-[#4DA5EC] flex items-center justify-center">
+                  <Shield size={20} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-xs font-medium text-[#94A3B8]">Verified</p>
+                  <p className="text-sm font-bold text-[#0263CC]">NMC Recognised</p>
+                </div>
+              </div>
+            </motion.div>
 
+            {/* Enhanced Floating Badge - Bottom Right */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              animate={{ 
+                y: [8, -8, 8],
+                transition: { repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }
+              }}
+              whileHover={{ scale: 1.05 }}
+              className="absolute -right-4 sm:right-0 bottom-8 sm:bottom-12 z-20 rounded-2xl bg-white px-4 sm:px-5 py-3 sm:py-4 shadow-2xl border border-[#E2E8F0] backdrop-blur-sm"
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#02A7BB] to-[#4ECDC4] flex items-center justify-center">
+                  <Users size={20} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-xs font-medium text-[#94A3B8]">Trusted by</p>
+                  <p className="text-sm font-bold text-[#02A7BB]">1000+ Families</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Stats Badge - Bottom Left */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="absolute -left-4 sm:left-4 bottom-32 sm:bottom-36 z-20 rounded-xl bg-gradient-to-br from-[#F59E0B] to-[#EF4444] px-4 py-3 shadow-2xl"
+            >
+              <p className="text-2xl font-black text-white">13+</p>
+              <p className="text-xs font-semibold text-white/90">Countries</p>
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT - Trust Cards Grid */}
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid gap-5 sm:grid-cols-2"
+          >
+            {TRUST_ITEMS.map((item, index) => {
+              const Icon = item.icon;
+              
+              return (
+                <motion.div
+                  key={item.heading}
+                  variants={cardVariants}
+                  whileHover={{ 
+                    y: -8, 
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
+                    transition: { duration: 0.3 }
+                  }}
+                  className="group relative rounded-2xl border border-[#E2E8F0] bg-white p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                >
+                  {/* Gradient Background on Hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+                  
+                  {/* Icon Container */}
+                  <motion.div
+                    variants={iconVariants}
+                    whileHover="hover"
+                    className={`relative mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${item.color} shadow-lg`}
+                  >
+                    <Icon size={24} className="text-white" strokeWidth={2.5} />
+                  </motion.div>
+
+                  {/* Heading */}
+                  <h3 className={`mb-2.5 text-base sm:text-lg font-bold text-[#0F172A] leading-tight group-hover:${item.accentColor} transition-colors duration-300`}>
+                    {item.heading}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm leading-relaxed text-[#64748B]">
+                    {item.body}
+                  </p>
+
+                  {/* Decorative Corner Element */}
+                  <div className={`absolute -top-10 -right-10 w-24 h-24 bg-gradient-to-br ${item.color} rounded-full opacity-0 group-hover:opacity-10 blur-2xl transition-opacity duration-500`} />
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
       </div>
-    </div>
-  </section>
-);
-}
+    </section>
+  );
+};
 
 export default TrustBar;

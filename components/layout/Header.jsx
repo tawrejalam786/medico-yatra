@@ -26,7 +26,7 @@ const NAV_LINKS = [
   { label: "FMGE / NExT", href: "/courses/fmge-next" },
   { label: "USMLE", href: "/usmle" },
   { label: "About Us", href: "/about" },
-  { label: "Resources", href: "/resources" },
+  { label: "Resources", href: "/free-resources" },
 ];
 
 // WhatsApp SVG inline (brand icon — no icon library dependency)

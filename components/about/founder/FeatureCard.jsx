@@ -11,22 +11,29 @@ export default function FeatureCard({
   return (
     <motion.div
       whileHover={{
-        y: -8,
+        y: -6,
+        boxShadow: "0 25px 50px -12px rgba(2, 99, 204, 0.25)",
       }}
-      transition={{ duration: .3 }}
-      className="group rounded-3xl border border-white bg-white/80 backdrop-blur-xl shadow-xl p-6"
+      transition={{ duration: 0.3 }}
+      className="group relative rounded-2xl border border-[#E2E8F0] bg-white/90 backdrop-blur-xl shadow-lg p-5 overflow-hidden"
     >
+      {/* Gradient background on hover */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+      
+      {/* Icon */}
       <div
-        className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${color} text-white shadow-lg`}
+        className={`relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${color} text-white shadow-md mb-4`}
       >
-        <Icon size={28} />
+        <Icon size={22} strokeWidth={2.5} />
       </div>
 
-      <h3 className="mt-5 text-xl font-bold text-slate-900">
+      {/* Title */}
+      <h3 className="relative text-base font-bold text-[#0F172A] leading-tight mb-2">
         {title}
       </h3>
 
-      <p className="mt-3 leading-7 text-slate-500">
+      {/* Description */}
+      <p className="relative text-sm leading-relaxed text-[#64748B]">
         {description}
       </p>
     </motion.div>

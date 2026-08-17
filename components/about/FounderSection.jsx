@@ -50,177 +50,104 @@ const features = [
 
 export default function FounderSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#F8FBFF] via-white to-[#EEF7FF] py-20 lg:py-10">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#F8FBFF] via-white to-[#EEF7FF] py-16 lg:py-20">
       {/* ========================= */}
-      {/* Background Blur */}
+      {/* Background Elements */}
       {/* ========================= */}
-
       <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-[#4DA5EC]/20 blur-[120px]" />
-
       <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-[#0263CC]/15 blur-[140px]" />
-
       <div className="absolute left-1/2 top-40 h-72 w-72 -translate-x-1/2 rounded-full bg-[#02A7BB]/10 blur-[100px]" />
 
-      {/* ========================= */}
-      {/* Grid */}
-      {/* ========================= */}
-
+      {/* Grid Pattern */}
       <div
-        className="absolute inset-0 opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: `
-          linear-gradient(#0263CC 1px, transparent 1px),
-          linear-gradient(90deg,#0263CC 1px, transparent 1px)
-        `,
+          backgroundImage: `linear-gradient(#0263CC 1px, transparent 1px), linear-gradient(90deg,#0263CC 1px, transparent 1px)`,
           backgroundSize: "50px 50px",
         }}
       />
 
-      {/* Curves */}
-
-      <svg
-        className="absolute inset-0 h-full w-full opacity-20"
-        viewBox="0 0 1440 900"
-        fill="none"
-      >
-        <path
-          d="M0 120C250 50 350 320 720 180C1020 70 1180 0 1440 130"
-          stroke="#0263CC"
-          strokeWidth="1.4"
-        />
-
-        <path
-          d="M100 880C400 650 850 980 1400 720"
-          stroke="#4DA5EC"
-          strokeWidth="1.2"
-        />
-      </svg>
-
-      {/* dots */}
-
-      <div className="absolute right-20 top-20 grid grid-cols-4 gap-2 opacity-25">
+      {/* Decorative Dots */}
+      <div className="absolute right-20 top-20 grid grid-cols-4 gap-2 opacity-20">
         {Array.from({ length: 16 }).map((_, i) => (
-          <span
-            key={i}
-            className="h-1.5 w-1.5 rounded-full bg-[#0263CC]"
-          />
+          <span key={i} className="h-1.5 w-1.5 rounded-full bg-[#0263CC]" />
         ))}
       </div>
 
       {/* ========================= */}
       {/* Container */}
       {/* ========================= */}
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* ========================================= */}
+        {/* TOP: Heading Section - Full Width */}
+        {/* ========================================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mx-auto max-w-4xl text-center mb-14 lg:mb-16"
+        >
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#0263CC]/15 bg-white/80 px-5 py-2.5 shadow-lg backdrop-blur-xl mb-6">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#0263CC] to-[#4DA5EC] text-white">
+              <UserRound size={16} />
+            </span>
+            <span className="font-bold text-sm text-[#0263CC]">Meet Our Founder</span>
+          </div>
 
-      <div className="relative mx-auto max-w-7xl px-5">
-        <div className="grid items-center gap-20 lg:grid-cols-2">
-          {/* ========================================= */}
-          {/* LEFT */}
-          {/* ========================================= */}
+          {/* Heading */}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-[#0F172A] mb-5">
+            Driven by a Vision to Make{" "}
+            <span className="bg-gradient-to-r from-[#0263CC] via-[#4DA5EC] to-[#02A7BB] bg-clip-text text-transparent">
+              Medical Education Accessible
+            </span>{" "}
+            Worldwide
+          </h2>
 
+          {/* Decorative Line */}
+          <div className="mx-auto h-1 w-24 rounded-full bg-gradient-to-r from-[#0263CC] to-[#4DA5EC] mb-6" />
+
+          {/* Description */}
+          <p className="text-base sm:text-lg leading-relaxed text-[#64748B] max-w-3xl mx-auto">
+            Our mission is simple yet powerful—to empower aspiring healthcare professionals by providing transparent guidance, quality education pathways, and unwavering support at every step of their journey.
+          </p>
+        </motion.div>
+
+        {/* ========================================= */}
+        {/* BOTTOM: Two Columns - Equal Height */}
+        {/* ========================================= */}
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-10 items-start">
+          
+          {/* LEFT: Image Card */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true }}
-            className="order-2 lg:order-1"
           >
             <FounderImageCard />
           </motion.div>
 
-          {/* ========================================= */}
-          {/* RIGHT */}
-          {/* ========================================= */}
-
+          {/* RIGHT: Only 4 Feature Cards in 2x2 Grid */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
             viewport={{ once: true }}
-            className="order-1 lg:order-2"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5"
           >
-            {/* Badge */}
-
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#0263CC]/15 bg-white/80 px-5 py-2 shadow-lg backdrop-blur-xl">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#0263CC] to-[#4DA5EC] text-white">
-                <UserRound size={16} />
-              </span>
-
-              <span className="font-semibold text-[#0263CC]">
-                Meet Our Founder
-              </span>
-            </div>
-
-            {/* Heading */}
-
-            <h2 className="mt-8 text-3xl font-black leading-tight text-slate-900 lg:text-[35px]">
-              Driven by a Vision to
-              <br />
-              Make Medical Education
-              <br />
-
-              <span className="bg-gradient-to-r from-[#0263CC] via-[#4DA5EC] to-[#02A7BB] bg-clip-text text-transparent">
-                Accessible Worldwide.
-              </span>
-            </h2>
-
-            <div className="mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-[#0263CC] to-[#4DA5EC]" />
-
-            {/* Description */}
-
-            <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600">
-              Our mission is simple yet powerful—to empower aspiring
-              healthcare professionals by providing transparent guidance,
-              quality education pathways, and unwavering support at every
-              step of their journey.
-            </p>
-
-            {/* Features */}
-
-            <div className="mt-12 grid gap-6 sm:grid-cols-2">
-              {features.map((item, index) => (
-                <FeatureCard
-                  key={index}
-                  icon={item.icon}
-                  title={item.title}
-                  description={item.description}
-                  color={item.color}
-                />
-              ))}
-            </div>
-
-            {/* Signature */}
-
-            <div className="mt-10">
-              <SignatureCard />
-            </div>
-
-            {/* CTA */}
-
-            <div className="mt-10 flex flex-wrap gap-5">
-              <Link
-                href="#"
-                className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-[#0263CC] to-[#4DA5EC] px-8 py-4 font-semibold text-white shadow-[0_20px_40px_rgba(2,99,204,.30)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(2,99,204,.40)]"
-              >
-                Read Story
-
-                <ArrowRight
-                  size={18}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </Link>
-
-              {/* <Link
-                href="#"
-                className="group inline-flex items-center gap-3 rounded-2xl border border-[#0263CC]/20 bg-white/80 px-8 py-4 font-semibold text-[#0263CC] shadow-lg backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#0263CC] hover:bg-[#0263CC] hover:text-white"
-              >
-                Connect
-
-                <Send
-                  size={17}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </Link> */}
-            </div>
+            {/* 4 Feature Cards - 2x2 Grid */}
+            {features.map((item, index) => (
+              <FeatureCard
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                color={item.color}
+              />
+            ))}
           </motion.div>
         </div>
       </div>

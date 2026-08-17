@@ -1,9 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowDown, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
-import HeroCarousel from "./HeroCarousel";
+import FinderStep from "./FinderStep";
+import FinderResults from "./FinderResults";
+import { FINDER_CAREER_OPTIONS, FINDER_BUDGET_OPTIONS, FINDER_PRIORITY_OPTIONS } from "@/data/careers";
+import { matchCountries } from "@/lib/countryMatcher";
 
 const TRUST_POINTS = [
   "NMC-recognised universities only",
@@ -18,6 +22,29 @@ const STATS = [
   { value: "100%", label: "Honest Guidance" },
 ];
 
+const STEPS = [
+  {
+    key: "career",
+    question: "What healthcare career interests you?",
+    options: FINDER_CAREER_OPTIONS,
+    layout: "grid",
+  },
+  {
+    key: "budget",
+    question: "What's your approximate total budget for the full course (tuition + living)?",
+    options: FINDER_BUDGET_OPTIONS,
+    layout: "list",
+  },
+  {
+    key: "priority",
+    question: "What matters most to you?",
+    options: FINDER_PRIORITY_OPTIONS,
+    layout: "list",
+  },
+];
+
+const TOTAL = STEPS.length; // 3
+
 const fadeUp = {
   hidden:  { opacity: 0, y: 28 },
   visible: (d = 0) => ({
@@ -27,13 +54,71 @@ const fadeUp = {
 };
 
 export default function Hero({ onScrollToFinder }) {
+  const [step, setStep] = useState(0);
+  const [career, setCareer] = useState(null);
+  const [budget, setBudget] = useState(null);
+  const [priority, setPriority] = useState(null);
+  const [results, setResults] = useState([]);
+
+  const currentStep = STEPS[step];
+
+  function getSelected() {
+    if (step === 0) return career;
+    if (step === 1) return budget;
+    return priority;
+  }
+
+  function handleSelect(id) {
+    if (step === 0) setCareer(id);
+    if (step === 1) setBudget(id);
+    if (step === 2) setPriority(id);
+    
+    setTimeout(() => {
+      if (step < TOTAL - 1) {
+        setStep((s) => s + 1);
+      } else {
+        const matched = matchCountries(
+          step === 0 ? id : career,
+          step === 1 ? id : budget,
+          step === 2 ? id : priority
+        );
+        setResults(matched);
+        setStep(TOTAL);
+      }
+    }, 280);
+  }
+
+  function handleNext() {
+    if (step < TOTAL - 1) {
+      setStep((s) => s + 1);
+    } else {
+      const matched = matchCountries(career, budget, priority);
+      setResults(matched);
+      setStep(TOTAL);
+    }
+  }
+
+  function handleBack() {
+    setStep((s) => Math.max(0, s - 1));
+  }
+
+  function handleReset() {
+    setStep(0);
+    setCareer(null);
+    setBudget(null);
+    setPriority(null);
+    setResults([]);
+  }
+
+  const showingResults = step === TOTAL;
+  const canNext = getSelected() !== null;
+
   return (
     <section
       id="hero"
       aria-labelledby="hero-heading"
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ backgroundColor: "#0263CC" }}
-      // previous color #f2f2ff
     >
       {/* ── Background texture: subtle dot grid ── */}
       <div
@@ -149,86 +234,108 @@ export default function Hero({ onScrollToFinder }) {
             
           </div>
 
-          {/* ══ RIGHT: Carousel ══ */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.75, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="order-1 lg:order-2 flex items-center justify-center"
-          >
-            {/* Outer decorative ring */}
-            <div className="relative w-full max-w-sm lg:max-w-md xl:max-w-lg">
-              {/* Glow ring */}
-              <div
-                className="absolute -inset-4 rounded-3xl pointer-events-none"
-                style={{ background: "rgba(77,165,236,0.08)", filter: "blur(24px)" }}
-                aria-hidden="true"
-              />
+          {/* ══ RIGHT: Country Finder Card ══ */}
+          <div className="w-full order-2 lg:order-2">
+            {/* Finder card */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: 0.15 }}
+            >
+              <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-[#E2E8F0] overflow-hidden">
 
-              {/* Floating badge — top left */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: -10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.5 }}
-                className="absolute -top-8 -left-1 z-20 flex items-center gap-2 px-3 py-2 rounded-xl shadow-lg"
-                style={{ background: "#02A7BB", minWidth: 140 }}
-                aria-hidden="true"
-              >
-                <span className="text-base">🎓</span>
-                <div>
-                  <p className="font-body font-semibold text-xs text-white leading-tight">NMC Recognised</p>
-                  <p className="font-body text-[10px] text-white/70 leading-tight">Universities</p>
+                {/* Progress bar — hidden during results */}
+                {!showingResults && (
+                  <div className="px-4 sm:px-6 pt-5 sm:pt-6 pb-0">
+                    {/* Step labels */}
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-body font-semibold text-xs sm:text-sm text-[#0263CC]">
+                        Step {step + 1} of {TOTAL}
+                      </span>
+                      <span className="font-body text-[10px] sm:text-xs text-[#94A3B8]">
+                        {Math.round(((step) / TOTAL) * 100)}% done
+                      </span>
+                    </div>
+                    {/* Track */}
+                    <div className="h-1.5 bg-[#E2E8F0] rounded-full overflow-hidden" role="progressbar" aria-valuenow={step + 1} aria-valuemin={1} aria-valuemax={TOTAL} aria-label={`Step ${step + 1} of ${TOTAL}`}>
+                      <motion.div
+                        className="h-full bg-gradient-to-r from-[#0263CC] via-[#4DA5EC] to-[#02A7BB] rounded-full"
+                        initial={false}
+                        animate={{ width: `${((step + 1) / TOTAL) * 100}%` }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
+                      />
+                    </div>
+
+                    {/* Step dots */}
+                    <div className="flex justify-between mt-2 px-0.5">
+                      {STEPS.map((s, i) => (
+                        <div key={s.key} className="flex flex-col items-center gap-1">
+                          <div
+                            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                              i < step ? "bg-[#02A7BB]" : i === step ? "bg-[#0263CC] scale-125" : "bg-[#E2E8F0]"
+                            }`}
+                            aria-hidden="true"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Content area */}
+                <div className={`px-4 sm:px-6 ${showingResults ? "pt-5 sm:pt-6 pb-5 sm:pb-6" : "pt-4 sm:pt-5 pb-5 sm:pb-6"}`}>
+                  <AnimatePresence mode="wait">
+                    {showingResults ? (
+                      <FinderResults
+                        key="results"
+                        results={results}
+                        career={career}
+                        budget={budget}
+                        priority={priority}
+                        onReset={handleReset}
+                      />
+                    ) : (
+                      <FinderStep
+                        key={currentStep.key}
+                        question={currentStep.question}
+                        options={currentStep.options}
+                        selected={getSelected()}
+                        onSelect={handleSelect}
+                        layout={currentStep.layout}
+                      />
+                    )}
+                  </AnimatePresence>
+
+                  {/* Navigation buttons (when not results) */}
+                  {!showingResults && (
+                    <div className="flex items-center justify-between mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-[#F1F5F9]">
+                      <button
+                        onClick={handleBack}
+                        disabled={step === 0}
+                        className="flex items-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl font-body font-medium text-xs sm:text-sm text-[#475569] hover:text-[#0263CC] hover:bg-[#F1F7FC] transition-colors disabled:opacity-30 disabled:pointer-events-none focus-visible:outline-2 focus-visible:outline-[#0263CC]"
+                        aria-label="Go to previous step"
+                      >
+                        <ArrowLeft size={14} className="sm:size-4" aria-hidden="true" />
+                        Back
+                      </button>
+
+                      <button
+                        onClick={handleNext}
+                        disabled={!canNext}
+                        className="flex items-center gap-1.5 px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-[#0263CC] text-white font-body font-semibold text-xs sm:text-sm hover:bg-[#0251a8] active:scale-95 transition-all disabled:opacity-40 disabled:pointer-events-none focus-visible:outline-2 focus-visible:outline-[#0263CC] shadow-sm"
+                        aria-label={step === TOTAL - 1 ? "See my country results" : "Go to next step"}
+                      >
+                        {step === TOTAL - 1 ? "See Results" : "Next"}
+                        <ArrowRight size={14} className="sm:size-4" aria-hidden="true" />
+                      </button>
+                    </div>
+                  )}
                 </div>
-              </motion.div>
-
-              {/* Floating badge — bottom right */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ delay: 0.85, duration: 0.5 }}
-                className="absolute -bottom-4 -right-1 z-20 flex items-center gap-2 px-3 py-2 rounded-xl shadow-lg"
-                style={{ background: "white", minWidth: 148 }}
-                aria-hidden="true"
-              >
-                <span className="text-base">📋</span>
-                <div>
-                  <p className="font-body font-semibold text-xs text-[#0263CC] leading-tight">FMGE / NExT</p>
-                  <p className="font-body text-[10px] text-[#475569] leading-tight">Prep included</p>
-                </div>
-              </motion.div>
-
-              {/* Floating badge — right mid */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, x: 10 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                transition={{ delay: 1.0, duration: 0.5 }}
-                className="absolute top-1/2 -right-1 -translate-y-1/2 z-20 flex items-center gap-2 px-3 py-2 rounded-xl shadow-lg"
-                style={{ background: "rgba(2,99,204,0.95)", border: "1px solid rgba(255,255,255,0.2)" }}
-                aria-hidden="true"
-              >
-                <span className="text-base">⚡</span>
-                <div>
-                  <p className="font-body font-semibold text-xs text-white leading-tight">USMLE</p>
-                  <p className="font-body text-[10px] text-white/65 leading-tight">Coaching</p>
-                </div>
-              </motion.div>
-
-              {/* Carousel card */}
-              <div
-                className="relative rounded-3xl overflow-hidden"
-                style={{
-                  height: 480,
-                  background: "rgba(255,255,255,0.06)",
-                  border: "1px solid rgba(255,255,255,0.16)",
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
-                  padding: "20px 20px 16px",
-                }}
-              >
-                <HeroCarousel />
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
+
         </div>
 
         {/* ── Scroll indicator ── */}
