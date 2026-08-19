@@ -91,11 +91,11 @@
           "text": "Licensing Support"
         },
         {
-          "icon": "UsersRound",
+          "icon": "Users",
           "text": "Family Settlement Paths"
         },
         {
-          "icon": "Globe2",
+          "icon": "Globe",
           "text": "End-to-End Support"
         }
       ],
@@ -157,7 +157,7 @@
         {
           "id": 3,
           "number": "03",
-          "icon": "Globe2",
+          "icon": "Globe",
           "title": "Global",
           "highlight": "Mobility",
           "description": "Build a nursing career and explore opportunities across multiple countries."

@@ -9,133 +9,6 @@ import {
   MessageCircle,
 } from "lucide-react";
 
-const faqs = [
-  {
-    id: 1,
-    question: "Is NEET required to study MBBS abroad?",
-    answer:
-      "For Indian students who intend to practise in India, qualifying NEET is required to obtain the Eligibility Certificate and to sit for FMGE / NExT later. Always confirm the current NMC rules before applying.",
-  },
-  {
-    id: 2,
-    question: "Is an MBBS degree from abroad valid in India?",
-    answer:
-      "A foreign MBBS can lead to practice in India if the university is on the NMC-approved list and you clear the required licensing exam (currently FMGE; NExT is planned as a future replacement). Verify the university's NMC status before enrolling.",
-  },
-  {
-    id: 3,
-    question: "What is NExT and has it replaced FMGE yet?",
-    answer:
-      "NExT (National Exit Test) is planned to eventually replace FMGE, but its rollout has been deferred. As of now, FMGE remains the operative exam. We track updates and recommend you verify the latest NMC notifications.",
-  },
-  {
-    id: 4,
-    question: "How long does MBBS abroad take?",
-    answer:
-      "Commonly around 6 years including clinical training, though this varies by country and university.",
-  },
-  {
-    id: 5,
-    question: "How much does MBBS abroad cost?",
-    answer:
-      "It varies widely by country and university. We'll share an indicative budget range during your free counselling — and a detailed breakdown on each country page. We never quote a single \"fixed\" figure because real costs include tuition, hostel, food, insurance, and travel.",
-  },
-  {
-    id: 6,
-    question: "Which is the best country for MBBS abroad?",
-    answer:
-      "There's no single \"best\" — it depends on your budget, goals (India vs USA), language comfort, and the university's recognition. Our counsellors help you match a country to your profile.",
-  },
-  {
-    id: 7,
-    question: "Are the universities you recommend NMC-approved?",
-    answer:
-      "We shortlist with awareness of the current NMC-approved list, but recognition can change. We always encourage you to independently verify a university's current NMC status before enrolling.",
-  },
-  {
-    id: 8,
-    question: "Will I be taught in English?",
-    answer:
-      "Many universities offer fully English-medium MBBS programmes for international students. Some local-language familiarity helps during clinical years.",
-  },
-  {
-    id: 9,
-    question: "Can I practise in the USA after MBBS abroad?",
-    answer:
-      "Yes, through the USMLE pathway, which is separate from FMGE / NExT. We offer structured USMLE guidance for students choosing this route.",
-  },
-  {
-    id: 10,
-    question: "What are the eligibility requirements?",
-    answer:
-      "Typically Class 12 with PCB + English and a minimum aggregate as per NMC norms, NEET qualification, and the minimum age. Requirements can change — we confirm current criteria for you.",
-  },
-  {
-    id: 11,
-    question: "When are the intakes?",
-    answer:
-      "Intake months vary by country and university. We help you align your application with the next available intake.",
-  },
-  {
-    id: 12,
-    question: "Is MBBS abroad safe for students, especially for girls?",
-    answer:
-      "Safety depends on the country, city, and university. We provide pre-departure briefings and accommodation guidance, and we factor safety into shortlisting. We discuss this openly with parents.",
-  },
-  {
-    id: 13,
-    question: "What support do I get after I reach the university?",
-    answer:
-      "You get a point of contact during your studies, plus access to integrated FMGE / NExT coaching. We stay involved beyond admission.",
-  },
-  {
-    id: 14,
-    question: "Do you guarantee admission or a visa?",
-    answer:
-      "No — and you should be cautious of anyone who does. We provide strong, organised support to maximise your chances, but admissions and visas are decided by universities and authorities.",
-  },
-  {
-    id: 15,
-    question: "What happens if a university loses NMC recognition during my course?",
-    answer:
-      "This is exactly why we emphasise the NMC list at the start. Recognition status matters at enrolment and at exam time. We help you make an informed initial choice and recommend ongoing verification.",
-  },
-  {
-    id: 16,
-    question: "Can I do PG in India after MBBS abroad?",
-    answer:
-      "Yes, after clearing the required licensing exam and meeting current PG-entrance requirements. The pathway can evolve with NExT, so we keep students informed.",
-  },
-  {
-    id: 17,
-    question: "How is Medico Yatra different from a normal admission agent?",
-    answer:
-      "We support the entire journey — counselling, admission, visa, in-study coaching for FMGE / NExT, and career guidance — rather than ending at the offer letter.",
-  },
-  {
-    id: 18,
-    question: "Do you help with education loans?",
-    answer:
-      "Yes, our Future Yatra group offers educational loan assistance guidance. Ask your counsellor about current options.",
-  },
-  {
-    id: 19,
-    question: "How do I start?",
-    answer:
-      "Book a free counselling session. We'll assess your goals and NEET situation honestly and share a personalised roadmap — with no obligation.",
-  },
-  {
-    id: 20,
-    question: "Can I get guidance before choosing a country?",
-    answer:
-      "Yes. Our counsellors can help you understand your options based on your goals, budget, academic profile, and preferred career pathway before you make a decision.",
-  },
-];
-
-const columnOne = faqs.slice(0, 7);
-const columnTwo = faqs.slice(7, 14);
-const columnThree = faqs.slice(14, 20);
-
 function FAQItem({ faq, openId, setOpenId }) {
   const isOpen = openId === faq.id;
 
@@ -245,8 +118,28 @@ function FAQColumn({ items, openId, setOpenId }) {
   );
 }
 
-export default function MBBSFAQ() {
+export default function MBBSFAQ({ data }) {
   const [openId, setOpenId] = useState(null);
+
+  // =====================================================
+  // DATA FROM JSON
+  // =====================================================
+
+  const {
+    eyebrow,
+    title,
+    description,
+    items: faqs,
+    supportCta,
+  } = data;
+
+  // =====================================================
+  // FAQ COLUMNS
+  // =====================================================
+
+  const columnOne = faqs.slice(0, 7);
+  const columnTwo = faqs.slice(7, 14);
+  const columnThree = faqs.slice(14, 20);
 
   return (
     <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-10">
@@ -359,7 +252,10 @@ export default function MBBSFAQ() {
       ====================================================== */}
 
       <div className="relative mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
+        {/* =================================================
+            HEADING
+        ================================================== */}
+
         <motion.div
           initial={{
             opacity: 0,
@@ -382,28 +278,34 @@ export default function MBBSFAQ() {
             <HelpCircle className="h-3.5 w-3.5 text-[#0263CC]" />
 
             <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#0263CC] sm:text-xs">
-              Need Answers?
+              {eyebrow?.text}
             </span>
           </div>
 
+          {/* Heading */}
           <h2 className="text-[27px] font-extrabold leading-tight tracking-[-0.8px] text-[#071A49] sm:text-3xl lg:text-[38px]">
-            Frequently Asked{" "}
+            {title?.prefix}{" "}
             <span className="bg-gradient-to-r from-[#0263CC] to-[#02A7BB] bg-clip-text text-transparent">
-              Questions
+              {title?.highlight}
             </span>
           </h2>
 
+          {/* Description */}
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-500 sm:text-[15px]">
-            Everything you need to know about studying MBBS abroad,
-            eligibility, costs, licensing, universities and the support
-            provided by Medico Yatra.
+            {description}
           </p>
 
           {/* Small animated line */}
           <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: 55 }}
-            viewport={{ once: true }}
+            initial={{
+              width: 0,
+            }}
+            whileInView={{
+              width: 55,
+            }}
+            viewport={{
+              once: true,
+            }}
             transition={{
               duration: 0.7,
               delay: 0.2,
@@ -474,48 +376,51 @@ export default function MBBSFAQ() {
             BOTTOM SUPPORT CTA
         ================================================== */}
 
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.2,
-          }}
-          className="mx-auto mt-10 flex max-w-3xl flex-col items-center justify-between gap-4 rounded-2xl border border-[#0263CC]/10 bg-gradient-to-r from-[#F5F9FF] via-white to-[#F0FBFC] p-5 text-center shadow-[0_12px_35px_rgba(2,99,204,0.06)] sm:flex-row sm:p-6 sm:text-left"
-        >
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#EAF3FF] text-[#0263CC]">
-              <MessageCircle className="h-5 w-5" />
-            </div>
-
-            <div>
-              <h3 className="text-sm font-bold text-[#071A49] sm:text-base">
-                Still have questions?
-              </h3>
-
-              <p className="mt-0.5 text-xs text-slate-500 sm:text-sm">
-                Talk to a Medico Yatra counsellor.
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="/counselling"
-            className="inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-xl bg-[#0263CC] px-5 text-xs font-bold text-white shadow-[0_8px_20px_rgba(2,99,204,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0759B8] sm:w-auto sm:text-sm"
+        {supportCta && (
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.2,
+            }}
+            className="mx-auto mt-10 flex max-w-3xl flex-col items-center justify-between gap-4 rounded-2xl border border-[#0263CC]/10 bg-gradient-to-r from-[#F5F9FF] via-white to-[#F0FBFC] p-5 text-center shadow-[0_12px_35px_rgba(2,99,204,0.06)] sm:flex-row sm:p-6 sm:text-left"
           >
-            Get Free Counselling
-            <ShieldCheck className="h-4 w-4" />
-          </a>
-        </motion.div>
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#EAF3FF] text-[#0263CC]">
+                <MessageCircle className="h-5 w-5" />
+              </div>
+
+              <div>
+                <h3 className="text-sm font-bold text-[#071A49] sm:text-base">
+                  {supportCta.title}
+                </h3>
+
+                <p className="mt-0.5 text-xs text-slate-500 sm:text-sm">
+                  {supportCta.description}
+                </p>
+              </div>
+            </div>
+
+            <a
+              href={supportCta.button?.href || "/counselling"}
+              className="inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-xl bg-[#0263CC] px-5 text-xs font-bold text-white shadow-[0_8px_20px_rgba(2,99,204,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0759B8] sm:w-auto sm:text-sm"
+            >
+              {supportCta.button?.label || "Get Free Counselling"}
+
+              <ShieldCheck className="h-4 w-4" />
+            </a>
+          </motion.div>
+        )}
       </div>
     </section>
   );

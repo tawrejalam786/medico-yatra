@@ -14,6 +14,7 @@ import {
   ShieldCheck,
   Stethoscope,
   Users,
+  BadgeCheck,
 } from "lucide-react";
 
 
@@ -29,6 +30,7 @@ const ICONS = {
   Stethoscope,
   Users,
   Globe,
+  BadgeCheck,
   // BookOpen,
   // Building2,
   // CheckCircle,
@@ -68,7 +70,7 @@ function DynamicIcon({
   return <Icon className={className} {...props} />;
 }
 
-export default function MBBSHero({data}) {
+export default function MBBSHero({ data }) {
   return (
     <section className="relative isolate w-full overflow-hidden bg-[#F5F9FF]">
       {/* =====================================================
@@ -240,7 +242,7 @@ export default function MBBSHero({data}) {
                 <ChevronRight className="h-3 w-3 shrink-0 text-slate-300 sm:h-3.5 sm:w-3.5" />
 
                 <span className="min-w-0 truncate font-semibold text-[#0263CC]">
-                {data.hero.breadcrumb[2].label}
+                  {data.hero.breadcrumb[2].label}
                 </span>
               </motion.nav>
 
@@ -301,16 +303,16 @@ export default function MBBSHero({data}) {
                   2xl:text-[46px]
                 "
               >
-                 {data.hero.title.line1}
+                {data.hero.title.line1}
                 <span className="block">
                   {data.hero.title.line2}{" "}
                   <span className="bg-gradient-to-r from-[#0263CC] to-[#02A7BB] bg-clip-text text-transparent">
-                   {data.hero.title.highlight}
+                    {data.hero.title.highlight}
                   </span>
                 </span>
 
                 <span className="block text-[#0263CC]">
-                   {data.hero.title.line3}
+                  {data.hero.title.line3}
                 </span>
               </motion.h1>
 
@@ -397,13 +399,13 @@ export default function MBBSHero({data}) {
                     sm:text-sm
                   "
                 >
-                 {data.hero.primaryCta.label}
+                  {data.hero.primaryCta.label}
 
-                  
-                    <DynamicIcon
-                      name={data.hero.primaryCta.icon}
-                      className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                    />
+
+                  <DynamicIcon
+                    name={data.hero.primaryCta.icon}
+                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  />
                 </Link>
 
                 <Link
@@ -434,11 +436,11 @@ export default function MBBSHero({data}) {
                     sm:text-sm
                   "
                 >
-                 
-                    <DynamicIcon
-                      name={data.hero.secondaryCta.icon}
-                      className="h-4 w-4"
-                    />
+
+                  <DynamicIcon
+                    name={data.hero.secondaryCta.icon}
+                    className="h-4 w-4"
+                  />
 
                   {data.hero.secondaryCta.label}
                 </Link>
@@ -491,19 +493,18 @@ export default function MBBSHero({data}) {
                         sm:bg-transparent
                         sm:px-2
                         sm:py-0
-                        ${
-                          index !== data.hero.highlights.length - 1
-                            ? "sm:border-r sm:border-slate-300"
-                            : ""
+                        ${index !== data.hero.highlights.length - 1
+                          ? "sm:border-r sm:border-slate-300"
+                          : ""
                         }
                       `}
                     >
                       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[#0263CC] shadow-sm ring-1 ring-[#0263CC]/10 sm:h-8 sm:w-8">
                         {/* <Icon className="h-3.5 w-3.5" /> */}
-                         <DynamicIcon
-                      name={Icon}
-                      className="h-3.5 w-3.5"
-                    />
+                        <DynamicIcon
+                          name={Icon}
+                          className="h-3.5 w-3.5"
+                        />
                       </div>
 
                       <span className="text-[8px] font-semibold leading-3 text-slate-600 min-[375px]:text-[9px] sm:text-[10px] sm:leading-4">
@@ -544,7 +545,7 @@ export default function MBBSHero({data}) {
             >
               {/* Visual area */}
 
-             <div
+              <div
                 className="
                   relative
                   h-[350px]
@@ -665,7 +666,7 @@ export default function MBBSHero({data}) {
                   "
                 >
                   <Map className="h-5 w-5" />
-                  
+
                 </motion.div>
 
                 {/* Small floating dot */}
@@ -697,16 +698,16 @@ export default function MBBSHero({data}) {
                     DOCTOR IMAGE
                 ================================================== */}
 
-               <motion.div
-  animate={{
-    y: [0, -5, 0],
-  }}
-  transition={{
-    duration: 5,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
-  className="
+                <motion.div
+                  animate={{
+                    y: [0, -5, 0],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="
     absolute
     inset-x-0
     bottom-30
@@ -729,13 +730,13 @@ export default function MBBSHero({data}) {
     xl:bottom-40
     xl:h-[675px]
   "
->
-  <Image
-    src={data.hero.image.src}
-    alt="Medical professionals guiding students for MBBS abroad"
-    fill
-    priority
-    sizes="
+                >
+                  <Image
+                    src={data.hero.image.src}
+                    alt="Medical professionals guiding students for MBBS abroad"
+                    fill
+                    priority
+                    sizes="
       (max-width: 374px) 100vw,
       (max-width: 639px) 100vw,
       (max-width: 767px) 90vw,
@@ -743,7 +744,7 @@ export default function MBBSHero({data}) {
       (max-width: 1279px) 50vw,
       45vw
     "
-    className="
+                    className="
       object-contain
       object-bottom
       scale-[1.15]
@@ -753,8 +754,8 @@ export default function MBBSHero({data}) {
       lg:scale-[1.25]
       xl:scale-[1.20]
     "
-  />
-</motion.div>
+                  />
+                </motion.div>
 
                 {/* =================================================
                     FLOATING ENQUIRY CARD
@@ -805,15 +806,15 @@ export default function MBBSHero({data}) {
                 >
                   <div className="flex items-start gap-2.5 sm:gap-3">
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#EAF3FF] text-[#0263CC] sm:h-10 sm:w-10">
-                       <DynamicIcon
-                      name={data.hero.floatingCard.icon}
-                      className="h-4 w-4 sm:h-5 sm:w-5"
-                    />
+                      <DynamicIcon
+                        name={data.hero.floatingCard.icon}
+                        className="h-4 w-4 sm:h-5 sm:w-5"
+                      />
                     </div>
 
                     <div className="min-w-0">
                       <h3 className="text-xs font-extrabold leading-4 text-[#071A49] sm:text-sm sm:leading-5">
-                      {data.hero.floatingCard.title}
+                        {data.hero.floatingCard.title}
                       </h3>
 
                       <p className="mt-1 text-[8px] leading-3.5 text-slate-500 sm:text-[9px] sm:leading-4">

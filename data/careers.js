@@ -15,7 +15,7 @@ export const CAREERS = [
     duration: "5–6 years (including internship)",
     entryRequirement: "Class 12 (PCB) + NEET",
     licenseExam: "FMGE / NExT (for India), USMLE (for USA), PLAB/UKMLA (for UK), AMC (for Australia)",
-    slug: "/courses/mbbs",
+    slug: "/courses/mbbs-abroad",
     popular: true,
   },
   {

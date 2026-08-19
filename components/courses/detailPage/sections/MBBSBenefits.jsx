@@ -13,6 +13,11 @@ import {
   ChevronRight,
   Headphones,
   MessageCircle,
+  BadgeCheck,
+  Globe,
+  HeartPulse,
+  TrendingUp,
+  BriefcaseBusiness,
 } from "lucide-react";
 
 const ICONS = {
@@ -29,6 +34,12 @@ const ICONS = {
   Headphones,
   MessageCircle,
   ShieldCheck,
+  BadgeCheck,
+  UsersRound,
+  Globe,
+  HeartPulse,
+  TrendingUp,
+  BriefcaseBusiness,
 };
 
 // ============================================================

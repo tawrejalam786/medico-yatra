@@ -24,32 +24,32 @@ export default function CourseDetailPage({ course }) {
 
       {/* MBBSJourneyComparison */}
       {course.sections.journeyComparison?.enabled && (
-        <MBBSJourneyComparison data={course.journeyComparison} />
+        <MBBSJourneyComparison data={course.sections.journeyComparison} />
       )}
 
       {/* TopMBBSDestinations */}
       {course.sections.topDestinations?.enabled && (
-        <TopMBBSDestinations data={course.topDestinations} />
+        <TopMBBSDestinations data={course.sections.topDestinations} />
       )}
 
       {/* whyMedicoYatra */}
       {course.sections.whyMedicoYatra?.enabled && (
-        <WhyMedicoYatra data={course.whyMedicoYatra} />
+        <WhyMedicoYatra data={course.sections.whyMedicoYatra} />
       )}
 
       {/* journey */}
       {course.sections.journey?.enabled && (
-        <MBBSJourneySection data={course.journey} />
+        <MBBSJourneySection data={course.sections.journey} />
       )}
 
       {/* MBBSLeadCapture */}
       {course.sections.leadCapture?.enabled && (
-        <MBBSLeadCapture data={course.leadCapture} />
+        <MBBSLeadCapture data={course.sections.leadCapture} />
       )}
 
       {/* faq */}
       {course.sections.faq?.enabled && (
-        <MBBSFAQ data={course.faq} />
+        <MBBSFAQ data={course.sections.faq} />
       )}
       
     </main>

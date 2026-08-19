@@ -24,7 +24,7 @@ const NAV_LINKS = [
   { label: "Courses", href: "/courses" },
   { label: "Countries", href: "/countries" },
   { label: "FMGE / NExT", href: "/courses/fmge-next" },
-  { label: "USMLE", href: "/usmle" },
+  { label: "USMLE", href: "/courses/usmle" },
   { label: "About Us", href: "/about" },
   { label: "Resources", href: "/free-resources" },
 ];

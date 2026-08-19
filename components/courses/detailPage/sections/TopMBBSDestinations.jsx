@@ -18,117 +18,50 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 /* =========================================================
-   DESTINATIONS DATA
+   ICONS
 ========================================================= */
 
-const destinations = [
-  {
-    id: 1,
-    country: "Russia",
-    slug: "russia",
-    flag: "🇷🇺",
-    image: "/images/countries/russia.jpg",
-    points: [
-      "NMC Recognized",
-      "English Medium",
-      "Affordable Fees",
-    ],
-  },
-  {
-    id: 2,
-    country: "Kazakhstan",
-    slug: "kazakhstan",
-    flag: "🇰🇿",
-    image: "/images/countries/Kazakhstan.png",
-    points: [
-      "NMC Recognized",
-      "Safe & Student Friendly",
-      "Modern Infrastructure",
-    ],
-  },
-  {
-    id: 3,
-    country: "Georgia",
-    slug: "georgia",
-    flag: "🇬🇪",
-    image: "/images/countries/Georgia.png",
-    points: [
-      "NMC Recognized",
-      "Indian Food Available",
-      "High FMGE Pass Rate",
-    ],
-  },
-  {
-    id: 4,
-    country: "Uzbekistan",
-    slug: "uzbekistan",
-    flag: "🇺🇿",
-    image: "/images/countries/Uzbekistan.png",
-    points: [
-      "NMC Recognized",
-      "Low Living Cost",
-      "Quality Education",
-    ],
-  },
-  {
-    id: 5,
-    country: "Kyrgyzstan",
-    slug: "kyrgyzstan",
-    flag: "🇰🇬",
-    image: "/images/countries/Kyrgyzstan.png",
-    points: [
-      "NMC Recognized",
-      "Affordable Tuition",
-      "Easy Admission",
-    ],
-  },
-  {
-    id: 6,
-    country: "Philippines",
-    slug: "philippines",
-    flag: "🇵🇭",
-    image: "/images/countries/Philippines.png",
-    points: [
-      "NMC Recognized",
-      "English Medium",
-      "Globally Accepted",
-    ],
-  },
-  {
-    id: 7,
-    country: "Bangladesh",
-    slug: "bangladesh",
-    flag: "🇧🇩",
-    image: "/images/countries/bangladesh.jpg",
-    points: [
-      "NMC Recognized",
-      "Low Tuition Fees",
-      "Close to India",
-    ],
-  },
-];
+const ICONS = {
+  ArrowRight,
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Globe2,
+  MapPin,
+};
+
+function CircleFallback({ className = "h-4 w-4" }) {
+  return (
+    <span
+      className={`inline-flex items-center justify-center rounded-full border-2 border-current ${className}`}
+    />
+  );
+}
+
+function DynamicIcon({
+  name,
+  className = "h-4 w-4",
+  ...props
+}) {
+  const Icon = ICONS[name] || CircleFallback;
+
+  return <Icon className={className} {...props} />;
+}
 
 /* =========================================================
    ANIMATION
 ========================================================= */
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-};
 
 const cardVariants = {
   hidden: {
     opacity: 0,
     y: 25,
   },
+
   visible: {
     opacity: 1,
     y: 0,
+
     transition: {
       duration: 0.55,
       ease: "easeOut",
@@ -140,16 +73,16 @@ const cardVariants = {
    COMPONENT
 ========================================================= */
 
-export default function TopMBBSDestinations() {
+export default function TopMBBSDestinations({ data }) {
   return (
     <section className="relative overflow-hidden bg-white py-7 sm:py-6 lg:py-8">
-      
+
       {/* =====================================================
           BACKGROUND
       ====================================================== */}
 
       <div className="pointer-events-none absolute inset-0 -z-0">
-        
+
         {/* Soft gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(77,165,236,0.10),transparent_35%)]" />
 
@@ -282,29 +215,32 @@ export default function TopMBBSDestinations() {
           }}
           className="mx-auto mb-8 max-w-3xl text-center sm:mb-10"
         >
-          
+
           {/* Small badge */}
 
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#0263CC]/10 bg-[#F3F8FF] px-3 py-1.5">
-            <Globe2 className="h-3.5 w-3.5 text-[#0263CC]" />
+            <DynamicIcon
+              name={data.eyebrow.icon}
+              className="h-3.5 w-3.5 text-[#0263CC]"
+            />
 
             <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#0263CC] sm:text-xs">
-              Study Around the World
+              {data.eyebrow.text}
             </span>
           </div>
 
           {/* Heading */}
 
           <h2 className="text-2xl font-extrabold tracking-tight text-[#071A49] sm:text-3xl lg:text-4xl">
-            Explore Top{" "}
+            {data.title.prefix}{" "}
+
             <span className="bg-gradient-to-r from-[#0263CC] to-[#02A7BB] bg-clip-text text-transparent">
-              MBBS Destinations
+              {data.title.highlight}
             </span>
           </h2>
 
           <p className="mx-auto mt-3 max-w-2xl text-xs leading-5 text-slate-500 sm:text-sm sm:leading-6">
-            Quality education, global exposure, and a clear path to building
-            your medical career abroad.
+            {data.description}
           </p>
 
           {/* Small underline */}
@@ -360,30 +296,37 @@ export default function TopMBBSDestinations() {
                 slidesPerView: 1.25,
                 spaceBetween: 14,
               },
+
               480: {
                 slidesPerView: 1.5,
                 spaceBetween: 16,
               },
+
               640: {
                 slidesPerView: 2,
                 spaceBetween: 18,
               },
+
               768: {
                 slidesPerView: 2.5,
                 spaceBetween: 18,
               },
+
               900: {
                 slidesPerView: 3,
                 spaceBetween: 20,
               },
+
               1024: {
                 slidesPerView: 3.5,
                 spaceBetween: 20,
               },
+
               1200: {
                 slidesPerView: 4.5,
                 spaceBetween: 20,
               },
+
               1400: {
                 slidesPerView: 5.5,
                 spaceBetween: 22,
@@ -391,9 +334,14 @@ export default function TopMBBSDestinations() {
             }}
             className="!overflow-visible"
           >
-            {destinations.map((destination) => (
-              <SwiperSlide key={destination.id} className="!h-auto">
-                <DestinationCard destination={destination} />
+            {data.destinations.map((destination) => (
+              <SwiperSlide
+                key={destination.id}
+                className="!h-auto"
+              >
+                <DestinationCard
+                  destination={destination}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -445,12 +393,15 @@ export default function TopMBBSDestinations() {
           className="mt-8 flex justify-center sm:mt-10"
         >
           <Link
-            href="/countries"
+            href={data.cta.href}
             className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[#0263CC]/20 bg-white px-5 text-xs font-bold text-[#0263CC] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#0263CC] hover:bg-[#F5F9FF] sm:px-6 sm:text-sm"
           >
-            Compare All Countries
+            {data.cta.label}
 
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <DynamicIcon
+              name={data.cta.icon}
+              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+            />
           </Link>
         </motion.div>
       </div>
@@ -541,7 +492,10 @@ function DestinationCard({ destination }) {
                 className="flex items-start gap-2"
               >
                 <span className="mt-[2px] flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-[#E9F8F3] text-[#159A67]">
-                  <Check className="h-2.5 w-2.5" strokeWidth={3} />
+                  <Check
+                    className="h-2.5 w-2.5"
+                    strokeWidth={3}
+                  />
                 </span>
 
                 <span className="text-[10px] leading-4 text-slate-500 sm:text-[11px]">

@@ -586,6 +586,14 @@
           "icon": "ArrowRight"
         }
       },
+       "alternativeCareerCard2": {
+        "icon": "BriefcaseMedical",
+        "eyebrow": "Step-by-Step Support",
+        "title": "Your Journey With Medico Yatra",
+        "highlight": "One trusted partner from counselling to career support.",
+        "description": "From your first counselling session to licensing and career support, we stay with you throughout the journey."
+       
+      },
       "journeySteps": [
         {
           "number": "01",

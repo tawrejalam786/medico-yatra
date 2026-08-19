@@ -32,101 +32,37 @@ import "swiper/css/pagination";
 
 
 // ============================================================
-// SERVICES
+// DYNAMIC ICONS
 // ============================================================
 
-const services = [
-  {
-    id: 1,
-    icon: BriefcaseBusiness,
-    number: "01",
-    title: "Career Counselling",
-    description:
-      "Honest assessment of whether MBBS abroad fits your goals, finances, and NEET situation.",
-    tag: "Start With Clarity",
-  },
-  {
-    id: 2,
-    icon: Building2,
-    number: "02",
-    title: "University Selection",
-    description:
-      "Shortlisting with awareness of the current NMC-approved list and your priorities.",
-    tag: "Choose Wisely",
-  },
-  {
-    id: 3,
-    icon: ClipboardCheck,
-    number: "03",
-    title: "Documentation",
-    description:
-      "Organised, checklist-driven support so nothing important is missed.",
-    tag: "Stay Organised",
-  },
-  {
-    id: 4,
-    icon: FileText,
-    number: "04",
-    title: "Admission Support",
-    description:
-      "End-to-end application handling through to the offer or invitation letter.",
-    tag: "Complete Support",
-  },
-  {
-    id: 5,
-    icon: Plane,
-    number: "05",
-    title: "Visa Guidance",
-    description:
-      "Preparation and guidance for the student visa process.",
-    tag: "Travel Prepared",
-  },
-  {
-    id: 6,
-    icon: Home,
-    number: "06",
-    title: "Accommodation Guidance",
-    description:
-      "Help understanding hostel and housing options before departure.",
-    tag: "Settle Comfortably",
-  },
-  {
-    id: 7,
-    icon: GraduationCap,
-    number: "07",
-    title: "Pre-Departure Briefing",
-    description:
-      "Know what to pack, what to expect, and how to prepare for life abroad.",
-    tag: "Ready To Go",
-  },
-  {
-    id: 8,
-    icon: UserRound,
-    number: "08",
-    title: "Student Support",
-    description:
-      "A point of contact during your studies, not just before you leave.",
-    tag: "We're With You",
-  },
-  {
-    id: 9,
-    icon: Stethoscope,
-    number: "09",
-    title: "FMGE / NExT Coaching",
-    description:
-      "Integrated licensing preparation during your medical education journey.",
-    tag: "Prepare Early",
-  },
-  {
-    id: 10,
-    icon: ShieldCheck,
-    number: "10",
-    title: "USMLE Coaching",
-    description:
-      "Support for students planning to pursue their medical career in the USA.",
-    tag: "USA Pathway",
-  },
-];
+const ICONS = {
+  ArrowRight,
+  BriefcaseBusiness,
+  Building2,
+  CheckCircle2,
+  ClipboardCheck,
+  FileText,
+  GraduationCap,
+  Home,
+  Plane,
+  ShieldCheck,
+  Stethoscope,
+  UserRound,
+};
+
+function DynamicIcon({
+  name,
+  className = "h-4 w-4",
+  ...props
+}) {
+  const Icon = ICONS[name];
+
+  if (!Icon) {
+    return null;
+  }
+
+  return <Icon className={className} {...props} />;
+}
 
 
 // ============================================================
@@ -142,6 +78,7 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
+
     transition: {
       duration: 0.55,
       ease: "easeOut",
@@ -150,7 +87,11 @@ const cardVariants = {
 };
 
 
-export default function WhyMedicoYatra() {
+// ============================================================
+// COMPONENT
+// ============================================================
+
+export default function WhyMedicoYatra({ data }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
@@ -196,7 +137,6 @@ export default function WhyMedicoYatra() {
           }}
           className="absolute -right-32 bottom-20 h-96 w-96 rounded-full bg-[#02A7BB]/[0.055] blur-3xl"
         />
-
 
         {/* ==================================================
             PREMIUM SVG ROUTE
@@ -269,7 +209,6 @@ export default function WhyMedicoYatra() {
 
         </svg>
 
-
         {/* Dot pattern */}
 
         <div
@@ -299,7 +238,6 @@ export default function WhyMedicoYatra() {
 
       <div className="mx-auto w-full max-w-[1200px] overflow-hidden px-4 sm:px-6 lg:px-8">
 
-
         {/* ====================================================
             SECTION HEADER
         ===================================================== */}
@@ -328,11 +266,16 @@ export default function WhyMedicoYatra() {
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0263CC]/10 bg-[#F2F7FF] px-3.5 py-1.5">
 
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0263CC]/10">
-              <Stethoscope className="h-3 w-3 text-[#0263CC]" />
+
+              <DynamicIcon
+                name={data.eyebrow.icon}
+                className="h-3 w-3 text-[#0263CC]"
+              />
+
             </span>
 
             <span className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#0263CC] sm:text-xs">
-              Why Medico Yatra
+              {data.eyebrow.text}
             </span>
 
           </div>
@@ -342,10 +285,10 @@ export default function WhyMedicoYatra() {
 
           <h2 className="text-[27px] font-extrabold leading-[1.15] tracking-[-0.8px] text-[#071A49] sm:text-[34px] lg:text-[42px]">
 
-            A Partner for the Whole Journey{" "}
+            {data.title.prefix}{" "}
 
             <span className="bg-gradient-to-r from-[#0263CC] to-[#02A7BB] bg-clip-text text-transparent">
-              — Not Just the Admission
+              {data.title.highlight}
             </span>
 
           </h2>
@@ -354,8 +297,7 @@ export default function WhyMedicoYatra() {
           {/* Description */}
 
           <p className="mx-auto mt-4 max-w-2xl text-xs leading-5 text-slate-500 sm:text-sm sm:leading-6">
-            From choosing the right path to preparing for your medical
-            journey abroad, we stay involved at every important step.
+            {data.description}
           </p>
 
 
@@ -379,6 +321,7 @@ export default function WhyMedicoYatra() {
         <div className="mt-10 flex items-center justify-between sm:mt-12">
 
           <div>
+
             <p className="text-xs font-bold text-[#071A49] sm:text-sm">
               What We Do For You
             </p>
@@ -386,6 +329,7 @@ export default function WhyMedicoYatra() {
             <p className="mt-1 text-[10px] text-slate-400 sm:text-xs">
               Explore our complete support journey
             </p>
+
           </div>
 
 
@@ -461,6 +405,7 @@ export default function WhyMedicoYatra() {
           }}
           variants={{
             hidden: {},
+
             visible: {
               transition: {
                 staggerChildren: 0.06,
@@ -495,8 +440,11 @@ export default function WhyMedicoYatra() {
               nextEl: nextRef.current,
             }}
             onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
+              swiper.params.navigation.prevEl =
+                prevRef.current;
+
+              swiper.params.navigation.nextEl =
+                nextRef.current;
             }}
             breakpoints={{
               375: {
@@ -542,113 +490,116 @@ export default function WhyMedicoYatra() {
             className="!overflow-visible"
           >
 
-            {services.map((service) => {
-              const Icon = service.icon;
+            {/* =================================================
+                JSON SERVICES
+            ================================================== */}
 
-              return (
-                <SwiperSlide
-                  key={service.id}
-                  className="!h-auto"
+            {data.services.map((service) => (
+              <SwiperSlide
+                key={service.id}
+                className="!h-auto"
+              >
+
+                <motion.article
+                  variants={cardVariants}
+                  className="
+                    group
+                    relative
+                    flex
+                    h-full
+                    min-h-[270px]
+                    flex-col
+                    overflow-hidden
+                    rounded-2xl
+                    border
+                    border-slate-200/80
+                    bg-white
+                    p-5
+                    shadow-[0_8px_30px_rgba(15,60,110,0.06)]
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:border-[#0263CC]/20
+                    hover:shadow-[0_20px_45px_rgba(2,99,204,0.12)]
+                    sm:min-h-[285px]
+                    sm:p-6
+                  "
                 >
 
-                  <motion.article
-                    variants={cardVariants}
-                    className="
-                      group
-                      relative
-                      flex
-                      h-full
-                      min-h-[270px]
-                      flex-col
-                      overflow-hidden
-                      rounded-2xl
-                      border
-                      border-slate-200/80
-                      bg-white
-                      p-5
-                      shadow-[0_8px_30px_rgba(15,60,110,0.06)]
-                      transition-all
-                      duration-300
-                      hover:-translate-y-1
-                      hover:border-[#0263CC]/20
-                      hover:shadow-[0_20px_45px_rgba(2,99,204,0.12)]
-                      sm:min-h-[285px]
-                      sm:p-6
-                    "
-                  >
+                  {/* Top glow */}
 
-                    {/* Top glow */}
-
-                    <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#0263CC]/[0.06] blur-2xl transition-all duration-500 group-hover:bg-[#0263CC]/10" />
+                  <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#0263CC]/[0.06] blur-2xl transition-all duration-500 group-hover:bg-[#0263CC]/10" />
 
 
-                    {/* Number */}
+                  {/* Number */}
 
-                    <div className="absolute right-5 top-5 text-[10px] font-extrabold tracking-widest text-slate-200 transition-colors duration-300 group-hover:text-[#0263CC]/20">
-                      {service.number}
-                    </div>
-
-
-                    {/* Icon */}
-
-                    <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#EAF3FF] to-[#F4FAFF] text-[#0263CC] shadow-sm ring-1 ring-[#0263CC]/10 transition-all duration-300 group-hover:scale-105 group-hover:shadow-md">
-
-                      <Icon className="h-6 w-6" />
-
-                    </div>
+                  <div className="absolute right-5 top-5 text-[10px] font-extrabold tracking-widest text-slate-200 transition-colors duration-300 group-hover:text-[#0263CC]/20">
+                    {service.number}
+                  </div>
 
 
-                    {/* Tag */}
+                  {/* Icon */}
 
-                    <div className="mt-5">
+                  <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#EAF3FF] to-[#F4FAFF] text-[#0263CC] shadow-sm ring-1 ring-[#0263CC]/10 transition-all duration-300 group-hover:scale-105 group-hover:shadow-md">
 
-                      <span className="inline-flex rounded-full bg-[#F3F8FF] px-2.5 py-1 text-[9px] font-bold text-[#0263CC]">
-                        {service.tag}
+                    <DynamicIcon
+                      name={service.icon}
+                      className="h-6 w-6"
+                    />
+
+                  </div>
+
+
+                  {/* Tag */}
+
+                  <div className="mt-5">
+
+                    <span className="inline-flex rounded-full bg-[#F3F8FF] px-2.5 py-1 text-[9px] font-bold text-[#0263CC]">
+                      {service.tag}
+                    </span>
+
+                  </div>
+
+
+                  {/* Title */}
+
+                  <h3 className="mt-3 pr-7 text-[16px] font-extrabold leading-snug text-[#071A49] sm:text-[17px]">
+                    {service.title}
+                  </h3>
+
+
+                  {/* Description */}
+
+                  <p className="mt-2 text-[11px] leading-5 text-slate-500 sm:text-xs sm:leading-[1.65]">
+                    {service.description}
+                  </p>
+
+
+                  {/* Bottom */}
+
+                  <div className="mt-auto pt-5">
+
+                    <div className="flex items-center gap-2 border-t border-slate-100 pt-4">
+
+                      <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
+
+                      <span className="text-[9px] font-semibold text-slate-500 sm:text-[10px]">
+                        Student-first support
                       </span>
 
                     </div>
 
-
-                    {/* Title */}
-
-                    <h3 className="mt-3 pr-7 text-[16px] font-extrabold leading-snug text-[#071A49] sm:text-[17px]">
-                      {service.title}
-                    </h3>
+                  </div>
 
 
-                    {/* Description */}
+                  {/* Hover line */}
 
-                    <p className="mt-2 text-[11px] leading-5 text-slate-500 sm:text-xs sm:leading-[1.65]">
-                      {service.description}
-                    </p>
+                  <div className="absolute bottom-0 left-0 h-1 w-0 rounded-full bg-gradient-to-r from-[#0263CC] to-[#02A7BB] transition-all duration-500 group-hover:w-full" />
 
+                </motion.article>
 
-                    {/* Bottom */}
-
-                    <div className="mt-auto pt-5">
-
-                      <div className="flex items-center gap-2 border-t border-slate-100 pt-4">
-
-                        <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
-
-                        <span className="text-[9px] font-semibold text-slate-500 sm:text-[10px]">
-                          Student-first support
-                        </span>
-
-                      </div>
-
-                    </div>
-
-
-                    {/* Hover line */}
-
-                    <div className="absolute bottom-0 left-0 h-1 w-0 rounded-full bg-gradient-to-r from-[#0263CC] to-[#02A7BB] transition-all duration-500 group-hover:w-full" />
-
-                  </motion.article>
-
-                </SwiperSlide>
-              );
-            })}
+              </SwiperSlide>
+            ))}
 
           </Swiper>
 
