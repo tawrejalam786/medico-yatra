@@ -49,7 +49,7 @@ export default function OurStory() {
             </span>
           </div>
 
-          <h2 className="text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-[#09213d] sm:text-[48px] lg:text-[28px]">
+          <h2 className="text-[28px] font-semibold leading-[1.08] tracking-[-0.04em] text-[#09213d] sm:text-[48px] lg:text-[28px]">
             Guiding future healthcare
             <span className="text-[#0263CC]"> professionals,</span>
             <br className="hidden sm:block" />

@@ -63,7 +63,7 @@ export default function CountriesSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative overflow-hidden bg-[#F8FBFF] py-10"
+            className="relative overflow-hidden bg-[#E6F2FF] py-10"
         >
             {/* Mouse Spotlight */}
             <div
@@ -145,7 +145,7 @@ export default function CountriesSection() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    className="grid auto-rows-[250px] grid-cols-1 gap-7 md:grid-cols-2 lg:gap-8 xl:grid-cols-4"
+                    className="grid auto-rows-[250px] grid-cols-2 gap-7 md:grid-cols-2 lg:gap-8 xl:grid-cols-4"
                 >
                     {/* Russia */}
                     <CountryCard

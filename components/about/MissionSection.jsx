@@ -127,7 +127,7 @@ export default function MissionSection() {
               duration: 0.8,
               delay: 0.1,
             }}
-            className="text-[39px] font-medium leading-[1.12] tracking-[-0.04em] text-white sm:text-[52px] md:text-[60px] lg:text-[68px] xl:text-[25px]"
+            className="text-[28px] font-medium leading-[1.12] tracking-[-0.04em] text-white sm:text-[52px] md:text-[60px] lg:text-[68px] xl:text-[25px]"
           >
             To guide future healthcare
             <span className="text-[#69dce5]"> professionals</span>

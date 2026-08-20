@@ -64,7 +64,7 @@ export default function CountryCard({
 
           {/* Badge */}
           {country.featured && (
-            <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur-xl">
+            <div className="rounded-full border hidden lg:block border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur-xl">
               Most Popular
             </div>
           )}
@@ -83,11 +83,11 @@ export default function CountryCard({
             </span>
           </div>
 
-          <h3 className="text-4xl font-black text-white">
+          <h3 className="text-medium lg:text-4xl font-black text-white">
             {country.name}
           </h3>
 
-          <p className="mt-2 max-w-sm text-white/80">
+          <p className="mt-2 text-sm max-w-sm text-white/80">
             {country.subtitle}
           </p>
 

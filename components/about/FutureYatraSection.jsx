@@ -20,6 +20,7 @@ const brands = [
     description: "Study-abroad counselling & admissions.",
     icon: GraduationCap,
     position: "top",
+    backgroundColor: "#7C68C9", // Purple
   },
   {
     name: "Academic Yatra",
@@ -27,6 +28,7 @@ const brands = [
     description: "Test prep & language training including IELTS and PTE.",
     icon: BookOpenCheck,
     position: "left",
+    backgroundColor: "#8B6B3F", // Brown
   },
   {
     name: "ApplyVisa Yatra",
@@ -34,6 +36,7 @@ const brands = [
     description: "Visa & immigration documentation support.",
     icon: FileCheck2,
     position: "right",
+    backgroundColor: "#5B9E90", // Teal
   },
 ];
 
@@ -380,7 +383,10 @@ function BrandCard({ brand, index }) {
       whileHover={{
         y: -5,
       }}
-      className="group relative overflow-hidden rounded-[24px] border border-slate-200 bg-white p-5 shadow-[0_10px_35px_rgba(9,33,61,0.045)] transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(2,99,204,0.09)] sm:p-6"
+      className="group relative overflow-hidden rounded-[24px] text-white border border-slate-200 p-5 shadow-[0_10px_35px_rgba(9,33,61,0.045)] transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(2,99,204,0.09)] sm:p-6"
+      style={{
+        backgroundColor: brand.backgroundColor,
+      }}
     >
       {/* hover glow */}
 
@@ -388,22 +394,22 @@ function BrandCard({ brand, index }) {
 
       <div className="relative flex items-start gap-4">
 
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#0263CC]/7 text-[#0263CC] transition-all duration-300 group-hover:bg-[#0263CC] group-hover:text-white">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-[#ffffff] bg-[#0263CC] transition-all duration-300 group-hover:bg-[#0263CC] group-hover:text-white">
           <Icon size={20} />
         </div>
 
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
-            <span className="text-[9px] font-bold tracking-[0.17em] text-[#02A7BB]">
+            <span className="text-[9px] font-bold tracking-[0.17em] text-[#ffff]">
               {brand.label}
             </span>
           </div>
 
-          <h3 className="mt-1.5 text-[17px] font-semibold tracking-[-0.02em] text-[#09213d]">
+          <h3 className="mt-1.5 text-[17px] font-semibold tracking-[-0.02em] text-[#ffffff]">
             {brand.name}
           </h3>
 
-          <p className="mt-1.5 text-xs leading-5 text-slate-500">
+          <p className="mt-1.5 text-xs leading-5 text-white">
             {brand.description}
           </p>
         </div>
@@ -412,7 +418,7 @@ function BrandCard({ brand, index }) {
       {/* bottom connection indicator */}
 
       <div className="mt-5 flex items-center gap-2">
-        <span className="h-px flex-1 bg-slate-100 transition-colors group-hover:bg-[#0263CC]/15" />
+        <span className="h-px flex-1 bg-slate-100 transition-colors group-hover:bg-[#0263CC]" />
 
         <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-50 text-slate-300 transition-all group-hover:bg-[#0263CC]/8 group-hover:text-[#0263CC]">
           <ArrowUpRight size={10} />

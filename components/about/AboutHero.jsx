@@ -114,7 +114,7 @@ export default function HeroAbout() {
             className="relative z-10 max-w-[700px]"
           >
             {/* Eyebrow */}
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#0263CC]/10 bg-white/75 px-3.5 py-2 shadow-[0_8px_30px_rgba(2,99,204,0.06)] backdrop-blur-md">
+            <div className="mb-6 mt-12 lg:mt-0 inline-flex items-center gap-2 rounded-full border border-[#0263CC]/10 bg-white/75 px-3.5 py-2 shadow-[0_8px_30px_rgba(2,99,204,0.06)] backdrop-blur-md">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#02A7BB] opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#02A7BB]" />
@@ -277,7 +277,7 @@ export default function HeroAbout() {
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
-                    className="absolute left-4 top-4 flex items-center gap-2 rounded-2xl border border-white/30 bg-white/90 px-3 py-2.5 shadow-xl backdrop-blur-md sm:left-6 sm:top-6 sm:px-4"
+                    className="absolute left-4 top-1 flex items-center gap-2 rounded-2xl border border-white/30 bg-white/90 px-3 py-2.5 shadow-xl backdrop-blur-md sm:left-6 sm:top-6 sm:px-4"
                   >
                     <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#0263CC] text-white">
                       <Compass size={16} />
@@ -302,7 +302,7 @@ export default function HeroAbout() {
                       delay: 0.8,
                       duration: 0.6,
                     }}
-                    className="absolute bottom-4 left-4 right-4 rounded-[22px] border border-white/20 bg-[#071d35]/80 p-4 text-white shadow-2xl backdrop-blur-xl sm:bottom-6 sm:left-6 sm:right-6 sm:p-5"
+                    className="absolute lg:block hidden bottom-4 left-4 right-4 rounded-[22px] border border-white/20 bg-[#071d35]/80 p-4 text-white shadow-2xl backdrop-blur-xl sm:bottom-6 sm:left-6 sm:right-6 sm:p-5"
                   >
                     <div className="flex items-start gap-3">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#02A7BB]/20 text-[#6de2eb]">

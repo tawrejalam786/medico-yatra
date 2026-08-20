@@ -4,18 +4,17 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowRight,
   Building2,
   CheckCircle2,
   ChevronRight,
   Clock3,
   ExternalLink,
   Globe2,
+  Mail,
   MapPin,
   Navigation,
   Phone,
   Search,
-  Sparkles,
 } from "lucide-react";
 
 const OFFICES = [
@@ -26,8 +25,10 @@ const OFFICES = [
     title: "India Head Office",
     city: "Noida",
     state: "Uttar Pradesh",
-    address: "2nd Floor, 123, Education Hub, Sector 62, Noida, UP 201309",
+    address:
+      "2nd Floor, 123, Education Hub, Sector 62, Noida, UP 201309",
     phone: "+91 96544 00800",
+    email: "hello@medicoyatra.com",
     hours: "Mon - Sat • 9:00 AM - 7:00 PM",
     image: "/images/offices/india-office.jpg",
     coordinates: {
@@ -46,6 +47,7 @@ const OFFICES = [
     state: "Dubai",
     address: "Office No. 507, Business Bay, Dubai, UAE",
     phone: "+971 50 000 0000",
+    email: "hello@medicoyatra.com",
     hours: "Mon - Sat • 9:00 AM - 7:00 PM",
     image: "/images/offices/uae-office.jpg",
     coordinates: {
@@ -65,6 +67,7 @@ const OFFICES = [
     address:
       "Office 12, Presnenskaya Embankment, Moscow 123112, Russia",
     phone: "+7 000 000 0000",
+    email: "hello@medicoyatra.com",
     hours: "Mon - Sat • 9:00 AM - 7:00 PM",
     image: "/images/offices/russia-office.jpg",
     coordinates: {
@@ -84,6 +87,7 @@ const OFFICES = [
     address:
       "14 Aleksandre Kazbegi Ave, Saburtalo, Tbilisi, Georgia",
     phone: "+995 000 000 000",
+    email: "hello@medicoyatra.com",
     hours: "Mon - Sat • 9:00 AM - 7:00 PM",
     image: "/images/offices/georgia-office.jpg",
     coordinates: {
@@ -103,6 +107,7 @@ const OFFICES = [
     address:
       "Amir Temur Street 88, Tashkent, Uzbekistan",
     phone: "+998 00 000 0000",
+    email: "hello@medicoyatra.com",
     hours: "Mon - Sat • 9:00 AM - 7:00 PM",
     image: "/images/offices/uzbekistan-office.jpg",
     coordinates: {
@@ -117,6 +122,10 @@ export default function GlobalOffices() {
   const [selectedOffice, setSelectedOffice] = useState(OFFICES[0]);
   const [search, setSearch] = useState("");
 
+  /* =========================================================
+      FILTER OFFICES
+  ========================================================= */
+
   const filteredOffices = useMemo(() => {
     const value = search.toLowerCase().trim();
 
@@ -130,6 +139,10 @@ export default function GlobalOffices() {
     );
   }, [search]);
 
+  /* =========================================================
+      MAP URL
+  ========================================================= */
+
   const mapUrl = `https://www.google.com/maps?q=${selectedOffice.coordinates.lat},${selectedOffice.coordinates.lng}&z=14&output=embed`;
 
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -137,12 +150,17 @@ export default function GlobalOffices() {
   )}`;
 
   return (
-    <section className="relative overflow-hidden bg-[#F8FBFF] py-20 sm:py-24 lg:py-10">
+    <section
+      id="visit-us"
+      className="relative overflow-hidden bg-[#F8FBFF] py-10 sm:py-10 lg:py-10"
+    >
       {/* =========================================================
           BACKGROUND
       ========================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Grid */}
+
         <div
           className="absolute inset-0 opacity-[0.035]"
           style={{
@@ -151,6 +169,8 @@ export default function GlobalOffices() {
             backgroundSize: "45px 45px",
           }}
         />
+
+        {/* Blue glow */}
 
         <motion.div
           animate={{
@@ -164,6 +184,8 @@ export default function GlobalOffices() {
           }}
           className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#0263CC]/15 blur-[100px]"
         />
+
+        {/* Teal glow */}
 
         <motion.div
           animate={{
@@ -180,51 +202,53 @@ export default function GlobalOffices() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
         {/* =========================================================
             SECTION HEADER
         ========================================================== */}
 
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto mb-12 max-w-3xl text-center"
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+          className="mx-auto mb-10 max-w-3xl text-center sm:mb-12"
         >
+          {/* Eyebrow */}
+
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#0263CC]/15 bg-white px-4 py-2 shadow-sm">
-            <Globe2 className="h-4 w-4 text-[#0263CC]" />
+            <MapPin className="h-4 w-4 text-[#0263CC]" />
 
             <span className="text-sm font-bold tracking-wide text-[#0263CC]">
-              OUR GLOBAL PRESENCE
+              VISIT US
             </span>
           </div>
 
+          {/* Heading */}
+
           <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
-            Our Offices{" "}
+            Visit{" "}
             <span className="bg-gradient-to-r from-[#0263CC] via-[#4DA5EC] to-[#02A7BB] bg-clip-text text-transparent">
-              Around the World
+              us.
             </span>
           </h2>
 
+          {/* Description */}
+
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Wherever your medical journey takes you, our dedicated teams are
-            here to provide trusted guidance and personalized support.
+            Prefer speaking in person? Find our office details below and
+            choose the location that's convenient for you.
           </p>
-
-          {/* Small stats */}
-
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm ring-1 ring-slate-100">
-              <Building2 className="h-4 w-4 text-[#0263CC]" />
-              5 Global Offices
-            </div>
-
-            <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm ring-1 ring-slate-100">
-              <Globe2 className="h-4 w-4 text-[#02A7BB]" />
-              Multiple Countries
-            </div>
-          </div>
         </motion.div>
 
         {/* =========================================================
@@ -232,26 +256,33 @@ export default function GlobalOffices() {
         ========================================================== */}
 
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          initial={{
+            opacity: 0,
+            y: 35,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.15,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
           className="overflow-hidden rounded-[32px] border border-white bg-white p-2 shadow-[0_30px_90px_rgba(2,99,204,0.12)] sm:p-3 lg:rounded-[38px]"
         >
           <div className="grid overflow-hidden rounded-[26px] bg-[#F8FBFF] lg:grid-cols-[380px_1fr] lg:rounded-[32px]">
-
             {/* =====================================================
                 LEFT SIDE
             ====================================================== */}
 
             <div className="flex min-h-[650px] flex-col border-b border-slate-200 bg-white lg:border-b-0 lg:border-r">
-
               {/* Header */}
 
               <div className="border-b border-slate-100 p-5 sm:p-6">
-
                 <div className="mb-4 flex items-center justify-between gap-3">
-
                   <div>
                     <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#0263CC]">
                       Find an Office
@@ -265,13 +296,11 @@ export default function GlobalOffices() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0263CC]/10">
                     <MapPin className="h-5 w-5 text-[#0263CC]" />
                   </div>
-
                 </div>
 
                 {/* Search */}
 
                 <div className="relative">
-
                   <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
 
                   <input
@@ -281,15 +310,12 @@ export default function GlobalOffices() {
                     placeholder="Search country or city..."
                     className="h-12 w-full rounded-2xl border border-slate-200 bg-[#F8FBFF] pl-11 pr-4 text-sm font-medium text-slate-700 outline-none transition focus:border-[#0263CC]/40 focus:bg-white focus:ring-4 focus:ring-[#0263CC]/5"
                   />
-
                 </div>
-
               </div>
 
               {/* Office List */}
 
               <div className="flex-1 space-y-3 overflow-y-auto p-4 sm:p-5 lg:max-h-[590px]">
-
                 {filteredOffices.length === 0 ? (
                   <div className="flex h-40 flex-col items-center justify-center text-center">
                     <MapPin className="mb-3 h-8 w-8 text-slate-300" />
@@ -311,24 +337,33 @@ export default function GlobalOffices() {
                         key={office.id}
                         type="button"
                         onClick={() => setSelectedOffice(office)}
-                        initial={{ opacity: 0, x: -15 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        initial={{
+                          opacity: 0,
+                          x: -15,
+                        }}
+                        whileInView={{
+                          opacity: 1,
+                          x: 0,
+                        }}
+                        viewport={{
+                          once: true,
+                        }}
                         transition={{
                           delay: index * 0.05,
                         }}
-                        whileHover={{ x: 3 }}
+                        whileHover={{
+                          x: 3,
+                        }}
                         className={`group relative flex w-full items-center gap-4 overflow-hidden rounded-2xl border p-3 text-left transition-all duration-300 ${
                           active
                             ? "border-[#0263CC]/30 bg-[#0263CC]/[0.06] shadow-[0_12px_30px_rgba(2,99,204,0.10)]"
                             : "border-slate-100 bg-white hover:border-[#0263CC]/20 hover:shadow-md"
                         }`}
                       >
-
                         {/* Active indicator */}
 
                         <div
-                          className={`absolute left-0 top-3 bottom-3 w-1 rounded-r-full transition-all ${
+                          className={`absolute bottom-3 left-0 top-3 w-1 rounded-r-full transition-all ${
                             active
                               ? "bg-[#0263CC]"
                               : "bg-transparent"
@@ -352,9 +387,7 @@ export default function GlobalOffices() {
                         {/* Content */}
 
                         <div className="min-w-0 flex-1">
-
                           <div className="flex items-center gap-2">
-
                             <span className="text-lg">
                               {office.flag}
                             </span>
@@ -362,7 +395,6 @@ export default function GlobalOffices() {
                             <h4 className="truncate text-sm font-extrabold text-slate-900">
                               {office.title}
                             </h4>
-
                           </div>
 
                           <p className="mt-1 text-xs font-semibold text-[#0263CC]">
@@ -372,7 +404,6 @@ export default function GlobalOffices() {
                           <p className="mt-1 line-clamp-2 text-[11px] leading-4 text-slate-500">
                             {office.address}
                           </p>
-
                         </div>
 
                         {/* Arrow */}
@@ -386,20 +417,16 @@ export default function GlobalOffices() {
                         >
                           <ChevronRight className="h-4 w-4" />
                         </div>
-
                       </motion.button>
                     );
                   })
                 )}
-
               </div>
 
               {/* Bottom hint */}
 
               <div className="border-t border-slate-100 p-4">
-
                 <div className="flex items-center gap-3 rounded-2xl bg-[#F8FBFF] p-4">
-
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0263CC]/10">
                     <Navigation className="h-5 w-5 text-[#0263CC]" />
                   </div>
@@ -413,11 +440,8 @@ export default function GlobalOffices() {
                       The map will automatically update.
                     </p>
                   </div>
-
                 </div>
-
               </div>
-
             </div>
 
             {/* =====================================================
@@ -425,19 +449,22 @@ export default function GlobalOffices() {
             ====================================================== */}
 
             <div className="relative min-h-[500px] lg:min-h-[650px]">
-
               {/* Google Map */}
 
               <AnimatePresence mode="wait">
-
                 <motion.div
                   key={selectedOffice.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.4 }}
+                  initial={{
+                    opacity: 0,
+                  }}
+                  animate={{
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 0.4,
+                  }}
                   className="absolute inset-0"
                 >
-
                   <iframe
                     title={`${selectedOffice.title} Google Map`}
                     src={mapUrl}
@@ -445,25 +472,21 @@ export default function GlobalOffices() {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   />
-
                 </motion.div>
-
               </AnimatePresence>
 
-              {/* Top map badge */}
+              {/* =================================================
+                  TOP MAP BADGE
+              ================================================== */}
 
-              <div className="absolute left-4 right-4 top-4 z-10 flex items-start justify-between gap-3 sm:left-6 sm:right-6 sm:top-6">
-
-                <div className="rounded-2xl border border-white/70 bg-white/95 p-3 shadow-xl backdrop-blur-md sm:p-4">
-
+              <div className="absolute left-4 right-4 top-4 z-10 sm:left-6 sm:right-6 sm:top-6">
+                <div className="inline-flex rounded-2xl border border-white/70 bg-white/95 p-3 shadow-xl backdrop-blur-md sm:p-4">
                   <div className="flex items-center gap-3">
-
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#0263CC] to-[#02A7BB] text-white shadow-lg">
                       <MapPin className="h-5 w-5" />
                     </div>
 
                     <div>
-
                       <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                         Currently Viewing
                       </p>
@@ -471,41 +494,36 @@ export default function GlobalOffices() {
                       <p className="mt-0.5 text-sm font-black text-slate-900">
                         {selectedOffice.title}
                       </p>
-
                     </div>
-
                   </div>
-
                 </div>
-
-                <div className="hidden rounded-full border border-white/70 bg-white/95 px-4 py-2 text-xs font-bold text-[#0263CC] shadow-lg backdrop-blur-md sm:flex sm:items-center sm:gap-2">
-
-                  <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
-
-                  Office Available
-
-                </div>
-
               </div>
 
-              {/* Bottom office information */}
+              {/* =================================================
+                  BOTTOM OFFICE INFORMATION
+              ================================================== */}
 
               <motion.div
                 key={`info-${selectedOffice.id}`}
-                initial={{ opacity: 0, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
+                initial={{
+                  opacity: 0,
+                  y: 25,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
                 className="absolute bottom-4 left-4 right-4 z-10 sm:bottom-6 sm:left-6 sm:right-6"
               >
-
                 <div className="rounded-[24px] border border-white/70 bg-white/95 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.15)] backdrop-blur-xl sm:p-5">
-
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex flex-col gap-4">
+                    {/* Office heading */}
 
                     <div className="min-w-0">
-
                       <div className="flex items-center gap-2">
-
                         <span className="text-xl">
                           {selectedOffice.flag}
                         </span>
@@ -513,30 +531,37 @@ export default function GlobalOffices() {
                         <h3 className="text-lg font-black text-slate-900">
                           {selectedOffice.title}
                         </h3>
-
                       </div>
 
-                      <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2 text-xs text-slate-500">
+                      {/* Location + Hours */}
 
+                      <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2 text-xs text-slate-500">
                         <span className="flex items-center gap-1.5">
                           <MapPin className="h-3.5 w-3.5 text-[#0263CC]" />
+
                           {selectedOffice.city}
                         </span>
 
                         <span className="flex items-center gap-1.5">
                           <Clock3 className="h-3.5 w-3.5 text-[#02A7BB]" />
+
                           {selectedOffice.hours}
                         </span>
-
                       </div>
+
+                      {/* Address */}
 
                       <p className="mt-2 max-w-xl text-xs leading-5 text-slate-500">
                         {selectedOffice.address}
                       </p>
-
                     </div>
 
-                    <div className="flex shrink-0 gap-2">
+                    {/* =================================================
+                        CONTACT ACTIONS
+                    ================================================== */}
+
+                    <div className="grid grid-cols-2 gap-2 sm:flex sm:justify-end">
+                      {/* Call */}
 
                       <a
                         href={`tel:${selectedOffice.phone.replace(
@@ -547,16 +572,27 @@ export default function GlobalOffices() {
                       >
                         <Phone className="h-4 w-4 text-[#0263CC]" />
 
-                        <span className="hidden sm:inline">
-                          Call
-                        </span>
+                        <span>Call</span>
                       </a>
+
+                      {/* Email */}
+
+                      <a
+                        href={`mailto:${selectedOffice.email}`}
+                        className="flex h-11 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-sm font-bold text-slate-700 transition hover:border-[#02A7BB]/20 hover:bg-[#02A7BB]/5"
+                      >
+                        <Mail className="h-4 w-4 text-[#02A7BB]" />
+
+                        <span>Email</span>
+                      </a>
+
+                      {/* Directions */}
 
                       <a
                         href={googleMapsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex h-11 items-center justify-center gap-2 rounded-xl bg-[#0263CC] px-4 text-sm font-bold text-white shadow-lg shadow-[#0263CC]/20 transition hover:bg-[#0155B4]"
+                        className="group col-span-2 flex h-11 items-center justify-center gap-2 rounded-xl bg-[#0263CC] px-4 text-sm font-bold text-white shadow-lg shadow-[#0263CC]/20 transition hover:bg-[#0155B4] sm:col-span-1"
                       >
                         <Navigation className="h-4 w-4" />
 
@@ -564,88 +600,117 @@ export default function GlobalOffices() {
 
                         <ExternalLink className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
                       </a>
-
                     </div>
-
                   </div>
-
                 </div>
-
               </motion.div>
-
             </div>
-
           </div>
         </motion.div>
 
         {/* =========================================================
-            BOTTOM TRUST STRIP
+            BOTTOM INFORMATION STRIP
         ========================================================== */}
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.5,
+          }}
           className="mt-6 grid gap-3 sm:grid-cols-3"
         >
+          {/* Visit */}
 
-          <div className="flex items-center gap-3 rounded-2xl border border-white bg-white p-4 shadow-sm">
-
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0263CC]/10">
-              <CheckCircle2 className="h-5 w-5 text-[#0263CC]" />
+          <div className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0263CC]/10">
+              <MapPin className="h-5 w-5 text-[#0263CC]" />
             </div>
 
             <div>
               <p className="text-sm font-bold text-slate-900">
-                Trusted Guidance
+                Visit in person
               </p>
 
               <p className="text-xs text-slate-500">
-                Dedicated local support
+                Meet our counselling team
               </p>
             </div>
-
           </div>
 
-          <div className="flex items-center gap-3 rounded-2xl border border-white bg-white p-4 shadow-sm">
+          {/* Hours */}
 
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#02A7BB]/10">
-              <Globe2 className="h-5 w-5 text-[#02A7BB]" />
+          <div className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#02A7BB]/10">
+              <Clock3 className="h-5 w-5 text-[#02A7BB]" />
             </div>
 
             <div>
               <p className="text-sm font-bold text-slate-900">
-                Global Network
+                Clear working hours
               </p>
 
               <p className="text-xs text-slate-500">
-                Offices across multiple countries
+                Check before you visit
               </p>
             </div>
-
           </div>
 
-          <div className="flex items-center gap-3 rounded-2xl border border-white bg-white p-4 shadow-sm">
+          {/* Call */}
 
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#4DA5EC]/10">
-              <Sparkles className="h-5 w-5 text-[#0263CC]" />
+          <div className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#6B2638]/10">
+              <Phone className="h-5 w-5 text-[#6B2638]" />
             </div>
 
             <div>
               <p className="text-sm font-bold text-slate-900">
-                Student First
+                Prefer a call?
               </p>
 
               <p className="text-xs text-slate-500">
-                Personalized admission assistance
+                Speak to a counsellor directly
               </p>
             </div>
-
           </div>
-
         </motion.div>
 
+        {/* =========================================================
+            PRIVACY / ACCURACY NOTE
+        ========================================================== */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+          }}
+          className="mt-5 flex items-center justify-center gap-2 text-center text-[11px] leading-5 text-slate-400"
+        >
+          <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#02A7BB]" />
+
+          <span>
+            Office details and working hours should be confirmed before your
+            visit.
+          </span>
+        </motion.div>
       </div>
     </section>
   );

@@ -8,33 +8,29 @@ const TRUST_ITEMS = [
     icon: Shield,
     heading: "NMC-recognised universities",
     body: "Your degree has to count when you come home — this is one of the most important things families need to verify.",
-    color: "from-[#0263CC] to-[#4DA5EC]",
-    iconBg: "bg-blue-500/10",
-    accentColor: "text-[#0263CC]",
+    color: "from-[#0263CC] to-[#178BE5]",
+    accentColor: "text-white",
   },
   {
     icon: Briefcase,
     heading: "Many healthcare careers — not just MBBS",
     body: "A low NEET score or a different interest doesn't mean fewer honest options.",
-    color: "from-[#02A7BB] to-[#4ECDC4]",
-    iconBg: "bg-cyan-500/10",
-    accentColor: "text-[#02A7BB]",
+    color: "from-[#009E9A] to-[#02C7B5]",
+    accentColor: "text-white",
   },
   {
     icon: GraduationCap,
     heading: "Integrated FMGE / NExT & USMLE coaching",
     body: "Licensing preparation starts with your course, not years later.",
-    color: "from-[#0263CC] to-[#02A7BB]",
-    iconBg: "bg-indigo-500/10",
-    accentColor: "text-[#4DA5EC]",
+    color: "from-[#5B4FE9] to-[#7C3AED]",
+    accentColor: "text-white",
   },
   {
     icon: Heart,
     heading: "Honest, end-to-end guidance",
     body: "From counselling to licensing, we stay involved throughout the journey.",
-    color: "from-[#F59E0B] to-[#EF4444]",
-    iconBg: "bg-orange-500/10",
-    accentColor: "text-[#F59E0B]",
+    color: "from-[#F97316] to-[#EF4444]",
+    accentColor: "text-white",
   },
 ];
 
@@ -213,47 +209,100 @@ const TrustBar = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid gap-5 sm:grid-cols-2"
+            className="grid grid-cols-2 gap-5 sm:grid-cols-2"
           >
             {TRUST_ITEMS.map((item, index) => {
               const Icon = item.icon;
               
               return (
-                <motion.div
-                  key={item.heading}
-                  variants={cardVariants}
-                  whileHover={{ 
-                    y: -8, 
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
-                    transition: { duration: 0.3 }
-                  }}
-                  className="group relative rounded-2xl border border-[#E2E8F0] bg-white p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
-                >
-                  {/* Gradient Background on Hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-                  
-                  {/* Icon Container */}
-                  <motion.div
-                    variants={iconVariants}
-                    whileHover="hover"
-                    className={`relative mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${item.color} shadow-lg`}
-                  >
-                    <Icon size={24} className="text-white" strokeWidth={2.5} />
-                  </motion.div>
+               <motion.div
+  key={item.heading}
+  variants={cardVariants}
+  whileHover={{
+    y: -8,
+    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.20)",
+    transition: { duration: 0.3 },
+  }}
+  className={`
+    group relative overflow-hidden rounded-2xl
+    bg-gradient-to-br ${item.color}
+    p-5 sm:p-6
+    shadow-lg
+    transition-all duration-300
+  `}
+>
+  {/* Soft Background Glow */}
+  <div className="absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                  {/* Heading */}
-                  <h3 className={`mb-2.5 text-base sm:text-lg font-bold text-[#0F172A] leading-tight group-hover:${item.accentColor} transition-colors duration-300`}>
-                    {item.heading}
-                  </h3>
+  {/* Decorative Circle */}
+  <div
+    className="
+      absolute -right-10 -top-10
+      h-28 w-28 rounded-full
+      bg-white/10 blur-2xl
+      transition-all duration-500
+      group-hover:scale-150 group-hover:bg-white/15
+    "
+  />
 
-                  {/* Description */}
-                  <p className="text-sm leading-relaxed text-[#64748B]">
-                    {item.body}
-                  </p>
+  {/* Icon Container */}
+  <motion.div
+    variants={iconVariants}
+    whileHover="hover"
+    className="
+      relative mb-5
+      flex h-14 w-14 items-center justify-center
+      rounded-xl
+      bg-white/15
+      shadow-lg
+      backdrop-blur-sm
+      ring-1 ring-white/20
+    "
+  >
+    <Icon
+      size={24}
+      className="text-white"
+      strokeWidth={2.5}
+    />
+  </motion.div>
 
-                  {/* Decorative Corner Element */}
-                  <div className={`absolute -top-10 -right-10 w-24 h-24 bg-gradient-to-br ${item.color} rounded-full opacity-0 group-hover:opacity-10 blur-2xl transition-opacity duration-500`} />
-                </motion.div>
+  {/* Heading */}
+  <h3
+    className="
+      relative mb-2.5
+      text-base sm:text-lg
+      font-bold
+      leading-tight
+      text-white
+    "
+  >
+    {item.heading}
+  </h3>
+
+  {/* Description */}
+  <p
+    className="
+      relative
+      text-sm
+      leading-relaxed
+      text-white/85
+    "
+  >
+    {item.body}
+  </p>
+
+  {/* Bottom Shine */}
+  <div
+    className="
+      absolute bottom-0 left-0 right-0
+      h-px
+      bg-white/20
+      opacity-0
+      transition-opacity duration-300
+      group-hover:opacity-100
+    "
+  />
+</motion.div>
               );
             })}
           </motion.div>

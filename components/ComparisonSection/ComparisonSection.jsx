@@ -64,7 +64,7 @@ export function ComparisonSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-10 grid gap-6 md:grid-cols-4"
+          className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4"
         >
           {[
             ["5000+", "Students Guided"],
@@ -83,7 +83,7 @@ export function ComparisonSection() {
         </motion.div>
 
         {/* Comparison */}
-        <div className="mt-15 grid items-start gap-12 lg:grid-cols-[1fr_auto_1fr]">
+        <div className="mt-15 grid  items-start gap-12 lg:grid-cols-[1fr_auto_1fr]">
           <ComparisonCard
             title="A Typical Admission Agent"
             color="red"
