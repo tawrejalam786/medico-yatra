@@ -270,17 +270,8 @@ export default function CourseHero() {
 
           <Chevron />
 
-          <Link
-            href="/courses"
-            className="shrink-0 transition-colors hover:text-[#0263CC]"
-          >
-            Courses
-          </Link>
-
-          <Chevron />
-
           <span className="shrink-0 text-[#0263CC]">
-            Course
+            Courses
           </span>
 
           <Chevron />
@@ -318,7 +309,7 @@ export default function CourseHero() {
               <span className="h-1.5 w-1.5 rounded-full bg-[#0263CC]" />
 
               <span className="text-[10px] font-bold text-[#0263CC] sm:text-xs">
-               A Future Yatra brand · Integrated Licensing Coaching
+                FMGE / NExT PREPARATION FOR MBBS ABROAD
               </span>
             </div>
 
@@ -332,10 +323,7 @@ export default function CourseHero() {
 
             {/* Description */}
             <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base sm:leading-7 lg:text-[17px]">
-              Most foreign medical graduates begin FMGE preparation only after they
-return to India — and lose months relearning subjects they studied years earlier. Medico
-Yatra's 100% online coaching lets you build structured FMGE / NExT preparation into your
-MBBS abroad from Year 1, from anywhere in the world.
+               Prepare for FMGE / NExT alongside your MBBS abroad, from Year 1.
             </p>
           </motion.div>
 
@@ -344,40 +332,166 @@ MBBS abroad from Year 1, from anywhere in the world.
               CTA
           ================================================== */}
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 18,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.28,
-            }}
-            className="mt-6 flex flex-col gap-2.5 sm:mt-7 sm:flex-row"
-          >
-            <Link
-              href="/contact"
-              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0263CC] to-[#0759C9] px-6 text-sm font-bold text-white shadow-[0_10px_25px_rgba(2,99,204,.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(2,99,204,.32)]"
-            >
-             Book Free Counselling
+       <motion.div
+  initial={{
+    opacity: 0,
+    y: 18,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  transition={{
+    duration: 0.6,
+    delay: 0.28,
+  }}
+  className="mt-6 flex flex-col gap-2.5 sm:mt-7 sm:flex-row"
+>
+  {/* ============================= */}
+  {/* BOOK FREE COUNSELLING BUTTON */}
+  {/* ============================= */}
 
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+  <Link
+    href="/contact"
+    className="
+      group relative isolate
+      inline-flex min-h-12
+      items-center justify-center
+      overflow-hidden rounded-xl
+      p-[2px]
+    "
+  >
+    {/* Soft Glow */}
+    <motion.span
+      aria-hidden="true"
+      className="
+        absolute
+        inset-[-100%]
+        rounded-full
+        bg-[conic-gradient(
+          from_0deg,
+          transparent_0deg,
+          transparent_300deg,
+          rgba(56,189,248,0.15)_315deg,
+          rgba(56,189,248,0.45)_330deg,
+          rgba(37,99,235,0.8)_345deg,
+          rgba(56,189,248,0.45)_355deg,
+          transparent_360deg
+        )]
+        blur-md
+      "
+      animate={{
+        rotate: -360,
+      }}
+      transition={{
+        duration: 2.5,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+    />
 
-            <button
-              type="button"
-              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#0263CC]/30 bg-white/80 px-6 text-sm font-bold text-[#0263CC] shadow-sm backdrop-blur transition-all duration-300 hover:border-[#0263CC] hover:bg-white"
-            >
-             See How the
-Programme Works 
+    {/* Bright Moving Snake */}
+    <motion.span
+      aria-hidden="true"
+      className="
+        absolute
+        inset-[-100%]
+        rounded-full
+        bg-[conic-gradient(
+          from_0deg,
+          transparent_0deg,
+          transparent_300deg,
+          #38BDF8_320deg,
+          #60A5FA_338deg,
+          #2563EB_352deg,
+          #38BDF8_360deg
+        )]
+      "
+      animate={{
+        rotate: 360,
+      }}
+      transition={{
+        duration: 2.5,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+    />
 
-              <ArrowDownToLine className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
-            </button>
-          </motion.div>
+    {/* Button Content */}
+    <span
+      className="
+        relative z-10
+        flex min-h-[44px]
+        w-full
+        items-center justify-center
+        gap-2
+        rounded-[10px]
+        bg-gradient-to-r
+        from-[#0263CC]
+        to-[#0759C9]
+        px-6
+        text-sm
+        font-bold
+        text-white
+        shadow-[0_10px_25px_rgba(2,99,204,.25)]
+        transition-all
+        duration-300
+        group-hover:-translate-y-0.5
+        group-hover:shadow-[0_14px_30px_rgba(2,99,204,.38)]
+      "
+    >
+      Book Free Counselling
+
+      <ArrowRight
+        className="
+          h-4 w-4
+          transition-transform
+          duration-300
+          group-hover:translate-x-1
+        "
+      />
+    </span>
+  </Link>
+
+  {/* ============================= */}
+  {/* SEE HOW PROGRAMME WORKS */}
+  {/* ============================= */}
+
+  <button
+    type="button"
+    className="
+      group
+      inline-flex min-h-12
+      items-center justify-center
+      gap-2
+      rounded-xl
+      border border-[#0263CC]/30
+      bg-white/80
+      px-6
+      text-sm
+      font-bold
+      text-[#0263CC]
+      shadow-sm
+      backdrop-blur
+      transition-all
+      duration-300
+      hover:border-[#0263CC]
+      hover:bg-white
+      hover:shadow-[0_8px_20px_rgba(2,99,204,.10)]
+    "
+  >
+    See How the Programme Works
+
+    <ArrowDownToLine
+      className="
+        h-4 w-4
+        transition-transform
+        duration-300
+        group-hover:translate-y-0.5
+      "
+    />
+  </button>
+</motion.div>
 
           {/* =================================================
               TRUST BADGES
@@ -399,8 +513,7 @@ Programme Works
             className="-mx-1 mt-7 pb-1 sm:mt-4"
           >
             <div className="flex min-w-max gap-2 px-1">
-             <p className="text-sm">100% online · Live classes aligned to FMGE pattern ·
-Integrated with your MBBS-abroad <br /> schedule · No relocation needed</p>
+             <p className="text-sm">100% Online · Live Classes · Year 1 Onwards</p>
             </div>
           </motion.div>
         </div>

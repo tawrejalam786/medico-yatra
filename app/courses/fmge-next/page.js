@@ -24,7 +24,7 @@ export default function FmgePage() {
          <FMGEOutcomes />
          <FMGEUnderstanding />
          <WhyComparisonMatters />
-         <WhyStudentsStruggle />
+         {/* <WhyStudentsStruggle /> */}
          <OurMethodology />
          <FMGEExamStructure />
          <ProgrammeIncludes />

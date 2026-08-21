@@ -225,7 +225,7 @@ export default function FMGEJourneyRoadmap() {
               </svg>
 
               {/* Moving plane */}
-              <motion.div
+              {/* <motion.div
                 animate={{
                   x: ["0%", "100%"],
                 }}
@@ -242,7 +242,7 @@ export default function FMGEJourneyRoadmap() {
                     className="rotate-[10deg] text-[#0263CC]"
                   />
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
 
             {/* Nodes */}

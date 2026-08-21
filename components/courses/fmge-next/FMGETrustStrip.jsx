@@ -79,7 +79,7 @@ export default function FMGETrustStrip() {
           <div className="relative rounded-2xl border border-slate-200/80 bg-[#F8FBFF] px-6 py-5 shadow-[0_8px_35px_rgba(7,26,73,0.06)]">
 
             {/* Connecting line */}
-            <div className="absolute left-[10%] right-[10%] top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-[#0263CC]/20 to-transparent" />
+            {/* <div className="absolute left-[10%] right-[10%] top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-[#0263CC]/20 to-transparent" /> */}
 
             <div className="relative grid grid-cols-4">
 

@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   ArrowRight,
   Check,
   ChevronDown,
   FileText,
   Globe2,
-  GraduationCap,
   LockKeyhole,
   MessageCircle,
   Phone,
@@ -16,6 +16,8 @@ import {
   Sparkles,
   UserRound,
 } from "lucide-react";
+
+const trustPanelImage = "/images/contact/contact-form-student.png";
 
 const courseOptions = [
   "MBBS",
@@ -49,6 +51,10 @@ const initialForm = {
   consent: false,
 };
 
+/* =========================================================
+   INPUT FIELD
+========================================================= */
+
 const InputField = ({
   label,
   required = false,
@@ -66,7 +72,10 @@ const InputField = ({
         className="mb-2.5 block text-[13px] font-bold text-[#173B5B]"
       >
         {label}
-        {required && <span className="ml-1 text-[#0263CC]">*</span>}
+
+        {required && (
+          <span className="ml-1 text-[#0263CC]">*</span>
+        )}
       </label>
 
       <div className="relative">
@@ -124,6 +133,10 @@ const InputField = ({
   );
 };
 
+/* =========================================================
+   SELECT FIELD
+========================================================= */
+
 const SelectField = ({
   label,
   required = false,
@@ -140,7 +153,10 @@ const SelectField = ({
         className="mb-2.5 block text-[13px] font-bold text-[#173B5B]"
       >
         {label}
-        {required && <span className="ml-1 text-[#0263CC]">*</span>}
+
+        {required && (
+          <span className="ml-1 text-[#0263CC]">*</span>
+        )}
       </label>
 
       <div className="relative">
@@ -168,11 +184,7 @@ const SelectField = ({
             focus:bg-white
             focus:ring-4
             focus:ring-[#0263CC]/8
-            ${
-              value
-                ? "text-[#092B4C]"
-                : "text-slate-400"
-            }
+            ${value ? "text-[#092B4C]" : "text-slate-400"}
           `}
         >
           <option value="" disabled>
@@ -202,6 +214,10 @@ const SelectField = ({
   );
 };
 
+/* =========================================================
+   MAIN COMPONENT
+========================================================= */
+
 const CounsellingForm = () => {
   const [form, setForm] = useState(initialForm);
   const [submitted, setSubmitted] = useState(false);
@@ -218,7 +234,7 @@ const CounsellingForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Backend / Zoho CRM integration will be added here.
+    // Backend / Zoho CRM integration can be added here.
     setSubmitted(true);
   };
 
@@ -230,17 +246,40 @@ const CounsellingForm = () => {
         overflow-hidden
         bg-[#F7FAFD]
         py-10
-        sm:py-10
-        lg:py-12
+        sm:py-12
+        lg:py-14
       "
     >
       {/* =========================================================
           BACKGROUND
       ========================================================= */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-[-180px] top-[15%] h-[420px] w-[420px] rounded-full bg-[#4DA5EC]/10 blur-[120px]" />
 
-        <div className="absolute right-[-180px] bottom-[-100px] h-[450px] w-[450px] rounded-full bg-[#02A7BB]/8 blur-[120px]" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          className="
+            absolute
+            left-[-180px]
+            top-[15%]
+            h-[420px]
+            w-[420px]
+            rounded-full
+            bg-[#4DA5EC]/10
+            blur-[120px]
+          "
+        />
+
+        <div
+          className="
+            absolute
+            right-[-180px]
+            bottom-[-100px]
+            h-[450px]
+            w-[450px]
+            rounded-full
+            bg-[#02A7BB]/8
+            blur-[120px]
+          "
+        />
 
         <div
           className="absolute inset-0 opacity-[0.025]"
@@ -256,48 +295,130 @@ const CounsellingForm = () => {
         {/* =======================================================
             SECTION HEADING
         ======================================================= */}
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
           className="mb-10 max-w-3xl sm:mb-12"
         >
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0263CC]/10 bg-white/80 px-3.5 py-2 shadow-sm backdrop-blur-md">
-            <Sparkles size={14} className="text-[#0263CC]" />
+          <div
+            className="
+              mb-4
+              inline-flex
+              items-center
+              gap-2
+              rounded-full
+              border
+              border-[#0263CC]/10
+              bg-white/80
+              px-3.5
+              py-2
+              shadow-sm
+              backdrop-blur-md
+            "
+          >
+            <Sparkles
+              size={14}
+              className="text-[#0263CC]"
+            />
 
-            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0263CC]">
+            <span
+              className="
+                text-[11px]
+                font-bold
+                uppercase
+                tracking-[0.16em]
+                text-[#0263CC]
+              "
+            >
               Free & no-obligation
             </span>
           </div>
 
-          <h2 className="text-3xl font-extrabold tracking-[-0.035em] text-[#092B4C] sm:text-4xl lg:text-[48px] lg:leading-[1.1]">
+          <h2
+            className="
+              text-3xl
+              font-extrabold
+              tracking-[-0.035em]
+              text-[#092B4C]
+              sm:text-4xl
+              lg:text-[48px]
+              lg:leading-[1.1]
+            "
+          >
             Book your{" "}
             <span className="text-[#0263CC]">
               free counselling
             </span>
           </h2>
 
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base sm:leading-8">
-            Share a few details and a Medico Yatra counsellor will reach out
-            with a personalised, no-obligation plan.
+          <p
+            className="
+              mt-4
+              max-w-2xl
+              text-sm
+              leading-7
+              text-slate-500
+              sm:text-base
+              sm:leading-8
+            "
+          >
+            Share a few details and a Medico Yatra counsellor
+            will reach out with a personalised, no-obligation
+            plan.
           </p>
         </motion.div>
 
         {/* =======================================================
             MAIN GRID
         ======================================================= */}
-        <div className="grid items-stretch gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:gap-7 xl:gap-8">
+
+        <div
+          className="
+            grid
+            items-stretch
+            gap-6
+            lg:grid-cols-[0.75fr_1.25fr]
+            lg:gap-7
+            xl:gap-8
+          "
+        >
           {/* =====================================================
               LEFT TRUST PANEL
           ===================================================== */}
+
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.7 }}
+            initial={{
+              opacity: 0,
+              x: -25,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
+            transition={{
+              duration: 0.7,
+            }}
             className="
               relative
+              min-h-[680px]
               overflow-hidden
               rounded-[28px]
               bg-[#082F52]
@@ -305,16 +426,133 @@ const CounsellingForm = () => {
               text-white
               shadow-[0_25px_70px_rgba(8,47,82,0.18)]
               sm:p-8
+              lg:min-h-[720px]
               lg:p-9
             "
           >
-            {/* Background glow */}
-            <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#4DA5EC]/20 blur-3xl" />
+            {/* =================================================
+                IMAGE
+            ================================================= */}
 
-            <div className="absolute -bottom-28 -left-20 h-72 w-72 rounded-full bg-[#02A7BB]/15 blur-3xl" />
+            {/* =================================================
+    STUDENT IMAGE — BOTTOM RIGHT
+================================================= */}
+<div
+  className="
+    pointer-events-none
+    absolute
+    bottom-0
+    right-0
+    z-[1]
+    h-[58%]
+    w-[92%]
+    sm:h-[62%]
+    sm:w-[90%]
+    lg:h-[60%]
+    lg:w-[94%]
+  "
+>
+  <Image
+    src={trustPanelImage}
+    alt="Medical student counselling"
+    fill
+    priority
+    sizes="
+      (max-width: 640px) 92vw,
+      (max-width: 1024px) 45vw,
+      450px
+    "
+    className="
+      object-contain
+      object-right-bottom
+      opacity-80
+    "
+  />
 
-            {/* Decorative line */}
-            <div className="absolute right-8 top-8 hidden opacity-30 sm:block">
+  {/* Bottom fade — image ko panel ke andar naturally blend karega */}
+  <div
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-t
+      from-[#082F52]
+      via-[#082F52]/55
+      to-transparent
+    "
+  />
+
+  {/* Left fade — text ke peeche image visible nahi hogi */}
+  <div
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-r
+      from-[#082F52]/95
+      via-[#082F52]/35
+      to-transparent
+    "
+  />
+
+  {/* Soft blue tint */}
+  <div
+    className="
+      absolute
+      inset-0
+      bg-[#0263CC]/10
+      mix-blend-multiply
+    "
+  />
+</div>
+
+            {/* =================================================
+                BACKGROUND GLOW
+            ================================================= */}
+
+            <div
+              className="
+                pointer-events-none
+                absolute
+                -right-24
+                -top-24
+                z-[1]
+                h-64
+                w-64
+                rounded-full
+                bg-[#4DA5EC]/20
+                blur-3xl
+              "
+            />
+
+            <div
+              className="
+                pointer-events-none
+                absolute
+                -bottom-28
+                -left-20
+                z-[1]
+                h-72
+                w-72
+                rounded-full
+                bg-[#02A7BB]/15
+                blur-3xl
+              "
+            />
+
+            {/* =================================================
+                DECORATIVE LINE
+            ================================================= */}
+
+            <div
+              className="
+                absolute
+                right-8
+                top-8
+                z-[2]
+                hidden
+                opacity-30
+                sm:block
+              "
+            >
               <svg
                 width="100"
                 height="80"
@@ -327,31 +565,95 @@ const CounsellingForm = () => {
                   strokeWidth="1.5"
                   strokeDasharray="5 6"
                 />
-                <circle cx="95" cy="15" r="4" fill="#8EDFFF" />
+
+                <circle
+                  cx="95"
+                  cy="15"
+                  r="4"
+                  fill="#8EDFFF"
+                />
               </svg>
             </div>
 
+            {/* =================================================
+                TRUST CONTENT
+            ================================================= */}
+
             <div className="relative z-10">
               {/* Icon */}
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-[#8EDFFF] backdrop-blur-md">
+
+              <div
+                className="
+                  flex
+                  h-14
+                  w-14
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  bg-white/10
+                  text-[#8EDFFF]
+                  backdrop-blur-md
+                "
+              >
                 <MessageCircle size={25} />
               </div>
 
-              <h3 className="mt-7 max-w-sm text-2xl font-extrabold tracking-tight sm:text-[30px] sm:leading-[1.2]">
+              <h3
+                className="
+                  mt-7
+                  max-w-sm
+                  text-2xl
+                  font-extrabold
+                  tracking-tight
+                  sm:text-[30px]
+                  sm:leading-[1.2]
+                "
+              >
                 Let's understand what you actually need.
               </h3>
 
-              <p className="mt-4 max-w-md text-sm leading-6 text-white/65 sm:text-[15px] sm:leading-7">
-                You don't need to have everything figured out before reaching
-                out. Tell us where you are, what you're considering, and what
-                you're unsure about.
+              <p
+                className="
+                  mt-4
+                  max-w-md
+                  text-sm
+                  leading-6
+                  text-white/65
+                  sm:text-[15px]
+                  sm:leading-7
+                "
+              >
+                You don't need to have everything figured out
+                before reaching out. Tell us where you are,
+                what you're considering, and what you're unsure
+                about.
               </p>
 
-              {/* Trust points */}
+              {/* =================================================
+                  TRUST POINTS
+              ================================================= */}
+
               <div className="mt-8 space-y-4">
+                {/* Point 1 */}
+
                 <div className="flex items-start gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#8EDFFF]">
-                    <Check size={15} strokeWidth={2.5} />
+                  <span
+                    className="
+                      flex
+                      h-8
+                      w-8
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-white/10
+                      text-[#8EDFFF]
+                    "
+                  >
+                    <Check
+                      size={15}
+                      strokeWidth={2.5}
+                    />
                   </span>
 
                   <div>
@@ -365,9 +667,26 @@ const CounsellingForm = () => {
                   </div>
                 </div>
 
+                {/* Point 2 */}
+
                 <div className="flex items-start gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#8EDFFF]">
-                    <Check size={15} strokeWidth={2.5} />
+                  <span
+                    className="
+                      flex
+                      h-8
+                      w-8
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-white/10
+                      text-[#8EDFFF]
+                    "
+                  >
+                    <Check
+                      size={15}
+                      strokeWidth={2.5}
+                    />
                   </span>
 
                   <div>
@@ -381,9 +700,26 @@ const CounsellingForm = () => {
                   </div>
                 </div>
 
+                {/* Point 3 */}
+
                 <div className="flex items-start gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#8EDFFF]">
-                    <Check size={15} strokeWidth={2.5} />
+                  <span
+                    className="
+                      flex
+                      h-8
+                      w-8
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-white/10
+                      text-[#8EDFFF]
+                    "
+                  >
+                    <Check
+                      size={15}
+                      strokeWidth={2.5}
+                    />
                   </span>
 
                   <div>
@@ -398,23 +734,45 @@ const CounsellingForm = () => {
                 </div>
               </div>
 
-              {/* Bottom reassurance */}
-              <div className="mt-9 rounded-2xl border border-white/10 bg-white/[0.06] p-4 backdrop-blur-md">
+              {/* =================================================
+                  BOTTOM REASSURANCE
+              ================================================= */}
+
+              <div
+                className="
+                  relative
+                  z-10
+                  mt-9
+                  rounded-2xl
+                  border
+                  border-white/10
+                  bg-white/[0.06]
+                  p-4
+                  backdrop-blur-md
+                "
+              >
                 <div className="flex items-start gap-3">
                   <ShieldCheck
                     size={19}
-                    className="mt-0.5 shrink-0 text-[#8EDFFF]"
+                    className="
+                      mt-0.5
+                      shrink-0
+                      text-[#8EDFFF]
+                    "
                   />
 
                   <p className="text-xs leading-5 text-white/60">
-                    Your details are used only to understand and respond to
-                    your enquiry.
+                    Your details are used only to understand and
+                    respond to your enquiry.
                   </p>
                 </div>
               </div>
 
-              {/* Quick contact */}
-              <div className="mt-7 grid grid-cols-2 gap-3">
+              {/* =================================================
+                  QUICK CONTACT
+              ================================================= */}
+
+              <div className="relative z-10 mt-7 grid grid-cols-2 gap-3">
                 <a
                   href="#"
                   className="
@@ -428,6 +786,7 @@ const CounsellingForm = () => {
                     bg-white/[0.05]
                     px-3
                     py-3
+                    backdrop-blur-md
                     transition-all
                     hover:border-white/20
                     hover:bg-white/10
@@ -444,7 +803,7 @@ const CounsellingForm = () => {
                 </a>
 
                 <a
-                  href="#"
+                  href="tel:+9198974444550"
                   className="
                     group
                     flex
@@ -456,6 +815,7 @@ const CounsellingForm = () => {
                     bg-white/[0.05]
                     px-3
                     py-3
+                    backdrop-blur-md
                     transition-all
                     hover:border-white/20
                     hover:bg-white/10
@@ -477,11 +837,23 @@ const CounsellingForm = () => {
           {/* =====================================================
               FORM CARD
           ===================================================== */}
+
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.7 }}
+            initial={{
+              opacity: 0,
+              x: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
+            transition={{
+              duration: 0.7,
+            }}
             className="
               relative
               rounded-[28px]
@@ -496,58 +868,167 @@ const CounsellingForm = () => {
             id="contact-form"
           >
             {/* Top accent */}
-            <div className="absolute left-7 right-7 top-0 h-[3px] rounded-b-full bg-gradient-to-r from-[#0263CC] via-[#4DA5EC] to-[#02A7BB] sm:left-9 sm:right-9" />
 
-            {/* Form heading */}
-            <div className="mb-7 flex items-start justify-between gap-4">
+            <div
+              className="
+                absolute
+                left-7
+                right-7
+                top-0
+                h-[3px]
+                rounded-b-full
+                bg-gradient-to-r
+                from-[#0263CC]
+                via-[#4DA5EC]
+                to-[#02A7BB]
+                sm:left-9
+                sm:right-9
+              "
+            />
+
+            {/* =================================================
+                FORM HEADING
+            ================================================= */}
+
+            <div
+              className="
+                mb-7
+                flex
+                items-start
+                justify-between
+                gap-4
+              "
+            >
               <div>
                 <div className="flex items-center gap-2">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0263CC]/8 text-[#0263CC]">
+                  <div
+                    className="
+                      flex
+                      h-9
+                      w-9
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-[#0263CC]/8
+                      text-[#0263CC]
+                    "
+                  >
                     <FileText size={17} />
                   </div>
 
-                  <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#0263CC]">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      tracking-[0.14em]
+                      text-[#0263CC]
+                    "
+                  >
                     Quick enquiry
                   </span>
                 </div>
 
-                <h3 className="mt-3 text-xl font-extrabold tracking-tight text-[#092B4C] sm:text-2xl">
+                <h3
+                  className="
+                    mt-3
+                    text-xl
+                    font-extrabold
+                    tracking-tight
+                    text-[#092B4C]
+                    sm:text-2xl
+                  "
+                >
                   Tell us a little about yourself
                 </h3>
               </div>
 
-              <div className="hidden items-center gap-1.5 rounded-full bg-slate-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 sm:flex">
+              <div
+                className="
+                  hidden
+                  items-center
+                  gap-1.5
+                  rounded-full
+                  bg-slate-50
+                  px-3
+                  py-1.5
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-wider
+                  text-slate-400
+                  sm:flex
+                "
+              >
                 <span className="h-1.5 w-1.5 rounded-full bg-[#02A7BB]" />
                 Secure enquiry
               </div>
             </div>
 
-            {/* Success state */}
+            {/* =================================================
+                SUCCESS STATE
+            ================================================= */}
+
             {submitted ? (
               <motion.div
-                initial={{ opacity: 0, scale: 0.97 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{
+                  opacity: 0,
+                  scale: 0.97,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
                 className="
                   flex
                   min-h-[500px]
                   flex-col
                   items-center
                   justify-center
-                  text-center
                   px-5
+                  text-center
                 "
               >
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#E9FAF7] text-[#02A7BB]">
-                  <Check size={38} strokeWidth={2.2} />
+                <div
+                  className="
+                    flex
+                    h-20
+                    w-20
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-[#E9FAF7]
+                    text-[#02A7BB]
+                  "
+                >
+                  <Check
+                    size={38}
+                    strokeWidth={2.2}
+                  />
                 </div>
 
-                <h3 className="mt-6 text-2xl font-extrabold text-[#092B4C]">
+                <h3
+                  className="
+                    mt-6
+                    text-2xl
+                    font-extrabold
+                    text-[#092B4C]
+                  "
+                >
                   Thank you for reaching out.
                 </h3>
 
-                <p className="mt-3 max-w-md text-sm leading-6 text-slate-500">
-                  We've received your enquiry. A Medico Yatra counsellor will
-                  get in touch with you.
+                <p
+                  className="
+                    mt-3
+                    max-w-md
+                    text-sm
+                    leading-6
+                    text-slate-500
+                  "
+                >
+                  We've received your enquiry. A Medico Yatra
+                  counsellor will get in touch with you.
                 </p>
 
                 <button
@@ -556,16 +1037,29 @@ const CounsellingForm = () => {
                     setSubmitted(false);
                     setForm(initialForm);
                   }}
-                  className="mt-7 rounded-full border border-slate-200 px-5 py-2.5 text-sm font-bold text-[#0263CC] transition hover:bg-slate-50"
+                  className="
+                    mt-7
+                    rounded-full
+                    border
+                    border-slate-200
+                    px-5
+                    py-2.5
+                    text-sm
+                    font-bold
+                    text-[#0263CC]
+                    transition
+                    hover:bg-slate-50
+                  "
                 >
                   Submit another enquiry
                 </button>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit}>
-                {/* =============================================
+                {/* =================================================
                     ROW 1
-                ============================================= */}
+                ================================================= */}
+
                 <div className="grid gap-5 sm:grid-cols-2">
                   <InputField
                     label="Full name"
@@ -589,9 +1083,10 @@ const CounsellingForm = () => {
                   />
                 </div>
 
-                {/* =============================================
+                {/* =================================================
                     ROW 2
-                ============================================= */}
+                ================================================= */}
+
                 <div className="mt-5 grid gap-5 sm:grid-cols-2">
                   <InputField
                     label="Email"
@@ -613,9 +1108,10 @@ const CounsellingForm = () => {
                   />
                 </div>
 
-                {/* =============================================
+                {/* =================================================
                     ROW 3
-                ============================================= */}
+                ================================================= */}
+
                 <div className="mt-5 grid gap-5 sm:grid-cols-2">
                   <SelectField
                     label="Course of interest"
@@ -637,9 +1133,10 @@ const CounsellingForm = () => {
                   />
                 </div>
 
-                {/* =============================================
+                {/* =================================================
                     ROW 4
-                ============================================= */}
+                ================================================= */}
+
                 <div className="mt-5">
                   <SelectField
                     label="NEET / Class 12 status"
@@ -651,13 +1148,20 @@ const CounsellingForm = () => {
                   />
                 </div>
 
-                {/* =============================================
+                {/* =================================================
                     MESSAGE
-                ============================================= */}
+                ================================================= */}
+
                 <div className="group mt-5">
                   <label
                     htmlFor="message"
-                    className="mb-2.5 block text-[13px] font-bold text-[#173B5B]"
+                    className="
+                      mb-2.5
+                      block
+                      text-[13px]
+                      font-bold
+                      text-[#173B5B]
+                    "
                   >
                     Message
                   </label>
@@ -696,9 +1200,10 @@ const CounsellingForm = () => {
                   />
                 </div>
 
-                {/* =============================================
+                {/* =================================================
                     CONSENT
-                ============================================= */}
+                ================================================= */}
+
                 <div className="mt-5">
                   <label className="flex cursor-pointer items-start gap-3">
                     <input
@@ -727,14 +1232,16 @@ const CounsellingForm = () => {
                     />
 
                     <span className="text-xs leading-5 text-slate-500">
-                      I agree to be contacted by Medico Yatra about my enquiry.
+                      I agree to be contacted by Medico Yatra
+                      about my enquiry.
                     </span>
                   </label>
                 </div>
 
-                {/* =============================================
+                {/* =================================================
                     SUBMIT
-                ============================================= */}
+                ================================================= */}
+
                 <div className="mt-6">
                   <button
                     type="submit"
@@ -764,22 +1271,60 @@ const CounsellingForm = () => {
                   >
                     Get My Free Counselling
 
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 group-hover:translate-x-1">
+                    <span
+                      className="
+                        flex
+                        h-7
+                        w-7
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-white/15
+                        transition-transform
+                        duration-300
+                        group-hover:translate-x-1
+                      "
+                    >
                       <ArrowRight size={16} />
                     </span>
                   </button>
                 </div>
 
-                {/* Privacy */}
-                <div className="mt-4 flex items-start justify-center gap-2 text-center">
+                {/* =================================================
+                    PRIVACY
+                ================================================= */}
+
+                <div
+                  className="
+                    mt-4
+                    flex
+                    items-start
+                    justify-center
+                    gap-2
+                    text-center
+                  "
+                >
                   <LockKeyhole
                     size={14}
-                    className="mt-0.5 shrink-0 text-slate-400"
+                    className="
+                      mt-0.5
+                      shrink-0
+                      text-slate-400
+                    "
                   />
 
-                  <p className="max-w-lg text-[11px] leading-5 text-slate-400 sm:text-xs">
-                    Your details are used only to contact you about your
-                    enquiry. We don't spam or sell your data.
+                  <p
+                    className="
+                      max-w-lg
+                      text-[11px]
+                      leading-5
+                      text-slate-400
+                      sm:text-xs
+                    "
+                  >
+                    Your details are used only to contact you
+                    about your enquiry. We don't spam or sell
+                    your data.
                   </p>
                 </div>
               </form>

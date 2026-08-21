@@ -9,7 +9,15 @@ import {
   GraduationCap,
   Plane,
   Stethoscope,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 const journey = [
   {
@@ -83,6 +91,7 @@ export default function WhatWeDo() {
 
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-20">
 
+          {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -25 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -108,6 +117,7 @@ export default function WhatWeDo() {
             </h2>
           </motion.div>
 
+          {/* RIGHT */}
           <motion.div
             initial={{ opacity: 0, x: 25 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -134,14 +144,13 @@ export default function WhatWeDo() {
             JOURNEY MAP
         ======================================================== */}
 
-        <div className="relative mt-16 sm:mt-20 lg:mt-24">
+        <div className="relative mt-12 sm:mt-16 lg:mt-24">
 
           {/* =====================================================
               DESKTOP FLIGHT PATH
           ====================================================== */}
 
           <div className="pointer-events-none absolute left-[8%] right-[8%] top-[105px] hidden lg:block">
-
             <svg
               viewBox="0 0 1000 160"
               className="h-[160px] w-full overflow-visible"
@@ -180,16 +189,106 @@ export default function WhatWeDo() {
           </div>
 
           {/* =====================================================
-              MOBILE VERTICAL PATH
+              MOBILE / TABLET CAROUSEL
           ====================================================== */}
 
-          <div className="pointer-events-none absolute bottom-8 left-[28px] top-8 w-px bg-gradient-to-b from-[#0263CC]/40 via-[#02A7BB]/50 to-[#69dce5]/10 lg:hidden" />
+          <div className="relative lg:hidden">
+
+            {/* Navigation */}
+            <div className="mb-5 flex items-center justify-between">
+
+              <div>
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/25">
+                  Your journey
+                </p>
+
+                <p className="mt-1 text-xs text-white/35">
+                  Swipe to explore each stage
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  className="journey-prev flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-white/60 transition-all duration-200 hover:border-[#02A7BB]/40 hover:bg-[#02A7BB]/10 hover:text-[#69dce5] active:scale-95"
+                  aria-label="Previous journey stage"
+                >
+                  <ChevronLeft size={17} />
+                </button>
+
+                <button
+                  type="button"
+                  className="journey-next flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-white/60 transition-all duration-200 hover:border-[#02A7BB]/40 hover:bg-[#02A7BB]/10 hover:text-[#69dce5] active:scale-95"
+                  aria-label="Next journey stage"
+                >
+                  <ChevronRight size={17} />
+                </button>
+              </div>
+            </div>
+
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              navigation={{
+                prevEl: ".journey-prev",
+                nextEl: ".journey-next",
+              }}
+              autoplay={{
+                delay: 3500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              spaceBetween={14}
+              slidesPerView={1.08}
+              grabCursor={true}
+              observer={true}
+              observeParents={true}
+              className="!overflow-visible"
+              breakpoints={{
+                480: {
+                  slidesPerView: 1.12,
+                  spaceBetween: 15,
+                },
+                640: {
+                  slidesPerView: 1.7,
+                  spaceBetween: 18,
+                },
+                768: {
+                  slidesPerView: 2.1,
+                  spaceBetween: 20,
+                },
+              }}
+            >
+              {journey.map((item, index) => (
+                <SwiperSlide
+                  key={item.number}
+                  className="!h-auto"
+                >
+                  <JourneyNode
+                    {...item}
+                    index={index}
+                    carousel
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* Swipe indicator */}
+            <div className="mt-5 flex items-center justify-center gap-2">
+              <span className="h-px w-6 bg-[#02A7BB]/30" />
+
+              <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-white/25">
+                Swipe to explore
+              </span>
+
+              <span className="h-px w-6 bg-[#02A7BB]/30" />
+            </div>
+          </div>
 
           {/* =====================================================
-              JOURNEY ITEMS
+              DESKTOP JOURNEY ITEMS
           ====================================================== */}
 
-          <div className="grid gap-5 lg:grid-cols-4 lg:gap-6">
+          <div className="hidden grid-cols-4 gap-6 lg:grid">
             {journey.map((item, index) => (
               <JourneyNode
                 key={item.number}
@@ -209,10 +308,12 @@ export default function WhatWeDo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7 }}
-          className="mt-14 grid gap-4 sm:mt-16 lg:grid-cols-[1fr_auto] lg:items-center"
+          className="mt-12 grid gap-4 sm:mt-16 lg:grid-cols-[1fr_auto] lg:items-center"
         >
+          {/* LEFT STATEMENT */}
           <div className="rounded-[24px] border border-white/8 bg-white/[0.035] p-5 sm:p-6">
             <div className="flex items-start gap-4">
+
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#02A7BB]/10 text-[#69dce5]">
                 <CheckCircle2 size={18} />
               </div>
@@ -226,11 +327,14 @@ export default function WhatWeDo() {
                   It's where the next part of the journey begins.
                 </p>
               </div>
+
             </div>
           </div>
 
+          {/* RIGHT COMMITMENT */}
           <div className="flex items-center justify-center rounded-[24px] border border-[#02A7BB]/15 bg-[#02A7BB]/5 px-6 py-5">
             <div className="text-center">
+
               <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#69dce5]">
                 Our commitment
               </p>
@@ -238,6 +342,7 @@ export default function WhatWeDo() {
               <p className="mt-1 text-sm font-semibold text-white">
                 With you beyond admission.
               </p>
+
             </div>
           </div>
         </motion.div>
@@ -257,6 +362,7 @@ function JourneyNode({
   icon: Icon,
   tag,
   index,
+  carousel = false,
 }) {
   return (
     <motion.div
@@ -276,8 +382,9 @@ function JourneyNode({
         duration: 0.6,
         delay: index * 0.12,
       }}
-      className="group relative lg:pt-2"
+      className="group relative h-full lg:pt-2"
     >
+
       {/* =====================================================
           DESKTOP NODE
       ====================================================== */}
@@ -295,8 +402,7 @@ function JourneyNode({
           }}
           className="relative flex h-[76px] w-[76px] items-center justify-center rounded-full border border-[#69dce5]/20 bg-[#061c34] shadow-[0_0_0_10px_rgba(2,167,187,0.035)]"
         >
-          {/* glow */}
-
+          {/* Glow */}
           <div className="absolute inset-2 rounded-full bg-[#0263CC]/15 blur-md transition-all duration-300 group-hover:bg-[#02A7BB]/25" />
 
           <Icon
@@ -304,8 +410,7 @@ function JourneyNode({
             className="relative text-[#69dce5]"
           />
 
-          {/* number */}
-
+          {/* Number */}
           <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white text-[8px] font-bold text-[#0263CC] shadow-lg">
             {number}
           </span>
@@ -317,7 +422,10 @@ function JourneyNode({
       ====================================================== */}
 
       <div className="absolute left-0 top-5 z-10 flex h-[58px] w-[58px] items-center justify-center rounded-full border-[5px] border-[#061c34] bg-[#0263CC] lg:hidden">
-        <Icon size={18} className="text-white" />
+        <Icon
+          size={18}
+          className="text-white"
+        />
 
         <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#69dce5] text-[7px] font-bold text-[#061c34]">
           {number}
@@ -328,9 +436,30 @@ function JourneyNode({
           CONTENT
       ====================================================== */}
 
-      <div className="ml-[78px] rounded-[24px] border border-white/8 bg-white/[0.035] p-5 transition-all duration-300 group-hover:border-[#02A7BB]/20 group-hover:bg-white/[0.055] lg:ml-0 lg:min-h-[285px] lg:p-6">
-        
+      <div
+        className={`
+          ml-[78px]
+          h-full
+          rounded-[24px]
+          border border-white/8
+          bg-white/[0.035]
+          p-5
+          transition-all duration-300
+
+          group-hover:border-[#02A7BB]/20
+          group-hover:bg-white/[0.055]
+
+          lg:ml-0
+          lg:min-h-[285px]
+          lg:p-6
+
+          ${carousel ? "min-h-[285px] sm:min-h-[270px]" : ""}
+        `}
+      >
+
+        {/* Top */}
         <div className="flex items-center justify-between">
+
           <span className="text-[9px] font-bold tracking-[0.2em] text-[#69dce5]">
             {tag}
           </span>
@@ -341,20 +470,23 @@ function JourneyNode({
           />
         </div>
 
+        {/* Title */}
         <h3 className="mt-3 text-[20px] font-semibold leading-[1.2] tracking-[-0.025em] text-white">
           {title}
         </h3>
 
+        {/* Description */}
         <p className="mt-3 text-[13px] leading-6 text-white/45">
           {description}
         </p>
 
-        {/* bottom line */}
-
+        {/* Bottom line */}
         <div className="mt-7 flex items-center gap-2">
+
           <span className="h-px flex-1 bg-white/8 transition-colors group-hover:bg-[#02A7BB]/20" />
 
           <span className="h-1.5 w-1.5 rounded-full bg-white/15 transition-colors group-hover:bg-[#69dce5]" />
+
         </div>
       </div>
     </motion.div>

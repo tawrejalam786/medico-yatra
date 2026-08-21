@@ -212,70 +212,86 @@ export default function AvailabilitySection() {
             RESPONSE PROMISE BAND
         ========================================================== */}
 
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 25,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.2,
-          }}
-          className="mt-5 overflow-hidden rounded-[30px] bg-[#16263A] shadow-[0_25px_70px_rgba(15,23,42,0.15)]"
-        >
-          <div className="relative px-5 py-7 sm:px-8 sm:py-8 lg:px-10">
-            {/* Background glow */}
+      <motion.div
+  initial={{
+    opacity: 0,
+    y: 25,
+  }}
+  whileInView={{
+    opacity: 1,
+    y: 0,
+  }}
+  viewport={{
+    once: true,
+  }}
+  transition={{
+    duration: 0.6,
+    delay: 0.2,
+  }}
+  className="mt-5 overflow-hidden rounded-[30px] bg-[#16263A] shadow-[0_25px_70px_rgba(15,23,42,0.15)]"
+>
+  <div className="relative min-h-[320px] px-5 py-7 sm:px-8 sm:py-8 lg:px-10">
 
-            <div className="pointer-events-none absolute -right-20 -top-24 h-60 w-60 rounded-full bg-[#0263CC]/30 blur-[80px]" />
+    {/* Right Side Background Image */}
+    <div className="pointer-events-none absolute inset-y-0 right-0 w-full lg:w-[55%]">
+      <img
+        src="/images/counselling-student.png"
+        alt=""
+        className="h-full w-full object-cover opacity-[0.22]"
+      />
 
-            <div className="pointer-events-none absolute -bottom-24 -left-20 h-60 w-60 rounded-full bg-[#02A7BB]/20 blur-[80px]" />
+      {/* Dark gradient to blend image into card */}
+      {/* <div className="absolute inset-0 bg-gradient-to-r from-[#16263A] via-[#16263A]/80 to-[#16263A]/30" /> */}
 
-            <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              {/* Left */}
+      {/* Extra blue tint */}
+      {/* <div className="absolute inset-0 bg-[#0B3B70]/20 mix-blend-multiply" /> */}
+    </div>
 
-              <div className="max-w-2xl">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/10">
-                    <CheckCircle2 className="h-5 w-5 text-[#5DD6DE]" />
-                  </div>
+    {/* Background glow */}
+    <div className="pointer-events-none absolute -right-20 -top-24 h-60 w-60 rounded-full bg-[#0263CC]/30 blur-[80px]" />
 
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#7CC8FF]">
-                    Our response promise
-                  </p>
-                </div>
+    <div className="pointer-events-none absolute -bottom-24 -left-20 h-60 w-60 rounded-full bg-[#02A7BB]/20 blur-[80px]" />
 
-                <h3 className="mt-5 text-2xl font-black tracking-tight text-white sm:text-3xl">
-                  Your enquiry won't disappear into a black hole.
-                </h3>
+    {/* Content */}
+    <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
 
-                <p className="mt-3 text-sm leading-6 text-slate-300 sm:text-base">
-                  We aim to reply to WhatsApp and form enquiries within one
-                  working day. WhatsApp is usually the fastest way to reach us.
-                </p>
-              </div>
-
-              {/* Right CTA */}
-
-              <div className="shrink-0">
-                <a
-                  href="#contact-form"
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-5 py-3.5 text-sm font-extrabold text-[#16263A] shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F4FAFF] sm:w-auto"
-                >
-                  Talk to a counsellor
-
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </a>
-              </div>
-            </div>
+      {/* Left */}
+      <div className="max-w-2xl">
+        <div className="flex items-center gap-3">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/10">
+            <CheckCircle2 className="h-5 w-5 text-[#5DD6DE]" />
           </div>
-        </motion.div>
+
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#7CC8FF]">
+            Our response promise
+          </p>
+        </div>
+
+        <h3 className="mt-5 text-2xl font-black tracking-tight text-white sm:text-3xl">
+          Your enquiry won't disappear into a black hole.
+        </h3>
+
+        <p className="mt-3 text-sm leading-6 text-slate-300 sm:text-base">
+          We aim to reply to WhatsApp and form enquiries within one
+          working day. WhatsApp is usually the fastest way to reach us.
+        </p>
+      </div>
+
+      {/* Right CTA */}
+      <div className="relative top-36 z-10 shrink-0">
+        <a
+          href="#contact-form"
+          className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-5 py-3.5 text-sm font-extrabold text-[#16263A] shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F4FAFF] sm:w-auto"
+        >
+          Talk to a counsellor
+
+          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+      </div>
+
+    </div>
+  </div>
+</motion.div>
 
         {/* =========================================================
             SMALL REASSURANCE

@@ -9,6 +9,8 @@ import {
   Phone,
   MapPin,
   Sparkles,
+  CheckCircle2,
+  Globe2,
 } from "lucide-react";
 
 const ContactHero = () => {
@@ -216,7 +218,7 @@ const ContactHero = () => {
                   sm:text-sm
                 "
               >
-                Contact Medico Yatra
+               MEDICAL EDUCATION ABROAD
               </span>
             </motion.div>
 
@@ -281,9 +283,7 @@ const ContactHero = () => {
                 sm:leading-8
               "
             >
-              Whether you're sure about your path or just exploring, we're
-              happy to help. Free counselling, no pressure, no false promises.
-              Choose whatever's easiest for you below.
+             Get clear answers on eligibility, study options, costs and what comes after MBBS — before you decide.
             </motion.p>
 
             {/* CTAs */}
@@ -302,7 +302,7 @@ const ContactHero = () => {
             >
               {/* Primary CTA */}
               <a
-                href="#counselling-form"
+                href="#contact-form"
                 className="
                   group
                   inline-flex
@@ -348,7 +348,7 @@ const ContactHero = () => {
 
               {/* WhatsApp CTA */}
               <a
-                href="#"
+                href="https://wa.me/919897444550"
                 className="
                   group
                   inline-flex
@@ -420,7 +420,7 @@ const ContactHero = () => {
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0263CC]/8 text-[#0263CC]">
                   <Check size={12} strokeWidth={3} />
                 </span>
-                No pressure
+               Personalised Guidance
               </span>
 
               <span className="hidden h-1 w-1 rounded-full bg-slate-300 sm:block" />
@@ -429,7 +429,7 @@ const ContactHero = () => {
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0263CC]/8 text-[#0263CC]">
                   <Check size={12} strokeWidth={3} />
                 </span>
-                No false promises
+                Clear Options
               </span>
 
               <span className="hidden h-1 w-1 rounded-full bg-slate-300 sm:block" />
@@ -438,7 +438,7 @@ const ContactHero = () => {
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0263CC]/8 text-[#0263CC]">
                   <Check size={12} strokeWidth={3} />
                 </span>
-                Your decision, your time
+                Honest Advice
               </span>
             </motion.div>
           </div>
@@ -446,257 +446,367 @@ const ContactHero = () => {
           {/* =====================================================
               RIGHT VISUAL
           ===================================================== */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96, x: 30 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="
-              relative
-              mx-auto
-              w-full
-              max-w-[530px]
-              lg:ml-auto
-              lg:mt-8
-            "
-          >
-            {/* Decorative glow */}
-            <div
-              className="
-                absolute
-                -inset-5
-                rounded-[38px]
-                bg-gradient-to-br
-                from-[#0263CC]/10
-                via-[#4DA5EC]/10
-                to-[#02A7BB]/10
-                blur-2xl
-              "
-            />
+         <motion.div
+  initial={{ opacity: 0, scale: 0.96, x: 30 }}
+  animate={{ opacity: 1, scale: 1, x: 0 }}
+  transition={{ duration: 0.9, delay: 0.2 }}
+  className="
+    relative
+    mx-auto
+    w-full
+    max-w-[530px]
+    lg:ml-auto
+    lg:mt-8
+  "
+>
+  {/* Decorative glow */}
+  <div
+    className="
+      absolute
+      -inset-5
+      rounded-[38px]
+      bg-gradient-to-br
+      from-[#0263CC]/10
+      via-[#4DA5EC]/10
+      to-[#02A7BB]/10
+      blur-2xl
+    "
+  />
 
-            {/* Main visual card */}
-            <div
-              className="
-                relative
-                aspect-[4/4.25]
-                overflow-hidden
-                rounded-[30px]
-                border
-                border-white/80
-                bg-gradient-to-br
-                from-[#EAF5FF]
-                via-[#F7FBFF]
-                to-[#E9FAFC]
-                shadow-[0_30px_80px_rgba(2,63,120,0.15)]
-                sm:rounded-[38px]
-              "
-            >
-              {/* Image */}
-              <img
-                src="/images/contact/contact-hero.png"
-                alt="Medico Yatra counsellor helping a student"
-                className="
-                  absolute
-                  inset-0
-                  h-full
-                  w-full
-                  object-cover
-                  object-center
-                "
-              />
+  {/* Main visual card */}
+  <div
+    className="
+      relative
+      aspect-[4/4.25]
+      rounded-[30px]
+      border
+      border-white/80
+      bg-gradient-to-br
+      from-[#EAF5FF]
+      via-[#F7FBFF]
+      to-[#E9FAFC]
+      shadow-[0_30px_80px_rgba(2,63,120,0.15)]
+      sm:rounded-[38px]
+    "
+  >
+    {/* Image */}
+    <img
+      src="/images/contact/contact-hero2.png"
+      alt="Medico Yatra counsellor helping a student"
+      className="
+        absolute
+        inset-0
+        h-full
+        w-full
+        object-cover
+        object-center
+      "
+    />
 
-              {/* Image overlay */}
-              <div
-                className="
-                  absolute
-                  inset-0
-                  bg-gradient-to-t
-                  from-[#062C4F]/70
-                  via-[#062C4F]/5
-                  to-transparent
-                "
-              />
+    {/* Image overlay */}
+    <div
+      className="
+        absolute
+        inset-0
+        bg-gradient-to-t
+        from-[#062C4F]/70
+        via-[#062C4F]/5
+        to-transparent
+      "
+    />
 
-              {/* Top floating label */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  absolute
-                  left-5
-                  top-5
-                  flex
-                  items-center
-                  gap-2
-                  rounded-full
-                  border
-                  border-white/70
-                  bg-white/90
-                  px-3
-                  py-2
-                  shadow-lg
-                  backdrop-blur-xl
-                  sm:left-7
-                  sm:top-7
-                  sm:px-4
-                "
-              >
-                <span
-                  className="
-                    flex
-                    h-7
-                    w-7
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-[#0263CC]/10
-                    text-[#0263CC]
-                  "
-                >
-                  <Sparkles size={14} />
-                </span>
+    {/* ========================================= */}
+    {/* Floating Capsule 1 */}
+    {/* ========================================= */}
+    <motion.div
+      animate={{ y: [0, -6, 0] }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="
+        absolute
+        left-4
+        top-5
+        flex
+        items-center
+        gap-2
+        rounded-full
+        border
+        border-white/70
+        bg-white/90
+        px-3
+        py-2
+        shadow-lg
+        backdrop-blur-xl
+        sm:-left-32
+        sm:top-7
+        sm:px-4
+        sm:z-50
+        z-50
+      "
+    >
+      <span
+        className="
+          flex
+          h-7
+          w-7
+          shrink-0
+          items-center
+          justify-center
+          rounded-full
+          bg-[#0263CC]/10
+          text-[#0263CC]
+        "
+      >
+        <CheckCircle2 size={14} />
+      </span>
 
-                <span className="text-xs font-bold text-[#092B4C] sm:text-sm">
-                  We're here to listen
-                </span>
-              </motion.div>
+      <span
+        className="
+          text-[10px]
+          font-bold
+          text-[#092B4C]
+          sm:text-sm
+        "
+      >
+        Know Where You Qualify
+      </span>
+    </motion.div>
 
-              {/* Location floating icon */}
-              <motion.div
-                animate={{ y: [0, 7, 0] }}
-                transition={{
-                  duration: 4.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  absolute
-                  right-5
-                  top-[28%]
-                  hidden
-                  h-12
-                  w-12
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  border
-                  border-white/70
-                  bg-white/90
-                  text-[#0263CC]
-                  shadow-xl
-                  backdrop-blur-xl
-                  sm:flex
-                "
-              >
-                <MapPin size={20} />
-              </motion.div>
+    {/* ========================================= */}
+    {/* Floating Capsule 2 */}
+    {/* ========================================= */}
+    <motion.div
+      animate={{ y: [0, 7, 0] }}
+      transition={{
+        duration: 4.5,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 0.4,
+      }}
+      className="
+        absolute
+        right-4
+        top-[18%]
+        flex
+        items-center
+        gap-2
+        rounded-full
+        border
+        border-white/70
+        bg-white/90
+        px-3
+        py-2
+        shadow-xl
+        backdrop-blur-xl
+        sm:-right-16
+        sm:px-4
+      "
+    >
+      <span
+        className="
+          flex
+          h-7
+          w-7
+          shrink-0
+          items-center
+          justify-center
+          rounded-full
+          bg-[#02A7BB]/10
+          text-[#02A7BB]
+        "
+      >
+        <Globe2 size={14} />
+      </span>
 
-              {/* Bottom information card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.8 }}
-                className="
-                  absolute
-                  bottom-5
-                  left-5
-                  right-5
-                  rounded-2xl
-                  border
-                  border-white/20
-                  bg-[#062C4F]/70
-                  p-4
-                  text-white
-                  shadow-2xl
-                  backdrop-blur-xl
-                  sm:bottom-7
-                  sm:left-7
-                  sm:right-7
-                  sm:rounded-3xl
-                  sm:p-5
-                "
-              >
-                <div className="flex items-start gap-3">
-                  <div
-                    className="
-                      flex
-                      h-10
-                      w-10
-                      shrink-0
-                      items-center
-                      justify-center
-                      rounded-xl
-                      bg-white/10
-                      text-[#8EDFFF]
-                    "
-                  >
-                    <MessageCircle size={19} />
-                  </div>
+      <span
+        className="
+          text-[11px]
+          font-bold
+          text-[#092B4C]
+          sm:text-sm
+        "
+      >
+        Countries, Fees &amp; Universities
+      </span>
+    </motion.div>
 
-                  <div>
-                    <p className="text-sm font-bold sm:text-base">
-                      Not sure where to start?
-                    </p>
+    {/* ========================================= */}
+    {/* Floating Capsule 3 */}
+    {/* ========================================= */}
+    <motion.div
+      animate={{ y: [0, -5, 0] }}
+      transition={{
+        duration: 4.2,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 0.8,
+      }}
+      className="
+        absolute
+        bottom-[31%]
+        left-4
+        flex
+        items-center
+        gap-2
+        rounded-full
+        border
+        border-white/70
+        bg-white/90
+        px-3
+        py-2
+        shadow-xl
+        backdrop-blur-xl
+        sm:left-6
+        sm:px-4
+      "
+    >
+      <span
+        className="
+          flex
+          h-7
+          w-7
+          shrink-0
+          items-center
+          justify-center
+          rounded-full
+          bg-[#0263CC]/10
+          text-[#0263CC]
+        "
+      >
+        <ArrowRight size={14} />
+      </span>
 
-                    <p className="mt-1 text-xs leading-5 text-white/70 sm:text-sm">
-                      That's completely okay. Start with a conversation.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+      <span
+        className="
+          text-[11px]
+          font-bold
+          text-[#092B4C]
+          sm:text-sm
+        "
+      >
+        What Comes After MBBS
+      </span>
+    </motion.div>
 
-            {/* Floating call card */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="
-                absolute
-                -bottom-5
-                -left-2
-                hidden
-                items-center
-                gap-3
-                rounded-2xl
-                border
-                border-slate-100
-                bg-white
-                px-4
-                py-3
-                shadow-[0_18px_45px_rgba(15,23,42,0.13)]
-                sm:flex
-                lg:-left-8
-              "
-            >
-              <span
-                className="
-                  flex
-                  h-10
-                  w-10
-                  items-center
-                  justify-center
-                  rounded-xl
-                  bg-[#0263CC]/10
-                  text-[#0263CC]
-                "
-              >
-                <Phone size={18} />
-              </span>
+    {/* ========================================= */}
+    {/* Bottom Information Card */}
+    {/* ========================================= */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.8 }}
+      className="
+        absolute
+        bottom-5
+        left-5
+        right-5
+        rounded-2xl
+        border
+        border-white/20
+        bg-[#062C4F]/70
+        p-4
+        text-white
+        shadow-2xl
+        backdrop-blur-xl
+        sm:bottom-7
+        sm:left-7
+        sm:right-7
+        sm:rounded-3xl
+        sm:p-5
+      "
+    >
+      <div className="flex items-start gap-3">
+        <div
+          className="
+            flex
+            h-10
+            w-10
+            shrink-0
+            items-center
+            justify-center
+            rounded-xl
+            bg-white/10
+            text-[#8EDFFF]
+          "
+        >
+          <MessageCircle size={19} />
+        </div>
 
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                  Need to talk?
-                </p>
-                <p className="mt-0.5 text-sm font-bold text-[#092B4C]">
-                  Speak with a counsellor
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
+        <div>
+          <p className="text-sm font-bold sm:text-base">
+            Not sure where to start?
+          </p>
+
+          <p className="mt-1 text-xs leading-5 text-white/70 sm:text-sm">
+            That's completely okay. Start with a conversation.
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+
+  {/* ========================================= */}
+  {/* Floating Call Card */}
+  {/* ========================================= */}
+  <motion.div
+    initial={{ opacity: 0, x: 20 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.6, delay: 1 }}
+    className="
+      absolute
+      -bottom-5
+      -left-2
+      hidden
+      items-center
+      gap-3
+      rounded-2xl
+      border
+      border-slate-100
+      bg-white
+      px-4
+      py-3
+      shadow-[0_18px_45px_rgba(15,23,42,0.13)]
+      sm:flex
+      lg:-left-8
+    "
+  >
+    <span
+      className="
+        flex
+        h-10
+        w-10
+        items-center
+        justify-center
+        rounded-xl
+        bg-[#0263CC]/10
+        text-[#0263CC]
+      "
+    >
+      <Phone size={18} />
+    </span>
+
+    <div>
+      <p
+        className="
+          text-[11px]
+          font-semibold
+          uppercase
+          tracking-wider
+          text-slate-400
+        "
+      >
+        Need to talk?
+      </p>
+
+      <p className="mt-0.5 text-sm font-bold text-[#092B4C]">
+        Speak with a counsellor
+      </p>
+    </div>
+  </motion.div>
+</motion.div>
         </div>
       </div>
     </section>
