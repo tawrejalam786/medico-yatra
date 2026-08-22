@@ -121,6 +121,9 @@ function FAQColumn({ items, openId, setOpenId }) {
 export default function MBBSFAQ({ data }) {
   const [openId, setOpenId] = useState(null);
 
+  // Mobile FAQ state
+  const [showAllFaqs, setShowAllFaqs] = useState(false);
+
   // =====================================================
   // DATA FROM JSON
   // =====================================================
@@ -135,11 +138,20 @@ export default function MBBSFAQ({ data }) {
 
   // =====================================================
   // FAQ COLUMNS
+  // DESKTOP / TABLET
   // =====================================================
 
   const columnOne = faqs.slice(0, 7);
   const columnTwo = faqs.slice(7, 14);
   const columnThree = faqs.slice(14, 20);
+
+  // =====================================================
+  // MOBILE FAQ
+  // Initially only first 4
+  // After click all FAQs
+  // =====================================================
+
+  const mobileFaqs = showAllFaqs ? faqs : faqs.slice(0, 4);
 
   return (
     <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-10">
@@ -316,6 +328,7 @@ export default function MBBSFAQ({ data }) {
 
         {/* =================================================
             DESKTOP FAQ GRID
+            ALL FAQs ALWAYS SHOW
         ================================================== */}
 
         <div className="hidden items-start gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
@@ -340,36 +353,86 @@ export default function MBBSFAQ({ data }) {
 
         {/* =================================================
             MOBILE FAQ
+            FIRST 4 INITIALLY
+            ALL AFTER CLICK
         ================================================== */}
 
         <div className="flex flex-col gap-3 md:hidden">
-          {faqs.map((faq, index) => (
+          <AnimatePresence initial={false}>
+            {mobileFaqs.map((faq, index) => (
+              <motion.div
+                key={faq.id}
+                initial={{
+                  opacity: 0,
+                  y: 15,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                exit={{
+                  opacity: 0,
+                  y: -10,
+                }}
+                transition={{
+                  duration: 0.35,
+                  delay: showAllFaqs && index >= 4 ? (index - 4) * 0.025 : 0,
+                }}
+              >
+                <FAQItem
+                  faq={faq}
+                  openId={openId}
+                  setOpenId={setOpenId}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+
+          {/* =================================================
+              VIEW ALL / SHOW LESS BUTTON
+          ================================================== */}
+
+          {faqs.length > 4 && (
             <motion.div
-              key={faq.id}
               initial={{
                 opacity: 0,
-                y: 15,
+                y: 8,
               }}
-              whileInView={{
+              animate={{
                 opacity: 1,
                 y: 0,
               }}
-              viewport={{
-                once: true,
-                amount: 0.1,
-              }}
               transition={{
-                duration: 0.4,
-                delay: Math.min(index * 0.025, 0.3),
+                duration: 0.35,
               }}
+              className="flex justify-center pt-3"
             >
-              <FAQItem
-                faq={faq}
-                openId={openId}
-                setOpenId={setOpenId}
-              />
+              <button
+                type="button"
+                onClick={() => {
+                  setShowAllFaqs((prev) => !prev);
+
+                  // Close currently opened FAQ when collapsing
+                  if (showAllFaqs) {
+                    setOpenId(null);
+                  }
+                }}
+                className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#0263CC]/20 bg-[#F8FBFF] px-6 py-3 text-sm font-bold text-[#0263CC] shadow-[0_5px_20px_rgba(2,99,204,0.05)] transition-all duration-300 hover:border-[#0263CC] hover:bg-[#0263CC] hover:text-white hover:shadow-[0_10px_25px_rgba(2,99,204,0.15)] active:scale-95"
+              >
+                <span>
+                  {showAllFaqs
+                    ? "Show Less FAQs"
+                    : `View All FAQs (${faqs.length})`}
+                </span>
+
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-300 ${
+                    showAllFaqs ? "rotate-180" : "group-hover:translate-y-0.5"
+                  }`}
+                />
+              </button>
             </motion.div>
-          ))}
+          )}
         </div>
 
         {/* =================================================

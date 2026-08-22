@@ -134,7 +134,7 @@ export const FINDER_CAREER_OPTIONS = [
   { id: "nursing",            label: "Nursing",                               emoji: "💉" },
   { id: "pharmacy",           label: "Pharmacy",                              emoji: "💊" },
   { id: "physiotherapy",      label: "Physiotherapy",                         emoji: "🏃" },
-  { id: "respiratoryTherapy", label: "Respiratory Therapy / Medical Lab Tech", emoji: "🫁" },
+  { id: "respiratoryTherapy", label: "Respiratory Therapy", emoji: "🫁" },
   { id: "all",                label: "Not Sure Yet — Show Me Everything",      emoji: "❓" },
 ];
 

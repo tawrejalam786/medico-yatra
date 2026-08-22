@@ -18,7 +18,7 @@ const COURSES = [
     shortTitle: "MBBS",
     description:
       "Study MBBS abroad at NMC-recognised universities with complete guidance.",
-    image: "/images/mbbs.jpg",
+    image: "/images/home-course-img/MBBS_MD.webp",
     slug: "/courses/mbbs-abroad",
   },
   {
@@ -27,7 +27,7 @@ const COURSES = [
     shortTitle: "Nursing",
     description:
       "Explore recognised nursing programs with guidance from admission to career.",
-    image: "/images/nursing-new.jpg",
+    image: "/images/home-course-img/Nursing.webp",
     slug: "/courses/nursing",
   },
   {
@@ -36,7 +36,7 @@ const COURSES = [
     shortTitle: "BDS Dental",
     description:
       "Build your dental career with globally recognised BDS programs.",
-    image: "/images/Dentistry-BDS.jpg",
+    image: "/images/home-course-img/Dentistry.webp",
     slug: "/courses/bds-dental",
   },
   {
@@ -45,7 +45,7 @@ const COURSES = [
     shortTitle: "Pharmacy",
     description:
       "Explore pharmacy education and career pathways across recognised institutions.",
-    image: "/images/young-woman-pharmacist.jpg",
+    image: "/images/home-course-img/Pharmacy.webp",
     slug: "/courses/pharmacy",
   },
   {
@@ -54,25 +54,25 @@ const COURSES = [
     shortTitle: "Physiotherapy",
     description:
       "Build a career in rehabilitation and patient-focused physiotherapy.",
-    image: "/images/physiotherapist-course.jpg",
+    image: "/images/home-course-img/Physiotherapy.webp",
     slug: "/courses/physiotherapy-rehab",
   },
-  {
-    id: "respiratory",
-    title: "Respiratory Therapy",
-    shortTitle: "Respiratory Therapy",
-    description:
-      "Explore specialised respiratory care and allied healthcare opportunities.",
-    image: "/images/doctor-helping-patient-rehabilitation.jpg",
-    slug: "/courses/respiratory-therapy",
-  },
+  // {
+  //   id: "respiratory",
+  //   title: "Respiratory Therapy",
+  //   shortTitle: "Respiratory Therapy",
+  //   description:
+  //     "Explore specialised respiratory care and allied healthcare opportunities.",
+  //   image: "/images/home-course-img/doctor-helping-patient-rehabilitation.webp",
+  //   slug: "/courses/respiratory-therapy",
+  // },
   {
     id: "mlt",
     title: "Medical Lab Technology",
     shortTitle: "MLT",
     description:
       "Learn about laboratory-based healthcare careers and diagnostic sciences.",
-    image: "/images/labs.jpg",
+    image: "/images/home-course-img/Med_Lab_Tech.webp",
     slug: "/courses/medical-lab-technology",
   },
   {
@@ -81,7 +81,7 @@ const COURSES = [
     shortTitle: "Allied Health",
     description:
       "Discover diverse healthcare careers beyond traditional medical pathways.",
-    image: "/images/alied-ask.jpg",
+    image: "/images/home-course-img/Allied_Health.webp",
     slug: "/courses/allied-health",
   },
 ];

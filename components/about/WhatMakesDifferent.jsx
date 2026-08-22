@@ -49,15 +49,15 @@ export default function WhatMakesDifferent() {
   return (
     <section
       id="what-makes-us-different"
-      className="relative overflow-hidden bg-[#f5f9fd] py-10 sm:py-24 lg:py-12"
+      className="relative overflow-hidden bg-[#C8DEF7] py-10 sm:py-24 lg:py-12"
     >
       {/* =========================================================
           BACKGROUND
       ========================================================== */}
 
-      <div className="pointer-events-none absolute left-[-180px] top-[15%] h-[420px] w-[420px] rounded-full bg-[#0263CC]/7 blur-[120px]" />
+      {/* <div className="pointer-events-none absolute top-[15%] h-[420px] w-[420px] rounded-full bg-[#0263CC]/7 blur-[120px]" />
 
-      <div className="pointer-events-none absolute bottom-[-180px] right-[-160px] h-[440px] w-[440px] rounded-full bg-[#02A7BB]/8 blur-[130px]" />
+      <div className="pointer-events-none absolute bottom-[-180px] h-[440px] w-[440px] rounded-full bg-[#02A7BB]/8 blur-[130px]" /> */}
 
       {/* =========================================================
           CONTAINER

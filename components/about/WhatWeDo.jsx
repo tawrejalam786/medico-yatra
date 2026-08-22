@@ -311,19 +311,19 @@ export default function WhatWeDo() {
           className="mt-12 grid gap-4 sm:mt-16 lg:grid-cols-[1fr_auto] lg:items-center"
         >
           {/* LEFT STATEMENT */}
-          <div className="rounded-[24px] border border-white/8 bg-white/[0.035] p-5 sm:p-6">
+          <div className="rounded-[24px] border border-white/8 bg-white p-5 sm:p-6">
             <div className="flex items-start gap-4">
 
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#02A7BB]/10 text-[#69dce5]">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#02A7BB]/10 text-black">
                 <CheckCircle2 size={18} />
               </div>
 
               <div>
-                <p className="text-sm font-semibold text-white/90">
+                <p className="text-sm font-semibold text-[#053048]">
                   The admission letter isn't the finish line.
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-white/40">
+                <p className="mt-1 text-xs leading-5 text-blue-500">
                   It's where the next part of the journey begins.
                 </p>
               </div>
@@ -332,14 +332,14 @@ export default function WhatWeDo() {
           </div>
 
           {/* RIGHT COMMITMENT */}
-          <div className="flex items-center justify-center rounded-[24px] border border-[#02A7BB]/15 bg-[#02A7BB]/5 px-6 py-5">
+          <div className="flex items-center justify-center rounded-[24px] border border-[#02A7BB]/15 bg-white px-6 py-5">
             <div className="text-center">
 
-              <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#69dce5]">
+              <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-black">
                 Our commitment
               </p>
 
-              <p className="mt-1 text-sm font-semibold text-white">
+              <p className="mt-1 text-sm font-semibold text-blue-400">
                 With you beyond admission.
               </p>
 

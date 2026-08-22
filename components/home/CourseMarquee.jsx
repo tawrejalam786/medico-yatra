@@ -165,7 +165,7 @@ export default function CourseMarquee() {
                 transition={{
                   duration: 0.25,
                 }}
-                className="group flex w-[260px] shrink-0 cursor-pointer items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:border-[#4DA5EC]/50 hover:shadow-xl sm:w-[290px] sm:p-5"
+                className="group flex w-[260px] shrink-0 cursor-pointer items-center gap-4 rounded-2xl border border-slate-200 bg-blue-400 p-4 shadow-sm transition-all duration-300 hover:border-[#4DA5EC]/50 hover:shadow-xl sm:w-[290px] sm:p-5"
               >
 
                 {/* =================================================
@@ -200,11 +200,11 @@ export default function CourseMarquee() {
 
                 <div className="min-w-0 flex-1">
 
-                  <h3 className="text-base font-bold text-[#021E46] sm:text-lg">
+                  <h3 className="text-base font-bold text-[#fff] sm:text-lg">
                     {course.name}
                   </h3>
 
-                  <p className="mt-1 line-clamp-2 text-xs leading-5 text-slate-500 sm:text-sm">
+                  <p className="mt-1 line-clamp-2 text-xs leading-5 text-white sm:text-sm">
                     {course.subtitle}
                   </p>
 

@@ -494,112 +494,347 @@ export default function WhyMedicoYatra({ data }) {
                 JSON SERVICES
             ================================================== */}
 
-            {data.services.map((service) => (
-              <SwiperSlide
-                key={service.id}
-                className="!h-auto"
-              >
+           {data.services.map((service, index) => {
+  const CARD_STYLES = [
+    {
+      gradient:
+        "linear-gradient(135deg, #0263CC 0%, #0B73D5 48%, #178BE5 100%)",
+      iconText: "text-[#0263CC]",
+      tagText: "text-[#0263CC]",
+      accent: "#0263CC",
+    },
+    {
+      gradient:
+        "linear-gradient(135deg, #009E9A 0%, #00B5A9 48%, #02C7B5 100%)",
+      iconText: "text-[#009E9A]",
+      tagText: "text-[#009E9A]",
+      accent: "#009E9A",
+    },
+    {
+      gradient:
+        "linear-gradient(135deg, #5B4FE9 0%, #6946E8 48%, #7C3AED 100%)",
+      iconText: "text-[#5B4FE9]",
+      tagText: "text-[#5B4FE9]",
+      accent: "#5B4FE9",
+    },
+    {
+      gradient:
+        "linear-gradient(135deg, #F97316 0%, #F45B29 48%, #EF4444 100%)",
+      iconText: "text-[#F97316]",
+      tagText: "text-[#F97316]",
+      accent: "#F97316",
+    },
+  ];
 
-                <motion.article
-                  variants={cardVariants}
-                  className="
-                    group
-                    relative
-                    flex
-                    h-full
-                    min-h-[270px]
-                    flex-col
-                    overflow-hidden
-                    rounded-2xl
-                    border
-                    border-slate-200/80
-                    bg-white
-                    p-5
-                    shadow-[0_8px_30px_rgba(15,60,110,0.06)]
-                    transition-all
-                    duration-300
-                    hover:-translate-y-1
-                    hover:border-[#0263CC]/20
-                    hover:shadow-[0_20px_45px_rgba(2,99,204,0.12)]
-                    sm:min-h-[285px]
-                    sm:p-6
-                  "
-                >
+  const cardStyle = CARD_STYLES[index % CARD_STYLES.length];
 
-                  {/* Top glow */}
+  return (
+    <SwiperSlide
+      key={service.id}
+      className="!h-auto"
+    >
+      <motion.article
+        variants={cardVariants}
+        style={{
+          background: cardStyle.gradient,
+        }}
+        className="
+          group
+          relative
+          flex
+          h-full
+          min-h-[270px]
+          flex-col
+          overflow-hidden
+          rounded-2xl
+          border
+          border-white/15
+          p-5
 
-                  <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#0263CC]/[0.06] blur-2xl transition-all duration-500 group-hover:bg-[#0263CC]/10" />
+          shadow-[0_10px_35px_rgba(15,60,110,0.12)]
 
+          transition-all
+          duration-300
 
-                  {/* Number */}
+          hover:-translate-y-1
+          hover:shadow-[0_20px_45px_rgba(9,33,61,0.20)]
 
-                  <div className="absolute right-5 top-5 text-[10px] font-extrabold tracking-widest text-slate-200 transition-colors duration-300 group-hover:text-[#0263CC]/20">
-                    {service.number}
-                  </div>
+          sm:min-h-[285px]
+          sm:p-6
+        "
+      >
+        {/* ================================================
+            SMOOTH BACKGROUND TEXTURE
+        ================================================= */}
 
+        {/* Top left soft white glow */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -left-16
+            -top-20
+            h-56
+            w-56
+            rounded-full
+            bg-white/20
+            blur-[70px]
+          "
+        />
 
-                  {/* Icon */}
+        {/* Top right soft glow */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -right-20
+            -top-16
+            h-52
+            w-52
+            rounded-full
+            bg-white/12
+            blur-[70px]
+          "
+        />
 
-                  <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#EAF3FF] to-[#F4FAFF] text-[#0263CC] shadow-sm ring-1 ring-[#0263CC]/10 transition-all duration-300 group-hover:scale-105 group-hover:shadow-md">
+        {/* Bottom darker blending */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -bottom-24
+            -right-14
+            h-64
+            w-64
+            rounded-full
+            bg-black/10
+            blur-[85px]
+          "
+        />
 
-                    <DynamicIcon
-                      name={service.icon}
-                      className="h-6 w-6"
-                    />
+        {/* Center soft light */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            left-[20%]
+            top-[35%]
+            h-40
+            w-40
+            rounded-full
+            bg-white/10
+            blur-[65px]
+          "
+        />
 
-                  </div>
+        {/* Overall smooth shine */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            inset-0
+            bg-gradient-to-br
+            from-white/10
+            via-transparent
+            to-black/5
+          "
+        />
 
+        {/* Subtle top shine */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            left-5
+            right-5
+            top-0
+            h-px
+            bg-gradient-to-r
+            from-transparent
+            via-white/50
+            to-transparent
+          "
+        />
 
-                  {/* Tag */}
+        {/* ================================================
+            NUMBER
+        ================================================= */}
 
-                  <div className="mt-5">
+        <div
+          className="
+            absolute
+            right-5
+            top-5
+            z-10
+            text-[10px]
+            font-extrabold
+            tracking-widest
+            text-white/40
+            transition-colors
+            duration-300
 
-                    <span className="inline-flex rounded-full bg-[#F3F8FF] px-2.5 py-1 text-[9px] font-bold text-[#0263CC]">
-                      {service.tag}
-                    </span>
+            group-hover:text-white/60
+          "
+        >
+          {service.number}
+        </div>
 
-                  </div>
+        {/* ================================================
+            ICON
+        ================================================= */}
 
+        <div
+          className={`
+            relative
+            z-10
+            flex
+            h-12
+            w-12
+            items-center
+            justify-center
+            rounded-2xl
 
-                  {/* Title */}
+            bg-white
 
-                  <h3 className="mt-3 pr-7 text-[16px] font-extrabold leading-snug text-[#071A49] sm:text-[17px]">
-                    {service.title}
-                  </h3>
+            ${cardStyle.iconText}
 
+            shadow-[0_7px_20px_rgba(0,0,0,0.10)]
+            ring-1
+            ring-white/40
 
-                  {/* Description */}
+            transition-all
+            duration-300
 
-                  <p className="mt-2 text-[11px] leading-5 text-slate-500 sm:text-xs sm:leading-[1.65]">
-                    {service.description}
-                  </p>
+            group-hover:scale-105
+            group-hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)]
+          `}
+        >
+          <DynamicIcon
+            name={service.icon}
+            className="h-6 w-6"
+          />
+        </div>
 
+        {/* ================================================
+            TAG
+        ================================================= */}
 
-                  {/* Bottom */}
+        <div className="relative z-10 mt-5">
+          <span
+            className={`
+              inline-flex
+              rounded-full
+              bg-white
+              px-2.5
+              py-1
+              text-[9px]
+              font-bold
+              shadow-sm
 
-                  <div className="mt-auto pt-5">
+              ${cardStyle.tagText}
+            `}
+          >
+            {service.tag}
+          </span>
+        </div>
 
-                    <div className="flex items-center gap-2 border-t border-slate-100 pt-4">
+        {/* ================================================
+            TITLE
+        ================================================= */}
 
-                      <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
+        <h3
+          className="
+            relative
+            z-10
+            mt-3
+            pr-7
+            text-[16px]
+            font-extrabold
+            leading-snug
+            text-white
 
-                      <span className="text-[9px] font-semibold text-slate-500 sm:text-[10px]">
-                        Student-first support
-                      </span>
+            sm:text-[17px]
+          "
+        >
+          {service.title}
+        </h3>
 
-                    </div>
+        {/* ================================================
+            DESCRIPTION
+        ================================================= */}
 
-                  </div>
+        <p
+          className="
+            relative
+            z-10
+            mt-2
+            text-[11px]
+            leading-5
+            text-white/80
 
+            sm:text-xs
+            sm:leading-[1.65]
+          "
+        >
+          {service.description}
+        </p>
 
-                  {/* Hover line */}
+        {/* ================================================
+            BOTTOM
+        ================================================= */}
 
-                  <div className="absolute bottom-0 left-0 h-1 w-0 rounded-full bg-gradient-to-r from-[#0263CC] to-[#02A7BB] transition-all duration-500 group-hover:w-full" />
+        <div className="relative z-10 mt-auto pt-5">
+          <div
+            className="
+              flex
+              items-center
+              gap-2
+              border-t
+              border-white/20
+              pt-4
+            "
+          >
+            <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-white" />
 
-                </motion.article>
+            <span
+              className="
+                text-[9px]
+                font-semibold
+                text-white/75
 
-              </SwiperSlide>
-            ))}
+                sm:text-[10px]
+              "
+            >
+              Student-first support
+            </span>
+          </div>
+        </div>
+
+        {/* ================================================
+            BOTTOM SHINE
+        ================================================= */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            bottom-0
+            left-0
+            h-[2px]
+            w-full
+
+            bg-gradient-to-r
+            from-transparent
+            via-white/50
+            to-transparent
+
+            opacity-50
+          "
+        />
+      </motion.article>
+    </SwiperSlide>
+  );
+})}
 
           </Swiper>
 
@@ -608,7 +843,7 @@ export default function WhyMedicoYatra({ data }) {
               MOBILE SWIPE INDICATOR
           =================================================== */}
 
-          <div className="mt-5 flex items-center justify-center gap-2 sm:hidden">
+          {/* <div className="mt-5 flex items-center justify-center gap-2 sm:hidden">
 
             <span className="h-1.5 w-7 rounded-full bg-[#0263CC]" />
 
@@ -618,12 +853,12 @@ export default function WhyMedicoYatra({ data }) {
 
             <ArrowRight className="h-3 w-3 text-[#0263CC]" />
 
-          </div>
+          </div> */}
 
 
           {/* Pagination */}
 
-          <div className="medico-services-pagination mt-5 flex min-h-3 items-center justify-center gap-1.5" />
+          <div className="medico-services-pagination mt-15 flex min-h-3 items-center justify-center gap-1.5" />
 
         </motion.div>
 

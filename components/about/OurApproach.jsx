@@ -30,7 +30,7 @@ const approachSteps = [
     description:
       "A realistic plan tailored to your goals, marks, finances, and dreams.",
     icon: Route,
-    accent: "cyan",
+    accent: "teal",
   },
   {
     number: "03",
@@ -39,7 +39,7 @@ const approachSteps = [
     description:
       "When you understand the full picture, the right decision becomes yours — not ours.",
     icon: BookOpenCheck,
-    accent: "blue",
+    accent: "purple",
   },
   {
     number: "04",
@@ -48,7 +48,7 @@ const approachSteps = [
     description:
       "We stay beside you from the first question to your first day as a professional.",
     icon: HeartHandshake,
-    accent: "cyan",
+    accent: "orange",
   },
 ];
 
@@ -77,13 +77,11 @@ export default function OurApproach() {
       ========================================================== */}
 
       <div className="relative mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
-
         {/* =======================================================
             HEADER
         ======================================================== */}
 
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
-
           <motion.div
             initial={{ opacity: 0, x: -25 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -166,13 +164,10 @@ export default function OurApproach() {
         ======================================================== */}
 
         <div className="relative mt-16 sm:mt-20 lg:mt-24">
-
           {/* Desktop connecting line */}
-
           <div className="pointer-events-none absolute left-[12.5%] right-[12.5%] top-[47px] hidden h-px bg-gradient-to-r from-[#0263CC]/15 via-[#02A7BB]/40 to-[#0263CC]/15 lg:block" />
 
           {/* Animated line */}
-
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
@@ -238,7 +233,6 @@ export default function OurApproach() {
           </div>
 
           <div className="relative grid gap-8 p-6 sm:p-8 lg:grid-cols-[auto_1fr_auto] lg:items-center lg:p-10">
-
             {/* Icon */}
 
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-[#0263CC] shadow-sm">
@@ -285,7 +279,10 @@ export default function OurApproach() {
             <motion.div
               key={step.number}
               initial={{ width: 0, opacity: 0 }}
-              whileInView={{ width: index === 0 ? 28 : 10, opacity: 1 }}
+              whileInView={{
+                width: index === 0 ? 28 : 10,
+                opacity: 1,
+              }}
               viewport={{ once: true }}
               transition={{
                 delay: index * 0.1,
@@ -334,86 +331,389 @@ function ApproachCard({
   title,
   description,
   icon: Icon,
+  accent,
   index,
 }) {
+  const styles = {
+    blue: {
+      gradient:
+        "linear-gradient(135deg, #0263CC 0%, #0D78DA 48%, #178BE5 100%)",
+      iconBg: "bg-white/16",
+      iconText: "text-white",
+      iconBorder: "border-white/20",
+      number: "text-white/55",
+      label: "text-white/70",
+      title: "text-white",
+      description: "text-white/80",
+      line: "bg-white/20",
+      check: "text-white/70",
+      nodeText: "text-[#0263CC]",
+      nodeHover: "group-hover:bg-[#0263CC]",
+    },
+
+    teal: {
+      gradient:
+        "linear-gradient(135deg, #009E9A 0%, #00B6AA 50%, #02C7B5 100%)",
+      iconBg: "bg-white/16",
+      iconText: "text-white",
+      iconBorder: "border-white/20",
+      number: "text-white/55",
+      label: "text-white/70",
+      title: "text-white",
+      description: "text-white/80",
+      line: "bg-white/20",
+      check: "text-white/70",
+      nodeText: "text-[#009E9A]",
+      nodeHover: "group-hover:bg-[#009E9A]",
+    },
+
+    purple: {
+      gradient:
+        "linear-gradient(135deg, #5B4FE9 0%, #6845E8 48%, #7C3AED 100%)",
+      iconBg: "bg-white/16",
+      iconText: "text-white",
+      iconBorder: "border-white/20",
+      number: "text-white/55",
+      label: "text-white/70",
+      title: "text-white",
+      description: "text-white/80",
+      line: "bg-white/20",
+      check: "text-white/70",
+      nodeText: "text-[#5B4FE9]",
+      nodeHover: "group-hover:bg-[#5B4FE9]",
+    },
+
+    orange: {
+      gradient:
+        "linear-gradient(135deg, #F97316 0%, #F45B29 50%, #EF4444 100%)",
+      iconBg: "bg-white/16",
+      iconText: "text-white",
+      iconBorder: "border-white/20",
+      number: "text-white/55",
+      label: "text-white/70",
+      title: "text-white",
+      description: "text-white/80",
+      line: "bg-white/20",
+      check: "text-white/70",
+      nodeText: "text-[#F97316]",
+      nodeHover: "group-hover:bg-[#F97316]",
+    },
+  };
+
+  const current = styles[accent] || styles.blue;
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      initial={{
+        opacity: 0,
+        y: 30,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
       transition={{
         duration: 0.6,
         delay: index * 0.1,
       }}
       className="group relative"
     >
-      {/* Desktop node */}
+      {/* =========================================================
+          DESKTOP NODE
+      ========================================================== */}
 
       <div className="relative z-10 mb-5 hidden justify-center lg:flex">
         <motion.div
-          whileHover={{ scale: 1.12 }}
+          whileHover={{
+            scale: 1.12,
+          }}
           className="flex h-[94px] w-[94px] items-center justify-center rounded-full border-[7px] border-white bg-[#f5f9fd] shadow-[0_8px_25px_rgba(2,99,204,0.1)]"
         >
-          <div className="flex h-[68px] w-[68px] items-center justify-center rounded-full bg-white text-[#0263CC] shadow-sm transition-all duration-300 group-hover:bg-[#0263CC] group-hover:text-white">
+          <div
+            className={`
+              flex
+              h-[68px]
+              w-[68px]
+              items-center
+              justify-center
+              rounded-full
+              bg-white
+              ${current.nodeText}
+              shadow-sm
+              transition-all
+              duration-300
+              ${current.nodeHover}
+              group-hover:text-white
+            `}
+          >
             <Icon size={24} />
           </div>
         </motion.div>
       </div>
 
-      {/* Card */}
+      {/* =========================================================
+          CARD
+      ========================================================== */}
 
-      <div className="relative h-full overflow-hidden rounded-[24px] border border-slate-200 bg-white p-5 shadow-[0_10px_35px_rgba(9,33,61,0.05)] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#0263CC]/15 group-hover:shadow-[0_18px_45px_rgba(2,99,204,0.09)] sm:p-6 lg:min-h-[285px]">
+      <div
+        style={{
+          background: current.gradient,
+        }}
+        className="
+          relative
+          h-full
+          overflow-hidden
+          rounded-[24px]
+          border
+          border-white/10
+          p-5
 
-        {/* Top accent */}
+          shadow-[0_14px_35px_rgba(9,33,61,0.12)]
 
-        <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-[#0263CC] to-[#02A7BB] opacity-70" />
+          transition-all
+          duration-300
 
-        {/* Mobile icon + number */}
+          group-hover:-translate-y-1
+          group-hover:shadow-[0_22px_50px_rgba(9,33,61,0.18)]
 
-        <div className="mb-5 flex items-center justify-between lg:hidden">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0263CC]/8 text-[#0263CC]">
+          sm:p-6
+          lg:min-h-[285px]
+        "
+      >
+        {/* =========================================================
+            SMOOTH TEXTURE - TOP LEFT LIGHT
+        ========================================================== */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -left-16
+            -top-16
+            h-56
+            w-56
+            rounded-full
+            bg-white/20
+            blur-[65px]
+          "
+        />
+
+        {/* =========================================================
+            SMOOTH TEXTURE - TOP RIGHT
+        ========================================================== */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -right-20
+            -top-20
+            h-56
+            w-56
+            rounded-full
+            bg-white/10
+            blur-[70px]
+          "
+        />
+
+        {/* =========================================================
+            SMOOTH TEXTURE - BOTTOM
+        ========================================================== */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -bottom-24
+            right-[5%]
+            h-64
+            w-64
+            rounded-full
+            bg-black/10
+            blur-[80px]
+          "
+        />
+
+        {/* =========================================================
+            SOFT CENTRAL LIGHT
+        ========================================================== */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            left-[20%]
+            top-[35%]
+            h-40
+            w-40
+            rounded-full
+            bg-white/8
+            blur-[70px]
+          "
+        />
+
+        {/* =========================================================
+            VERY SUBTLE SHINE
+        ========================================================== */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            inset-0
+            bg-gradient-to-br
+            from-white/10
+            via-transparent
+            to-black/5
+          "
+        />
+
+        {/* =========================================================
+            TOP ACCENT
+        ========================================================== */}
+
+        <div
+          className="
+            absolute
+            left-0
+            right-0
+            top-0
+            h-px
+            bg-gradient-to-r
+            from-transparent
+            via-white/45
+            to-transparent
+          "
+        />
+
+        {/* =========================================================
+            MOBILE ICON + NUMBER
+        ========================================================== */}
+
+        <div className="relative z-10 mb-5 flex items-center justify-between lg:hidden">
+          <div
+            className={`
+              flex
+              h-11
+              w-11
+              items-center
+              justify-center
+              rounded-xl
+              border
+              ${current.iconBorder}
+              ${current.iconBg}
+              ${current.iconText}
+              backdrop-blur-sm
+            `}
+          >
             <Icon size={19} />
           </div>
 
-          <span className="text-[30px] font-semibold tracking-[-0.05em] text-slate-100">
+          <span
+            className={`
+              text-[30px]
+              font-semibold
+              tracking-[-0.05em]
+              ${current.number}
+            `}
+          >
             {number}
           </span>
         </div>
 
-        {/* Desktop number */}
+        {/* =========================================================
+            DESKTOP NUMBER
+        ========================================================== */}
 
-        <div className="hidden lg:block">
-          <span className="text-[11px] font-bold tracking-[0.2em] text-[#0263CC]">
+        <div className="relative z-10 hidden lg:block">
+          <span
+            className={`
+              text-[11px]
+              font-bold
+              tracking-[0.2em]
+              ${current.number}
+            `}
+          >
             {number}
           </span>
         </div>
 
-        {/* Label */}
+        {/* =========================================================
+            LABEL
+        ========================================================== */}
 
-        <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.2em] text-[#02A7BB]">
+        <p
+          className={`
+            relative
+            z-10
+            mt-2
+            text-[9px]
+            font-bold
+            uppercase
+            tracking-[0.2em]
+            ${current.label}
+          `}
+        >
           {label}
         </p>
 
-        {/* Title */}
+        {/* =========================================================
+            TITLE
+        ========================================================== */}
 
-        <h3 className="mt-3 text-[20px] font-semibold leading-[1.2] tracking-[-0.025em] text-[#09213d]">
+        <h3
+          className={`
+            relative
+            z-10
+            mt-3
+            text-[20px]
+            font-semibold
+            leading-[1.2]
+            tracking-[-0.025em]
+            ${current.title}
+          `}
+        >
           {title}
         </h3>
 
-        {/* Description */}
+        {/* =========================================================
+            DESCRIPTION
+        ========================================================== */}
 
-        <p className="mt-3 text-[13px] leading-6 text-slate-500">
+        <p
+          className={`
+            relative
+            z-10
+            mt-3
+            text-[13px]
+            font-medium
+            leading-6
+            ${current.description}
+          `}
+        >
           {description}
         </p>
 
-        {/* Bottom indicator */}
+        {/* =========================================================
+            BOTTOM INDICATOR
+        ========================================================== */}
 
-        <div className="absolute bottom-5 left-5 right-5 flex items-center gap-2 sm:left-6 sm:right-6">
-          <span className="h-px flex-1 bg-slate-100 transition-all duration-300 group-hover:bg-[#0263CC]/15" />
+        <div className="absolute bottom-3 left-5 right-5 z-10 flex items-center gap-2 sm:left-6 sm:right-6">
+          <span
+            className={`
+              h-px
+              flex-1
+              ${current.line}
+            `}
+          />
 
           <CheckCircle2
             size={14}
-            className="text-slate-200 transition-colors duration-300 group-hover:text-[#02A7BB]"
+            className={current.check}
           />
         </div>
       </div>

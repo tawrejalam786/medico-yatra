@@ -227,20 +227,20 @@ export default function MissionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="mt-14 overflow-hidden rounded-[24px] border border-white/8 bg-white/[0.035] p-5 backdrop-blur-sm sm:mt-16 sm:p-6"
+          className="mt-14 overflow-hidden rounded-[24px] border border-white/8 bg-white p-5 backdrop-blur-sm sm:mt-16 sm:p-6"
         >
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-4">
-              <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#02A7BB]/10 text-[#69dce5]">
+              <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#02A7BB]/10 text-blue-500">
                 <Compass size={16} />
               </div>
 
               <div>
-                <p className="text-sm font-semibold text-white/90">
+                <p className="text-sm font-semibold text-black">
                   Beyond the admission.
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-white/40">
+                <p className="mt-1 text-xs leading-5 text-blue-500">
                   The mission continues through the healthcare journey.
                 </p>
               </div>
@@ -248,7 +248,7 @@ export default function MissionSection() {
 
             <div className="hidden h-px flex-1 bg-white/8 sm:mx-8 sm:block" />
 
-            <p className="text-xs font-medium text-[#69dce5]">
+            <p className="text-xs font-medium  text-blue-500">
               Healthcare careers. Honest guidance.
             </p>
           </div>

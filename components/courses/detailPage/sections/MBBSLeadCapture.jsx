@@ -382,7 +382,7 @@ export default function MBBSLeadCapture({ data }) {
                 RIGHT FORM
             ================================================== */}
 
-            <div className="p-5 sm:p-8 lg:p-10 xl:p-12">
+            <div className="p-5 sm:p-8 lg:p-10 xl:p-12 bg-blue-300">
 
               <div className="mb-6">
 
@@ -646,7 +646,7 @@ export default function MBBSLeadCapture({ data }) {
 
                   <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#02A7BB]" />
 
-                  <p className="text-[9px] leading-4 text-slate-400 sm:text-[10px]">
+                  <p className="text-[9px] leading-4 text-black font-medium sm:text-[10px]">
                     {data.privacyNote}
                   </p>
 

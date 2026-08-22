@@ -131,10 +131,10 @@ const TrustBar = () => {
                 duration: 6,
                 ease: "easeInOut"
               }}
-              className="relative z-10 aspect-[3/4] max-h-[500px]"
+              className="relative z-10 aspect-[3/0] max-h-[500px]"
             >
               <img
-                src="/images/doc1.jpg"
+                src="/images/doc1.webp"
                 alt="Healthcare Student"
                 className="relative rounded-3xl w-full h-full object-cover shadow-2xl border-4 border-white"
               />
@@ -153,7 +153,7 @@ const TrustBar = () => {
                 transition: { repeat: Infinity, duration: 5, ease: "easeInOut" }
               }}
               whileHover={{ scale: 1.05 }}
-              className="absolute -left-4 sm:left-0 top-8 sm:top-12 z-20 rounded-2xl bg-white px-4 sm:px-5 py-3 sm:py-4 shadow-2xl border border-[#E2E8F0] backdrop-blur-sm"
+              className="absolute -left-4 sm:left-0 -top-10 lg:top-8 sm:top-12 z-20 rounded-2xl bg-white px-4 sm:px-5 py-3 sm:py-4 shadow-2xl border border-[#E2E8F0] backdrop-blur-sm"
             >
               <div className="flex items-center gap-2.5">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#0263CC] to-[#4DA5EC] flex items-center justify-center">
@@ -204,108 +204,147 @@ const TrustBar = () => {
           </motion.div>
 
           {/* RIGHT - Trust Cards Grid */}
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-2 gap-5 sm:grid-cols-2"
-          >
-            {TRUST_ITEMS.map((item, index) => {
-              const Icon = item.icon;
-              
-              return (
-               <motion.div
-  key={item.heading}
-  variants={cardVariants}
-  whileHover={{
-    y: -8,
-    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.20)",
-    transition: { duration: 0.3 },
-  }}
-  className={`
-    group relative overflow-hidden rounded-2xl
-    bg-gradient-to-br ${item.color}
-    p-5 sm:p-6
-    shadow-lg
-    transition-all duration-300
-  `}
+         <motion.div
+  variants={container}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="grid grid-cols-2 gap-5 sm:grid-cols-2"
 >
-  {/* Soft Background Glow */}
-  <div className="absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+  {TRUST_ITEMS.map((item, index) => {
+    const Icon = item.icon;
 
-  {/* Decorative Circle */}
-  <div
-    className="
-      absolute -right-10 -top-10
-      h-28 w-28 rounded-full
-      bg-white/10 blur-2xl
-      transition-all duration-500
-      group-hover:scale-150 group-hover:bg-white/15
-    "
-  />
+    return (
+      <motion.div
+        key={item.heading}
+        variants={cardVariants}
+        whileHover={{
+          y: -8,
+          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.20)",
+          transition: { duration: 0.3 },
+        }}
+        className={`
+          group relative overflow-hidden rounded-2xl
+          bg-gradient-to-br ${item.color}
+          p-5 sm:p-6
+          shadow-lg
+          transition-all duration-300
+        `}
+      >
+        {/* Smooth Background Texture */}
+        <div
+          className="
+            pointer-events-none absolute inset-0
+            bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.28),transparent_32%)]
+            opacity-80
+            blur-xl
+            scale-110
+          "
+        />
 
-  {/* Icon Container */}
-  <motion.div
-    variants={iconVariants}
-    whileHover="hover"
-    className="
-      relative mb-5
-      flex h-14 w-14 items-center justify-center
-      rounded-xl
-      bg-white/15
-      shadow-lg
-      backdrop-blur-sm
-      ring-1 ring-white/20
-    "
-  >
-    <Icon
-      size={24}
-      className="text-white"
-      strokeWidth={2.5}
-    />
-  </motion.div>
+        {/* Second Soft Glow */}
+        <div
+          className="
+            pointer-events-none absolute
+            -right-16 -top-16
+            h-48 w-48
+            rounded-full
+            bg-white/15
+            blur-3xl
+            transition-transform duration-700
+            group-hover:scale-125
+          "
+        />
 
-  {/* Heading */}
-  <h3
-    className="
-      relative mb-2.5
-      text-base sm:text-lg
-      font-bold
-      leading-tight
-      text-white
-    "
-  >
-    {item.heading}
-  </h3>
+        {/* Bottom Soft Shade */}
+        <div
+          className="
+            pointer-events-none absolute
+            -bottom-20 -left-16
+            h-52 w-52
+            rounded-full
+            bg-black/10
+            blur-3xl
+          "
+        />
 
-  {/* Description */}
-  <p
-    className="
-      relative
-      text-sm
-      leading-relaxed
-      text-white/85
-    "
-  >
-    {item.body}
-  </p>
+        {/* Decorative Circle */}
+        <div
+          className="
+            pointer-events-none absolute
+            -right-10 -top-10
+            h-28 w-28
+            rounded-full
+            bg-white/10
+            blur-2xl
+            transition-all duration-500
+            group-hover:scale-150
+            group-hover:bg-white/15
+          "
+        />
 
-  {/* Bottom Shine */}
-  <div
-    className="
-      absolute bottom-0 left-0 right-0
-      h-px
-      bg-white/20
-      opacity-0
-      transition-opacity duration-300
-      group-hover:opacity-100
-    "
-  />
+        {/* Content */}
+        <motion.div
+          variants={iconVariants}
+          whileHover="hover"
+          className="
+            relative z-10 mb-5
+            flex h-14 w-14 items-center justify-center
+            rounded-xl
+            bg-white/15
+            shadow-lg
+            backdrop-blur-sm
+            ring-1 ring-white/20
+          "
+        >
+          <Icon
+            size={24}
+            className="text-white"
+            strokeWidth={2.5}
+          />
+        </motion.div>
+
+        <h3
+          className="
+            relative z-10 mb-2.5
+            text-base sm:text-lg
+            font-bold
+            leading-tight
+            text-white
+          "
+        >
+          {item.heading}
+        </h3>
+
+        <p
+          className="
+            relative z-10
+            text-sm
+            hidden
+            lg:block
+            leading-relaxed
+            text-white/85
+          "
+        >
+          {item.body}
+        </p>
+
+        {/* Bottom Shine */}
+        <div
+          className="
+            pointer-events-none absolute
+            bottom-0 left-0 right-0
+            h-px
+            bg-white/20
+            opacity-0
+            transition-opacity duration-300
+            group-hover:opacity-100
+          "
+        />
+      </motion.div>
+    );
+  })}
 </motion.div>
-              );
-            })}
-          </motion.div>
         </div>
       </div>
     </section>
