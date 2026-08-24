@@ -86,54 +86,66 @@ export default function Universities() {
               }}
               className="!overflow-visible"
             >
-              {universities.map((u) => (
-  <SwiperSlide key={u.name} className="h-auto">
-    <article className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-slate-100 bg-white shadow-[0_18px_55px_rgba(15,23,42,.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(15,23,42,.12)]">
+          {universities.map((u) => (
+  <SwiperSlide key={u.name} className="h-auto pb-3">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-slate-200/70 bg-white shadow-[0_12px_35px_rgba(15,23,42,0.07)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#0263CC]/20 hover:shadow-[0_24px_55px_rgba(2,99,204,0.13)]">
+      
+      {/* TOP ACCENT */}
+      <div className="absolute inset-x-8 top-0 z-20 h-[2px] bg-gradient-to-r from-transparent via-[#02A7BB] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
       {/* IMAGE */}
-      <div className="relative h-52 shrink-0 overflow-hidden bg-slate-100 sm:h-56">
+      <div className="relative h-44 shrink-0 overflow-hidden bg-slate-100 sm:h-48">
         <img
           src={u.image}
           alt={u.name}
-          className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
+          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-950/5 to-transparent" />
 
         {/* BADGE */}
-        <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/90 px-3 py-2 text-[10px] font-black uppercase tracking-[.12em] text-[#0263CC] shadow-sm backdrop-blur-md">
-          <BadgeCheck className="h-3.5 w-3.5" />
+        <span className="absolute left-3.5 top-3.5 inline-flex items-center gap-1.5 rounded-full border border-white/60 bg-white/95 px-2.5 py-1.5 text-[9px] font-black uppercase tracking-[0.1em] text-[#0263CC] shadow-[0_5px_15px_rgba(15,23,42,0.12)] backdrop-blur-md">
+          <BadgeCheck className="h-3.5 w-3.5 text-[#02A7BB]" />
           Verify NMC
         </span>
 
-        {/* CITY CHIP */}
-        <div className="absolute bottom-4 left-4">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-950/55 px-3 py-2 text-xs font-bold text-white backdrop-blur-md">
-            <MapPin className="h-3.5 w-3.5" />
+        {/* CITY */}
+        <div className="absolute bottom-3.5 left-3.5">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-slate-950/55 px-2.5 py-1.5 text-[11px] font-bold text-white shadow-sm backdrop-blur-md">
+            <MapPin className="h-3.5 w-3.5 text-cyan-300" />
             {u.city}
           </span>
         </div>
       </div>
 
       {/* CONTENT */}
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
+      <div className="relative flex flex-1 flex-col px-5 pb-5 pt-4">
+        {/* DECORATIVE GLOW */}
+        <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#02A7BB]/[0.06] blur-2xl" />
 
         {/* UNIVERSITY NAME */}
-        <h3 className="line-clamp-1 min-h-[56px] text-lg font-black leading-7 tracking-[-.02em] text-slate-950">
+        <h3 className="relative line-clamp-2 text-[17px] font-black leading-[1.4] tracking-[-0.025em] text-slate-950 transition-colors duration-300 group-hover:text-[#0263CC] sm:text-lg">
           {u.name}
         </h3>
 
         {/* DESCRIPTION */}
-        <p className="mt-3 line-clamp-2 min-h-[72px] text-[14px] leading-6 text-slate-600">
+        <p className="relative mt-2 line-clamp-2 text-[13px] leading-[1.65] text-slate-600 sm:text-[13.5px]">
           {u.note}
         </p>
 
-        {/* BUTTON */}
-        <div className="mt-auto pt-5">
-          <button className="group/btn inline-flex items-center gap-2 text-sm font-black text-[#0263CC]">
-            View details
+        {/* DIVIDER + BUTTON */}
+        <div className="relative mt-auto pt-4">
+          <div className="mb-3.5 h-px w-full bg-gradient-to-r from-slate-200 via-slate-100 to-transparent" />
 
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+          <button
+            type="button"
+            className="group/btn flex w-full items-center justify-between rounded-xl bg-slate-50 px-3.5 py-2.5 text-[13px] font-black text-[#0263CC] transition-all duration-300 hover:bg-[#0263CC] hover:text-white"
+          >
+            <span>View university</span>
+
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#0263CC] shadow-sm transition-transform duration-300 group-hover/btn:translate-x-0.5">
+              <ArrowRight className="h-3.5 w-3.5" />
+            </span>
           </button>
         </div>
       </div>
