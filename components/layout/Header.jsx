@@ -119,14 +119,14 @@ function Logo({ scrolled }) {
       </div>
 
       {/* Desktop logo */}
-      <div className="relative hidden h-[40px] w-[160px] lg:block">
+      <div className="relative hidden h-[60px] w-[147px] lg:block">
         <Image
           src={logoSrc}
           alt="Medico Yatra Logo"
           fill
           priority
           sizes="160px"
-          className="object-cover object-left"
+          className="object-fill object-left"
         />
       </div>
     </Link>
