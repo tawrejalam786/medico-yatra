@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
+  ArrowRight,
   ChevronDown,
   HelpCircle,
   MessageCircle,
-  ArrowRight,
   ShieldCheck,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -32,7 +32,8 @@ const faqs = [
       "No — the year-by-year structure is designed to integrate with, not compete against, your university academic calendar.",
   },
   {
-    question: "Does the FMGE pass rate vary by which country I study in?",
+    question:
+      "Does the FMGE pass rate vary by which country I study in?",
     answer:
       "Yes, and we are transparent about this on our individual country pages. This variability is exactly why early, structured preparation matters, regardless of destination.",
   },
@@ -52,17 +53,20 @@ const faqs = [
       "While designed to integrate with ongoing MBBS-abroad studies for maximum benefit, graduates preparing for FMGE can also join our final-stage intensive revision track.",
   },
   {
-    question: "Do you offer NExT preparation specifically, or only FMGE?",
+    question:
+      "Do you offer NExT preparation specifically, or only FMGE?",
     answer:
       "Our curriculum is built around the core medical knowledge both exams assess, and we update our exam-format-specific preparation as official NMC guidance on NExT's rollout becomes available.",
   },
   {
-    question: "Can students from any MBBS-abroad country join this coaching?",
+    question:
+      "Can students from any MBBS-abroad country join this coaching?",
     answer:
       "Yes — open to students from any country, with content calibrated to address curriculum gaps relevant to each destination.",
   },
   {
-    question: "Does Medico Yatra guarantee that I will clear FMGE / NExT?",
+    question:
+      "Does Medico Yatra guarantee that I will clear FMGE / NExT?",
     answer:
       "No. We do not and cannot guarantee exam outcomes — success depends on your own consistent effort and engagement alongside our structured curriculum.",
   },
@@ -72,27 +76,32 @@ const faqs = [
       "Yes — no relocation required. Attend from your university, hostel, or home, anywhere in the world.",
   },
   {
-    question: "What if I'm already in my final year — is it too late to join?",
+    question:
+      "What if I'm already in my final year — is it too late to join?",
     answer:
       "No — while an early start is ideal, our final-year intensive revision track is built for students who need to make the most of the time remaining before their exam.",
   },
   {
-    question: "How are classes scheduled across different time zones?",
+    question:
+      "How are classes scheduled across different time zones?",
     answer:
       "We schedule live sessions with international student time zones in mind, and provide recorded access for anything that doesn't fit your specific schedule.",
   },
   {
-    question: "Will my parents be able to understand how this coaching works?",
+    question:
+      "Will my parents be able to understand how this coaching works?",
     answer:
       "Yes — we're happy to walk parents through the year-by-year structure directly, since understanding exactly how licensing will be handled is often their biggest concern.",
   },
   {
-    question: "Does this coaching cover both theory and practice tests?",
+    question:
+      "Does this coaching cover both theory and practice tests?",
     answer:
       "Yes — live classes, recorded lectures, monthly subject-wise tests, and full-length mock exams simulating the real FMGE format are all included.",
   },
   {
-    question: "What happens if I fall behind during a busy clinical placement period?",
+    question:
+      "What happens if I fall behind during a busy clinical placement period?",
     answer:
       "Recorded class access and faculty doubt-clearing support are designed exactly for this — to help you catch up without losing your place in the structured curriculum.",
   },
@@ -103,7 +112,8 @@ const faqs = [
       "Our curriculum covers the foundational medical knowledge both exams test. As official NExT details solidify, we update our specific exam-format preparation accordingly — you won't need to start over with a different provider.",
   },
   {
-    question: "Can I prepare for both FMGE/NExT and USMLE at the same time?",
+    question:
+      "Can I prepare for both FMGE/NExT and USMLE at the same time?",
     answer:
       "Yes, many students do. This requires genuine time management — we discuss realistic timelines honestly during counselling.",
   },
@@ -118,7 +128,7 @@ function FAQItem({ faq, index, compact = false }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <motion.div
+    <motion.article
       layout
       initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -135,46 +145,39 @@ function FAQItem({ faq, index, compact = false }) {
     >
       <button
         type="button"
-        onClick={() => setOpen(!open)}
+        onClick={() => setOpen((previous) => !previous)}
         aria-expanded={open}
         className={`flex w-full items-center gap-4 text-left ${
           compact ? "px-5 py-4" : "px-5 py-5 sm:px-6"
         }`}
       >
-        {/* Number */}
         <span
           className={`flex shrink-0 items-center justify-center rounded-xl font-bold transition-all duration-300 ${
-            compact
-              ? "h-9 w-9 text-xs"
-              : "h-10 w-10 text-sm"
+            compact ? "h-9 w-9 text-xs" : "h-10 w-10 text-sm"
           } ${
             open
               ? "bg-[#0263CC] text-white"
-              : "bg-[#0263CC]/8 text-[#0263CC] group-hover:bg-[#0263CC]/12"
+              : "bg-[#0263CC]/[0.08] text-[#0263CC] group-hover:bg-[#0263CC]/[0.12]"
           }`}
         >
           {String(index + 1).padStart(2, "0")}
         </span>
 
-        {/* Question */}
         <span
           className={`min-w-0 flex-1 font-semibold leading-snug ${
             compact
               ? "text-[14px] sm:text-[15px]"
               : "text-[15px] sm:text-base"
-          } ${
-            open ? "text-[#071A49]" : "text-slate-800"
-          }`}
+          } ${open ? "text-[#071A49]" : "text-slate-800"}`}
         >
           {faq.question}
         </span>
 
-        {/* Arrow */}
         <span
           className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
             open
               ? "rotate-180 bg-[#0263CC]/10 text-[#0263CC]"
-              : "bg-slate-100 text-slate-500 group-hover:bg-[#0263CC]/8 group-hover:text-[#0263CC]"
+              : "bg-slate-100 text-slate-500 group-hover:bg-[#0263CC]/[0.08] group-hover:text-[#0263CC]"
           }`}
         >
           <ChevronDown size={18} strokeWidth={2.2} />
@@ -196,6 +199,7 @@ function FAQItem({ faq, index, compact = false }) {
                 duration: 0.2,
               },
             }}
+            className="overflow-hidden"
           >
             <div
               className={`border-t border-slate-100 ${
@@ -215,23 +219,43 @@ function FAQItem({ faq, index, compact = false }) {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </motion.article>
   );
 }
 
 export default function FMGEFAQ() {
-  const firstSeven = faqs.slice(0, 7);
-  const remainingFaqs = faqs.slice(7);
+  const [showAllFaqs, setShowAllFaqs] = useState(false);
+
+  const firstFourFaqs = faqs.slice(0, 4);
+  const remainingFaqs = faqs.slice(4);
+
+  const handleFaqToggle = () => {
+    if (showAllFaqs) {
+      setShowAllFaqs(false);
+
+      window.requestAnimationFrame(() => {
+        document
+          .getElementById("faq")
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      return;
+    }
+
+    setShowAllFaqs(true);
+  };
 
   return (
-    <section className="relative overflow-hidden bg-[#F7FAFF] py-16 sm:py-20 lg:py-24">
+    <section
+      id="faq"
+      className="relative overflow-hidden bg-[#F7FAFF] py-16 sm:py-20 lg:py-24"
+    >
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#0263CC]/6 blur-3xl" />
+        <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#0263CC]/[0.06] blur-3xl" />
 
-        <div className="absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-[#02A7BB]/6 blur-3xl" />
+        <div className="absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-[#02A7BB]/[0.06] blur-3xl" />
 
-        {/* subtle grid */}
         <div
           className="absolute inset-0 opacity-[0.35]"
           style={{
@@ -286,15 +310,12 @@ export default function FMGEFAQ() {
           </motion.p>
         </div>
 
-        {/* =========================================
-            FAQ 01–07
-            Main Questions
-        ========================================= */}
+        {/* First 4 FAQs */}
         <div className="mx-auto max-w-5xl">
           <div className="space-y-3">
-            {firstSeven.map((faq, index) => (
+            {firstFourFaqs.map((faq, index) => (
               <FAQItem
-                key={index}
+                key={faq.question}
                 faq={faq}
                 index={index}
               />
@@ -302,39 +323,85 @@ export default function FMGEFAQ() {
           </div>
         </div>
 
-        {/* Divider / label */}
-        <div className="mx-auto my-12 flex max-w-5xl items-center gap-4 sm:my-14">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-200 to-slate-200" />
+        {/* Remaining FAQs */}
+        <AnimatePresence initial={false}>
+          {showAllFaqs && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{
+                height: {
+                  duration: 0.45,
+                  ease: "easeInOut",
+                },
+                opacity: {
+                  duration: 0.3,
+                },
+              }}
+              className="overflow-hidden"
+            >
+              <div className="mx-auto my-10 flex max-w-5xl items-center gap-4 sm:my-12">
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-200 to-slate-200" />
 
-          <div className="flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#02A7BB]" />
+                <div className="flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#02A7BB]" />
 
-            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500">
-              More Questions
-            </span>
-          </div>
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500">
+                    More Questions
+                  </span>
+                </div>
 
-          <div className="h-px flex-1 bg-gradient-to-l from-transparent via-slate-200 to-slate-200" />
-        </div>
+                <div className="h-px flex-1 bg-gradient-to-l from-transparent via-slate-200 to-slate-200" />
+              </div>
 
-        {/* =========================================
-            FAQ 08–20
-            Compact 2-column grid
-        ========================================= */}
-        <div className="mx-auto grid max-w-6xl gap-3 md:grid-cols-2">
-          {remainingFaqs.map((faq, index) => (
-            <FAQItem
-              key={index + 7}
-              faq={faq}
-              index={index + 7}
-              compact
-            />
-          ))}
-        </div>
+              <div className="mx-auto grid max-w-6xl gap-3 md:grid-cols-2">
+                {remainingFaqs.map((faq, index) => (
+                  <FAQItem
+                    key={faq.question}
+                    faq={faq}
+                    index={index + 4}
+                    compact
+                  />
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-        {/* =========================================
-            Bottom CTA
-        ========================================= */}
+        {/* Load More / Show Less */}
+        {faqs.length > 4 && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="mt-9 flex justify-center"
+          >
+            <button
+              type="button"
+              onClick={handleFaqToggle}
+              aria-expanded={showAllFaqs}
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0263CC] to-[#02A7BB] px-6 py-3 text-sm font-bold text-white shadow-[0_12px_30px_rgba(2,99,204,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(2,99,204,0.3)] active:scale-95"
+            >
+              <span>
+                {showAllFaqs
+                  ? "Show Less"
+                  : `Load More (${faqs.length - 4})`}
+              </span>
+
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-300 ${
+                  showAllFaqs
+                    ? "rotate-180"
+                    : "group-hover:translate-y-0.5"
+                }`}
+              />
+            </button>
+          </motion.div>
+        )}
+
+        {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -342,7 +409,6 @@ export default function FMGEFAQ() {
           transition={{ duration: 0.6 }}
           className="relative mx-auto mt-12 max-w-5xl overflow-hidden rounded-3xl bg-[#071A49] p-6 shadow-[0_20px_60px_rgba(7,26,73,0.18)] sm:mt-14 sm:p-8 lg:p-10"
         >
-          {/* CTA glow */}
           <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#0263CC]/30 blur-3xl" />
 
           <div className="pointer-events-none absolute -bottom-24 -left-20 h-60 w-60 rounded-full bg-[#02A7BB]/20 blur-3xl" />
@@ -379,6 +445,7 @@ export default function FMGEFAQ() {
 
           <div className="relative z-10 mt-6 flex items-center gap-2 border-t border-white/10 pt-5 text-xs text-white/50">
             <ShieldCheck size={14} className="text-[#4DA5EC]" />
+
             <span>
               No pressure. Just honest guidance for your licensing journey.
             </span>

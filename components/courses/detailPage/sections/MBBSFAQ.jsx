@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ChevronDown,
   HelpCircle,
@@ -36,12 +36,8 @@ function FAQItem({ faq, openId, setOpenId }) {
         </span>
 
         <motion.span
-          animate={{
-            rotate: isOpen ? 180 : 0,
-          }}
-          transition={{
-            duration: 0.25,
-          }}
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.25 }}
           className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-colors ${
             isOpen
               ? "bg-[#0263CC] text-white"
@@ -55,22 +51,14 @@ function FAQItem({ faq, openId, setOpenId }) {
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            initial={{
-              height: 0,
-              opacity: 0,
-            }}
-            animate={{
-              height: "auto",
-              opacity: 1,
-            }}
-            exit={{
-              height: 0,
-              opacity: 0,
-            }}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
             transition={{
               duration: 0.28,
               ease: "easeInOut",
             }}
+            className="overflow-hidden"
           >
             <div className="border-t border-[#0263CC]/10 px-4 pb-5 pt-4 sm:px-5">
               <p className="text-[12px] leading-5 text-slate-600 sm:text-[13px] sm:leading-6">
@@ -84,86 +72,45 @@ function FAQItem({ faq, openId, setOpenId }) {
   );
 }
 
-function FAQColumn({ items, openId, setOpenId }) {
-  return (
-    <div className="flex flex-col gap-3">
-      {items.map((faq, index) => (
-        <motion.div
-          key={faq.id}
-          initial={{
-            opacity: 0,
-            y: 18,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.15,
-          }}
-          transition={{
-            duration: 0.45,
-            delay: index * 0.04,
-          }}
-        >
-          <FAQItem
-            faq={faq}
-            openId={openId}
-            setOpenId={setOpenId}
-          />
-        </motion.div>
-      ))}
-    </div>
-  );
-}
-
 export default function MBBSFAQ({ data }) {
   const [openId, setOpenId] = useState(null);
-
-  // Mobile FAQ state
   const [showAllFaqs, setShowAllFaqs] = useState(false);
-
-  // =====================================================
-  // DATA FROM JSON
-  // =====================================================
 
   const {
     eyebrow,
     title,
     description,
-    items: faqs,
+    items: faqs = [],
     supportCta,
   } = data;
 
-  // =====================================================
-  // FAQ COLUMNS
-  // DESKTOP / TABLET
-  // =====================================================
+  // Initially 4 FAQs, button click ke baad sabhi FAQs
+  const visibleFaqs = showAllFaqs ? faqs : faqs.slice(0, 4);
 
-  const columnOne = faqs.slice(0, 7);
-  const columnTwo = faqs.slice(7, 14);
-  const columnThree = faqs.slice(14, 20);
+  const handleFaqToggle = () => {
+    if (showAllFaqs) {
+      setShowAllFaqs(false);
+      setOpenId(null);
 
-  // =====================================================
-  // MOBILE FAQ
-  // Initially only first 4
-  // After click all FAQs
-  // =====================================================
-
-  const mobileFaqs = showAllFaqs ? faqs : faqs.slice(0, 4);
+      setTimeout(() => {
+        document
+          .getElementById("faq")
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    } else {
+      setShowAllFaqs(true);
+    }
+  };
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-10">
-      {/* =====================================================
-          BACKGROUND
-      ====================================================== */}
-
+    <section
+      id="faq"
+      className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-10"
+    >
+      {/* Background decorations */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Soft gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(77,165,236,0.08),transparent_28%),radial-gradient(circle_at_85%_70%,rgba(2,167,187,0.06),transparent_30%)]" />
 
-        {/* Animated glow */}
         <motion.div
           animate={{
             x: [0, 25, 0],
@@ -190,7 +137,6 @@ export default function MBBSFAQ({ data }) {
           className="absolute -right-32 bottom-20 h-80 w-80 rounded-full bg-[#02A7BB]/5 blur-3xl"
         />
 
-        {/* SVG dotted decoration */}
         <svg
           className="absolute left-0 top-16 hidden h-56 w-56 text-[#0263CC]/10 lg:block"
           viewBox="0 0 220 220"
@@ -203,19 +149,10 @@ export default function MBBSFAQ({ data }) {
             height="14"
             patternUnits="userSpaceOnUse"
           >
-            <circle
-              cx="2"
-              cy="2"
-              r="1.5"
-              fill="currentColor"
-            />
+            <circle cx="2" cy="2" r="1.5" fill="currentColor" />
           </pattern>
 
-          <rect
-            width="220"
-            height="220"
-            fill="url(#faqDots)"
-          />
+          <rect width="220" height="220" fill="url(#faqDots)" />
 
           <motion.circle
             cx="110"
@@ -224,9 +161,7 @@ export default function MBBSFAQ({ data }) {
             stroke="currentColor"
             strokeWidth="1"
             strokeDasharray="5 8"
-            animate={{
-              rotate: 360,
-            }}
+            animate={{ rotate: 360 }}
             transition={{
               duration: 35,
               repeat: Infinity,
@@ -235,7 +170,6 @@ export default function MBBSFAQ({ data }) {
           />
         </svg>
 
-        {/* Right SVG */}
         <svg
           className="absolute right-0 top-1/2 hidden h-64 w-64 -translate-y-1/2 text-[#02A7BB]/10 lg:block"
           viewBox="0 0 260 260"
@@ -259,33 +193,15 @@ export default function MBBSFAQ({ data }) {
         </svg>
       </div>
 
-      {/* =====================================================
-          MAIN CONTAINER
-      ====================================================== */}
-
       <div className="relative mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
-        {/* =================================================
-            HEADING
-        ================================================== */}
-
+        {/* Heading */}
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-          }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="mx-auto mb-10 max-w-3xl text-center sm:mb-12"
         >
-          {/* Small label */}
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#0263CC]/10 bg-[#F1F7FF] px-3 py-1.5">
             <HelpCircle className="h-3.5 w-3.5 text-[#0263CC]" />
 
@@ -294,7 +210,6 @@ export default function MBBSFAQ({ data }) {
             </span>
           </div>
 
-          {/* Heading */}
           <h2 className="text-[27px] font-extrabold leading-tight tracking-[-0.8px] text-[#071A49] sm:text-3xl lg:text-[38px]">
             {title?.prefix}{" "}
             <span className="bg-gradient-to-r from-[#0263CC] to-[#02A7BB] bg-clip-text text-transparent">
@@ -302,22 +217,14 @@ export default function MBBSFAQ({ data }) {
             </span>
           </h2>
 
-          {/* Description */}
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-500 sm:text-[15px]">
             {description}
           </p>
 
-          {/* Small animated line */}
           <motion.div
-            initial={{
-              width: 0,
-            }}
-            whileInView={{
-              width: 55,
-            }}
-            viewport={{
-              once: true,
-            }}
+            initial={{ width: 0 }}
+            whileInView={{ width: 55 }}
+            viewport={{ once: true }}
             transition={{
               duration: 0.7,
               delay: 0.2,
@@ -326,57 +233,27 @@ export default function MBBSFAQ({ data }) {
           />
         </motion.div>
 
-        {/* =================================================
-            DESKTOP FAQ GRID
-            ALL FAQs ALWAYS SHOW
-        ================================================== */}
-
-        <div className="hidden items-start gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
-          <FAQColumn
-            items={columnOne}
-            openId={openId}
-            setOpenId={setOpenId}
-          />
-
-          <FAQColumn
-            items={columnTwo}
-            openId={openId}
-            setOpenId={setOpenId}
-          />
-
-          <FAQColumn
-            items={columnThree}
-            openId={openId}
-            setOpenId={setOpenId}
-          />
-        </div>
-
-        {/* =================================================
-            MOBILE FAQ
-            FIRST 4 INITIALLY
-            ALL AFTER CLICK
-        ================================================== */}
-
-        <div className="flex flex-col gap-3 md:hidden">
+        {/* FAQ grid */}
+        <motion.div
+          layout
+          className={`grid grid-cols-1 items-start gap-3 md:grid-cols-2 ${
+            showAllFaqs ? "lg:grid-cols-3 lg:gap-5" : "lg:grid-cols-2 lg:gap-4"
+          }`}
+        >
           <AnimatePresence initial={false}>
-            {mobileFaqs.map((faq, index) => (
+            {visibleFaqs.map((faq, index) => (
               <motion.div
+                layout
                 key={faq.id}
-                initial={{
-                  opacity: 0,
-                  y: 15,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                exit={{
-                  opacity: 0,
-                  y: -10,
-                }}
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
                 transition={{
-                  duration: 0.35,
-                  delay: showAllFaqs && index >= 4 ? (index - 4) * 0.025 : 0,
+                  duration: 0.4,
+                  delay:
+                    showAllFaqs && index >= 4
+                      ? Math.min((index - 4) * 0.025, 0.25)
+                      : index * 0.04,
                 }}
               >
                 <FAQItem
@@ -387,71 +264,45 @@ export default function MBBSFAQ({ data }) {
               </motion.div>
             ))}
           </AnimatePresence>
+        </motion.div>
 
-          {/* =================================================
-              VIEW ALL / SHOW LESS BUTTON
-          ================================================== */}
-
-          {faqs.length > 4 && (
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 8,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.35,
-              }}
-              className="flex justify-center pt-3"
+        {/* Load More / Show Less button */}
+        {faqs.length > 4 && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.35 }}
+            className="mt-8 flex justify-center"
+          >
+            <button
+              type="button"
+              onClick={handleFaqToggle}
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0263CC] to-[#02A7BB] px-6 py-3 text-sm font-bold text-white shadow-[0_12px_30px_rgba(2,99,204,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(2,99,204,0.3)] active:scale-95"
             >
-              <button
-                type="button"
-                onClick={() => {
-                  setShowAllFaqs((prev) => !prev);
+              <span>
+                {showAllFaqs
+                  ? "Show Less"
+                  : `Load More (${faqs.length - 4})`}
+              </span>
 
-                  // Close currently opened FAQ when collapsing
-                  if (showAllFaqs) {
-                    setOpenId(null);
-                  }
-                }}
-                className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#0263CC]/20 bg-[#F8FBFF] px-6 py-3 text-sm font-bold text-[#0263CC] shadow-[0_5px_20px_rgba(2,99,204,0.05)] transition-all duration-300 hover:border-[#0263CC] hover:bg-[#0263CC] hover:text-white hover:shadow-[0_10px_25px_rgba(2,99,204,0.15)] active:scale-95"
-              >
-                <span>
-                  {showAllFaqs
-                    ? "Show Less FAQs"
-                    : `View All FAQs (${faqs.length})`}
-                </span>
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-300 ${
+                  showAllFaqs
+                    ? "rotate-180"
+                    : "group-hover:translate-y-0.5"
+                }`}
+              />
+            </button>
+          </motion.div>
+        )}
 
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform duration-300 ${
-                    showAllFaqs ? "rotate-180" : "group-hover:translate-y-0.5"
-                  }`}
-                />
-              </button>
-            </motion.div>
-          )}
-        </div>
-
-        {/* =================================================
-            BOTTOM SUPPORT CTA
-        ================================================== */}
-
+        {/* Support CTA */}
         {supportCta && (
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{
               duration: 0.6,
               delay: 0.2,
@@ -479,7 +330,6 @@ export default function MBBSFAQ({ data }) {
               className="inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-xl bg-[#0263CC] px-5 text-xs font-bold text-white shadow-[0_8px_20px_rgba(2,99,204,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0759B8] sm:w-auto sm:text-sm"
             >
               {supportCta.button?.label || "Get Free Counselling"}
-
               <ShieldCheck className="h-4 w-4" />
             </a>
           </motion.div>

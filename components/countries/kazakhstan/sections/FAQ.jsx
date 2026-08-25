@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { faqs } from "../../../../data/russia";
+import { faqs } from "../data";
 import SectionTitle from "../shared/SectionTitle";
 
 export default function FAQ() {
@@ -15,6 +15,7 @@ export default function FAQ() {
   const handleShowLess = () => {
     setShowAll(false);
 
+    // Hidden FAQ open ho to first FAQ open kar dega
     if (open >= 4) {
       setOpen(0);
     }
@@ -25,12 +26,12 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="bg-[#F8FBFF] py-16 sm:py-20 lg:py-24">
+    <section id="faq" className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="FAQ"
-          title="Russia MBBS — frequently asked questions."
-          text="Straight answers to the questions students and parents usually ask before counselling."
+          title="Kazakhstan MBBS — frequently asked questions."
+          text="Twenty questions from the supplied brief, kept compact with an accordion to prevent a huge mobile scroll."
           center
         />
 
@@ -60,7 +61,7 @@ export default function FAQ() {
                   <span
                     className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl transition ${
                       active
-                        ? "bg-[#0263CC] text-white"
+                        ? "bg-gradient-to-br from-[#0263CC] to-[#02A7BB] text-white"
                         : "bg-[#EEF7FF] text-[#0263CC]"
                     }`}
                   >
@@ -78,7 +79,7 @@ export default function FAQ() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
+                      transition={{ duration: 0.24 }}
                       className="overflow-hidden"
                     >
                       <p className="px-4 pb-5 text-sm leading-7 text-slate-600 sm:px-5">
