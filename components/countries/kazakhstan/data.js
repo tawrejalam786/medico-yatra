@@ -62,8 +62,8 @@ export const universities = [
 ];
 
 export const studentLife = [
-  { icon: House, title: "Accommodation", text: "University hostels are standard and affordable, while private apartments are available in major cities at reasonable rates.", image: "/images/countries/kazakhstan/life-hostel.webp" },
-  { icon: Utensils, title: "Food", text: "Indian restaurants and groceries are available in Almaty and Astana; many Indian students self-cook using ingredients from supermarkets and specialty stores.", image: "/images/kazakhstan/life-food.webp" },
+  { icon: House, title: "Accommodation", text: "University hostels are standard and affordable, while private apartments are available in major cities at reasonable rates.", image: "/images/countries/georgia/life-hostel.png" },
+  { icon: Utensils, title: "Food", text: "Indian restaurants and groceries are available in Almaty and Astana; many Indian students self-cook using ingredients from supermarkets and specialty stores.", image: "/images/countries/georgia/life-food.png" },
   { icon: BusFront, title: "Transport", text: "Almaty has metro and bus networks, Astana has expanding public transport, and taxis or ride-hailing are widely used.", image: "/images/countries/kazakhstan/life-transport.webp" },
   { icon: CloudSnow, title: "Weather", text: "Winters are severe, especially in Astana where temperatures below -30°C are possible. Almaty is milder and summers are warm.", image: "/images/countries/kazakhstan/life-winter.webp" },
   { icon: ShieldCheck, title: "Safety", text: "Major Kazakhstani cities are generally safe for students. Standard urban precautions apply, and Indian students are a known community at medical universities.", image: "/images/countries/kazakhstan/life-safety.webp" },
