@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileStickyCTA from "@/components/layout/MobileStickyCTA";
+import FreeCounsellingModal from "@/components/layout/FreeCounsellingModal";
 
 // Load Poppins via next/font (Manjari is loaded via @import in globals.css
 // because it is not available in the next/font Google catalogue)
@@ -101,6 +102,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <FreeCounsellingModal />
         <MobileStickyCTA />
       </body>
     </html>
